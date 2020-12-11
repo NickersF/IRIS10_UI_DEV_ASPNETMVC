@@ -28,5 +28,12 @@ namespace IRIS10_UI_Dev_ASPNETMVC5.Controllers
 
             return View();
         }
+
+        public ActionResult Login()
+        {
+            ViewBag.Message = "Login page";
+
+            return View();
+        }
     }
 }

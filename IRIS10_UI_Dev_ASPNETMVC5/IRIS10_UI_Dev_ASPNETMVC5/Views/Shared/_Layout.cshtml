@@ -5,15 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@ViewBag.Title - My Telerik MVC Application</title>
     	<link href="https://kendo.cdn.telerik.com/2020.3.1118/styles/kendo.bootstrap-v4.min.css" rel="stylesheet" type="text/css" />
-	<link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
-	<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-	<script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
-	<script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jszip.min.js"></script>
-	<script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
-	<script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.aspnetmvc.min.js"></script>
-	<script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
-	<script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
-</head>
+	    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+	    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+	    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+	    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jszip.min.js"></script>
+	    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+	    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.aspnetmvc.min.js"></script>
+	    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+	    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+    </head>
     <body class="k-content">
         <nav class="navbar navbar-inverse navbar-fixed-top p-3">
             <div class="container p-0 p-sm-3">
@@ -29,6 +29,7 @@
                             items.Add().Text("Home").Action("Index", "Home", new { area = "" });
                             items.Add().Text("About").Action("About", "Home", new { area = "" });
                             items.Add().Text("Contact").Action("Contact", "Home", new { area = "" });
+                            items.Add().Text("Login").Action("Login", "Home", new { area = "" });
                         })
                     )
                 </div>
