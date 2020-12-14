@@ -26,6 +26,14 @@
                         .Name("Menu")
                         .Items(items =>
                         {
+                            items.Add() // Add dropdown items (children of "Helper Demos")
+                                .Text("Helper Demos")
+                                .Items(children =>
+                            {
+                                children.Add().Text("Gantt Chart Demo");
+                                children.Add().Text("Menu Demo");
+                                children.Add().Text("Window Demo");
+                            });
                             items.Add().Text("Home").Action("Index", "Home", new { area = "" });
                             items.Add().Text("About").Action("About", "Home", new { area = "" });
                             items.Add().Text("Contact").Action("Contact", "Home", new { area = "" });
