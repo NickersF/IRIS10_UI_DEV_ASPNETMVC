@@ -15,11 +15,11 @@
 	    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
     </head>
     <body class="k-content">
-        <nav class="navbar navbar-inverse navbar-fixed-top p-3">
-            <div class="container p-0 p-sm-3">
+        <nav class="navbar navbar-inverse navbar-fixed-top iris-bg-light-blue">
+            <div class="container-fluid">
                 <div class="navbar-header">
                     <button id="configure" class="k-rpanel-toggle k-button btn-toggle"><span class="k-icon k-i-menu"></span></button>
-                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    <a class="navbar-brand" href="#"><img class="img-fluid"width="300" height="76" src="~/Images/IRIS_logo_web_ltgray.svg" /></a>
                 </div>
                 <div id="responsive-panel" class="navbar-left">
                     @(Html.Kendo().Menu()
@@ -37,23 +37,17 @@
                             items.Add().Text("Home").Action("Index", "Home", new { area = "" });
                             items.Add().Text("About").Action("About", "Home", new { area = "" });
                             items.Add().Text("Contact").Action("Contact", "Home", new { area = "" });
-                            items.Add().Text("Login").Action("Login", "Home", new { area = "" });
                         })
                     )
                 </div>
             </div>
         </nav>
         <main>
-            <div class="container">
-                @RenderBody()
-            </div>
+            @RenderBody()
         </main>
 
-        <footer class="footer text-center d-flex align-items-center">
-            <div class="container pb-0">
-                <hr />
-                <p>Copyright &copy; @DateTime.Now.Year Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
-            </div>
+        <footer class="footer text-center">
+
         </footer>
 
         <script>

@@ -1,0 +1,59 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Screen</title>
+    <link href="https://kendo.cdn.telerik.com/2020.3.1118/styles/kendo.bootstrap-v4.min.css" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+
+<body class="mb-0">
+
+    <div class="container">
+        <div class="row vh-100 align-content-center">
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-4 pb-5">
+                        <img src="~/Images/IRIS_logo_web_blue.svg" width="320" height="76" />
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-4 pt-3 pb-3 border rounded-sm">
+                        <form>
+                            <div class="form-group">
+                                <label for="irisLoginEmail">Email address</label>
+                                <input type="email" class="form-control" id="irisLoginEmail" aria-describedby="emailHelp">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="irisLoginPassword">Password</label>
+                                <input type="password" class="form-control" id="irisLoginPassword">
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="irisLoginKeepLoggedCheckBox">
+                                <label class="form-check-label" for="exampleCheck1">Keep me logged in</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
