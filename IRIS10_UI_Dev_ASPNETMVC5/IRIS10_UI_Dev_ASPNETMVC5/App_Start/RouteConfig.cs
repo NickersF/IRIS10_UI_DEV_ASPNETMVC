@@ -24,6 +24,12 @@ namespace IRIS10_UI_Dev_ASPNETMVC5
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Login", action = "Login", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "ReportScreens",
+                url: "{controller}/{actions}",
+                defaults: new { controller = "ReportScreens", action = "Index" }
+                );
         }
     }
 }

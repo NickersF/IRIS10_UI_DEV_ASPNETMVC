@@ -15,33 +15,28 @@
 	    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
     </head>
     <body class="k-content">
-        <nav class="navbar navbar-inverse navbar-fixed-top iris-bg-light-blue">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button id="configure" class="k-rpanel-toggle k-button btn-toggle"><span class="k-icon k-i-menu"></span></button>
-                    <a class="navbar-brand" href="#"><img class="img-fluid"width="300" height="76" src="~/Images/IRIS_logo_web_ltgray.svg" /></a>
+
+        <div class="container-fluid">
+            <div class="row iris-bg-light-blue p-2">
+
+                <div class="col-4 d-flex align-items-center pl-0 pr-0">
+                    <a href="#"><img class="img-fluid" width="300" height="76" src="~/Images/IRIS_logo_web_ltgray.svg" /></a>
                 </div>
-                <div id="responsive-panel" class="navbar-left">
-                    @(Html.Kendo().Menu()
-                        .Name("Menu")
-                        .Items(items =>
-                        {
-                            items.Add() // Add dropdown items (children of "Helper Demos")
-                                .Text("Helper Demos")
-                                .Items(children =>
-                            {
-                                children.Add().Text("Gantt Chart Demo");
-                                children.Add().Text("Menu Demo");
-                                children.Add().Text("Window Demo");
-                            });
-                            items.Add().Text("Home").Action("Index", "Home", new { area = "" });
-                            items.Add().Text("About").Action("About", "Home", new { area = "" });
-                            items.Add().Text("Contact").Action("Contact", "Home", new { area = "" });
-                        })
-                    )
+
+                <div class="col-2 ml-auto pl-0 pr-0">
+                    <div class="card iris-border-hinted iris-bg-light-blue">
+                        <div class="card-body text-light p-1">
+                            <div><strong class="text-dark">Username: </strong><span>Nicholas Fazzolari</span></div>
+                            <div><strong class="text-dark">Tenant: </strong><span>Polk</span></div>
+                        </div>
+                        <div class="card-footer p-1">
+                            <button type="button" class="btn btn-primary btn-sm">Logout</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
+        </div>
+
         <main>
             @RenderBody()
         </main>
@@ -49,19 +44,6 @@
         <footer class="footer text-center">
 
         </footer>
-
-        <script>
-            $(document).ready(function () {
-                $("#responsive-panel").kendoResponsivePanel({
-                    breakpoint: 768,
-                    autoClose: false,
-                    orientation: "top"
-                });
-            });
-            function onclick(e) {
-                $("#responsive-panel").getKendoResponsivePanel().toggle();
-            }
-        </script>
 
         @RenderSection("scripts", required: false)
     </body>

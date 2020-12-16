@@ -2,14 +2,24 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>IRIS 10 UI Development Sandbox</h1>
-    <p class="lead text-muted">This project contains the UI screens for the IRIS 10 web application for ORP.</p>
-</div>
-
 <div class="container-fluid">
-    <div class="row text-center">
-        <p class="color-test">Hello World!</p>
+    <div class="row">
+        @(Html.Kendo().Menu()
+        .Name("screensPreviewMenu")
+        .Items(items =>
+        {
+            items.Add().Text("Reports Main").Action("Index", "ReportScreens");
+            items.Add().Text("Login Screens")
+                .Items(children =>
+                {
+                    children.Add().Text("Login Screen").Action("Login", "Login");
+                    children.Add().Text("Reset Password Screen").Action("ResetPassword", "Login");
+                    children.Add().Text("Change Password Screen").Action("ChangePassword", "Login");
+                }
+                );
+            items.Add().Text("Gantt Demo");
+            items.Add().Text("Grid Example");
+        }))
     </div>
 </div>
 

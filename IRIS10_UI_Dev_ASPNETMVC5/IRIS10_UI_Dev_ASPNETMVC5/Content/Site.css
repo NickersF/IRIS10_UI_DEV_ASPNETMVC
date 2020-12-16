@@ -14,7 +14,9 @@
 .iris-bg-light-blue {
   background-color: #5399EE;
 }
-.validate-list-null {
-  list-style-image: url(../Images/password_chk_null.svg);
-  list-style-position: outside;
+.iris-border-medium-gray {
+  border-color: #737373;
+}
+.iris-border-hinted {
+  border-color: rgba(0, 0, 0, 0.125);
 }
