@@ -16,11 +16,11 @@
     </head>
     <body class="k-content">
 
-        <div class="container-fluid">
+        <header class="container-fluid">
             <div class="row iris-bg-light-blue p-2">
 
                 <div class="col-4 d-flex align-items-center pl-0 pr-0">
-                    <a href="#"><img class="img-fluid" width="300" height="76" src="~/Images/IRIS_logo_web_ltgray.svg" /></a>
+                    <a href="@Url.Action("Index", "Home")"><img class="img-fluid" width="300" height="76" src="~/Images/IRIS_logo_web_ltgray.svg" /></a>
                 </div>
 
                 <div class="col-2 ml-auto pl-0 pr-0">
@@ -35,14 +35,39 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+            <nav class="row" id="mainNavigation">
+                @(Html.Kendo().Menu()
+                .Name("screensPreviewMenu")
+                .Items(items =>
+                {
+                    items.Add().Text("Reports Main").Action("Index", "ReportScreens");
+                    items.Add().Text("Login Screens") // Dropdown level
+                        .Items(children =>
+                        {
+                            children.Add().Text("Login Screen").Action("Login", "Login");
+                            children.Add().Text("Reset Password Screen").Action("ResetPassword", "Login");
+                            children.Add().Text("Change Password Screen").Action("ChangePassword", "Login");
+                        }
+                        );
+                    items.Add().Text("Kendo Widget Demos") // Dropdown level
+                        .Items(children =>
+                        {
+                            children.Add().Text("Gantt Demo").Action("GanttDemo", "KendoDemos");
+                            children.Add().Text("Toolbar Demo");
+                            children.Add().Text("Grid Example");
+                        }
+                        );
+                }))
+            </nav>
+        </header>
 
         <main>
             @RenderBody()
         </main>
 
         <footer class="footer text-center">
-
+            <p>Footer content</p>
         </footer>
 
         @RenderSection("scripts", required: false)

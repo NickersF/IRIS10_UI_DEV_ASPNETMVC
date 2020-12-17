@@ -2,24 +2,13 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="container-fluid">
+<section class="container-fluid">
     <div class="row">
-        @(Html.Kendo().Menu()
-        .Name("screensPreviewMenu")
-        .Items(items =>
-        {
-            items.Add().Text("Reports Main").Action("Index", "ReportScreens");
-            items.Add().Text("Login Screens")
-                .Items(children =>
-                {
-                    children.Add().Text("Login Screen").Action("Login", "Login");
-                    children.Add().Text("Reset Password Screen").Action("ResetPassword", "Login");
-                    children.Add().Text("Change Password Screen").Action("ChangePassword", "Login");
-                }
-                );
-            items.Add().Text("Gantt Demo");
-            items.Add().Text("Grid Example");
-        }))
+        <div class="col">
+            <div class="jumbotron-fluid">
+                <h1>Hello World</h1>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 

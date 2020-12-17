@@ -20,7 +20,7 @@
         <div class="row iris-bg-light-blue p-2">
 
             <div class="col-4 d-flex align-items-center pl-0 pr-0">
-                <a href="#"><img class="img-fluid" width="300" height="76" src="~/Images/IRIS_logo_web_ltgray.svg" /></a>
+                <a href="@Url.Action("Index", "Home")"><img class="img-fluid" width="300" height="76" src="~/Images/IRIS_logo_web_ltgray.svg" /></a>
             </div>
 
             <div class="col-2 ml-auto pl-0 pr-0">
@@ -38,7 +38,11 @@
     </div>
 
     <main>
-        <p>Hello World!</p>
+        @(Html.Kendo().Button()
+            .Name("buttonStyled")
+            .HtmlAttributes(new { type = "button", @class = "btn btn-primary btn-sm" })
+            .Content("Styled Button")
+            )
     </main>
 
     <footer class="footer text-center">
