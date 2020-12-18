@@ -16,7 +16,7 @@
 </head>
 <body class="k-content">
 
-    <div class="container-fluid">
+    <header class="container-fluid">
         <div class="row iris-bg-light-blue p-2">
 
             <div class="col-4 d-flex align-items-center pl-0 pr-0">
@@ -35,18 +35,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
-    <main>
-        @(Html.Kendo().Button()
-            .Name("buttonStyled")
-            .HtmlAttributes(new { type = "button", @class = "btn btn-primary btn-sm" })
-            .Content("Styled Button")
-            )
-    </main>
-
-    <footer class="footer text-center">
-    </footer>
+    <section id="ReportUpper"></section>
+    <section id="ReportLower"></section>
 
 </body>
 </html>

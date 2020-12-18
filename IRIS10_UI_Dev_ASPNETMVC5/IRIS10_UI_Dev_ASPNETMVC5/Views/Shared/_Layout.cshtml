@@ -53,9 +53,10 @@
                     items.Add().Text("Kendo Widget Demos") // Dropdown level
                         .Items(children =>
                         {
-                            children.Add().Text("Gantt Demo");
-                            children.Add().Text("Toolbar Demo");
+                            children.Add().Text("Gantt Example");
+                            children.Add().Text("Toolbar Example");
                             children.Add().Text("Grid Example");
+                            children.Add().Text("Window Example").Action("Index", "WindowEx");
                         }
                         );
                 }))
@@ -66,9 +67,9 @@
             @RenderBody()
         </main>
 
-        <footer class="footer text-center">
+        @*<footer class="footer text-center">
             <p>Footer content</p>
-        </footer>
+        </footer>*@
 
         @RenderSection("scripts", required: false)
     </body>

@@ -13,5 +13,18 @@ namespace IRIS10_UI_Dev_ASPNETMVC5.Controllers
         {
             return PartialView();
         }
+
+        [HttpGet]
+        public ActionResult ReportMainUpper()
+        {
+            return PartialView();
+        }
+
+        [HttpGet]
+        public ActionResult ReportMainLower()
+        {
+
+            return PartialView();
+        }
     }
 }
