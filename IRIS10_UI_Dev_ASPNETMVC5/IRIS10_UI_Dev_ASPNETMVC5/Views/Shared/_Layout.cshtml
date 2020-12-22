@@ -41,7 +41,14 @@
                 .Name("screensPreviewMenu")
                 .Items(items =>
                 {
-                    items.Add().Text("Reports Main").Action("Index", "ReportScreens");
+                    items.Add().Text("Reports Main")
+                        .Items(children =>
+                         {
+                             children.Add().Text("Reports Main").Action("Index", "ReportScreens");
+                             children.Add().Text("Report Upper").Action("ReportUpper", "ReportScreens");
+                             children.Add().Text("Report Lower").Action("ReportLower", "ReportScreens");
+                         }
+                         );
                     items.Add().Text("Login Screens") // Dropdown level
                         .Items(children =>
                         {
