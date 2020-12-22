@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@ViewBag.Title - My Telerik MVC Application</title>
     	<link href="https://kendo.cdn.telerik.com/2020.3.1118/styles/kendo.bootstrap-v4.min.css" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/font-awesome.min.css")" rel="stylesheet" type="text/css" />
 	    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
 	    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
 	    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
@@ -73,10 +74,6 @@
         <main>
             @RenderBody()
         </main>
-
-        @*<footer class="footer text-center">
-            <p>Footer content</p>
-        </footer>*@
 
         @RenderSection("scripts", required: false)
     </body>
