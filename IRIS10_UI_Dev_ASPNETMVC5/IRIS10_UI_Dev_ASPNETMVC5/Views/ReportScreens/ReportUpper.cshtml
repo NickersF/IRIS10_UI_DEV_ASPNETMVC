@@ -41,17 +41,12 @@
         .Name("ReportToolBar")
         .Items(items =>
         {
-            items.Add().Template("<input type='text' class='form-control' placeholder='Search' /> ");
+            items.Add().Template("<input type='text' class='form-control' placeholder='Search' />");
             items.Add().Type(CommandType.Button).Text("Custom Reports").Icon("k-icon k-i-gear k-icon-32");
             items.Add().Type(CommandType.Button).Text("Support").Id("SupportBtn").Overflow(ShowInOverflowPopup.Always);
             items.Add().Type(CommandType.Button).Text("Users").Id("UserBtn").Overflow(ShowInOverflowPopup.Always);
-            items.Add().OverflowTemplate("<select class='custom-select'> <option selected>Open this select menu</option> <option value='1'>One</option> <option value='2'>Two</option> <option value='3'>Three</option> </select>");
-    })
-
+            items.Add().Id("TenantDDList").OverflowTemplate("<select class='form-control' aria-label='Default select example'><option selected>Open this select menu</option><option value='1'>One</option><option value='2'>Two</option> <option value='3'>Three</option></select>").Overflow(ShowInOverflowPopup.Always);
+        })
     )
-
-    <i class="bi bi-arrow-down-circle-fill"></i>
-    <i class="bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i>
-
 </body>
 </html>
