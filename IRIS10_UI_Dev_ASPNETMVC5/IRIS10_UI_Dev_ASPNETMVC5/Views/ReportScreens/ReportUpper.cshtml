@@ -39,7 +39,8 @@
         </div>
     </header>
 
-    @(Html.Kendo().ToolBar()
+    <section id="ToolBarContainer" class="container-fluid pl-0 pr-0">
+        @(Html.Kendo().ToolBar()
         .Name("ReportToolBar")
         .Items(items =>
         {
@@ -47,9 +48,20 @@
             items.Add().Type(CommandType.Button).Text("Custom Reports").Id("CustomReportBtn").Icon("k-icon k-i-track-changes-enable");
             items.Add().Type(CommandType.Button).Text("Support").Id("SupportBtn").Overflow(ShowInOverflowPopup.Always);
             items.Add().Type(CommandType.Button).Text("Users").Id("UserBtn").Overflow(ShowInOverflowPopup.Always);
-            items.Add().Id("TenantDDList").OverflowTemplate("<select class='form-control' aria-label='Default select example'><option selected>Open this select menu</option><option value='1'>One</option><option value='2'>Two</option> <option value='3'>Three</option></select>").Overflow(ShowInOverflowPopup.Always);
+            items.Add().Id("TenantDDList").OverflowTemplate("<select class='form-control' aria-label='Default select example'><option selected>Tenant List</option><option value='1'>One</option><option value='2'>Two</option> <option value='3'>Three</option></select>").Overflow(ShowInOverflowPopup.Always);
         })
-    )
+        )
+    </section>
+
+    <section id="ReportListContainer" class="container-fluid">
+        <div class="row">
+            <div class="col-6 iris-bg-light-blue report-list-height">Report list grid</div>
+            <div class="col-6">Report preview and editor</div>
+        </div>
+        <div class="row">
+            <div class="col">Report Description</div>
+        </div>
+    </section>
 
     <div id="SupportWindow"></div>
     <div id="UserWindow"></div>

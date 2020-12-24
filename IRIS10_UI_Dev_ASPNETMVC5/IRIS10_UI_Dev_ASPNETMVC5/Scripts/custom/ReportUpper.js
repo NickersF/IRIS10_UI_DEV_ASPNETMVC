@@ -5,10 +5,11 @@ $(document).ready(function () {
     // Basic configuration of the window instance
     var WindowOptions = {
         actions: ["Maximize", "Close"],
+        title: "Modal",
         modal: true,
         draggable: false,
-        width: "512px",
-        height: "256px",
+        width: "75vw",
+        height: "10vh",
         visible: false
     }
 
@@ -23,7 +24,8 @@ $(document).ready(function () {
         url: "/ReportScreens/ReportUpper",
         data: {}
     }).done(() => {
-        $("#SupportBtn_overflow").click( () => {
+        $("#SupportBtn_overflow").click(() => {
+            WindowOptions.title = "Support Window";
             $("#SupportWindow").data("kendoWindow").center().open();
         });
         $("#UserBtn_overflow").click( () => {

@@ -1,4 +1,5 @@
-﻿/* IRIS LESS Color Library */
+﻿/* IRIS 10 CSS UI Development Sandbox */
+/* IRIS LESS Color Library */
 /* Grays */
 /* Main Palette */
 /* Custom Validation Colors */
@@ -20,4 +21,7 @@
 }
 .iris-border-hinted {
   border-color: rgba(0, 0, 0, 0.125);
+}
+.report-list-height {
+  height: 256px;
 }
