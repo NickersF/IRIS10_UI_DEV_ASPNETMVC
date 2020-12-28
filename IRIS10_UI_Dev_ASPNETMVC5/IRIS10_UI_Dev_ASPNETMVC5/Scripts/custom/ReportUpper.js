@@ -2,10 +2,10 @@
 
 $(document).ready(function () {
 
-    // Basic configuration of the window instance
-    var WindowOptions = {
+    // Support window options
+    var SupportWindowOptions = {
         actions: ["Maximize", "Close"],
-        title: "Modal",
+        title: "Support Tickets",
         modal: true,
         draggable: false,
         width: "75vw",
@@ -13,9 +13,31 @@ $(document).ready(function () {
         visible: false
     }
 
-    $("#SupportWindow").kendoWindow(WindowOptions);         // Set the options and initialize support window
-    $("#UserWindow").kendoWindow(WindowOptions);            // Set the options and initialize user window
-    $("#CustomReportWindow").kendoWindow(WindowOptions);    // Set the options and initialize custom reports window
+    // User window options
+    var UserWindowOptions = {
+        actions: ["Maximize", "Close"],
+        title: "Manage Users",
+        modal: true,
+        draggable: false,
+        width: "75vw",
+        height: "10vh",
+        visible: false
+    }
+
+    // Custom report window options
+    var CustomReportWindowOptions = {
+        actions: ["Maximize", "Close"],
+        title: "Custom Reports",
+        modal: true,
+        draggable: false,
+        width: "75vw",
+        height: "10vh",
+        visible: false
+    }
+
+    $("#SupportWindow").kendoWindow(SupportWindowOptions);              // Set the options and initialize support window
+    $("#UserWindow").kendoWindow(UserWindowOptions);                    // Set the options and initialize user window
+    $("#CustomReportWindow").kendoWindow(CustomReportWindowOptions);    // Set the options and initialize custom reports window
 
     // Drives down into the overflow buttons of the ToolBar items and sets events
     $.ajax({
@@ -25,14 +47,39 @@ $(document).ready(function () {
         data: {}
     }).done(() => {
         $("#SupportBtn_overflow").click(() => {
-            WindowOptions.title = "Support Window";
             $("#SupportWindow").data("kendoWindow").center().open();
         });
-        $("#UserBtn_overflow").click( () => {
+        $("#UserBtn_overflow").click(() => {
             $("#UserWindow").data("kendoWindow").center().open();
         });
         $("#CustomReportBtn").click(() => {
             $("#CustomReportWindow").data("kendoWindow").center().open();
         });
     });
+
+    // Example grid
+    $("#ExampleGrid").kendoGrid({
+        columns: [
+            { selectable: true },
+            {
+                field: "ReportName",
+                title: "Report Name"
+            },
+        {
+            field: "ReportNumber",
+            title: "Report Number"
+        }],
+        dataSource: {
+            data: [{
+                ReportName: "Accounts Payable Order",
+                ReportNumber: "APS1017"
+            },
+            {
+                ReportName: "Contract Balance Summary Report",
+                ReportNumber: "APS1007"
+            }]
+        }
+    });
+
+    $("#ExampleGrid .k-grid-header").css('display', 'none');
 });
