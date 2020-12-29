@@ -81,5 +81,13 @@ $(document).ready(function () {
         }
     });
 
+    // Hide grid header
     $("#ExampleGrid .k-grid-header").css('display', 'none');
+
+    // Change column sizes of report list on click from full width to sharing half width with description column
+    $("#ShowDetailsBtn").click(() => {
+        $("#ReportListCol").removeClass('col-12').addClass('col-6');
+        $("#ReportDetailsCol").removeClass('d-none').fadeIn(1000);
+
+    });
 });

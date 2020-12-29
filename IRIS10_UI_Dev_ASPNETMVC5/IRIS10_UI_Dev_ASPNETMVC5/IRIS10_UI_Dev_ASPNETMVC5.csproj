@@ -807,6 +807,12 @@
     <Content Include="Content\kendo\2020.3.1021\Uniform\sprite_2x.png" />
     <Content Include="Content\kendo\2020.3.1021\Uniform\sprite_kpi.png" />
     <Content Include="Content\kendo\2020.3.1021\Uniform\sprite_kpi_2x.png" />
+    <Content Include="Content\site-reports.css">
+      <DependentUpon>site-reports.less</DependentUpon>
+    </Content>
+    <Content Include="Content\site-reports.min.css">
+      <DependentUpon>site-reports.css</DependentUpon>
+    </Content>
     <Content Include="Content\Site.min.css">
       <DependentUpon>Site.css</DependentUpon>
     </Content>

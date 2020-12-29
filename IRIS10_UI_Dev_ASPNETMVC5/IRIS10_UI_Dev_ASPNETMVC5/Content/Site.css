@@ -25,3 +25,19 @@
 .report-list-height {
   height: 256px;
 }
+.iris-grid-no-header {
+  display: none;
+}
+.iris-report-description-width-null {
+  width: 0px;
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s;
+}
+.iris-report-description-width-auto {
+  width: auto;
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s;
+}
+.row [class*='col-'] {
+  transition: all 0.5s ease-in-out;
+}

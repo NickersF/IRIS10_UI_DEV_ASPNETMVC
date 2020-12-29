@@ -56,22 +56,37 @@
     <section id="ReportListContainer" class="container-fluid">
         <div class="row">
 
-            <div class="col-6 mt-2">
+            <div id="ReportListCol" class="col-12 mt-3">
                 <div class="card">
                     <h4 class="card-header">Report List</h4>
                     <div class="card-body">
-                        <p class="lead">Select a report to view the details for the report.</p>
+                        @* Grid instance *@
                         <div id="ExampleGrid"></div>
+                        <button id="ShowDetailsBtn" type="button" class="btn btn-primary mt-3">Show Report Description</button>
                     </div>
+                    
                 </div>
             </div>
 
-            <div class="col-6 mt-2">
+            <div id="ReportDetailsCol" class="col-6 d-none mt-3">
                 <div class="card">
-                    <h4 class="card-header">Report: <span class="badge bg-primary text-light">Accounts Payable Order</span></h4>
+                    <h4 class="card-header">Report Details for:
+                        <span class="badge bg-primary text-light">Accounts Payable Order</span>
+                        <span class="badge bg-secondary text-light">APS1017</span>
+                    </h4>
                     <div class="card-body">
-                        <h4>Report Description:</h4>
-                        <p class="lead">Accounts Payable Order summarizes an invoice description and payment by vendor.</p>
+
+                        <div class="row">
+                            <div class="col">
+                                <h4>Report Description:</h4>
+                                <p>Accounts Payable Order summarizes an invoice description and payment by vendor.</p>
+                            </div>
+                            <div class="col">
+                                <h4>Report Preview</h4>
+                                <img class="rounded mx-auto d-block" src="https://place-hold.it/300" />
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
