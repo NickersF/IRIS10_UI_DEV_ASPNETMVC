@@ -46,6 +46,8 @@
         {
             items.Add().Template("<input type='text' class='form-control' placeholder='Search' />");
             items.Add().Type(CommandType.Button).Text("Custom Reports").Id("CustomReportBtn").Icon("k-icon k-i-track-changes-enable");
+            items.Add().Type(CommandType.Button).Text("Edit Report").Id("EditReportBtn").Icon("k-icon k-i-pencil");
+            items.Add().Type(CommandType.Button).Text("Finish Report").Id("FinishReportBtn").Icon("k-icon k-i-checkmark");
             items.Add().Type(CommandType.Button).Text("Support").Id("SupportBtn").Overflow(ShowInOverflowPopup.Always);
             items.Add().Type(CommandType.Button).Text("Users").Id("UserBtn").Overflow(ShowInOverflowPopup.Always);
             items.Add().Id("TenantDDList").OverflowTemplate("<select class='form-control' aria-label='Default select example'><option selected>Tenant List</option><option value='1'>One</option><option value='2'>Two</option> <option value='3'>Three</option></select>").Overflow(ShowInOverflowPopup.Always);
@@ -53,10 +55,10 @@
         )
     </section>
 
-    <section id="ReportListContainer" class="container-fluid">
+    <section id="ReportListContainer" class="container-fluid mt-3 mb-3">
         <div class="row">
 
-            <div id="ReportListCol" class="col-12 mt-3">
+            <div id="ReportListCol" class="col-12">
                 <div class="card">
                     <h4 class="card-header">Report List</h4>
                     <div class="card-body">
@@ -68,7 +70,7 @@
                 </div>
             </div>
 
-            <div id="ReportDetailsCol" class="col-6 d-none mt-3">
+            <div id="ReportDetailsCol" class="col-6 d-none">
                 <div class="card">
                     <h4 class="card-header">Report Details for:
                         <span class="badge bg-primary text-light">Accounts Payable Order</span>
@@ -83,10 +85,15 @@
                             </div>
                             <div class="col">
                                 <h4>Report Preview</h4>
-                                <img class="rounded mx-auto d-block" src="https://place-hold.it/300" />
+                                <img class="rounded mx-auto d-block" src="https://place-hold.it/128" />
                             </div>
                         </div>
 
+                        <div class="row">
+                            <div class="col-12">
+                                <button id="HideDetailsBtn" type="button" class="btn btn-primary mt-3">Close Report Details</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -94,6 +101,30 @@
         </div>
     </section>
 
+    <section id="ReportFilterContainer">
+        @(Html.Kendo().ToolBar()
+            .Name("ReportFilterToolbar")
+            .Items(items =>
+            {
+                items.Add().Type(CommandType.Button).Text("Add Filter").Id("AddFilter").Icon("k-icon k-i-filter");
+                items.Add().Type(CommandType.Button).Text("Clear Filter").Id("ClearFilter").Icon("k-icon k-i-filter-clear");
+                items.Add().Type(CommandType.Button).Text("Save Filter").Id("SaveFilter").Icon("k-icon k-i-save");
+                items.Add().Type(CommandType.Button).Text("Delete Filter").Id("DeleteFilter").Icon("k-icon k-i-delete");
+                items.Add().Type(CommandType.Separator);
+                items.Add().Id("TenantDDList").Template("<select class='form-control' aria-label='Default select example'><option selected>Filter List</option><option value='1'>One</option><option value='2'>Two</option> <option value='3'>Three</option></select>");
+            })
+            )
+        <div class="row">
+
+        </div>
+        <div class="row">
+
+        </div>
+    </section>
+
+    @* Window instances for various editing controls *@
+    <div id="EditReportWindow"></div>
+    <div id="FinishReportWindow"></div>
     <div id="SupportWindow"></div>
     <div id="UserWindow"></div>
     <div id="CustomReportWindow"></div>
