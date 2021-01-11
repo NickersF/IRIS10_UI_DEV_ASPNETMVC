@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>@ViewBag.Title - My Telerik MVC Application</title>
+        <title>@ViewBag.Title IRIS10 UI Development Sandbox</title>
     	<link href="https://kendo.cdn.telerik.com/2020.3.1118/styles/kendo.bootstrap-v4.min.css" rel="stylesheet" type="text/css" />
         <link href="@Url.Content("~/Content/font-awesome.min.css")" rel="stylesheet" type="text/css" />
 	    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
@@ -45,9 +45,7 @@
                     items.Add().Text("Reports Main")
                         .Items(children =>
                          {
-                             children.Add().Text("Reports Main").Action("Index", "ReportScreens");
-                             children.Add().Text("Report Upper").Action("ReportUpper", "ReportScreens");
-                             children.Add().Text("Report Lower").Action("ReportLower", "ReportScreens");
+                             children.Add().Text("Reports Main").Action("_ReportsMain", "ReportScreens");
                          }
                          );
                     items.Add().Text("Login Screens") // Dropdown level
@@ -74,10 +72,6 @@
         <main>
             @RenderBody()
         </main>
-
-        <script type="text/javascript">
-            $(document).re
-        </script>
 
         @RenderSection("scripts", required: false)
     </body>

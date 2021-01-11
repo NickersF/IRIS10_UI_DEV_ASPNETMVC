@@ -14,7 +14,7 @@
     <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.aspnetmvc.min.js"></script>
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
     <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
-    <script src="~/Scripts/custom/ReportUpper.js"></script>
+    <script src="~/Scripts/custom/_ReportsMain.js"></script>
 </head>
 <body class="k-content">
 
@@ -45,6 +45,7 @@
         .Items(items =>
         {
             items.Add().Template("<input type='text' class='form-control' placeholder='Search' />");
+            items.Add().Type(CommandType.Separator);
             items.Add().Type(CommandType.Button).Text("Custom Reports").Id("CustomReportBtn").Icon("k-icon k-i-track-changes-enable");
             items.Add().Type(CommandType.Button).Text("Edit Report").Id("EditReportBtn").Icon("k-icon k-i-pencil");
             items.Add().Type(CommandType.Button).Text("Finish Report").Id("FinishReportBtn").Icon("k-icon k-i-checkmark");
@@ -66,13 +67,14 @@
                         <div id="ExampleGrid"></div>
                         <button id="ShowDetailsBtn" type="button" class="btn btn-primary mt-3">Show Report Description</button>
                     </div>
-                    
+
                 </div>
             </div>
 
             <div id="ReportDetailsCol" class="col-6 d-none">
                 <div class="card">
-                    <h4 class="card-header">Report Details for:
+                    <h4 class="card-header">
+                        Report Details for:
                         <span class="badge bg-primary text-light">Accounts Payable Order</span>
                         <span class="badge bg-secondary text-light">APS1017</span>
                     </h4>
@@ -123,10 +125,11 @@
     </section>
 
     @* Window instances for various editing controls *@
-    <div id="EditReportWindow"></div>
-    <div id="FinishReportWindow"></div>
-    <div id="SupportWindow"></div>
-    <div id="UserWindow"></div>
-    <div id="CustomReportWindow"></div>
+    <div id="CustomReportWindow">@Html.Partial("_CustomReportWindow")</div>
+    <div id="EditReportWindow">@Html.Partial("_EditReportWindow")</div>
+    <div id="FinishReportWindow">@Html.Partial("_FinishReportWindow")</div>
+    <div id="SupportWindow">@Html.Partial("_SupportWindow")</div>
+    <div id="UserWindow">@Html.Partial("_UserWindow")</div>
+
 </body>
 </html>

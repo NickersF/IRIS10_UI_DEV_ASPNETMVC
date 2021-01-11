@@ -4,6 +4,16 @@ $(document).ready(function () {
 
     // Set up the windows:
 
+    // Custom report window options
+    var CustomReportWindowOptions = {
+        actions: ["Maximize", "Close"],
+        title: "Manage Custom Reports",
+        modal: true,
+        draggable: false,
+        width: "75vw",
+        visible: false
+    }
+
     // Support window options
     var SupportWindowOptions = {
         actions: ["Maximize", "Close"],
@@ -19,17 +29,6 @@ $(document).ready(function () {
     var UserWindowOptions = {
         actions: ["Maximize", "Close"],
         title: "Manage Users",
-        modal: true,
-        draggable: false,
-        width: "75vw",
-        height: "10vh",
-        visible: false
-    }
-
-    // Custom report window options
-    var CustomReportWindowOptions = {
-        actions: ["Maximize", "Close"],
-        title: "Custom Reports",
         modal: true,
         draggable: false,
         width: "75vw",
@@ -71,7 +70,7 @@ $(document).ready(function () {
     $.ajax({
         global: false,
         type: "GET",
-        url: "/ReportScreens/ReportUpper",
+        url: "/ReportScreens/_ReportsMain",
         data: {}
     }).done(() => {
         $("#CustomReportBtn").click(() => {
@@ -125,7 +124,7 @@ $(document).ready(function () {
     // Hide grid header on load
     $("#ExampleGrid .k-grid-header").css('display', 'none');
 
-    // Show report description event
+    // Show report description event (this will be at the row level event eventually)
     $("#ShowDetailsBtn").click(() => {
         $("#ReportListCol").removeClass('col-12').addClass('col-6');
         $("#ReportDetailsCol").fadeIn(500).removeClass('d-none');

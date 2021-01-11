@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.4.1.2\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.4.1.2\build\Microsoft.TypeScript.MSBuild.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -24,6 +25,8 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <TypeScriptToolsVersion>4.0</TypeScriptToolsVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,6 +36,19 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptModuleKind />
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir>C:\Users\nfazz\source\repos\NickersF\IRIS10_UI_DEV_ASPNETMVC\IRIS10_UI_Dev_ASPNETMVC5\IRIS10_UI_Dev_ASPNETMVC5\Scripts\dist</TypeScriptOutDir>
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>False</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot>C:\Users\nfazz\source\repos\NickersF\IRIS10_UI_DEV_ASPNETMVC\IRIS10_UI_Dev_ASPNETMVC5\IRIS10_UI_Dev_ASPNETMVC5\Scripts\custom</TypeScriptSourceRoot>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -1472,7 +1488,7 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\custom\ReportUpper.js" />
+    <Content Include="Scripts\custom\_ReportsMain.js" />
     <Content Include="Scripts\custom\windowEx_openJQWindow.js" />
     <Content Include="Scripts\custom\windowEx_openWindow.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
@@ -2698,10 +2714,8 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\ResetPassword.cshtml" />
     <Content Include="Views\Login\ChangePassword.cshtml" />
-    <Content Include="Views\ReportScreens\Index.cshtml" />
+    <Content Include="Views\ReportScreens\_ReportsMain.cshtml" />
     <Content Include="Views\WindowEx\Index.cshtml" />
-    <Content Include="Views\ReportScreens\ReportUpper.cshtml" />
-    <Content Include="Views\ReportScreens\ReportLower.cshtml" />
     <Content Include="Scripts\kendo\2020.3.1021\messages\kendo.messages.zh-TW.min.js.map" />
     <Content Include="Scripts\kendo\2020.3.1021\messages\kendo.messages.zh-HK.min.js.map" />
     <Content Include="Scripts\kendo\2020.3.1021\messages\kendo.messages.zh-CN.min.js.map" />
@@ -3779,6 +3793,12 @@
     <Content Include="Scripts\kendo\2020.3.1021\cultures\kendo.culture.aa-ET.min.js.map" />
     <Content Include="Scripts\kendo\2020.3.1021\cultures\kendo.culture.aa-ER.min.js.map" />
     <Content Include="Scripts\kendo\2020.3.1021\cultures\kendo.culture.aa-DJ.min.js.map" />
+    <Content Include="Views\WindowEx\_WindowContent.cshtml" />
+    <Content Include="Views\ReportScreens\_CustomReportWindow.cshtml" />
+    <Content Include="Views\ReportScreens\_EditReportWindow.cshtml" />
+    <Content Include="Views\ReportScreens\_FinishReportWindow.cshtml" />
+    <Content Include="Views\ReportScreens\_SupportWindow.cshtml" />
+    <Content Include="Views\ReportScreens\_UserWindow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />
@@ -3794,9 +3814,12 @@
   <ItemGroup>
     <Folder Include="Icons\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\dist\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\custom\compile_test.ts" />
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -3831,6 +3854,14 @@
       <UserProperties UseCdnSupport="True" />
     </VisualStudio>
   </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.4.1.2\build\Microsoft.TypeScript.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.4.1.2\build\Microsoft.TypeScript.MSBuild.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.4.1.2\build\Microsoft.TypeScript.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.4.1.2\build\Microsoft.TypeScript.MSBuild.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.4.1.2\build\Microsoft.TypeScript.MSBuild.targets" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.4.1.2\build\Microsoft.TypeScript.MSBuild.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
