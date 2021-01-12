@@ -1,4 +1,4 @@
-﻿// Manages UI state and events for the upper report page
+﻿// Manages UI state and events the _ReportsMain page
 
 $(document).ready(function () {
 
@@ -90,7 +90,7 @@ $(document).ready(function () {
         });
     });
 
-    // Example grid instance for ReportUpper
+    // Example grid instance master report list
     $("#ExampleGrid").kendoGrid({
         columns: [
             { selectable: true },

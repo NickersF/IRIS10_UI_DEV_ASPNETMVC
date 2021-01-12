@@ -1488,9 +1488,11 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\custom\CustomReportExampleGrid.js" />
     <Content Include="Scripts\custom\_ReportsMain.js" />
     <Content Include="Scripts\custom\windowEx_openJQWindow.js" />
     <Content Include="Scripts\custom\windowEx_openWindow.js" />
+    <Content Include="Scripts\custom\_SupportWindows.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />

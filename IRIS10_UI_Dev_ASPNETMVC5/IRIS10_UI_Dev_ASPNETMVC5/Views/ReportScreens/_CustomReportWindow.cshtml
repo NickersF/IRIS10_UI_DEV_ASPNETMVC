@@ -3,5 +3,113 @@
 }
 
 <div class="container-fluid">
-    <p>Hello world</p>
+    <div id="CustomReportsToolBar" class="row">
+        <div class="col">
+            @(Html.Kendo().ToolBar()
+            .Name("KendoCustomReportsToolBar")
+            .Items(items => {
+                items.Add().Type(CommandType.Button).Text("New Report").Icon("k-icon k-i-file-add");
+                items.Add().Type(CommandType.Button).Text("Open Report").Icon("k-icon k-i-folder-open");
+                items.Add().Type(CommandType.Button).Text("Save Report").Icon("k-icon k-i-save");
+                items.Add().Type(CommandType.Button).Text("Delete Report").Icon("k-icon k-i-delete");
+                items.Add().Type(CommandType.Separator);
+                items.Add().Type(CommandType.Button).Text("Filter").Icon("k-icon k-i-filter");
+                items.Add().Type(CommandType.Button).Text("Clear Filter").Icon("k-icon k-i-filter-clear");
+                items.Add().Type(CommandType.Separator);
+                items.Add().Type(CommandType.Button).Text("Edit Columns").Icon("k-icon k-i-edit");
+                items.Add().Type(CommandType.Spacer);
+                items.Add().Type(CommandType.Button).Text("Quick Load Reports").Icon("k-icon k-i-bookmark");
+
+            })
+            )
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-header font-weight-bold">Custom Report Selection</div>
+                <div class="card-body">
+                    <form id="CustomReportDataSelect">
+                        <div class="form-group">
+                            <label for="CustomReportDataSource" class="font-weight-bold">Datasource</label>
+                            <select id="CustomReportDataSource" class="custom-select">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="CustomReportModule" class="font-weight-bold">Module</label>
+                            <select id="CustomReportModule" class="custom-select">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </form>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <ul id="treeView">
+                                <li>
+                                    Item 1
+                                    <ul>
+                                        <li>Item 1.1</li>
+                                        <li>Item 1.2</li>
+                                        <li>Item 1.3</li>
+                                    </ul>
+                                </li>
+                                <li>Item 2</li>
+                                <li>Item 3</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <script>
+                        $(document).ready(function () {
+                            $("#treeView").kendoTreeView();
+                        });
+                    </script>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="card">
+                <div class="card-header font-weight-bold">Custom Report Configuration</div>
+                <div class="card-body">
+                    <form id="CustomReportConfiguration">
+                        <div class="form-group row">
+                            <div class="col-4">
+                                <label for="CustomReportTitle" class="font-weight-bold">Report Title:</label>
+                                <input id="CustomReportTitle" class="form-control mb-2" />
+                                <label for="CustomReportSubTitle" class="font-weight-bold">Sub Title:</label>
+                                <input id="CustomReportSubTitle" class="form-control" />
+                            </div>
+                            <div class="col-4">
+                                <div class="custom-control custom-switch">
+                                    <input id="CustomReportShowDetailsSwitch" type="checkbox" class="custom-control-input">
+                                    <label class="custom-control-label font-weight-bold" for="CustomReportShowDetailsSwitch">Hide/Show Details</label>
+                                </div>
+                                <small id="DetailsSwitchHelpBlock" class="form-text text-muted">Hide or show details to be rendered in report. </small>
+                                <button type="button" class="btn btn-primary mt-3">Run Report</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div id="CustomReportExampleGrid"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
