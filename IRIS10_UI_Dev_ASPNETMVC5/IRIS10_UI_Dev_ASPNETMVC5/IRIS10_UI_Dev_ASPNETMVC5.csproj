@@ -121,9 +121,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GridDemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ReportScreensController.cs" />
+    <Compile Include="Controllers\TextEditorDemoController.cs" />
     <Compile Include="Controllers\WindowExController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1493,6 +1495,7 @@
     <Content Include="Scripts\custom\windowEx_openJQWindow.js" />
     <Content Include="Scripts\custom\windowEx_openWindow.js" />
     <Content Include="Scripts\custom\_SupportWindows.js" />
+    <Content Include="Scripts\custom\_UserWindow.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -3801,6 +3804,12 @@
     <Content Include="Views\ReportScreens\_FinishReportWindow.cshtml" />
     <Content Include="Views\ReportScreens\_SupportWindow.cshtml" />
     <Content Include="Views\ReportScreens\_UserWindow.cshtml" />
+    <Content Include="Views\ReportScreens\_SupportAddNewTicket.cshtml" />
+    <Content Include="Views\TextEditorDemo\Index.cshtml" />
+    <Content Include="Views\GridDemo\Index.cshtml" />
+    <Content Include="Views\ReportScreens\_UserAddUser.cshtml" />
+    <Content Include="Views\ReportScreens\_UserEditUser.cshtml" />
+    <Content Include="Views\ReportScreens\_SupportEditTicket.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />
@@ -3819,7 +3828,6 @@
     <Folder Include="Scripts\dist\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\custom\compile_test.ts" />
     <TypeScriptCompile Include="Scripts\index.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>

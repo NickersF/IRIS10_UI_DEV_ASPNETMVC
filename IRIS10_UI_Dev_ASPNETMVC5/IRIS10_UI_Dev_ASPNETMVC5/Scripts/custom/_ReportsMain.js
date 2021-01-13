@@ -1,4 +1,4 @@
-﻿// Manages UI state and events the _ReportsMain page
+﻿// Manages UI state and events for the _ReportsMain page
 
 $(document).ready(function () {
 

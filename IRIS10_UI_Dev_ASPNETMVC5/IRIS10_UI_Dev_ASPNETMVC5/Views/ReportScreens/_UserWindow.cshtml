@@ -11,8 +11,8 @@
                 items.Add().Template("<input type='text' class='form-control' placeholder='Search Users' />");
                 items.Add().Template("<select class='form-control' aria-label='Default select example'><option selected>Tenant List</option><option value='1'>One</option><option value='2'>Two</option> <option value='3'>Three</option></select>");
                 items.Add().Type(CommandType.Separator);
-                items.Add().Type(CommandType.Button).Text("Add User").Icon("k-icon k-i-plus-circle");
-                items.Add().Type(CommandType.Button).Text("Edit User").Icon("k-icon k-i-edit");
+                items.Add().Type(CommandType.Button).Text("Add User").Id("AddUser").Icon("k-icon k-i-plus-circle");
+                items.Add().Type(CommandType.Button).Text("Edit User").Id("EditUser").Icon("k-icon k-i-edit");
             })
             )
         </div>
@@ -53,4 +53,9 @@
             </div>
         </div>
     </div>
+
+    <div id="AddUserWindow">@Html.Partial("_UserAddUser")</div>
+    <div id="EditUserWindow">@Html.Partial("_UserEditUser")</div>
+
+    <script src="~/Scripts/custom/_UserWindow.js"></script>
 </div>

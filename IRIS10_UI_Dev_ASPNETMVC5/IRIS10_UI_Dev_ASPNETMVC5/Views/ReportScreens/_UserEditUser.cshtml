@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="EditUserEmail" class="font-weight-bold">Edit Email:</label>
+                            <input id="EditUserEmail" type="email" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="EditUserFirstName" class="font-weight-bold">First Name:</label>
+                            <input id="EditUserFirstName" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="EditUserLastName" class="font-weight-bold">Last Name:</label>
+                            <input id="EditUserLastName" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="EditUserSecurityLevel" class="font-weight-bold">Security Level</label>
+                            <select id="EditUserSecurityLevel" class="custom-select">
+                                <option selected>Open to set security status</option>
+                                <option value="1">01 - Pleb</option>
+                                <option value="2">02 - Noob</option>
+                                <option value="3">03 - Default</option>
+                                <option value="4">04 - L33t Pwner</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="EditUserTenantSelect" class="font-weight-bold">Add User for Tenant</label>
+                            <select id="EditUserTenantSelect" class="custom-select">
+                                <option selected>Open to select tenant</option>
+                                <option value="1">01 - House</option>
+                                <option value="2">02 - Barn</option>
+                                <option value="3">03 - Mansion</option>
+                                <option value="4">04 - Castle</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-primary">Edit User</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

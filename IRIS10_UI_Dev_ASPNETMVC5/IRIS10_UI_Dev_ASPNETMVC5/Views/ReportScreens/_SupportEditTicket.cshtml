@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="TickeTypeSelect" class="font-weight-bold">Support Ticket Type</label>
+                            <select id="TicketTypeSelect" class="custom-select d-block w-50">
+                                <option selected>Open to select type</option>
+                                <option value="1">Feedback</option>
+                                <option value="2">Support</option>
+                                <option value="3">Bug</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="TicketStatusSelect" class="font-weight-bold">Choose a Ticket Status</label>
+                            <select id="TicketStatusSelect" class="custom-select d-block w-50">
+                                <option selected>Open to select status</option>
+                                <option value="1">Complete</option>
+                                <option value="2">Reassigned</option>
+                                <option value="3">Awaiting User Response</option>
+                                <option value="4">Abandoned</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    @* Text editor instance *@
+                    <textarea id="EditTicketEditor" rows="10" cols="30"></textarea>
+
+                    <script>
+                        $(document).ready(function () {
+                            $("#EditTicketEditor").kendoEditor();
+                        });
+                    </script>
+
+                    <button class="btn btn-primary mt-3">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

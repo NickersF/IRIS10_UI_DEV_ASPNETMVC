@@ -59,10 +59,11 @@
                     items.Add().Text("Kendo Widget Demos") // Dropdown level
                         .Items(children =>
                         {
-                            children.Add().Text("Gantt Example");
-                            children.Add().Text("Toolbar Example");
-                            children.Add().Text("Grid Example");
-                            children.Add().Text("Window Example").Action("Index", "WindowEx");
+                            children.Add().Text("Grid Demo").Action("Index", "GridDemo");
+                            children.Add().Text("Text Editor Demo").Action("Index", "TextEditorDemo");
+                            children.Add().Text("Window Demo").Action("Index", "WindowEx");
+                            children.Add().Text("Gantt Demo").Enabled(false);
+                            children.Add().Text("Toolbar Demo").Enabled(false);
                         }
                         );
                 }))

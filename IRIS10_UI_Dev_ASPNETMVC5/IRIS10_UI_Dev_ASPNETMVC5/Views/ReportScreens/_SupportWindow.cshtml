@@ -9,6 +9,7 @@
             .Name("KendoSupportTicketsToolBar")
             .Items(items => {
                 items.Add().Type(CommandType.Button).Text("New Support Ticket").Id("NewTicketBtn").Icon("k-icon k-i-file-add");
+                items.Add().Type(CommandType.Button).Text("Edit Support Ticket").Id("EditTicketBtn").Icon("k-icon k-i-edit");
             })
             )
         </div>
@@ -50,7 +51,8 @@
         </div>
     </div>
 
-    <div id="NewSupportTicketWindow"></div>
+    <div id="NewSupportTicketWindow">@Html.Partial("_SupportAddNewTicket")</div>
+    <div id="EditSupportTicketWindow">@Html.Partial("_SupportEditTicket")</div>
 
     <script src="~/Scripts/custom/_SupportWindows.js"></script>
 </div>
