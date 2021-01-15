@@ -13,5 +13,35 @@ namespace IRIS10_UI_Dev_ASPNETMVC5.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult _PanelBarTemplateCurrentReport()
+        {
+            return View();
+        }
+
+        public ActionResult _PanelBarTemplateParameters()
+        {
+            return View();
+        }
+
+        public ActionResult _PanelBarTemplateUserPrompt()
+        {
+            return View();
+        }
+
+        public ActionResult _PanelBarTemplateDescription()
+        {
+            return View();
+        }
+
+        public ActionResult _PanelBarTemplateThumbnail()
+        {
+            return View();
+        }
+
+        public ActionResult _PanelBarTemplateTags()
+        {
+            return View();
+        }
     }
 }

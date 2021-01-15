@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     var EditSupportTicketWinOptions = {
         actions: ["Maximize", "Close"],
-        title: "EditSupport Ticket",
+        title: "Edit Support Ticket",
         width: "50vw",
         modal: true,
         draggable: false,

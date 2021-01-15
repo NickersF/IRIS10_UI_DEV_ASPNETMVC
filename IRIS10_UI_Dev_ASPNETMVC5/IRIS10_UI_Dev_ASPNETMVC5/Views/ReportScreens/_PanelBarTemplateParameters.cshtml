@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="container-fluid mt-3 mb-3">
+
+    <form>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="EditableParameterList" class="font-weight-bold">Paramter List</label>
+                    <select id="EditableParameterList" class="custom-select" multiple>
+                        <option selected>Parameter 0</option>
+                        <option value="1">Parameter 1</option>
+                        <option value="2">Parameter 2</option>
+                        <option value="3">Parameter 3</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label for="EditParameterName" class="font-weight-bold">Add/Edit Parameter</label>
+                    <input id="EditParameterName" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="EditParameterValue" class="font-weight-bold">Parameter Value</label>
+                    <input id="EditParameterValue" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="EditParameterDescription" class="font-weight-bold">Parameter Description</label>
+                    <textarea id="EditParameterDescription" class="form-control" rows="3"></textarea>
+                </div>
+
+                <button type="button" class="btn btn-primary">Update Current Parameter</button>
+                <button type="button" class="btn btn-primary">Delete Current Parameter</button>
+            </div>
+        </div>
+    </form>
+</div>

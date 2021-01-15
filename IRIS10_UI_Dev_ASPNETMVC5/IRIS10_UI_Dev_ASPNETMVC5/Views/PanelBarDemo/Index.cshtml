@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Kendo Panelbar Demo</h4>
+                    <p class="card-subtitle text-muted">This demo explores the customization features of the Kendo UI panelbar</p>
+
+                    @(Html.Kendo().PanelBar()
+                        .Name("DemoPanelBar")
+                        .ExpandMode(PanelBarExpandMode.Single)
+                        .Items(panelbar =>
+                        {
+                            panelbar.Add().Text("Loaded html Item").LoadContentFrom(Url.Content("~/PanelBarDemo/_PanelBarItem1"));
+                        })
+                    )
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

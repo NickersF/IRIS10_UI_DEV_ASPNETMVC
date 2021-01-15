@@ -124,6 +124,7 @@
     <Compile Include="Controllers\GridDemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PanelBarDemoController.cs" />
     <Compile Include="Controllers\ReportScreensController.cs" />
     <Compile Include="Controllers\TextEditorDemoController.cs" />
     <Compile Include="Controllers\WindowExController.cs" />
@@ -3810,6 +3811,14 @@
     <Content Include="Views\ReportScreens\_UserAddUser.cshtml" />
     <Content Include="Views\ReportScreens\_UserEditUser.cshtml" />
     <Content Include="Views\ReportScreens\_SupportEditTicket.cshtml" />
+    <Content Include="Views\PanelBarDemo\Index.cshtml" />
+    <Content Include="Views\PanelBarDemo\_PanelBarItem1.cshtml" />
+    <Content Include="Views\ReportScreens\_PanelBarTemplateCurrentReport.cshtml" />
+    <Content Include="Views\ReportScreens\_PanelBarTemplateParameters.cshtml" />
+    <Content Include="Views\ReportScreens\_PanelBarTemplateUserPrompt.cshtml" />
+    <Content Include="Views\ReportScreens\_PanelBarTemplateDescription.cshtml" />
+    <Content Include="Views\ReportScreens\_PanelBarTemplateThumbnail.cshtml" />
+    <Content Include="Views\ReportScreens\_PanelBarTemplateTags.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

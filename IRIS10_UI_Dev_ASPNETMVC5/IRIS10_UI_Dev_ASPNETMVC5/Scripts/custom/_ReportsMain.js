@@ -42,7 +42,7 @@ $(document).ready(function () {
         title: "Edit Report",
         modal: true,
         draggable: false,
-        width: "75vw",
+        width: "50vw",
         height: "10vh",
         visible: false
     }

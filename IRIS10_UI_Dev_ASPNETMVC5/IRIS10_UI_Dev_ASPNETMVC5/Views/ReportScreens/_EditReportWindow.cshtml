@@ -2,16 +2,41 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-        <h1>Edit Report Window Template</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            @(Html.Kendo().PanelBar()
+                .Name("EditReportPanelBar")
+                .ExpandMode(PanelBarExpandMode.Single)
+                .Items(panelbar =>
+                {
+                    panelbar.Add()
+                    .Text("Choose Report")
+                    .LoadContentFrom(Url.Content("~/ReportScreens/_PanelBarTemplateCurrentReport"))
+                    .Expanded(true)
+                    .LinkHtmlAttributes(new { @class = "font-weight-bold" });
+                    panelbar.Add()
+                    .Text("Edit Parameters")
+                    .LoadContentFrom(Url.Content("~/ReportScreens/_PanelBarTemplateParameters"))
+                    .LinkHtmlAttributes(new { @class = "font-weight-bold" });
+                    panelbar.Add()
+                    .Text("Edit User Prompt")
+                    .LoadContentFrom(Url.Content("~/ReportScreens/_PanelBarTemplateUserPrompt"))
+                    .LinkHtmlAttributes(new { @class = "font-weight-bold" });
+                    panelbar.Add()
+                    .Text("Edit Description")
+                    .LoadContentFrom(Url.Content("~/ReportScreens/_PanelBarTemplateDescription"))
+                    .LinkHtmlAttributes(new { @class = "font-weight-bold" });
+                    panelbar.Add()
+                    .Text("Add & Edit Thumbnails")
+                    .LoadContentFrom(Url.Content("~/ReportScreens/_PanelBarTemplateThumbnail"))
+                    .LinkHtmlAttributes(new { @class = "font-weight-bold" });
+                    panelbar.Add()
+                    .Text("Create & Edit Tags")
+                    .LoadContentFrom(Url.Content("~/ReportScreens/_PanelBarTemplateTags"))
+                    .LinkHtmlAttributes(new { @class = "font-weight-bold" });
+                })
+            )
+        </div>
     </div>
-</body>
-</html>
+</div>
