@@ -3819,6 +3819,7 @@
     <Content Include="Views\ReportScreens\_PanelBarTemplateDescription.cshtml" />
     <Content Include="Views\ReportScreens\_PanelBarTemplateThumbnail.cshtml" />
     <Content Include="Views\ReportScreens\_PanelBarTemplateTags.cshtml" />
+    <Content Include="Views\Login\ChangePasswordConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />
