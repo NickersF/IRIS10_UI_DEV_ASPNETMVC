@@ -3,9 +3,39 @@
 }
 
 <div class="container-fluid mt-3 mb-3">
-    <div class="row">
-        <div class="col">
-            Content
+
+    <form>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="EditableUserPromptList" class="font-weight-bold">User Prompt List</label>
+                    <select id="EditableUserPromptList" class="custom-select" multiple>
+                        <option selected>User Prompt 0</option>
+                        <option value="1">User Prompt 1</option>
+                        <option value="2">User Prompt 2</option>
+                        <option value="3">User Prompt 3</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label for="EditPromptName" class="font-weight-bold">Add/Edit Prompt Name</label>
+                    <input id="EditPromptName" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="EditPromptValue">Prompt Value</label>
+                    <input id="EditPromptValue" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="EditPromptType" class="font-weight-bold">Edit Prompt Type</label>
+                    <textarea id="EditPromptType" class="form-control" rows="3"></textarea>
+                </div>
+
+                <button type="button" class="btn btn-success">Update Current Prompt</button>
+                <button type="button" class="btn btn-danger">Delete Current Prompt</button>
+            </div>
         </div>
-    </div>
+    </form>
+
 </div>
