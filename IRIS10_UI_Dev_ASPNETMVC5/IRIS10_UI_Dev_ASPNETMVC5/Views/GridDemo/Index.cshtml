@@ -8,11 +8,86 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Kendo UI for JQuery Grid Examples</title>
 </head>
 <body>
-    <div>
-        <p>Grid demo page</p>
+
+    <script src="~/Scripts/custom/TestGridData.js"></script>
+
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col">
+
+                <div id="TestGridReports"></div>
+
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+
+                <div id="TestGridUsers"></div>
+
+            </div>
+        </div>
     </div>
+
+    <script>
+
+        $(document).ready(function () {
+
+            // Reports test grid
+            $("#TestGridReports").kendoGrid({
+                dataSource: sampleReports,
+                columns: [
+                    {
+                        selectable: true,
+                        width: "4rem"
+                    },
+
+                    {
+                        field: "ReportName",
+                        title: "Report Name"
+                    },
+
+                    {
+                        field: "ReportId",
+                        title: "Report ID"
+                    }
+                ],
+                selectable: "row"
+            });
+
+            // Users test grid
+            $("#TestGridUsers").kendoGrid({
+                dataSource: sampleUsers,
+                columns: [
+                    {
+                        selectable: true,
+                        width: "4rem"
+                    },
+
+                    {
+                        field: "FirstName",
+                        title: "First Name"
+                    },
+
+                    {
+                        field: "LastName",
+                        title: "Last Name"
+                    },
+
+                    {
+                        field: "Email",
+                        title: "Email"
+                    }
+                ],
+                selectable: "row"
+            });
+
+        });
+
+    </script>
+
 </body>
 </html>

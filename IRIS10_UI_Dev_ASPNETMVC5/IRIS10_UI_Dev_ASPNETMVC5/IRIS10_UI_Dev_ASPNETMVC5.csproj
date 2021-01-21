@@ -1492,6 +1492,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom\CustomReportExampleGrid.js" />
+    <Content Include="Scripts\custom\TestGrid.js" />
+    <Content Include="Scripts\custom\TestGridData.js" />
     <Content Include="Scripts\custom\_ReportsMain.js" />
     <Content Include="Scripts\custom\windowEx_openJQWindow.js" />
     <Content Include="Scripts\custom\windowEx_openWindow.js" />
