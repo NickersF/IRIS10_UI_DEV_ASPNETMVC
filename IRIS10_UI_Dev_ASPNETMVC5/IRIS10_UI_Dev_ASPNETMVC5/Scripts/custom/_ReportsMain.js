@@ -59,7 +59,6 @@ $(document).ready(function () {
     }
 
     // Initialize the windows:
-
     $("#SupportWindow").kendoWindow(SupportWindowOptions);              // Set the options and initialize support window
     $("#UserWindow").kendoWindow(UserWindowOptions);                    // Set the options and initialize user window
     $("#CustomReportWindow").kendoWindow(CustomReportWindowOptions);    // Set the options and initialize custom reports window
