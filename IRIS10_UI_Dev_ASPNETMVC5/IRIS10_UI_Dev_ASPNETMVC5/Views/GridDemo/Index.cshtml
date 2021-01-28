@@ -23,75 +23,89 @@
             </div>
         </div>
 
-        <div class="row mt-3">
+        @*<div class="row mt-3">
+                <div class="col">
+
+                    <div id="TestGridUsers"></div>
+
+                </div>
+            </div>*@
+
+        <div id="ReportDetailsRow" class="row mt-3 d-none">
             <div class="col">
-
-                <div id="TestGridUsers"></div>
-
+                <div class="card">
+                    <div class="card-body">
+                        <h4 id="ReportNameDisplay"></h4>
+                        <h4 id="ReportShortNameDisplay" class="badge-info"></h4>
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
 
-    <script>
+    @*<script>
 
-        $(document).ready(function () {
+            $(document).ready(function () {
 
-            // Reports test grid
-            $("#TestGridReports").kendoGrid({
-                dataSource: sampleReports,
-                columns: [
-                    {
-                        selectable: true,
-                        width: "4rem"
-                    },
+                // Reports test grid
+                $("#TestGridReports").kendoGrid({
+                    dataSource: sampleReports,
+                    columns: [
+                        {
+                            selectable: true,
+                            width: "4rem"
+                        },
 
-                    {
-                        field: "ReportName",
-                        title: "Report Name"
-                    },
+                        {
+                            field: "ReportName",
+                            title: "Report Name"
+                        },
 
-                    {
-                        field: "ReportId",
-                        title: "Report ID"
-                    }
-                ],
-                selectable: "row"
+                        {
+                            field: "ReportId",
+                            title: "Report ID"
+                        }
+                    ],
+                    selectable: "row"
+                });
+
+                // Users test grid
+                $("#TestGridUsers").kendoGrid({
+                    dataSource: sampleUsers,
+                    columns: [
+                        {
+                            selectable: true,
+                            width: "4rem"
+                        },
+
+                        {
+                            field: "FirstName",
+                            title: "First Name"
+                        },
+
+                        {
+                            field: "LastName",
+                            title: "Last Name"
+                        },
+
+                        {
+                            field: "Email",
+                            title: "Email"
+                        }
+                    ],
+                    selectable: "row"
+                });
+
+                // Removes the alternate row coloring on the grid.
+                $("#TestGridReports tr.k-alt").removeClass("k-alt");
+                $("#TestGridUsers tr.k-alt").removeClass("k-alt");
+
             });
 
-            // Users test grid
-            $("#TestGridUsers").kendoGrid({
-                dataSource: sampleUsers,
-                columns: [
-                    {
-                        selectable: true,
-                        width: "4rem"
-                    },
+        </script>*@
 
-                    {
-                        field: "FirstName",
-                        title: "First Name"
-                    },
-
-                    {
-                        field: "LastName",
-                        title: "Last Name"
-                    },
-
-                    {
-                        field: "Email",
-                        title: "Email"
-                    }
-                ],
-                selectable: "row"
-            });
-
-            // Removes the alternate row coloring on the grid.
-            $("#TestGridReports tr.k-alt").removeClass("k-alt");
-            $("#TestGridUsers tr.k-alt").removeClass("k-alt");
-
-        });
-
-    </script>
+    <script src="~/Scripts/custom/MainGridDemo.js"></script>
 
 </body>
 </html>

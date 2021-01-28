@@ -90,39 +90,34 @@ $(document).ready(function () {
     });
 
     // Example grid instance master report list
-    $("#ExampleGrid").kendoGrid({
+    $("#TestGridReports").kendoGrid({
+        dataSource: sampleReports,
+        change: selectRowAction,
+        selectable: "row",
         columns: [
-            { selectable: true },
+            {
+                selectable: true,
+                width: "4em"
+            },
             {
                 field: "ReportName",
                 title: "Report Name"
             },
             {
-                field: "ReportNumber",
+                field: "ReportId",
                 title: "Report Number"
             }],
-
-        dataSource: {
-            data: [
-                {
-                    ReportName: "Accounts Payable Order",
-                    ReportNumber: "APS1017"
-                },
-                {
-                    ReportName: "Contract Balance Summary Report",
-                    ReportNumber: "APS1007"
-                },
-                {
-                    ReportName: "Budget Balance Detail Report",
-                    ReportNumber: "ARS1012"
-                }
-            ]
-        }
     });
 
-    // Hide grid header on load
-    $("#ExampleGrid .k-grid-header").css('display', 'none');
+    // Configure grid CSS styles
+    $("#TestGridReports .k-grid-header").css('display', 'none');    // Remove header
+    $("#TestGridReports tr.k-alt").removeClass("k-alt");            // Remove alternate row colors
 
+    // Row selection event
+    function selectRowAction() {
+        $("#ReportListCol").removeClass('col-12').addClass('col-6');
+        $("#ReportDetailsCol").fadeIn(500).removeClass('d-none');
+    }
     // Show report description event (this will be at the row level event eventually)
     $("#ShowDetailsBtn").click(() => {
         $("#ReportListCol").removeClass('col-12').addClass('col-6');
