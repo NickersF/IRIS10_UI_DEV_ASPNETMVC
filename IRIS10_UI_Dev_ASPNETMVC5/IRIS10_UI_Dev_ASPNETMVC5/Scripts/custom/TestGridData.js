@@ -3,7 +3,8 @@
 var sampleReports = [
     {
         ReportName: "Sample Financial Report",
-        ReportId: "RP1001"
+        ReportId: "RP1001",
+        ReportDescription: "This report provides information for the organizations financial status."
     },
 
     {

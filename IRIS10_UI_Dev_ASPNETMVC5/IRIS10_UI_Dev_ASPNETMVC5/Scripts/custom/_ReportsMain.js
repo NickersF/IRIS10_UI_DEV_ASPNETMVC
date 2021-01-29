@@ -113,16 +113,32 @@ $(document).ready(function () {
     $("#TestGridReports .k-grid-header").css('display', 'none');    // Remove header
     $("#TestGridReports tr.k-alt").removeClass("k-alt");            // Remove alternate row colors
 
-    // Row selection event
-    function selectRowAction() {
+    // Row selection event method
+    function selectRowAction(e) {
+
+        // Get row data for selected row
+        var rows = e.sender.select();
+
+        rows.each(function (e) {
+
+            // Store row data in local
+            var grid = $("#TestGridReports").data("kendoGrid");
+            var dataItem = grid.dataItem(this);
+
+            // Set report details card text
+            $("#ReportDetailsName").text(dataItem.ReportName);
+            $("#ReportDetailsId").text(dataItem.ReportId);
+
+            // Logging
+            console.log(dataItem);
+            console.log(dataItem.ReportName);
+            console.log(dataItem.ReportId);
+        })
+
+        // Set visibility of report list off and turn on details
         $("#ReportListCol").removeClass('col-12').addClass('col-6');
         $("#ReportDetailsCol").fadeIn(500).removeClass('d-none');
     }
-    // Show report description event (this will be at the row level event eventually)
-    $("#ShowDetailsBtn").click(() => {
-        $("#ReportListCol").removeClass('col-12').addClass('col-6');
-        $("#ReportDetailsCol").fadeIn(500).removeClass('d-none');
-    });
 
     // Close report description event
     $("#HideDetailsBtn").click(() => {
