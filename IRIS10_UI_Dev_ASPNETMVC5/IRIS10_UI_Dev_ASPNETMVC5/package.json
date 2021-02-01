@@ -1,0 +1,32 @@
+{
+  "name": "ui-development",
+  "version": "1.0.0",
+  "description": "UI development for IRIS10 web app",
+  "main": "index.js",
+  "dependencies": {
+    "common.js": "^1.1.1",
+    "ts-loader": "^8.0.14",
+    "webpack": "^5.19.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.168",
+    "lodash": "^4.17.20",
+    "typescript": "^4.1.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicholas Fazzolari",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NickersF/IRIS10_UI_DEV_ASPNETMVC.git"
+  },
+  "keywords": [
+    "UI/UX"
+  ],
+  "bugs": {
+    "url": "https://github.com/n/a/issues"
+  },
+  "homepage": "https://github.com/n/a#readme"
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"getWindow.js","sourceRoot":"","sources":["../../../../src/utils/getWindow.js"],"names":[],"mappings":"AAAA;;;;GAIG;AACH,MAAM,CAAC,OAAO,UAAU,SAAS,CAAC,OAAO;IACvC,IAAM,aAAa,GAAG,OAAO,CAAC,aAAa,CAAC;IAC5C,OAAO,aAAa,CAAC,CAAC,CAAC,aAAa,CAAC,WAAW,CAAC,CAAC,CAAC,MAAM,CAAC;AAC5D,CAAC"}

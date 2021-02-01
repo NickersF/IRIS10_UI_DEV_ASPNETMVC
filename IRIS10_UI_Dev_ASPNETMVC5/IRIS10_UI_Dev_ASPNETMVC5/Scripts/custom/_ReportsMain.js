@@ -129,6 +129,9 @@ $(document).ready(function () {
             $("#ReportDetailsName").text(dataItem.ReportName);
             $("#ReportDetailsId").text(dataItem.ReportId);
 
+            // Disable grid during details view
+            $("#TestGridReports").addClass("k-state-disabled");
+
             // Logging
             console.log(dataItem);
             console.log(dataItem.ReportName);
@@ -143,7 +146,10 @@ $(document).ready(function () {
     // Close report description event
     $("#HideDetailsBtn").click(() => {
         $("#ReportListCol").removeClass('col-6').addClass('col-12');
-        $("#ReportDetailsCol").fadeOut(500).addClass('d-none'); // fadeout not working
+        $("#ReportDetailsCol").fadeOut(500).addClass('d-none');
+
+        // Enable grid after closing details card
+        $("#TestGridReports").removeClass("k-state-disabled");
     });
 
 });

@@ -1,15 +1,4 @@
-﻿// Change cell event function
-function onChange(arg) {
-    var selected = $.map(this.select(), function (item) {
-        return $(item).text();
-    });
-
-    $("#ReportNameDisplay").text(selected);
-    $("#ReportDetailsRow").removeClass("d-none");
-    console.log("Selected: " + selected.length + " item(s), [" + selected.join(", ") + "]");
-}
-
-// Reports test grid
+﻿// Reports test grid
 $("#TestGridReports").kendoGrid({
     dataSource: sampleReports,
     change: onChange,
