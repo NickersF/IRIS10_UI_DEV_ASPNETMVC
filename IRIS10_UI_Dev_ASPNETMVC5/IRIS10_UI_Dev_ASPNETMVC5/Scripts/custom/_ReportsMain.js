@@ -138,7 +138,7 @@ $(document).ready(function () {
             console.log(dataItem.ReportId);
         })
 
-        // Set visibility of report list off and turn on details
+        // Set display of report list off and turn on details
         $("#ReportListCol").removeClass('col-12').addClass('col-6');
         $("#ReportDetailsCol").fadeIn(500).removeClass('d-none');
     }
