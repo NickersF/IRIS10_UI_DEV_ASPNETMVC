@@ -3,12 +3,40 @@
 }
 
 <section class="container-fluid">
-    <div class="row">
+    <div class="row mt-3">
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h5>TypeScript Module Testing:</h5>
+                    <h5>Basic Kendo UI Widget Examples</h5>
 
+                    @(Html.Kendo().Button()
+                        .Name("textButton")
+                        .HtmlAttributes( new {type = "button", @class = "btn btn-primary mt-3" } )
+                        .Content("Text Button")
+                    )
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Bootstrap UI Conversation Cards Example</h5>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Conversation</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p>Content here.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
