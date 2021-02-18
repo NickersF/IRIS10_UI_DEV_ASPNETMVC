@@ -3826,6 +3826,7 @@
     <Content Include="Views\ReportScreens\_PanelBarTemplateTags.cshtml" />
     <Content Include="Views\Login\ChangePasswordConfirmation.cshtml" />
     <Content Include="tsconfig.json" />
+    <Content Include="Views\Home\TabStripExample.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

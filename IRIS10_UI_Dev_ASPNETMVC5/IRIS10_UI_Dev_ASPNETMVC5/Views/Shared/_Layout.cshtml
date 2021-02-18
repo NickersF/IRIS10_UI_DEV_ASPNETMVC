@@ -42,10 +42,11 @@
                 .Name("screensPreviewMenu")
                 .Items(items =>
                 {
-                    items.Add().Text("Reports Main")
+                    items.Add().Text("General Kendo Examples")
                         .Items(children =>
                          {
                              children.Add().Text("Reports Main").Action("_ReportsMain", "ReportScreens");
+                             children.Add().Text("TabStrip Example").Action("TabStripExample", "Home");
                          }
                          );
                     items.Add().Text("Login Screens") // Dropdown level
