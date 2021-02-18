@@ -1,4 +1,6 @@
 ﻿/* IRIS 10 CSS UI Development Sandbox */
+@import "bootstrap.min.css";
+@import "iris10-bootstrap-custom-theme.css";
 /* IRIS LESS Color Library */
 /* Grays */
 /* Main Palette */
@@ -31,3 +33,7 @@
 /*.row [class*='col-'] {
     transition: all 0.5s ease-in-out;
 }*/
+#tabstrip {
+  height: 320px !important;
+  overflow: auto;
+}

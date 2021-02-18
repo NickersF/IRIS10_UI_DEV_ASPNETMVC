@@ -147,6 +147,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\iris10-bootstrap-custom-theme.css" />
     <Content Include="Content\kendo\2020.3.1021-source\dataviz\kendo.dataviz.black.css" />
     <Content Include="Content\kendo\2020.3.1021-source\dataviz\kendo.dataviz.blueopal.css" />
     <Content Include="Content\kendo\2020.3.1021-source\dataviz\kendo.dataviz.bootstrap.css" />
@@ -1482,6 +1483,7 @@
     <Content Include="Content\kendo\2020.3.1021-source\common\transitions.less" />
     <Content Include="package.json" />
     <Content Include="package-lock.json" />
+    <Content Include="Content\site-tabstrip-config.less" />
     <None Include="packages.config" />
     <Content Include="Images\IRIS_card_header.svg" />
     <Content Include="Images\IRIS_logo_web_blue.svg" />

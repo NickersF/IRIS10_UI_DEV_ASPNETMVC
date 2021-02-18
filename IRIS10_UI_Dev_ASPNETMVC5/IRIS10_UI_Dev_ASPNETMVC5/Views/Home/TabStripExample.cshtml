@@ -6,12 +6,59 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title</title>
+
+    @*<link href="https://kendo.cdn.telerik.com/2020.3.1118/styles/kendo.bootstrap-v4.min.css" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />*@
+
+    @Styles.Render("~/Content/css")
+
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
 </head>
 <body>
-    <div>
-        <p>TabStrip example goes here.</p>
+    <div class="container-fluid">
+        @(Html.Kendo().TabStrip()
+            .Name("tabstrip")
+            .Items(tabstrip =>
+            {
+                tabstrip.Add().Text("Paris")
+                    .Selected(true)
+                    .Content(@<text>
+                        <div class="weather">
+                            <p>Rainy weather in Paris.</p>
+                        </div>
+                    </text>);
+
+                tabstrip.Add().Text("Sofia")
+                    .Content(@<text>
+                        <div class="weather">
+                            <p>Sunny weather in Sofia.</p>
+                        </div>
+                    </text>);
+
+                tabstrip.Add().Text("Moscow")
+                    .Content(@<text>
+                        <div class="weather">
+                            <p>Cloudy weather in Moscow.</p>
+                        </div>
+                    </text>);
+
+                tabstrip.Add().Text("Sydney")
+                    .Content(@<text>
+                        <div class="weather">
+                            <p>Rainy weather in Sidney.</p>
+                        </div>
+                    </text>);
+            })
+        )
     </div>
 </body>
 </html>

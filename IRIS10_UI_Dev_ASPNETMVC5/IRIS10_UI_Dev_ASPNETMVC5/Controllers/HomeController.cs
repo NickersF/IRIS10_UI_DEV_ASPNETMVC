@@ -31,7 +31,8 @@ namespace IRIS10_UI_Dev_ASPNETMVC5.Controllers
 
         public ActionResult TabStripExample()
         {
-            ViewBag.Message = "TabStrip Kendo UI Example";
+            ViewBag.Title = "Kendo UI - TabStrip Examples";
+            ViewBag.Message = "Renders view for Kendo UI TabStrip examples.";
 
             return View();
         }

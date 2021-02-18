@@ -11,6 +11,10 @@ namespace IRIS10_UI_Dev_ASPNETMVC5
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            // Global style bundle
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                        "~/Content/Site.css"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
