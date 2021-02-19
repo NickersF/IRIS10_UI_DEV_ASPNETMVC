@@ -1,0 +1,97 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div class="col">
+            <div class="card">
+                <h5 class="card-header">Single Line Text Input Examples (Kendo UI and Boostrap)</h5>
+                <div class="card-body">
+
+                    @* Kendo UI Label and TextBox *@
+                    <h5 class="card-title">Kendo UI Label and TextBox</h5>
+                    <div class="form-group">
+                        @(Html.Kendo().TextBox()
+                            .Name("kendoTextBoxExample1")
+                            .Placeholder("Placeholder")
+                            .Label(label => label
+                                .Content("Example Label")
+                            )
+                        )
+                    </div>
+
+                    @* Bootstrap Label With Kendo UI TextBox *@
+                    <h5 class="card-title">Bootstrap Label With Kendo UI TextBox</h5>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Example label</label>
+                        @(Html.Kendo().TextBox()
+                            .Name("kendoTextBoxExample2")
+                            .Placeholder("Placeholder")
+                        )
+                    </div>
+
+                    @* Bootstrap Label and TextBox *@
+                    <h5 class="card-title">Bootstrap Label and TextBox</h5>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Example label</label>
+                        <input type="text" class="form-control" id="boostrapTextBoxExample" placeholder="Placeholder">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <div class="card">
+                <h5 class="card-header">Dropdown List Input Examples (Kendo UI and Bootstrap)</h5>
+                <div class="card-body">
+
+                    @* Default DropDownList (Base HTML) *@
+                    <h5 class="card-title">Default DropDownList (Base HTML)</h5>
+                    <div class="form-group">
+                        <label for="pureHTMLDDExample">Example Label</label>
+                        <select id="pureHTMLDDExample">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+                    @* Kendo UI DropDownList *@
+                    <h5 class="card-title">Kendo UI DropDownList</h5>
+                    <div class="form-group">
+                        <label for="kendoDDExample">Example Label</label>
+                        @(Html.Kendo().DropDownList()
+                            .Name("dropdownlist")
+                            .Items(items =>
+                            {
+                                items.Add().Text("Open this select menu").Selected(true);
+                                items.Add().Text("One").Value("1");
+                                items.Add().Text("Two").Value("2");
+                                items.Add().Text("Three").Value("3");
+                            }
+                            )
+                        )
+                    </div>
+
+                    @* Bootstrap DropDownList (custom-select) *@
+                    <h5 class="card-title">Bootstrap DropDownList (custom-select)</h5>
+                    <div class="form-group">
+                        <label for="bootstrapDDExample">Example Label</label>
+                        <select id="bootstrapDDExample" class="custom-select">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

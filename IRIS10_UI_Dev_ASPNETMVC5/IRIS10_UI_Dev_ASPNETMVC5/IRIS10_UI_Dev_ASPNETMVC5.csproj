@@ -125,6 +125,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PanelBarDemoController.cs" />
+    <Compile Include="Controllers\PermitsController.cs" />
     <Compile Include="Controllers\ReportScreensController.cs" />
     <Compile Include="Controllers\TextEditorDemoController.cs" />
     <Compile Include="Controllers\WindowExController.cs" />
@@ -3829,6 +3830,8 @@
     <Content Include="Views\Login\ChangePasswordConfirmation.cshtml" />
     <Content Include="tsconfig.json" />
     <Content Include="Views\Home\TabStripExample.cshtml" />
+    <Content Include="Views\Permits\AddStandardPermit.cshtml" />
+    <Content Include="Views\Permits\CommonFormInputs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />
