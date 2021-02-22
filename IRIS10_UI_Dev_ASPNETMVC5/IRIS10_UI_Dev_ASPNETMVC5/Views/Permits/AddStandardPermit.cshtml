@@ -2,4 +2,775 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<p>Add standard permit view page.</p>
+@* Standard permits required fields *@
+<div class="container-fluid mt-3 mb-3">
+    <div class="row bg-success">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddPermitType">Permit Type:</label>
+                <div>
+                    @(Html.Kendo().DropDownList()
+                            .Name("AddPermitType")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetPermitTypeList", "PermitMain").Type(HttpVerbs.Get));
+                            }))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddPermitStatus">Permit Status:</label>
+                <div>
+                    @(Html.Kendo().DropDownList()
+                            .Name("AddPermitStatus")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetPermitStatusList", "PermitMain").Type(HttpVerbs.Get));
+                            }))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label class="form-check-label" for="AddCertificateOfInsuranceCB">Certificate of Insurance:</label>
+                @(Html.Kendo().CheckBox().Name("AddCertificateOfInsuranceCB"))
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label class="form-check-label" for="AddNeverExpiresCB">Never Expires:</label>
+                @(Html.Kendo().CheckBox().Name("AddNeverExpiresCB"))
+            </div>
+        </div>
+    </div>
+</div>
+
+@* General permits required fields *@
+<div class="container-fluid mt-3 mb-3">
+    @* Identification data start *@
+    <div class="row">
+        <div class="col">
+            <h5>Identification Data</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddPermitNumber">Permit Number:</label>
+                <div>
+                    @(Html.Kendo().TextBox().Name("AddPermitNumber").Placeholder("Enter permit number"))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddAuthorizationNumber">Authorization Number:</label>
+                <div>
+                    @(Html.Kendo().TextBox().Name("AddAuthorizationNumber").Placeholder("Enter authorization number"))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddApplicationNumber">Application Number:</label>
+                <div>
+                    @(Html.Kendo().TextBox().Name("AddApplicationNumber").Placeholder("Enter application number"))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddTypeOfAccess">Type of Access:</label>
+                <div>
+                    @(Html.Kendo().DropDownList()
+                            .Name("AddTypeOfAccess")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetAccessTypeList", "PermitMain").Type(HttpVerbs.Get));
+                            }))
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddIssuedBy">Issued By:</label>
+                <div>
+                    @(Html.Kendo().TextBox().Name("AddIssuedBy").Placeholder("Enter issuing user"))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddIssueDate">Issue Date:</label>
+                <div>
+                    @(Html.Kendo().DatePicker().Name("AddIssueDate"))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddApprovedBy">Approved By:</label>
+                <div>
+                    @(Html.Kendo().TextBox().Name("AddApprovedBy").Placeholder("Enter approving user"))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddApprovedDate">Approved Date:</label>
+                <div>
+                    @(Html.Kendo().DatePicker().Name("AddApprovedDate"))
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="AddProjectDescription">Project Description:</label>
+                <div>
+                    @(Html.Kendo().TextArea()
+                        .Name("AddProjectDescription")
+                        .Placeholder("Enter your text here.")
+                        .Rows(5)
+                        .MaxLength(500)
+                        .HtmlAttributes(new { style = "width: 100%" })
+                    )
+                </div>
+            </div>
+
+        </div>
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="AddMaintenanceDistrict">Maintenance District:</label>
+                <div>
+                    @(Html.Kendo().DropDownList()
+                            .Name("AddMaintenanceDistrict")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetMaintenanceDistrictList", "PermitMain").Type(HttpVerbs.Get));
+                            }))
+                </div>
+            </div>
+        </div>
+    </div>
+    @* Identification data end *@
+
+    @* Location data begin *@
+    <div class="row">
+        <div class="col">
+            <h5>Identification Data</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddPlacement">Placement:</label>
+                <div>
+                    @(Html.Kendo().DropDownList()
+                            .Name("AddPlacement")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetPlacementList", "PermitMain").Type(HttpVerbs.Get));
+                            }))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddDirection">Direction:</label>
+                <div>
+                    @(Html.Kendo().TextBox().Name("AddDirection").Placeholder("Enter approving user"))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddRoadName">Road Name:</label>
+                <div>
+                    @(Html.Kendo().DropDownList()
+                            .Name("AddRoadName")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetRoadNameList", "PermitMain").Type(HttpVerbs.Get));
+                            }))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddCrossRoadName">Cross Road Name:</label>
+                <div>
+                    @(Html.Kendo().DropDownList()
+                            .Name("AddCrossRoadName")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetRoadNameList", "PermitMain").Type(HttpVerbs.Get));
+                            }))
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddMilepost">Milepost:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddMilepost")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddBeginMilepost">Begin Milepost:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddBeginMilepost")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddEndMilepost">Begin Milepost:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddEndMilepost")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+    @* Location data end *@
+
+    @* Begin physical properties *@
+    <div class="row">
+        <div class="col">
+            <h5>Physical Properties</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddSidewalkLength">Sidewalk Length:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddSidewalkLength")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddSidewalkWidth">Sidewalk Width:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddSidewalkWidth")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddCurb">Curb:</label>
+                <div>
+                    @(Html.Kendo().DropDownList()
+                            .Name("AddCurb")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetCurbList", "PermitMain").Type(HttpVerbs.Get));
+                            }))
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddCulvertDiameter">Culvert Diameter:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddCulvertDiameter")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddCulvertLength">Culvert Length:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddCulvertLength")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddCulvertDepth">Culvert Depth:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddCulvertDepth")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddDrivewayLength">Driveway Length:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddDrivewayLength")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddDrivewayWidth">Driveway Width:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddDrivewayWidth")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddLength">Length:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddLength")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddWidth">Width:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddWidth")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddDepth">Depth:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddDepth")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddRadius">Radius:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddRadius")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddAngle">Angle:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddAngle")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddSlope">Slope:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddSlope")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddDimension">Dimension:</label>
+                <div>
+                    @(Html.Kendo().TextBox().Name("AddDimension"))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddDistance">Distance:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddDistance")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddOffsetDistance">Offset Distance:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddOffsetDistance")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddSetbackWidth">Setback Width:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddSetbackWidth")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddMeasuredFrom">Measured From:</label>
+                <div>
+                    @(Html.Kendo().TextBox().Name("AddMeasuredFrom"))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddDistanceToDitch">Distance To Ditch:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddDistanceToDitch")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddTopOfAccessDistanceFromTrafficLane">Top Of Access Distance From Traffic Lane:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddTopOfAccessDistanceFromTrafficLane")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddMinimumBelowEdgeOfTrafficLane">Minimum Below Edge Of Traffic Lane:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddMinimumBelowEdgeOfTrafficLane")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddDistanceFromTrafficLane">Distance From Traffic Lane:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddDistanceFromTrafficLane")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddMinimumSightDistanceLeft">Minimum Sight Distance Left:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddMinimumSightDistanceLeft")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddMinimumSightDistanceRight">Minimum Sight Distance Right:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddMinimumSightDistanceRight")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddSurfaceType">Surface Type:</label>
+                <div>
+                    @(Html.Kendo().DropDownList()
+                            .Name("AddSurfaceType")
+                            .AutoWidth(true)
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .DataSource(ds =>
+                                    {
+                                ds.Read(r =>
+                                        {
+                                    r.Action("GetSurfaceTypeList", "PermitMain").Type(HttpVerbs.Get);
+                                });
+                            }))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddDrawingNumber">Drawing Number:</label>
+                <div>
+                    @(Html.Kendo().TextBox().Name("AddDrawingNumber"))
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddSlopeAccessFeetFromTrafficLane">Slope Access Feet From Traffic Lane:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddSlopeAccessFeetFromTrafficLane")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddSlopeAccessPercentFromTrafficLane">Slope Access Percent From Traffic Lane:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddSlopeAccessPercentFromTrafficLane")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddClearanceFeet">Clearance Feet:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddClearanceFeet")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddTaxlotNumber">Taxlot Number:</label>
+                <div>
+                    @(Html.Kendo().TextBox().Name("AddTaxlotNumber"))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddTownship">Township:</label>
+                <div>
+                    @(Html.Kendo().TextBox().Name("AddTownship"))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddRange">Range:</label>
+                <div>
+                    @(Html.Kendo().TextBox().Name("AddRange"))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddSection">Section:</label>
+                <div>
+                    @(Html.Kendo().TextBox().Name("AddSection"))
+                </div>
+            </div>
+        </div>
+    </div>
+    @* Physicial properties end *@
+
+    @* Begin description data *@
+    <div class="row">
+        <div class="col">
+            <h5>Physical Properties</h5>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddApplicationDate">Application Date:</label>
+                <div>
+                    @(Html.Kendo().DatePicker().Name("AddApplicationDate"))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddInstallDate">Install Date:</label>
+                <div>
+                    @(Html.Kendo().DatePicker().Name("AddInstallDate"))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddExpireDate">Expire Date:</label>
+                <div>
+                    @(Html.Kendo().DatePicker().Name("AddExpireDate"))
+                </div>
+            </div>
+        </div>
+    </div>
+    @* End description data *@
+</div>

@@ -94,4 +94,34 @@
             </div>
         </div>
     </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <div class="card">
+                <h5 class="card-header">Checkbox Examples</h5>
+                <div class="card-body">
+
+                    @* Kendo UI Checkbox and Label *@
+                    <h5 class="card-title">Kendo UI Checkbox and Label</h5>
+                    <div class="form-group">
+                        @(Html.Kendo().CheckBox().Name("kendoCheckBoxExample").Label("Kendo UI CheckBox"))
+                    </div>
+
+                    @* Bootstrap Checkbox and Label *@
+                    <h5 class="card-title">Bootstrap Checkbox and Label</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+                    </div>
+
+                    @* Hybrid Checkbox and Label *@
+                    <h5 class="card-title">Hybrid Checkbox and Label</h5>
+                    <div class="form-group">
+                        <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+                        @(Html.Kendo().CheckBox().Name("kendoCheckBoxExample1"))
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
