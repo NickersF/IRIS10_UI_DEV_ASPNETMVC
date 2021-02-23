@@ -16,6 +16,12 @@ namespace IRIS10_UI_Dev_ASPNETMVC5.Controllers
             return View();
         }
 
+        public ActionResult StdPermitOwnerFields()
+        {
+            ViewBag.Title = "Owner Fields For Standard Permit Add Screen";
+
+            return View();
+        }
         // GET: CommonFormInputs
         public ActionResult CommonFormInputs()
         {

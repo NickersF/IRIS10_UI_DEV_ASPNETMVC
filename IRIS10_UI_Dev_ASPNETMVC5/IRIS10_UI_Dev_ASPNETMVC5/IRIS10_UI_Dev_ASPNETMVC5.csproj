@@ -3832,6 +3832,7 @@
     <Content Include="Views\Home\TabStripExample.cshtml" />
     <Content Include="Views\Permits\AddStandardPermit.cshtml" />
     <Content Include="Views\Permits\CommonFormInputs.cshtml" />
+    <Content Include="Views\Permits\StdPermitOwnerFields.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

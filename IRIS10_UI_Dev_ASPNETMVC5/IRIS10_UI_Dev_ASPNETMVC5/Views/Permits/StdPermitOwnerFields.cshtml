@@ -1,0 +1,114 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="permitOwnerFields" class="container-fluid mt-3 mb-3">
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddOwnerFirstName">Owner First Name:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddOwnerFirstName")
+                            .Placeholder("First name")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddOwnerLastName">Owner Last Name:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddOwnerLastName")
+                            .Placeholder("Last name")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddOwnerInitial">Owner Initial:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddOwnerInitial")
+                            .Placeholder("M.I")
+                            .HtmlAttributes(new { @class = "w-50" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="AddOwnerAddress1">Owner Address 1:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddOwnerAddress1")
+                            .Placeholder("Address line 1")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="AddOwnerAddress2">Owner Address 2:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddOwnerAddress2")
+                            .Placeholder("Address line 2")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="AddOwnerCity">Owner City:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddOwnerCity")
+                            .Placeholder("Enter city")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="AddOwnerState">Owner State:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddOwnerState")
+                            .Placeholder("Enter state")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="AddOwnerZip">Owner Zip:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddOwnerZip")
+                            .Placeholder("Enter zip code")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

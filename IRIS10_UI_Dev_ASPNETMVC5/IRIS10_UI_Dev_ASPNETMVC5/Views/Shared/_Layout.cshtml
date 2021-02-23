@@ -47,13 +47,19 @@
                 {
                     items.Add().Text("General Kendo Examples")
                         .Items(children =>
-                         {
-                             children.Add().Text("Reports Main").Action("_ReportsMain", "ReportScreens");
-                             children.Add().Text("TabStrip Example").Action("TabStripExample", "Home");
-                             children.Add().Text("Common Permit Input Forms").Action("CommonFormInputs", "Permits");
-                             children.Add().Text("Add Standard Permit Forms").Action("AddStandardPermit", "Permits");
-                         }
-                         );
+                        {
+                            children.Add().Text("Reports Main").Action("_ReportsMain", "ReportScreens");
+                            children.Add().Text("TabStrip Example").Action("TabStripExample", "Home");
+                        }
+                        );
+                    items.Add().Text("Permit Views")
+                        .Items(children => 
+                        {
+                            children.Add().Text("Common Permit Input Forms").Action("CommonFormInputs", "Permits");
+                            children.Add().Text("Add Standard Permit Forms").Action("AddStandardPermit", "Permits");
+                            children.Add().Text("Standard Permit Owner Forms").Action("StdPermitOwnerFields", "Permits");
+                        }
+                        );
                     items.Add().Text("Login Screens") // Dropdown level
                         .Items(children =>
                         {
