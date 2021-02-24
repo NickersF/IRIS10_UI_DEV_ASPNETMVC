@@ -52,14 +52,19 @@
                             children.Add().Text("TabStrip Example").Action("TabStripExample", "Home");
                         }
                         );
+
                     items.Add().Text("Permit Views")
                         .Items(children => 
                         {
                             children.Add().Text("Common Permit Input Forms").Action("CommonFormInputs", "Permits");
                             children.Add().Text("Add Standard Permit Forms").Action("AddStandardPermit", "Permits");
                             children.Add().Text("Standard Permit Owner Forms").Action("StdPermitOwnerFields", "Permits");
+                            children.Add().Text("Standard Permit Site Forms").Action("StdPermitSiteFields", "Permits");
+                            children.Add().Text("Standard Permit Applicant Forms").Action("StdPermitApplicantField", "Permits");
+                            children.Add().Text("Standard Permit Contractor Forms").Action("StdPermitsContractorFields", "Permits");
                         }
                         );
+
                     items.Add().Text("Login Screens") // Dropdown level
                         .Items(children =>
                         {
@@ -69,6 +74,7 @@
                             children.Add().Text("Change Password Confirmation Screen").Action("ChangePasswordConfirmation", "Login");
                         }
                         );
+
                     items.Add().Text("Kendo Widget Demos") // Dropdown level
                         .Items(children =>
                         {

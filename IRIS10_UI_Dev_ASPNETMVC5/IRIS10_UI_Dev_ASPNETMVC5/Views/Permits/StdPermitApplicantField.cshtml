@@ -2,16 +2,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div id="permitOwnerFields" class="container-fluid mt-3 mb-3">
+<div id="permitApplicantFields" class="container-fluid mt-3 mb-3">
 
     <div class="row mt-3">
         <div class="col-4 border-left">
             <div class="form-group">
-                <label for="AddOwnerFirstName">Owner First Name:</label>
+                <label for="AddApplicant" style="font-size:small;">Applicant:</label>
                 <div>
                     @(Html.Kendo().TextBox()
-                            .Name("AddOwnerFirstName")
-                            .Placeholder("Enter first name")
+                            .Name("AddApplicant")
+                            .Placeholder("Enter applicant")
                             .HtmlAttributes(new { @class = "w-100" })
                             )
                 </div>
@@ -19,11 +19,11 @@
         </div>
         <div class="col-4 border-left">
             <div class="form-group">
-                <label for="AddOwnerLastName">Owner Last Name:</label>
+                <label for="AddApplicantPosition">Applicant Position:</label>
                 <div>
                     @(Html.Kendo().TextBox()
-                            .Name("AddOwnerLastName")
-                            .Placeholder("Enter last name")
+                            .Name("AddApplicantPosition")
+                            .Placeholder("Enter applicant position")
                             .HtmlAttributes(new { @class = "w-100" })
                             )
                 </div>
@@ -31,26 +31,11 @@
         </div>
         <div class="col-4 border-left">
             <div class="form-group">
-                <label for="AddOwnerInitial">Owner Initial:</label>
+                <label for="AddApplicantCompany">Applicant Company:</label>
                 <div>
                     @(Html.Kendo().TextBox()
-                            .Name("AddOwnerInitial")
-                            .Placeholder("Enter initial")
-                            .HtmlAttributes(new { @class = "w-50" })
-                            )
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-3">
-        <div class="col-6 border-left">
-            <div class="form-group">
-                <label for="AddOwnerAddress1">Owner Address 1:</label>
-                <div>
-                    @(Html.Kendo().TextBox()
-                            .Name("AddOwnerAddress1")
-                            .Placeholder("Enter address line 1")
+                            .Name("AddApplicantCompany")
+                            .Placeholder("Enter applicant company")
                             .HtmlAttributes(new { @class = "w-100" })
                             )
                 </div>
@@ -61,11 +46,11 @@
     <div class="row mt-3">
         <div class="col-6 border-left">
             <div class="form-group">
-                <label for="AddOwnerAddress2">Owner Address 2:</label>
+                <label for="AddApplicantAddress">Applicant Address:</label>
                 <div>
                     @(Html.Kendo().TextBox()
-                            .Name("AddOwnerAddress2")
-                            .Placeholder("Enter address line 2")
+                            .Name("AddApplicantAddress")
+                            .Placeholder("Enter applicant address")
                             .HtmlAttributes(new { @class = "w-100" })
                             )
                 </div>
@@ -76,11 +61,11 @@
     <div class="row mt-3">
         <div class="col-2 border-left">
             <div class="form-group">
-                <label for="AddOwnerCity">Owner City:</label>
+                <label for="AddApplicantCity">Applicant City:</label>
                 <div>
                     @(Html.Kendo().TextBox()
-                            .Name("AddOwnerCity")
-                            .Placeholder("Enter city")
+                            .Name("AddApplicantCity")
+                            .Placeholder("Enter applicant city")
                             .HtmlAttributes(new { @class = "w-100" })
                             )
                 </div>
@@ -88,11 +73,11 @@
         </div>
         <div class="col-2 border-left">
             <div class="form-group">
-                <label for="AddOwnerState">Owner State:</label>
+                <label for="AddApplicantState">Applicant State:</label>
                 <div>
                     @(Html.Kendo().TextBox()
-                            .Name("AddOwnerState")
-                            .Placeholder("Enter state")
+                            .Name("AddApplicantState")
+                            .Placeholder("Enter applicant state")
                             .HtmlAttributes(new { @class = "w-100" })
                             )
                 </div>
@@ -100,11 +85,11 @@
         </div>
         <div class="col-2 border-left">
             <div class="form-group">
-                <label for="AddOwnerZip">Owner Zip:</label>
+                <label for="AddApplicantZip">Applicant Zip:</label>
                 <div>
                     @(Html.Kendo().TextBox()
-                            .Name("AddOwnerZip")
-                            .Placeholder("Enter zip code")
+                            .Name("AddApplicantZip")
+                            .Placeholder("Enter applicant zip code")
                             .HtmlAttributes(new { @class = "w-100" })
                             )
                 </div>
@@ -113,38 +98,50 @@
     </div>
 
     <div class="row mt-3">
-        <div class="col-4 border-left">
+        <div class="col-3 border-left">
             <div class="form-group">
-                <label for="AddOwnerHomePhone">Owner Home Phone:</label>
+                <label for="AddApplicantPhone">Applicant Phone:</label>
                 <div>
                     @(Html.Kendo().TextBox()
-                            .Name("AddOwnerHomePhone")
+                            .Name("AddApplicantPhone")
                             .Placeholder("(000)-000-0000")
                             )
                 </div>
             </div>
         </div>
-        <div class="col-4 border-left">
+        <div class="col-3 border-left">
             <div class="form-group">
-                <label for="AddOwnerWorkPhone">Owner Work Phone:</label>
+                <label for="AddApplicantMobile">Applicant Mobile:</label>
                 <div>
                     @(Html.Kendo().TextBox()
-                            .Name("AddOwnerWorkPhone")
+                            .Name("AddApplicantMobile")
                             .Placeholder("(000)-000-0000")
                             )
                 </div>
             </div>
         </div>
-        <div class="col-4 border-left">
+        <div class="col-3 border-left">
             <div class="form-group">
-                <label for="AddOwnerEmail">Owner Email:</label>
+                <label for="AddApplicantEmail">Applicant Email:</label>
                 <div>
                     @(Html.Kendo().TextBox()
-                            .Name("AddOwnerEmail")
+                            .Name("AddApplicantEmail")
                             .Placeholder("name@domain.com")
                             )
                 </div>
             </div>
         </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddApplicantFax">Applicant Fax:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddApplicantFax")
+                            .Placeholder("(000)-000-0000")
+                            )
+                </div>
+            </div>
+        </div>
     </div>
+
 </div>

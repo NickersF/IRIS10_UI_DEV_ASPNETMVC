@@ -3833,6 +3833,9 @@
     <Content Include="Views\Permits\AddStandardPermit.cshtml" />
     <Content Include="Views\Permits\CommonFormInputs.cshtml" />
     <Content Include="Views\Permits\StdPermitOwnerFields.cshtml" />
+    <Content Include="Views\Permits\StdPermitSiteFields.cshtml" />
+    <Content Include="Views\Permits\StdPermitApplicantField.cshtml" />
+    <Content Include="Views\Permits\StdPermitsContractorFields.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

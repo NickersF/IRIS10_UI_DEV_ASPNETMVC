@@ -1,0 +1,188 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="permitContractorFields" class="container-fluid mt-3 mb-3">
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddContractorCompanyName">Contractor Company Name:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddContractorCompanyName")
+                            .Placeholder("Enter contractor company name")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddContractorContact">Contractor Contact:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddContractorContact")
+                            .Placeholder("Enter contractor contact")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddContractorContactJobTitle">Contractor Contact Job Title:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddContractorContactJobTitle")
+                            .Placeholder("Enter contractor job title")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddFieldSupervisorName">Field Supervisor Name:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddFieldSupervisorName")
+                            .Placeholder("Enter field supervisor name")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="AddContractorAddress1">Contractor Address 1:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddContractorAddress1")
+                            .Placeholder("Enter contractor address line 1")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="AddContractorAddress2">Contractor Address 2:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddContractorAddress2")
+                            .Placeholder("Enter contractor address line 2")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="AddContractorCity">Contractor City:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddContractorCity")
+                            .Placeholder("Enter city")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="AddContractorState">Contractor State:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddContractorState")
+                            .Placeholder("Enter state")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="AddContractorZip">Contractor Zip:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddContractorZip")
+                            .Placeholder("Enter zip code")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddContractorPhone">Contractor Phone:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddContractorPhone")
+                            .Placeholder("(000)-000-0000")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddContractorMobile">Contractor Mobile:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddContractorMobile")
+                            .Placeholder("(000)-000-0000")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddContractorEmail">Contractor Email:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddContractorEmail")
+                            .Placeholder("name@domain.com")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddContractorFax">Contractor Fax:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddContractorFax")
+                            .Placeholder("(000)-000-0000")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddContractorNumber">Contractor Number:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddContractorNumber")
+                            .Placeholder("Enter contractor number")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
