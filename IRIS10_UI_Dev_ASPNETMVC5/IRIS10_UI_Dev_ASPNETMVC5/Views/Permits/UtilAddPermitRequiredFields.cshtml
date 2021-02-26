@@ -1,0 +1,315 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="utilityPermitRequiredFields" class="container-fluid mt-3 mb-3">
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddPermitNumber">Permit Number:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddPermitNumber")
+                            .Placeholder("Enter permit number")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddPermitType">Permit Type:</label>
+                <div>
+                    @(Html.Kendo().DropDownList()
+                            .Name("AddUtilityPermitType")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetUtilityTypeList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddUtilityPermitStatus">Utility Permit Status:</label>
+                <div>
+                    @(Html.Kendo().DropDownList()
+                            .Name("AddUtilityPermitStatus")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetUtilityPermitStatusList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddUtilityInstalled">Utility Installed:</label>
+                <div>
+                    @(Html.Kendo().DropDownList()
+                            .Name("AddUtilityInstalled")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetUtilityInstalledList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddInstalledLocation">Installed Location:</label>
+                <div>
+                    @(Html.Kendo().DropDownList()
+                            .Name("AddInstalledLocation")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetUtilityInstalledLocationList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddLocationDescription">Location Description:</label>
+                <div>
+                    @(Html.Kendo().TextArea()
+                            .Name("AddLocationDescription")
+                            .Placeholder("Enter location description here")
+                            .Rows(5)
+                            .MaxLength(200)
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddMilepost">Milepost:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddMilepost")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddBeginMilepost">Begin Milepost:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddBeginMilepost")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddEndMilepost">End Milepost:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddEndMilepost")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddSurface">Surface:</label>
+                <div>
+                    @(Html.Kendo().DropDownList()
+                            .Name("AddSurface")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetLookupUtilitySurfaceList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddCuttingOfSurface">Cutting Of Surface Permitted:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddCuttingOfSurface")
+                            .Placeholder("Enter value")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddPlacement">Placement:</label>
+                <div>
+                    @(Html.Kendo().DropDownList()
+                            .Name("AddPlacement")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetLookupUtilityPlacementList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddApplicant">Applicant:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddApplicant")
+                            .Placeholder("Enter applicant")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddApplicantPosition">Applicant Position:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddApplicantPosition")
+                            .Placeholder("Enter applicant position")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddApplicantCompany">Applicant Company:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddApplicantCompany")
+                            .Placeholder("Enter applicant company")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="AddIssuedBy">Issued By Position:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddIssuedBy")
+                            .Placeholder("Enter issued by position")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="AddApplicantAddress">Applicant Address:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddApplicantAddress")
+                            .Placeholder("Enter applicant address")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="AddApplicantCity">Applicant City:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddApplicantCity")
+                            .Placeholder("Enter city")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="AddApplicantState">Applicant State:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddApplicantState")
+                            .Placeholder("Enter applicant state")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="AddApplicantZip">Applicant Zip:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                        .Name("AddApplicantZip")
+                        .Placeholder("Enter applicant zip")
+                        )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="AddApplicantPhone">Applicant Phone:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                        .Name("AddApplicantPhone")
+                        .Placeholder("Enter applicant phone")
+                        )
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

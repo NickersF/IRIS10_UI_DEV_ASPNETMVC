@@ -1,0 +1,141 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="odotLoadInformationFields" class="container-fluid mt-3 mb-3">
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddLoadLength">Load Length:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddLoadLength")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddLoadWidth">Load Width:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddLoadWidth")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddLoadHeight">Load Height:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddLoadHeight")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddOverallLength">Overall Length:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddOverallLength")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddTotalWeight">Total Weight:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddTotalWeight")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddNumberOfAxles">Number Of Axles:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddNumberOfAxles")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddFrontOverhang">Front Overhang:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddFrontOverhang")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddRearOverhang">Rear Overhang:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddRearOverhang")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddWeightTable">Weight Table:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddWeightTable")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

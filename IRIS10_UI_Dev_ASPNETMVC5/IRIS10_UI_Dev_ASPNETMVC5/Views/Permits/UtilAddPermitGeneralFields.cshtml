@@ -1,0 +1,156 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="utilityPermitGeneralFields" class="container-fluid mt-3 mb-3">
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddIssueDate">Issue Date:</label>
+                <div>
+                    @(Html.Kendo().DatePicker()
+                            .Name("AddIssueDate")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddExpireDate">Expire Date:</label>
+                <div>
+                    @(Html.Kendo().DatePicker()
+                            .Name("AddExpireDate")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddTownship">Township:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddTownship")
+                            .Placeholder("Enter township")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddRange">Range:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddRange")
+                            .Placeholder("Enter range")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddSection">Section:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddSection")
+                            .Placeholder("Enter section")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddWorkOrderNumber">Work Order Number:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddWorkOrderNumber")
+                            .Placeholder("Enter work order number")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddScopeOfWork">Scope Of Work:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddScopeOfWork")
+                            .Placeholder("Enter scope of work")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddROWWidth">ROW Width:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBox()
+                            .Name("AddROWWidth")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddReadyForInspectionDate">Ready For Inspection Date:</label>
+                <div>
+                    @(Html.Kendo().DatePicker()
+                            .Name("AddReadyForInspectionDate")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddInspectedBy">Inspected By:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("AddInspectedBy")
+                            .Placeholder("Enter instpected by")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="AddInspectionDate">Inspection Date:</label>
+                <div>
+                    @(Html.Kendo().DatePicker()
+                            .Name("AddInspectionDate")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="AddComment">Comment:</label>
+            <div>
+                @(Html.Kendo().TextArea()
+                        .Name("AddComment")
+                        .Placeholder("Enter comment")
+                        .Rows(5)
+                        .MaxLength(500)
+                        .HtmlAttributes(new { @class = "w-100" })
+                    )
+            </div>
+            </div>
+        </div>
+    </div>
+
+</div>

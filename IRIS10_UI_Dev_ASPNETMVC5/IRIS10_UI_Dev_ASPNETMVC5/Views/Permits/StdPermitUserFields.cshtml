@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="permitUserFields" class="container-fluid mt-3 mb-3">
+
+    <div class="row mt-3">
+
+        @{ string User1Type = "String"; }
+
+        @switch (User1Type)
+        {
+            case "String":
+                <p>String</p>
+                break;
+            case "Date":
+                <p>Date</p>
+                break;
+            case "Numeric":
+                <p>Numeric</p>
+                break;
+            case "CheckBox":
+                <p>CheckBox</p>
+                break;
+            case "Lookup":
+                <p>Lookup</p>
+                break;
+            default:
+                <p>None of the cases were meet.</p>
+                break;
+        }
+
+        <span class="k-icon k-i-user"></span>
+    </div>
+
+</div>

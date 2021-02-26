@@ -45,47 +45,74 @@
                 .Name("screensPreviewMenu")
                 .Items(items =>
                 {
-                    items.Add().Text("General Kendo Examples")
-                        .Items(children =>
-                        {
-                            children.Add().Text("Reports Main").Action("_ReportsMain", "ReportScreens");
-                            children.Add().Text("TabStrip Example").Action("TabStripExample", "Home");
-                        }
-                        );
-
-                    items.Add().Text("Permit Views")
-                        .Items(children => 
-                        {
-                            children.Add().Text("Common Permit Input Forms").Action("CommonFormInputs", "Permits");
-                            children.Add().Text("Add Standard Permit Forms").Action("AddStandardPermit", "Permits");
-                            children.Add().Text("Standard Permit Owner Forms").Action("StdPermitOwnerFields", "Permits");
-                            children.Add().Text("Standard Permit Site Forms").Action("StdPermitSiteFields", "Permits");
-                            children.Add().Text("Standard Permit Applicant Forms").Action("StdPermitApplicantField", "Permits");
-                            children.Add().Text("Standard Permit Contractor Forms").Action("StdPermitsContractorFields", "Permits");
-                        }
-                        );
-
-                    items.Add().Text("Login Screens") // Dropdown level
+                    items.Add().Text("IRIS 10 Login Screens") // Dropdown level
                         .Items(children =>
                         {
                             children.Add().Text("Login Screen").Action("Login", "Login");
                             children.Add().Text("Reset Password Screen").Action("ResetPassword", "Login");
                             children.Add().Text("Change Password Screen").Action("ChangePassword", "Login");
                             children.Add().Text("Change Password Confirmation Screen").Action("ChangePasswordConfirmation", "Login");
-                        }
-                        );
+                        });
 
-                    items.Add().Text("Kendo Widget Demos") // Dropdown level
+                    items.Add().Text("Admin Views and Templates")
+                        .Items(children =>
+                        {
+                            children.Add().Text("IRIS10 Admin Dashboard");
+                        });
+
+                    items.Add().Text("Reports Views and Templates")
+                        .Items(children =>
+                        {
+                            children.Add().Text("Reports Main").Action("_ReportsMain", "ReportScreens");
+                        });
+
+                    items.Add().Text("Permit Views and Templates")
+                        .Items(children =>
+                        {
+                            children.Add().Text("Add Standard Permit Form Templates")
+                                    .Items(innerChildren =>
+                                    {
+                                        innerChildren.Add().Text("Add Standard Permit Forms").Action("StdPermitGenReqFields", "Permits");
+                                        innerChildren.Add().Text("Add Standard Permit Owner Forms").Action("StdPermitOwnerFields", "Permits");
+                                        innerChildren.Add().Text("Add Standard Permit Site Forms").Action("StdPermitSiteFields", "Permits");
+                                        innerChildren.Add().Text("Add Standard Permit Applicant Forms").Action("StdPermitApplicantField", "Permits");
+                                        innerChildren.Add().Text("Add Standard Permit Contractor Forms").Action("StdPermitsContractorFields", "Permits");
+                                        innerChildren.Add().Text("Add Standard Permit User Forms").Action("StdPermitUserFields", "Permits");
+
+                                    });
+                            children.Add().Text("Add Utility Permit Form Templates")
+                                    .Items(innerChildren =>
+                                    {
+                                        innerChildren.Add().Text("Add Utility Permit Required Forms ").Action("UtilAddPermitRequiredFields", "Permits");
+                                        innerChildren.Add().Text("Add Utility Permit General Forms ").Action("UtilAddPermitGeneralFields", "Permits");
+                                        innerChildren.Add().Text("Add Utility Permit Applicant Forms ").Action("UtilAddPermitAppFields", "Permits");
+                                        innerChildren.Add().Text("Add Utility Permit Sub Contractor Forms ").Action("UtilAddPermitContractorFields", "Permits");
+                                        innerChildren.Add().Text("Add Utility Permit User Forms ").Action("UtilAddPermitUserFields", "Permits");
+                                    });
+                            children.Add().Text("Add ODOT Permit Form Templates")
+                                    .Items(innerChildren =>
+                                    {
+                                        innerChildren.Add().Text("Add ODOT Permit Required Forms ").Action("ODOTAddPermitRequiredFields", "Permits");
+                                        innerChildren.Add().Text("Add ODOT Permit General Forms ").Action("ODOTAddPermitGeneralFields", "Permits");
+                                        innerChildren.Add().Text("Add ODOT Permit Load Information Forms ").Action("ODOTAddPermitLoadInfoFields", "Permits");
+                                        innerChildren.Add().Text("Add ODOT Permit Route Forms ").Action("ODOTAddPermitRouteFields", "Permits");
+                                        innerChildren.Add().Text("Add ODOT Permit Axle Forms ").Action("ODOTAddPermitAxleFields", "Permits");
+                                    });
+                            children.Add().Separator(true);
+                            children.Add().Text("Common Permit Input Forms").Action("CommonFormInputs", "Permits");
+                        });
+
+                    items.Add().Text("Kendo UI Demos") // Dropdown level
                         .Items(children =>
                         {
                             children.Add().Text("Grid Demo").Action("Index", "GridDemo");
                             children.Add().Text("Text Editor Demo").Action("Index", "TextEditorDemo");
                             children.Add().Text("Panel Bar Demo").Action("Index", "PanelBarDemo");
                             children.Add().Text("Window Demo").Action("Index", "WindowEx");
+                            children.Add().Text("TabStrip Example").Action("TabStripExample", "Home");
                             children.Add().Text("Gantt Demo").Enabled(false);
                             children.Add().Text("Toolbar Demo").Enabled(false);
-                        }
-                        );
+                        });
                 }))
         </nav>
     </header>

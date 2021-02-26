@@ -3830,12 +3830,23 @@
     <Content Include="Views\Login\ChangePasswordConfirmation.cshtml" />
     <Content Include="tsconfig.json" />
     <Content Include="Views\Home\TabStripExample.cshtml" />
-    <Content Include="Views\Permits\AddStandardPermit.cshtml" />
+    <Content Include="Views\Permits\StdPermitGenReqFields.cshtml" />
     <Content Include="Views\Permits\CommonFormInputs.cshtml" />
     <Content Include="Views\Permits\StdPermitOwnerFields.cshtml" />
     <Content Include="Views\Permits\StdPermitSiteFields.cshtml" />
     <Content Include="Views\Permits\StdPermitApplicantField.cshtml" />
     <Content Include="Views\Permits\StdPermitsContractorFields.cshtml" />
+    <Content Include="Views\Permits\UtilAddPermitRequiredFields.cshtml" />
+    <Content Include="Views\Permits\UtilAddPermitGeneralFields.cshtml" />
+    <Content Include="Views\Permits\UtilAddPermitAppFields.cshtml" />
+    <Content Include="Views\Permits\UtilAddPermitContractorFields.cshtml" />
+    <Content Include="Views\Permits\ODOTAddPermitRequiredFields.cshtml" />
+    <Content Include="Views\Permits\ODOTAddPermitGeneralFields.cshtml" />
+    <Content Include="Views\Permits\ODOTAddPermitLoadInfoFields.cshtml" />
+    <Content Include="Views\Permits\ODOTAddPermitRouteFields.cshtml" />
+    <Content Include="Views\Permits\ODOTAddPermitAxleFields.cshtml" />
+    <Content Include="Views\Permits\StdPermitUserFields.cshtml" />
+    <Content Include="Views\Permits\UtilAddPermitUserFields.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

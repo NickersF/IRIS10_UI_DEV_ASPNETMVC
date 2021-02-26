@@ -8,8 +8,9 @@ namespace IRIS10_UI_Dev_ASPNETMVC5.Controllers
 {
     public class PermitsController : Controller
     {
+        // Add standard permit views
         // GET: AddStandardPermit
-        public ActionResult AddStandardPermit()
+        public ActionResult StdPermitGenReqFields()
         {
             ViewBag.Title = "Add Standard Permit Form Grid";
 
@@ -40,6 +41,85 @@ namespace IRIS10_UI_Dev_ASPNETMVC5.Controllers
         public ActionResult StdPermitsContractorFields()
         {
             ViewBag.Title = "Contractor Fields for Standard Permits Screen";
+
+            return View();
+        }
+
+        public ActionResult StdPermitUserFields()
+        {
+            ViewBag.Title = "Add Standard Permit - User Fields";
+
+            return View();
+        }
+
+        // Add utility permit views
+        public ActionResult UtilAddPermitRequiredFields()
+        {
+            ViewBag.Title = "Add Utility Permit - Required Fields";
+
+            return View();
+        }
+
+        public ActionResult UtilAddPermitGeneralFields()
+        {
+            ViewBag.Title = "Add Utility Permit - General Fields";
+
+            return View();
+        }
+
+        public ActionResult UtilAddPermitAppFields()
+        {
+            ViewBag.Title = "Add Utility Permit - Applicant Fields";
+
+            return View();
+        }
+
+        public ActionResult UtilAddPermitContractorFields()
+        {
+            ViewBag.Title = "Add Utility Permit - Contractor Fields";
+
+            return View();
+        }
+
+        public ActionResult UtilAddPermitUserFields()
+        {
+            ViewBag.Title = "Add Utility Permit - User Fields";
+
+            return View();
+        }
+
+        // Add ODOT permit views
+        public ActionResult ODOTAddPermitRequiredFields()
+        {
+            ViewBag.Title = "Add ODOT Permit - Required Fields";
+
+            return View();
+        }
+
+        public ActionResult ODOTAddPermitGeneralFields()
+        {
+            ViewBag.Title = "Add ODOT Permit - General Fields";
+
+            return View();
+        }
+
+        public ActionResult ODOTAddPermitLoadInfoFields()
+        {
+            ViewBag.Title = "Add ODOT Permit - Load Information Fields";
+
+            return View();
+        }
+
+        public ActionResult ODOTAddPermitRouteFields()
+        {
+            ViewBag.Title = "Add ODOT Permit - Route Fields";
+
+            return View();
+        }
+
+        public ActionResult ODOTAddPermitAxleFields()
+        {
+            ViewBag.Title = "Add ODOT Permit - Axle Fields";
 
             return View();
         }
