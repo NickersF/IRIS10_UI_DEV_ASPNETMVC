@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="permitRequiredFields" class="container-fluid mt-3 mb-3">
+    <div class="row">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditPermitType">Permit Type:</label>
+                <div>
+                    @(Html.Kendo().DropDownListFor(m => m.PermitType_Key)
+                            .Name("EditPermitType")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetPermitTypeList", "PermitMain").Type(HttpVerbs.Get));
+                            }))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditPermitStatus">Permit Status:</label>
+                <div>
+                    @(Html.Kendo().DropDownListFor(m => m.PermitStatus_Key)
+                        .Name("EditPermitStatus")
+                        .DataTextField("Text")
+                        .DataValueField("Value")
+                        .AutoWidth(true)
+                        .DataSource(d =>
+                        {
+                            d.Read(r => r.Action("GetPermitStatusList", "PermitMain").Type(HttpVerbs.Get));
+                        }))
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label class="form-check-label" for="EditCertificateOfInsuranceCB">Certificate of Insurance:</label>
+                @(Html.Kendo().CheckBoxFor(m => m.CertificateOfInsurance)
+                        .Name("EditCertificateOfInsuranceCB"))
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label class="form-check-label" for="EditNeverExpiresCB">Never Expires:</label>
+                @(Html.Kendo().CheckBoxFor(m => m.NeverExpires)
+                        .Name("EditNeverExpiresCB"))
+            </div>
+        </div>
+    </div>
+</div>

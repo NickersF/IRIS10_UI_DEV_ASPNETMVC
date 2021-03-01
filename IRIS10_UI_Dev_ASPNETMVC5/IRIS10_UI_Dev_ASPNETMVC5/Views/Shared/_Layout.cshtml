@@ -99,6 +99,15 @@
                                         innerChildren.Add().Text("Add ODOT Permit Axle Forms ").Action("ODOTAddPermitAxleFields", "Permits");
                                     });
                             children.Add().Separator(true);
+                            children.Add().Text("Edit Standard Permit Form Templates")
+                                    .Items( innerChildren =>
+                                    {
+                                        innerChildren.Add().Text("Edit Standard Permit Required Forms").Action("StdPermitEditRequiredFields", "Permits");
+                                        innerChildren.Add().Text("Edit Standard Permit General Forms").Action("StdPermitEditGeneralFields", "Permits");
+                                        innerChildren.Add().Text("Edit Standard Permit Owner Forms").Action("StdPermitEditOwnerFields", "Permits");
+
+                                    });
+                            children.Add().Separator(true);
                             children.Add().Text("Common Permit Input Forms").Action("CommonFormInputs", "Permits");
                         });
 

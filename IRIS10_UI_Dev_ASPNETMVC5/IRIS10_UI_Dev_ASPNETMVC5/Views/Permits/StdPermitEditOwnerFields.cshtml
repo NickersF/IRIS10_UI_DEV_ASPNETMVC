@@ -1,0 +1,150 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="permitOwnerFields" class="container-fluid mt-3 mb-3">
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditOwnerFirstName">Owner First Name:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("EditOwnerFirstName")
+                            .Placeholder("Enter first name")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditOwnerLastName">Owner Last Name:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("EditOwnerLastName")
+                            .Placeholder("Enter last name")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditOwnerInitial">Owner Initial:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("EditOwnerInitial")
+                            .Placeholder("Enter initial")
+                            .HtmlAttributes(new { @class = "w-50" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="EditOwnerEditress1">Owner Editress 1:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("EditOwnerEditress1")
+                            .Placeholder("Enter address line 1")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="EditOwnerEditress2">Owner Editress 2:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("EditOwnerEditress2")
+                            .Placeholder("Enter address line 2")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditOwnerCity">Owner City:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("EditOwnerCity")
+                            .Placeholder("Enter city")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditOwnerState">Owner State:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("EditOwnerState")
+                            .Placeholder("Enter state")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditOwnerZip">Owner Zip:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("EditOwnerZip")
+                            .Placeholder("Enter zip code")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditOwnerHomePhone">Owner Home Phone:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("EditOwnerHomePhone")
+                            .Placeholder("(000)-000-0000")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditOwnerWorkPhone">Owner Work Phone:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("EditOwnerWorkPhone")
+                            .Placeholder("(000)-000-0000")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditOwnerEmail">Owner Email:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("EditOwnerEmail")
+                            .Placeholder("name@domain.com")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

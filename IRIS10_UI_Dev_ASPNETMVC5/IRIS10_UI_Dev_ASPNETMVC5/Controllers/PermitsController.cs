@@ -124,6 +124,28 @@ namespace IRIS10_UI_Dev_ASPNETMVC5.Controllers
             return View();
         }
 
+        // Edit standard permit views
+        public ActionResult StdPermitEditRequiredFields()
+        {
+            ViewBag.Title = "Edit Standard Permit - Required Fields";
+
+            return View();
+        }
+
+        public ActionResult StdPermitEditGeneralFields()
+        {
+            ViewBag.Title = "Edit Standard Permit - General Fields";
+
+            return View();
+        }
+
+        public ActionResult StdPermitEditOwnerFields()
+        {
+            ViewBag.Title = "Edit Standard Permit - Owner Fields";
+
+            return View();
+        }
+
         // GET: CommonFormInputs
         public ActionResult CommonFormInputs()
         {

@@ -3847,6 +3847,9 @@
     <Content Include="Views\Permits\ODOTAddPermitAxleFields.cshtml" />
     <Content Include="Views\Permits\StdPermitUserFields.cshtml" />
     <Content Include="Views\Permits\UtilAddPermitUserFields.cshtml" />
+    <Content Include="Views\Permits\StdPermitEditRequiredFields.cshtml" />
+    <Content Include="Views\Permits\StdPermitEditGeneralFields.cshtml" />
+    <Content Include="Views\Permits\StdPermitEditOwnerFields.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />
