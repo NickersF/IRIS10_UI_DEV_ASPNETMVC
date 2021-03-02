@@ -14,7 +14,9 @@
             <div class="form-group">
                 <label for="EditPermitNumber">Permit Number:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditPermitNumber").Placeholder("Enter permit number"))
+                    @(Html.Kendo().TextBox()
+                            .Name("EditPermitNumber")
+                            )
                 </div>
             </div>
         </div>
@@ -22,7 +24,9 @@
             <div class="form-group">
                 <label for="EditAuthorizationNumber">Authorization Number:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditAuthorizationNumber").Placeholder("Enter authorization number"))
+                    @(Html.Kendo().TextBoxFor(m => m.AuthorizationNumber)
+                            .Name("EditAuthorizationNumber")
+                            )
                 </div>
             </div>
         </div>
@@ -30,7 +34,9 @@
             <div class="form-group">
                 <label for="EditApplicationNumber">Application Number:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditApplicationNumber").Placeholder("Enter application number"))
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicationNumber)
+                            .Name("EditApplicationNumber")
+                            )
                 </div>
             </div>
         </div>
@@ -38,7 +44,7 @@
             <div class="form-group">
                 <label for="EditTypeOfAccess">Type of Access:</label>
                 <div>
-                    @(Html.Kendo().DropDownList()
+                    @(Html.Kendo().DropDownListFor(m => m.PermitTypeOfAccess_Key)
                             .Name("EditTypeOfAccess")
                             .DataTextField("Text")
                             .DataValueField("Value")
@@ -57,7 +63,9 @@
             <div class="form-group">
                 <label for="EditIssuedBy">Issued By:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditIssuedBy").Placeholder("Enter issuing user"))
+                    @(Html.Kendo().TextBoxFor(m => m.IssuedByPosition)
+                            .Name("EditIssuedBy")
+                            )
                 </div>
             </div>
         </div>
@@ -65,7 +73,9 @@
             <div class="form-group">
                 <label for="EditIssueDate">Issue Date:</label>
                 <div>
-                    @(Html.Kendo().DatePicker().Name("EditIssueDate"))
+                    @(Html.Kendo().DatePickerFor(m => m.IssueDate)
+                            .Name("EditIssueDate")
+                            )
                 </div>
             </div>
         </div>
@@ -73,7 +83,9 @@
             <div class="form-group">
                 <label for="EditApprovedBy">Approved By:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditApprovedBy").Placeholder("Enter approving user"))
+                    @(Html.Kendo().TextBoxFor(m => m.ApprovedBy)
+                            .Name("EditApprovedBy")
+                            )
                 </div>
             </div>
         </div>
@@ -81,7 +93,9 @@
             <div class="form-group">
                 <label for="EditApprovedDate">Approved Date:</label>
                 <div>
-                    @(Html.Kendo().DatePicker().Name("EditApprovedDate"))
+                    @(Html.Kendo().DatePickerFor(m => m.ApprovedDate)
+                            .Name("EditApprovedDate")
+                            )
                 </div>
             </div>
         </div>
@@ -92,9 +106,8 @@
             <div class="form-group">
                 <label for="EditProjectDescription">Project Description:</label>
                 <div>
-                    @(Html.Kendo().TextArea()
+                    @(Html.Kendo().TextAreaFor(m => m.ProjectDescription)
                         .Name("EditProjectDescription")
-                        .Placeholder("Enter your text here.")
                         .Rows(5)
                         .MaxLength(500)
                         .HtmlAttributes(new { style = "width: 100%" })
@@ -107,7 +120,7 @@
             <div class="form-group">
                 <label for="EditMaintenanceDistrict">Maintenance District:</label>
                 <div>
-                    @(Html.Kendo().DropDownList()
+                    @(Html.Kendo().DropDownListFor(m => m.RISMaintenanceDistrict_Key)
                             .Name("EditMaintenanceDistrict")
                             .DataTextField("Text")
                             .DataValueField("Value")
@@ -133,7 +146,7 @@
             <div class="form-group">
                 <label for="EditPlacement">Placement:</label>
                 <div>
-                    @(Html.Kendo().DropDownList()
+                    @(Html.Kendo().DropDownListFor(m => m.RISPlacement_Key)
                             .Name("EditPlacement")
                             .DataTextField("Text")
                             .DataValueField("Value")
@@ -149,7 +162,9 @@
             <div class="form-group">
                 <label for="EditDirection">Direction:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditDirection").Placeholder("Enter approving user"))
+                    @(Html.Kendo().TextBoxFor(m => m.Direction)
+                            .Name("EditDirection")
+                            )
                 </div>
             </div>
         </div>
@@ -157,7 +172,7 @@
             <div class="form-group">
                 <label for="EditRoadName">Road Name:</label>
                 <div>
-                    @(Html.Kendo().DropDownList()
+                    @(Html.Kendo().DropDownListFor(m => m.RoadName_Key)
                             .Name("EditRoadName")
                             .DataTextField("Text")
                             .DataValueField("Value")
@@ -173,7 +188,7 @@
             <div class="form-group">
                 <label for="EditCrossRoadName">Cross Road Name:</label>
                 <div>
-                    @(Html.Kendo().DropDownList()
+                    @(Html.Kendo().DropDownListFor(m => m.XRoadName_Key)
                             .Name("EditCrossRoadName")
                             .DataTextField("Text")
                             .DataValueField("Value")
@@ -192,11 +207,9 @@
             <div class="form-group">
                 <label for="EditMilepost">Milepost:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.Milepost)
                             .Name("EditMilepost")
-                            .Placeholder("Enter milepost")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -206,11 +219,9 @@
             <div class="form-group">
                 <label for="EditBeginMilepost">Begin Milepost:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.BeginMilepost)
                             .Name("EditBeginMilepost")
-                            .Placeholder("Enter beginning milepost")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -220,13 +231,11 @@
             <div class="form-group">
                 <label for="EditEndMilepost">End Milepost:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
-                            .Name("EditEndMilepost")
-                            .Placeholder("Enter ending milepost")
-                            .Decimals(2)
-                            .Min(double.Parse("0.00"))
-                            .Spinners(false)
-                            )
+                    @(Html.Kendo().NumericTextBoxFor(m => m.EndMilepost)
+                        .Name("EditEndMilepost")
+                        .Decimals(2)
+                        .Spinners(false)
+                        )
                 </div>
             </div>
         </div>
@@ -244,11 +253,9 @@
             <div class="form-group">
                 <label for="EditSidewalkLength">Sidewalk Length:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.SidewalkLength)
                             .Name("EditSidewalkLength")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -258,11 +265,9 @@
             <div class="form-group">
                 <label for="EditSidewalkWidth">Sidewalk Width:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.SidewalkWidth)
                             .Name("EditSidewalkWidth")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -272,7 +277,7 @@
             <div class="form-group">
                 <label for="EditCurb">Curb:</label>
                 <div>
-                    @(Html.Kendo().DropDownList()
+                    @(Html.Kendo().DropDownListFor(m => m.RISLookupCurb_Key)
                             .Name("EditCurb")
                             .DataTextField("Text")
                             .DataValueField("Value")
@@ -291,11 +296,9 @@
             <div class="form-group">
                 <label for="EditCulvertDiameter">Culvert Diameter:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.CulvertDiameter)
                             .Name("EditCulvertDiameter")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -305,11 +308,9 @@
             <div class="form-group">
                 <label for="EditCulvertLength">Culvert Length:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.CulvertLength)
                             .Name("EditCulvertLength")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -319,11 +320,9 @@
             <div class="form-group">
                 <label for="EditCulvertDepth">Culvert Depth:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.CulvertDepth)
                             .Name("EditCulvertDepth")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -336,11 +335,9 @@
             <div class="form-group">
                 <label for="EditDrivewayLength">Driveway Length:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.DrivewayLength)
                             .Name("EditDrivewayLength")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -350,11 +347,9 @@
             <div class="form-group">
                 <label for="EditDrivewayWidth">Driveway Width:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.DrivewayWidth)
                             .Name("EditDrivewayWidth")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -367,11 +362,9 @@
             <div class="form-group">
                 <label for="EditLength">Length:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.Length)
                             .Name("EditLength")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -381,11 +374,9 @@
             <div class="form-group">
                 <label for="EditWidth">Width:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.Width)
                             .Name("EditWidth")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -395,11 +386,9 @@
             <div class="form-group">
                 <label for="EditDepth">Depth:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.Depth)
                             .Name("EditDepth")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -412,11 +401,9 @@
             <div class="form-group">
                 <label for="EditRadius">Radius:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.Radius)
                             .Name("EditRadius")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -426,11 +413,9 @@
             <div class="form-group">
                 <label for="EditAngle">Angle:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.Angle)
                             .Name("EditAngle")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -440,11 +425,9 @@
             <div class="form-group">
                 <label for="EditSlope">Slope:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.Slope)
                             .Name("EditSlope")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -457,7 +440,9 @@
             <div class="form-group">
                 <label for="EditDimension">Dimension:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditDimension").Placeholder("Enter dimension"))
+                    @(Html.Kendo().TextBoxFor(m => m.Dimension)
+                            .Name("EditDimension")
+                            )
                 </div>
             </div>
         </div>
@@ -465,11 +450,9 @@
             <div class="form-group">
                 <label for="EditDistance">Distance:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.Distance)
                             .Name("EditDistance")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -479,11 +462,9 @@
             <div class="form-group">
                 <label for="EditOffsetDistance">Offset Distance:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.OffsetDistance)
                             .Name("EditOffsetDistance")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -496,11 +477,9 @@
             <div class="form-group">
                 <label for="EditSetbackWidth">Setback Width:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.SetbackWidth)
                             .Name("EditSetbackWidth")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -510,7 +489,9 @@
             <div class="form-group">
                 <label for="EditMeasuredFrom">Measured From:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditMeasuredFrom").Placeholder("Enter measured from value"))
+                    @(Html.Kendo().TextBoxFor(m => m.MeasuredFrom)
+                            .Name("EditMeasuredFrom")
+                            )
                 </div>
             </div>
         </div>
@@ -518,11 +499,9 @@
             <div class="form-group">
                 <label for="EditDistanceToDitch">Distance To Ditch:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.DistanceToDitch)
                             .Name("EditDistanceToDitch")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -535,11 +514,9 @@
             <div class="form-group">
                 <label for="EditTopOfAccessDistanceFromTrafficLane">Top Of Access Distance From Traffic Lane:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.TopOfAccessDistanceFromTrafficLane)
                             .Name("EditTopOfAccessDistanceFromTrafficLane")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -549,11 +526,9 @@
             <div class="form-group">
                 <label for="EditMinimumBelowEdgeOfTrafficLane">Minimum Below Edge Of Traffic Lane:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.MinimumBelowEdgeOfTrafficLane)
                             .Name("EditMinimumBelowEdgeOfTrafficLane")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -563,11 +538,9 @@
             <div class="form-group">
                 <label for="EditDistanceFromTrafficLane">Distance From Traffic Lane:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.DistanceFromTrafficLane)
                             .Name("EditDistanceFromTrafficLane")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -580,11 +553,9 @@
             <div class="form-group">
                 <label for="EditMinimumSightDistanceLeft">Minimum Sight Distance Left:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.MinimumSightDistanceLeft)
                             .Name("EditMinimumSightDistanceLeft")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -594,11 +565,9 @@
             <div class="form-group">
                 <label for="EditMinimumSightDistanceRight">Minimum Sight Distance Right:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.MinimumSightDistanceRight)
                             .Name("EditMinimumSightDistanceRight")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -611,7 +580,7 @@
             <div class="form-group">
                 <label for="EditSurfaceType">Surface Type:</label>
                 <div>
-                    @(Html.Kendo().DropDownList()
+                    @(Html.Kendo().DropDownListFor(m => m.SurfaceType_Key)
                             .Name("EditSurfaceType")
                             .AutoWidth(true)
                             .DataTextField("Text")
@@ -622,7 +591,8 @@
                                         {
                                     r.Action("GetSurfaceTypeList", "PermitMain").Type(HttpVerbs.Get);
                                 });
-                            }))
+                            })
+                            )
                 </div>
             </div>
         </div>
@@ -630,7 +600,9 @@
             <div class="form-group">
                 <label for="EditDrawingNumber">Drawing Number:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditDrawingNumber").Placeholder("Enter drawing number"))
+                    @(Html.Kendo().TextBoxFor(m => m.DrawingNumber)
+                            .Name("EditDrawingNumber")
+                            )
                 </div>
             </div>
         </div>
@@ -641,11 +613,9 @@
             <div class="form-group">
                 <label for="EditSlopeAccessFeetFromTrafficLane">Slope Access Feet From Traffic Lane:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.SlopeAccessFeetFromTrafficLane)
                             .Name("EditSlopeAccessFeetFromTrafficLane")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -655,11 +625,9 @@
             <div class="form-group">
                 <label for="EditSlopeAccessPercentFromTrafficLane">Slope Access Percent From Traffic Lane:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.SlopeAccessPercentFromTrafficLane)
                             .Name("EditSlopeAccessPercentFromTrafficLane")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -669,11 +637,9 @@
             <div class="form-group">
                 <label for="EditClearanceFeet">Clearance Feet:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.ClearanceFeet)
                             .Name("EditClearanceFeet")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -686,7 +652,9 @@
             <div class="form-group">
                 <label for="EditTaxlotNumber">Tax Lot Number:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditTaxlotNumber").Placeholder("Enter tax lot number"))
+                    @(Html.Kendo().TextBoxFor(m => m.TaxlotNumber)
+                            .Name("EditTaxlotNumber")
+                            )
                 </div>
             </div>
         </div>
@@ -694,7 +662,9 @@
             <div class="form-group">
                 <label for="EditTownship">Township:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditTownship").Placeholder("Enter township"))
+                    @(Html.Kendo().TextBoxFor(m => m.Township)
+                            .Name("EditTownship")
+                            )
                 </div>
             </div>
         </div>
@@ -702,7 +672,9 @@
             <div class="form-group">
                 <label for="EditRange">Range:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditRange").Placeholder("Enter range value"))
+                    @(Html.Kendo().TextBoxFor(m => m.Range)
+                            .Name("EditRange")
+                            )
                 </div>
             </div>
         </div>
@@ -710,7 +682,9 @@
             <div class="form-group">
                 <label for="EditSection">Section:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditSection").Placeholder("Edit section value"))
+                    @(Html.Kendo().TextBoxFor(m => m.Section)
+                            .Name("EditSection")
+                            )
                 </div>
             </div>
         </div>
@@ -728,7 +702,9 @@
             <div class="form-group">
                 <label for="EditApplicationDate">Application Date:</label>
                 <div>
-                    @(Html.Kendo().DatePicker().Name("EditApplicationDate"))
+                    @(Html.Kendo().DatePickerFor(m => m.ApplicationDate)
+                            .Name("EditApplicationDate")
+                            )
                 </div>
             </div>
         </div>
@@ -736,7 +712,10 @@
             <div class="form-group">
                 <label for="EditInstallDate">Install Date:</label>
                 <div>
-                    @(Html.Kendo().DatePicker().Name("EditInstallDate"))
+                    @(Html.Kendo().DatePickerFor(m => m.InstallDate)
+                            .Name("EditInstallDate")
+                            .HtmlAttributes(new { @style = "width:6vw;font-size:small;" })
+                            )
                 </div>
             </div>
         </div>
@@ -744,7 +723,10 @@
             <div class="form-group">
                 <label for="EditExpireDate">Expire Date:</label>
                 <div>
-                    @(Html.Kendo().DatePicker().Name("EditExpireDate"))
+                    @(Html.Kendo().DatePickerFor(m => m.ExpireDate)
+                            .Name("EditExpireDate")
+                            .HtmlAttributes(new { @style = "width:6vw;font-size:small;" })
+                            )
                 </div>
             </div>
         </div>
@@ -755,7 +737,9 @@
             <div class="form-group">
                 <label for="EditPermitReturned">Permit Returned:</label>
                 <div>
-                    @(Html.Kendo().DatePicker().Name("EditPermitReturned"))
+                    @(Html.Kendo().DatePickerFor(m => m.PermitReturned)
+                            .Name("EditPermitReturned")
+                            )
                 </div>
             </div>
         </div>
@@ -763,7 +747,9 @@
             <div class="form-group">
                 <label for="EditPaymentDate">Payment Date:</label>
                 <div>
-                    @(Html.Kendo().DatePicker().Name("EditPaymentDate"))
+                    @(Html.Kendo().DatePickerFor(m => m.PaymentDate)
+                            .Name("EditPaymentDate")
+                            )
                 </div>
             </div>
         </div>
@@ -771,11 +757,9 @@
             <div class="form-group">
                 <label for="EditPaymentAmount">Payment Amount:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.PaymentAmount)
                             .Name("EditPaymentAmount")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -788,13 +772,12 @@
             <div class="form-group">
                 <label for="EditDescriptionOfWork">Description of Work:</label>
                 <div>
-                    @(Html.Kendo().TextArea()
-                        .Name("EditDescriptionOfWork")
-                        .Placeholder("Enter comment text")
-                        .Rows(5)
-                        .MaxLength(500)
-                        .HtmlAttributes(new { style = "width: 100%" })
-                    )
+                    @(Html.Kendo().TextAreaFor(m => m.DescriptionOfWork)
+                            .Name("EditDescriptionOfWork")
+                            .Rows(5)
+                            .MaxLength(500)
+                            .HtmlAttributes(new { style = "width: 100%" })
+                        )
                 </div>
             </div>
         </div>
@@ -802,7 +785,10 @@
             <div class="form-group">
                 <label for="EditLocationOfWork">Location of Work:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditLocationOfWork").Placeholder("Enter location of work"))
+                    @(Html.Kendo().TextBoxFor(m => m.LocationOfWork)
+                            .Name("EditLocationOfWork")
+                            .HtmlAttributes(new { @style = "height:3vh;width:10vw;font-size:small;" })
+                            )
                 </div>
             </div>
         </div>
@@ -810,7 +796,10 @@
             <div class="form-group">
                 <label for="EditNearestLandMark">Nearest Landmark:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditNearestLandMark").Placeholder("Enter nearest landmark"))
+                    @(Html.Kendo().TextBoxFor(m => m.NearestLandMark)
+                            .Name("EditNearestLandMark")
+                            .HtmlAttributes(new { @style = "height:3vh;width:8vw;font-size:small;" })
+                            )
                 </div>
             </div>
         </div>
@@ -821,13 +810,12 @@
             <div class="form-group">
                 <label for="EditWorkBeingPerformed">Work Being Performed:</label>
                 <div>
-                    @(Html.Kendo().TextArea()
-                        .Name("EditWorkBeingPerformed")
-                        .Placeholder("Enter comment text")
-                        .Rows(5)
-                        .MaxLength(500)
-                        .HtmlAttributes(new { style = "width: 100%" })
-                    )
+                    @(Html.Kendo().TextAreaFor(m => m.WorkBeingPerformedBy)
+                            .Name("EditWorkBeingPerformed")
+                            .Rows(5)
+                            .MaxLength(500)
+                            .HtmlAttributes(new { style = "width: 100%" })
+                        )
                 </div>
             </div>
         </div>
@@ -835,7 +823,9 @@
             <div class="form-group">
                 <label for="EditInsuranceProvidedCB">Insurance Provided:</label>
                 <div>
-                    @(Html.Kendo().CheckBox().Name("EditInsuranceProvidedCB"))
+                    @(Html.Kendo().CheckBoxFor(m => m.InsuranceProvided)
+                            .Name("EditInsuranceProvidedCB")
+                            )
                 </div>
             </div>
         </div>
@@ -843,7 +833,9 @@
             <div class="form-group">
                 <label for="EditTwoSetsOfPlansProvidedCB">Two Sets Of Plans Provided:</label>
                 <div>
-                    @(Html.Kendo().CheckBox().Name("EditTwoSetsOfPlansProvidedCB"))
+                    @(Html.Kendo().CheckBoxFor(m => m.TwoSetsOfPlansProvided)
+                            .Name("EditTwoSetsOfPlansProvidedCB")
+                            )
                 </div>
             </div>
         </div>
@@ -854,11 +846,9 @@
             <div class="form-group">
                 <label for="EditBondGuaranteeAmount">Bond Guarantee Amount:</label>
                 <div>
-                    @(Html.Kendo().NumericTextBox()
+                    @(Html.Kendo().NumericTextBoxFor(m => m.BondGuaranteeAmount)
                             .Name("EditBondGuaranteeAmount")
-                            .Placeholder("0.00")
                             .Decimals(2)
-                            .Min(double.Parse("0.00"))
                             .Spinners(false)
                             )
                 </div>
@@ -868,7 +858,7 @@
             <div class="form-group">
                 <label for="EditFeeType">Fee Type:</label>
                 <div>
-                    @(Html.Kendo().DropDownList()
+                    @(Html.Kendo().DropDownListFor(m => m.PermitFeeType_Key)
                             .Name("EditFeeType")
                             .AutoWidth(true)
                             .DataTextField("Text")
@@ -879,7 +869,8 @@
                                         {
                                     r.Action("GetFeeTypeList", "PermitMain").Type(HttpVerbs.Get);
                                 });
-                            }))
+                            })
+                            )
                 </div>
             </div>
         </div>
@@ -887,7 +878,9 @@
             <div class="form-group">
                 <label for="EditWorkOrderNumber">Work Order Number:</label>
                 <div>
-                    @(Html.Kendo().TextBox().Name("EditWorkOrderNumber").Placeholder("Enter work order number"))
+                    @(Html.Kendo().TextBoxFor(m => m.WorkOrderNumber)
+                            .Name("EditWorkOrderNumber")
+                            )
                 </div>
             </div>
         </div>
@@ -898,13 +891,12 @@
             <div class="form-group">
                 <label for="EditSpecialProvisions">Special Provisions:</label>
                 <div>
-                    @(Html.Kendo().TextArea()
-                        .Name("EditSpecialProvisions")
-                        .Placeholder("Enter special provisions text")
-                        .Rows(5)
-                        .MaxLength(500)
-                        .HtmlAttributes(new { style = "width: 100%" })
-                    )
+                    @(Html.Kendo().TextAreaFor(m => m.SpecialProvisions)
+                            .Name("EditSpecialProvisions")
+                            .Rows(5)
+                            .MaxLength(500)
+                            .HtmlAttributes(new { style = "width: 100%" })
+                        )
                 </div>
             </div>
         </div>
@@ -912,9 +904,8 @@
             <div class="form-group">
                 <label for="EditComment">Comment:</label>
                 <div>
-                    @(Html.Kendo().TextArea()
+                    @(Html.Kendo().TextAreaFor(m => m.Comment)
                         .Name("EditComment")
-                        .Placeholder("Enter comment text")
                         .Rows(5)
                         .MaxLength(500)
                         .HtmlAttributes(new { style = "width: 100%" })
@@ -926,7 +917,9 @@
             <div class="form-group">
                 <label for="EditPermissionGrantedDate">Permission Granted Date:</label>
                 <div>
-                    @(Html.Kendo().DatePicker().Name("EditPermissionGrantedDate"))
+                    @(Html.Kendo().DatePickerFor(m => m.PermissionGrantedDate)
+                        .Name("EditPermissionGrantedDate")
+                        )
                 </div>
             </div>
         </div>

@@ -3850,6 +3850,10 @@
     <Content Include="Views\Permits\StdPermitEditRequiredFields.cshtml" />
     <Content Include="Views\Permits\StdPermitEditGeneralFields.cshtml" />
     <Content Include="Views\Permits\StdPermitEditOwnerFields.cshtml" />
+    <Content Include="Views\Permits\StdPermitEditSiteFields.cshtml" />
+    <Content Include="Views\Permits\StdPermitEditApplicantFields.cshtml" />
+    <Content Include="Views\Permits\StdPermitEditContractorFields.cshtml" />
+    <Content Include="Views\Permits\UtilEditRequiredFields.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

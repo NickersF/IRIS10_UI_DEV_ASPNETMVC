@@ -105,7 +105,15 @@
                                         innerChildren.Add().Text("Edit Standard Permit Required Forms").Action("StdPermitEditRequiredFields", "Permits");
                                         innerChildren.Add().Text("Edit Standard Permit General Forms").Action("StdPermitEditGeneralFields", "Permits");
                                         innerChildren.Add().Text("Edit Standard Permit Owner Forms").Action("StdPermitEditOwnerFields", "Permits");
+                                        innerChildren.Add().Text("Edit Standard Permit Site Forms").Action("StdPermitEditSiteFields", "Permits");
+                                        innerChildren.Add().Text("Edit Standard Permit Applicant Forms").Action("StdPermitEditApplicantFields", "Permits");
+                                        innerChildren.Add().Text("Edit Standard Permit Contractor Forms").Action("StdPermitEditContractorFields", "Permits");
 
+                                    });
+                            children.Add().Text("Edit Utility Permit Form Templates")
+                                    .Items(innerChildren =>
+                                    {
+                                        innerChildren.Add().Text("Edit Utility Permit Required Forms").Action("UtilEditRequiredFields", "Permits");
                                     });
                             children.Add().Separator(true);
                             children.Add().Text("Common Permit Input Forms").Action("CommonFormInputs", "Permits");

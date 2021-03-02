@@ -1,0 +1,147 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="permitApplicantFields" class="container-fluid mt-3 mb-3">
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditApplicant" style="font-size:small;">Applicant:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.Applicant)
+                            .Name("EditApplicant")
+                            .Placeholder("Enter applicant")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditApplicantPosition">Applicant Position:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantPosition)
+                            .Name("EditApplicantPosition")
+                            .Placeholder("Enter applicant position")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditApplicantCompany">Applicant Company:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantCompany)
+                            .Name("EditApplicantCompany")
+                            .Placeholder("Enter applicant company")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="EditApplicantAddress">Applicant Address:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantAddress)
+                            .Name("EditApplicantAddress")
+                            .Placeholder("Enter applicant address")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditApplicantCity">Applicant City:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantCity)
+                            .Name("EditApplicantCity")
+                            .Placeholder("Enter applicant city")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditApplicantState">Applicant State:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantState)
+                            .Name("EditApplicantState")
+                            .Placeholder("Enter applicant state")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditApplicantZip">Applicant Zip:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantZip)
+                            .Name("EditApplicantZip")
+                            .Placeholder("Enter applicant zip code")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditApplicantPhone">Applicant Phone:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantPhone)
+                            .Name("EditApplicantPhone")
+                            .Placeholder("(000)-000-0000")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditApplicantMobile">Applicant Mobile:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantMobile)
+                            .Name("EditApplicantMobile")
+                            .Placeholder("(000)-000-0000")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditApplicantEmail">Applicant Email:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantEmail)
+                            .Name("EditApplicantEmail")
+                            .Placeholder("name@domain.com")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditApplicantFax">Applicant Fax:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantFax)
+                            .Name("EditApplicantFax")
+                            .Placeholder("(000)-000-0000")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

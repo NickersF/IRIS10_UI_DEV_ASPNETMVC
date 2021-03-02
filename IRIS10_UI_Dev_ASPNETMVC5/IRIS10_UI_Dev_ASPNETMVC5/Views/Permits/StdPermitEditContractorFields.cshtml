@@ -1,0 +1,188 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="permitContractorFields" class="container-fluid mt-3 mb-3">
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditContractorCompanyName">Contractor Company Name:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ContractorCompanyName)
+                            .Name("EditContractorCompanyName")
+                            .Placeholder("Enter contractor company name")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditContractorContact">Contractor Contact:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ContractorContact)
+                            .Name("EditContractorContact")
+                            .Placeholder("Enter contractor contact")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditContractorContactJobTitle">Contractor Contact Job Title:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ContractorContactJobTitle)
+                            .Name("EditContractorContactJobTitle")
+                            .Placeholder("Enter contractor job title")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditFieldSupervisorName">Field Supervisor Name:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.FieldSupervisorName)
+                            .Name("EditFieldSupervisorName")
+                            .Placeholder("Enter field supervisor name")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="EditContractorAddress1">Contractor Address 1:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ContractorAddress1)
+                            .Name("EditContractorAddress1")
+                            .Placeholder("Enter contractor address line 1")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="EditContractorAddress2">Contractor Address 2:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ContractorAddress2)
+                            .Name("EditContractorAddress2")
+                            .Placeholder("Enter contractor address line 2")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditContractorCity">Contractor City:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ContractorCity)
+                            .Name("EditContractorCity")
+                            .Placeholder("Enter city")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditContractorState">Contractor State:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ContractorState)
+                            .Name("EditContractorState")
+                            .Placeholder("Enter state")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditContractorZip">Contractor Zip:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ContractorZip)
+                            .Name("EditContractorZip")
+                            .Placeholder("Enter zip code")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditContractorPhone">Contractor Phone:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ContractorPhone)
+                            .Name("EditContractorPhone")
+                            .Placeholder("(000)-000-0000")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditContractorMobile">Contractor Mobile:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ContractorMobile)
+                            .Name("EditContractorMobile")
+                            .Placeholder("(000)-000-0000")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditContractorEmail">Contractor Email:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ContractorEmail)
+                            .Name("EditContractorEmail")
+                            .Placeholder("name@domain.com")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditContractorFax">Contractor Fax:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ContractorFax)
+                            .Name("EditContractorFax")
+                            .Placeholder("(000)-000-0000")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditContractorNumber">Contractor Number:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ContractorNumber)
+                            .Name("EditContractorNumber")
+                            .Placeholder("Enter contractor number")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

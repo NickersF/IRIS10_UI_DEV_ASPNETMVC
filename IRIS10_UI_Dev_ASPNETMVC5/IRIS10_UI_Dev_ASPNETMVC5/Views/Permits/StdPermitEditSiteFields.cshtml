@@ -2,15 +2,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div id="permitOwnerFields" class="container-fluid mt-3 mb-3">
+<div id="permitSiteFields" class="container-fluid mt-3 mb-3">
 
     <div class="row mt-3">
         <div class="col-4 border-left">
             <div class="form-group">
-                <label for="EditOwnerFirstName">Owner First Name:</label>
+                <label for="EditSiteFirstName">Site First Name:</label>
                 <div>
-                    @(Html.Kendo().TextBoxFor(m => m.OwnerFirstName)
-                            .Name("EditOwnerFirstName")
+                    @(Html.Kendo().TextBoxFor(m => m.SiteFirstName)
+                            .Name("EditSiteFirstName")
                             .Placeholder("Enter first name")
                             .HtmlAttributes(new { @class = "w-100" })
                             )
@@ -19,10 +19,10 @@
         </div>
         <div class="col-4 border-left">
             <div class="form-group">
-                <label for="EditOwnerLastName">Owner Last Name:</label>
+                <label for="EditSiteLastName">Site Last Name:</label>
                 <div>
-                    @(Html.Kendo().TextBoxFor(m => m.OwnerLastName)
-                            .Name("EditOwnerLastName")
+                    @(Html.Kendo().TextBoxFor(m => m.SiteLastName)
+                            .Name("EditSiteLastName")
                             .Placeholder("Enter last name")
                             .HtmlAttributes(new { @class = "w-100" })
                             )
@@ -31,12 +31,13 @@
         </div>
         <div class="col-4 border-left">
             <div class="form-group">
-                <label for="EditOwnerInitial">Owner Initial:</label>
+                <label for="EditSiteInitial">Site Initial:</label>
                 <div>
-                    @(Html.Kendo().TextBoxFor(m => m.OwnerInitial)
-                            .Name("EditOwnerInitial")
+                    @(Html.Kendo().TextBoxFor(m => m.SiteInitial)
+                            .Name("EditSiteInitial")
                             .Placeholder("Enter initial")
                             .HtmlAttributes(new { @class = "w-50" })
+
                             )
                 </div>
             </div>
@@ -46,10 +47,10 @@
     <div class="row mt-3">
         <div class="col-6 border-left">
             <div class="form-group">
-                <label for="EditOwnerEditress1">Owner Editress 1:</label>
+                <label for="EditSiteAddress1">Site Address 1:</label>
                 <div>
-                    @(Html.Kendo().TextBoxFor(m => m.OwnerAddress1)
-                            .Name("EditOwnerEditress1")
+                    @(Html.Kendo().TextBoxFor(m => m.SiteAddress1)
+                            .Name("EditSiteAddress1")
                             .Placeholder("Enter address line 1")
                             .HtmlAttributes(new { @class = "w-100" })
                             )
@@ -61,10 +62,10 @@
     <div class="row mt-3">
         <div class="col-6 border-left">
             <div class="form-group">
-                <label for="EditOwnerEditress2">Owner Editress 2:</label>
+                <label for="EditSiteAddress2">Site Address 2:</label>
                 <div>
-                    @(Html.Kendo().TextBoxFor(m => m.OwnerAddress2)
-                            .Name("EditOwnerEditress2")
+                    @(Html.Kendo().TextBoxFor(m => m.SiteAddress2)
+                            .Name("EditSiteAddress2")
                             .Placeholder("Enter address line 2")
                             .HtmlAttributes(new { @class = "w-100" })
                             )
@@ -76,10 +77,11 @@
     <div class="row mt-3">
         <div class="col-2 border-left">
             <div class="form-group">
-                <label for="EditOwnerCity">Owner City:</label>
+                <label for="EditSiteCity">Site City:</label>
+
                 <div>
-                    @(Html.Kendo().TextBoxFor(m => m.OwnerCity)
-                            .Name("EditOwnerCity")
+                    @(Html.Kendo().TextBoxFor(m => m.SiteCity)
+                            .Name("EditSiteCity")
                             .Placeholder("Enter city")
                             .HtmlAttributes(new { @class = "w-100" })
                             )
@@ -88,10 +90,11 @@
         </div>
         <div class="col-2 border-left">
             <div class="form-group">
-                <label for="EditOwnerState">Owner State:</label>
+                <label for="EditSiteState">Site State:</label>
+
                 <div>
-                    @(Html.Kendo().TextBoxFor(m => m.OwnerState)
-                            .Name("EditOwnerState")
+                    @(Html.Kendo().TextBoxFor(m => m.SiteState)
+                            .Name("EditSiteState")
                             .Placeholder("Enter state")
                             .HtmlAttributes(new { @class = "w-100" })
                             )
@@ -100,11 +103,11 @@
         </div>
         <div class="col-2 border-left">
             <div class="form-group">
-                <label for="EditOwnerZip">Owner Zip:</label>
+                <label for="EditSiteZip">Site Zip:</label>
                 <div>
-                    @(Html.Kendo().TextBoxFor(m => m.OwnerZip)
-                            .Name("EditOwnerZip")
-                            .Placeholder("Enter zip code")
+                    @(Html.Kendo().TextBoxFor(m => m.SiteZip)
+                            .Name("EditSiteZip")
+                            .Placeholder("Enter zip")
                             .HtmlAttributes(new { @class = "w-100" })
                             )
                 </div>
@@ -115,10 +118,10 @@
     <div class="row mt-3">
         <div class="col-4 border-left">
             <div class="form-group">
-                <label for="EditOwnerHomePhone">Owner Home Phone:</label>
+                <label for="EditSiteHomePhone">Site Home Phone:</label>
                 <div>
-                    @(Html.Kendo().TextBoxFor(m => m.OwnerHomePhone)
-                            .Name("EditOwnerHomePhone")
+                    @(Html.Kendo().TextBoxFor(m => m.SiteHomePhone)
+                            .Name("EditSiteHomePhone")
                             .Placeholder("(000)-000-0000")
                             )
                 </div>
@@ -126,10 +129,10 @@
         </div>
         <div class="col-4 border-left">
             <div class="form-group">
-                <label for="EditOwnerWorkPhone">Owner Work Phone:</label>
+                <label for="EditSiteWorkPhone">Site Work Phone:</label>
                 <div>
-                    @(Html.Kendo().TextBoxFor(m => m.OwnerWorkPhone)
-                            .Name("EditOwnerWorkPhone")
+                    @(Html.Kendo().TextBoxFor(m => m.SiteWorkPhone)
+                            .Name("EditSiteWorkPhone")
                             .Placeholder("(000)-000-0000")
                             )
                 </div>
@@ -137,14 +140,16 @@
         </div>
         <div class="col-4 border-left">
             <div class="form-group">
-                <label for="EditOwnerEmail">Owner Email:</label>
+                <label for="EditSiteEmail">Site Email:</label>
+
                 <div>
-                    @(Html.Kendo().TextBoxFor(m => m.OwnerEmail)
-                            .Name("EditOwnerEmail")
+                    @(Html.Kendo().TextBoxFor(m => m.SiteEmail)
+                            .Name("EditSiteEmail")
                             .Placeholder("name@domain.com")
                             )
                 </div>
             </div>
         </div>
     </div>
+
 </div>
