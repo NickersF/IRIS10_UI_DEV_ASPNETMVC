@@ -3854,6 +3854,14 @@
     <Content Include="Views\Permits\StdPermitEditApplicantFields.cshtml" />
     <Content Include="Views\Permits\StdPermitEditContractorFields.cshtml" />
     <Content Include="Views\Permits\UtilEditRequiredFields.cshtml" />
+    <Content Include="Views\Permits\UtilEditGeneralFields.cshtml" />
+    <Content Include="Views\Permits\UtilEditApplicantFields.cshtml" />
+    <Content Include="Views\Permits\UtilEditSubContractorFields.cshtml" />
+    <Content Include="Views\Permits\ODOTEditRequiredFields.cshtml" />
+    <Content Include="Views\Permits\ODOTEditGeneralFields.cshtml" />
+    <Content Include="Views\Permits\ODOTEditLoadFields.cshtml" />
+    <Content Include="Views\Permits\ODOTEditRouteFields.cshtml" />
+    <Content Include="Views\Permits\ODOTEditAxleFields.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

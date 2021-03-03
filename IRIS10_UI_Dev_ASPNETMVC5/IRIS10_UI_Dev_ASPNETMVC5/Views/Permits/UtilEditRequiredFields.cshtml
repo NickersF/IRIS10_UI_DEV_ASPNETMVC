@@ -1,18 +1,329 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<div id="utilityPermitRequiredFields" class="container-fluid mt-3 mb-3">
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>UtilEditRequiredFields</title>
-</head>
-<body>
-    <div>
-        Hijah
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditPermitNumber">Permit Number:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.PermitNumber)
+                            .Name("EditPermitNumber")
+                            .Placeholder("Enter permit number")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditPermitType">Permit Type:</label>
+                <div>
+                    @(Html.Kendo().DropDownListFor(m => m.SERLookupUtilityPermitType_Key)
+                            .Name("EditUtilityPermitType")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetUtilityTypeList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditRoadName">Road Name:</label>
+                <div>
+                    @(Html.Kendo().DropDownListFor(m => m.RoadName_Key)
+                            .Name("EditRoadName")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetRoadNameList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditUtilityPermitStatus">Utility Permit Status:</label>
+                <div>
+                    @(Html.Kendo().DropDownListFor(m => m.SERLookupUtilityPermitStatus_Key)
+                            .Name("EditUtilityPermitStatus")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetUtilityPermitStatusList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditUtilityInstalled">Utility Installed:</label>
+                <div>
+                    @(Html.Kendo().DropDownListFor(m => m.SERLookupUtilityPermitUtilityInstalled_Key)
+                            .Name("EditUtilityInstalled")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetUtilityInstalledList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditInstalledLocation">Installed Location:</label>
+                <div>
+                    @(Html.Kendo().DropDownListFor(m => m.SERLookupUtilityPermitInstalledLocation_Key)
+                            .Name("EditInstalledLocation")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetUtilityInstalledLocationList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditLocationDescription">Location Description:</label>
+                <div>
+                    @(Html.Kendo().TextAreaFor(m => m.LocationDescription)
+                            .Name("EditLocationDescription")
+                            .Placeholder("Enter location description here")
+                            .Rows(5)
+                            .MaxLength(200)
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditMilepost">Milepost:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBoxFor(m => m.Milepost)
+                            .Name("EditMilepost")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditBeginMilepost">Begin Milepost:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBoxFor(m => m.BeginMilepost)
+                            .Name("EditBeginMilepost")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditEndMilepost">End Milepost:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBoxFor(m => m.EndMilepost)
+                            .Name("EditEndMilepost")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditSurface">Surface:</label>
+                <div>
+                    @(Html.Kendo().DropDownListFor(m => m.SERLookupUtilityPermitSurface_Key)
+                            .Name("EditSurface")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetLookupUtilitySurfaceList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditCuttingOfSurface">Cutting Of Surface Permitted:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.CuttingOfSurfacePermitted)
+                            .Name("EditCuttingOfSurface")
+                            .Placeholder("Enter value")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditPlacement">Placement:</label>
+                <div>
+                    @(Html.Kendo().DropDownListFor(m => m.SERLookupUtilityPermitPlacement_Key)
+                            .Name("EditPlacement")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetLookupUtilityPlacementList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditApplicant">Applicant:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.Applicant)
+                            .Name("EditApplicant")
+                            .Placeholder("Enter applicant")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditApplicantPosition">Applicant Position:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantPosition)
+                            .Name("EditApplicantPosition")
+                            .Placeholder("Enter applicant position")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditApplicantCompany">Applicant Company:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantCompany)
+                            .Name("EditApplicantCompany")
+                            .Placeholder("Enter applicant company")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditIssuedBy">Issued By Position:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.IssuedByPosition)
+                            .Name("EditIssuedBy")
+                            .Placeholder("Enter issued by position")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="EditApplicantAddress">Applicant Address:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantAddress)
+                            .Name("EditApplicantAddress")
+                            .Placeholder("Enter applicant address")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditApplicantCity">Applicant City:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantCity)
+                            .Name("EditApplicantCity")
+                            .Placeholder("Enter city")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditApplicantState">Applicant State:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantState)
+                            .Name("EditApplicantState")
+                            .Placeholder("Enter applicant state")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditApplicantZip">Applicant Zip:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantZip)
+                        .Name("EditApplicantZip")
+                        .Placeholder("Enter applicant zip")
+                        )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditApplicantPhone">Applicant Phone:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ApplicantPhone)
+                        .Name("EditApplicantPhone")
+                        .Placeholder("Enter applicant phone")
+                        )
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

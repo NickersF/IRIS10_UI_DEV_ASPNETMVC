@@ -1,0 +1,77 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="utilityPermitRequiredFields" class="container-fluid mt-3 mb-3">
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditPermitNumber">Permit Number:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBoxFor(m => m.ODOTPermitNumber)
+                            .Name("EditPermitNumber")
+                            .Placeholder("0.00")
+                            .Decimals(0)
+                            .RestrictDecimals(true)
+                            .Format("D")
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditRouteHeightPole">Route Height Pole:</label>
+                <div>
+                    @(Html.Kendo().CheckBoxFor(m => m.RouteHeightPole)
+                            .Name("EditRouteHeightPole")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditLegalWeight">Legal Weight:</label>
+                <div>
+                    @(Html.Kendo().CheckBoxFor(m => m.LegalWeight)
+                            .Name("EditLegalWeight")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditLegalHeight">Legal Height:</label>
+                <div>
+                    @(Html.Kendo().CheckBoxFor(m => m.LegalHeight)
+                            .Name("EditLegalHeight")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditLegalWidth">Legal Width:</label>
+                <div>
+                    @(Html.Kendo().CheckBoxFor(m => m.LegalWidth)
+                            .Name("EditLegalWidth")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditLegalLength">Legal Length:</label>
+                <div>
+                    @(Html.Kendo().CheckBoxFor(m => m.LegalLength)
+                            .Name("EditLegalLength")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,181 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="odotLoadInformationFields" class="container-fluid mt-3 mb-3">
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditStartingPoint">Starting Point:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.StartingPoint)
+                            .Name("EditStartingPoint")
+                            .Placeholder("Enter starting point")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditDestination">Destination:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.Destination)
+                            .Name("EditDestination")
+                            .Placeholder("Enter destination")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="EditStartingAddress">Starting Address:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.StartingAddress)
+                            .Name("EditStartingAddress")
+                            .Placeholder("Enter starting address")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="EditEndingAddress">Ending Address:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.EndingAddress)
+                            .Name("EditEndingAddress")
+                            .Placeholder("Enter ending address")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditRoute">Route:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.Route)
+                            .Name("EditRoute")
+                            .Placeholder("Enter route")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditOtherRouteCondition">Other Route Condition:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.OtherRouteCondition)
+                            .Name("EditOtherRouteCondition")
+                            .Placeholder("Enter other route condition")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditWeightAndSpacingNeeded">Weight And Spacing Needed:</label>
+                <div>
+                    @(Html.Kendo().CheckBoxFor(m => m.WeightAndSpacingNeeded)
+                            .Name("EditWeightAndSpacingNeeded")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditOverweightCheckBy">Overweight Check By:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.OverweightCheckBy)
+                            .Name("EditOverweightCheckBy")
+                            .Placeholder("Enter overweight check by")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditDirectorApproval">Director Approval:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.DirectorApproval_Key)
+                            .Name("EditDirectorApproval")
+                            .Placeholder("Enter director approval")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditNumberPilotCarsFront">Number Of Pilot Cars In Front:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBoxFor(m => m.NumberPilotCarsFront)
+                            .Name("EditNumberPilotCarsFront")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditNumberPilotCarsRear">Number Of Pilot Cars In Rear:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBoxFor(m => m.NumberPilotCarsRear)
+                            .Name("EditNumberPilotCarsRear")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditNumberPilotCarsRequired">Number Of Pilot Cars Required:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBoxFor(m => m.NumberOfPilotCarRequired_Key)
+                            .Name("EditNumberPilotCarsRequired")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditTotalTrips">Total Trips:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBoxFor(m => m.TotalTrips)
+                            .Name("EditTotalTrips")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

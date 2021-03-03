@@ -1,0 +1,97 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="odotPermitGeneralFields" class="container-fluid mt-3 mb-3">
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditPermitDate">Permit Date:</label>
+                <div>
+                    @(Html.Kendo().DatePickerFor(m => m.PermitDate)
+                            .Name("EditPermitDate")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditEffectiveDate">Effective Date:</label>
+                <div>
+                    @(Html.Kendo().DatePickerFor(m => m.EffectiveDate)
+                            .Name("EditEffectiveDate")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditExpirationDate">Expiration Date:</label>
+                <div>
+                    @(Html.Kendo().DatePickerFor(m => m.ExpirationDate)
+                            .Name("EditExpirationDate")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditIssuer">Issuer:</label>
+                <div>
+                    @(Html.Kendo().ComboBoxFor(m => m.ODOTLookupIssuer_Key)
+                            .Name("EditIssuer")
+                            .Placeholder("Select...")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetOdotIssuerList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditCarrier">Carrier:</label>
+                <div>
+                    @(Html.Kendo().ComboBoxFor(m => m.ODOTLookupCarrier_Key)
+                            .Name("EditCarrier")
+                            .Placeholder("Select...")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetOdotCarrierList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditCommodity">Commodity:</label>
+                <div>
+                    @(Html.Kendo().ComboBoxFor(m => m.ODOTLookupCommodity_Key)
+                            .Name("EditCommodity")
+                            .Placeholder("Select...")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .AutoWidth(true)
+                            .DataSource(d =>
+                            {
+                                d.Read(r => r.Action("GetOdotCommodityList", "PermitMain").Type(HttpVerbs.Get));
+                            })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

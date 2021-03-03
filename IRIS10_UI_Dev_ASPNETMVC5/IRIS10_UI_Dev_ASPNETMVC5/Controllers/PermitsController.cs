@@ -176,6 +176,64 @@ namespace IRIS10_UI_Dev_ASPNETMVC5.Controllers
             return View();
         }
 
+        public ActionResult UtilEditGeneralFields()
+        {
+            ViewBag.Title = "Edit Utility Permit - General Fields";
+
+            return View();
+        }
+
+        public ActionResult UtilEditApplicantFields()
+        {
+            ViewBag.Title = "Edit Utility Permit - Applicant Fields";
+
+            return View();
+        }
+
+        public ActionResult UtilEditSubContractorFields()
+        {
+            ViewBag.Title = "Edit Utility Permit - Sub Contractor Fields";
+
+            return View();
+        }
+
+        // ODOT permit edit forms
+
+        public ActionResult ODOTEditRequiredFields()
+        {
+            ViewBag.Title = "Edit ODOT Permit - Required Fields";
+
+            return View();
+        }
+
+        public ActionResult ODOTEditGeneralFields()
+        {
+            ViewBag.Title = "Edit ODOT Permit - General Fields";
+
+            return View();
+        }
+
+        public ActionResult ODOTEditLoadFields()    
+        {
+            ViewBag.Title = "Edit ODOT Permit - Load Information Fields";
+
+            return View();
+        }
+
+        public ActionResult ODOTEditRouteFields()
+        {
+            ViewBag.Title = "Edit ODOT Permit - Route Fields";
+
+            return View();
+        }
+
+        public ActionResult ODOTEditAxleFields()
+        {
+            ViewBag.Title = "Edit ODOT Permit - Axle Fields";
+
+            return View();
+        }
+
         // GET: CommonFormInputs
         public ActionResult CommonFormInputs()
         {

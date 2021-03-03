@@ -1,0 +1,159 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="utilityPermitSubContractorFields" class="container-fluid mt-3 mb-3">
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditSubContractorContact">Sub Contractor Contact:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.SubContractorContact)
+                            .Name("EditSubContractorContact")
+                            .Placeholder("Enter subcontractor contact")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditSubContractorCompanyName">Sub Contractor Company Name:</label>
+                <div>
+                    @(Html.Kendo().TextBox()
+                            .Name("EditSubContractorCompanyName")
+                            .Placeholder("Enter sub contractor company name")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditSubContractorContactJobTitle">Sub Contractor Contact Job Title:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.SubContractorContactJobTitle)
+                            .Name("EditSubContractorContactJobTitle")
+                            .Placeholder("Enter sub contractor job title")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="EditSubContractorAddress">Sub Contractor Address:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.SubContractorAddress)
+                            .Name("EditSubContractorAddress")
+                            .Placeholder("Enter sub contractor address")
+                            .HtmlAttributes(new { @class = "w-100" })
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditSubContractorCity">Sub Contractor City:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.SubContractorCity)
+                            .Name("EditSubContractorCity")
+                            .Placeholder("Enter city")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditSub ContractorState">Sub Contractor State:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.SubContractorState)
+                            .Name("EditSubContractorState")
+                            .Placeholder("Enter state")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="form-group">
+                <label for="EditSubContractorZip">Sub Contractor Zip:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.SubContractorZip)
+                            .Name("EditSubContractorZip")
+                            .Placeholder("Enter zip code")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditSubContractorPhone">Sub Contractor Phone:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.SubContractorPhone)
+                            .Name("EditSubContractorPhone")
+                            .Placeholder("(000)-000-0000")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditSubContractorMobile">Sub Contractor Mobile:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.SubContractorMobile)
+                            .Name("EditSubContractorMobile")
+                            .Placeholder("(000)-000-0000")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditSubContractorEmail">Sub Contractor Email:</label>
+
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.SubContractorEmail)
+                            .Name("EditSubContractorEmail")
+                            .Placeholder("name@domain.com")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditSubContractorFax">Sub Contractor Fax:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.SubContractorFax)
+                            .Name("EditSubContractorFax")
+                            .Placeholder("(000)-000-0000")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3 border-left">
+            <div class="form-group">
+                <label for="EditSubContractorNumber">Sub Contractor Number:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.SubContractorNumber)
+                            .Name("EditSubContractorNumber")
+                            .Placeholder("Enter sub contractor number")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

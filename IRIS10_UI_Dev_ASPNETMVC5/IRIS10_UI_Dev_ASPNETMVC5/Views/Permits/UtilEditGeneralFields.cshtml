@@ -1,0 +1,156 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="utilityPermitGeneralFields" class="container-fluid mt-3 mb-3">
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditIssueDate">Issue Date:</label>
+                <div>
+                    @(Html.Kendo().DatePickerFor(m => m.IssueDate)
+                            .Name("EditIssueDate")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditExpireDate">Expire Date:</label>
+                <div>
+                    @(Html.Kendo().DatePickerFor(m => m.ExpireDate)
+                            .Name("EditExpireDate")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditTownship">Township:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.Township)
+                            .Name("EditTownship")
+                            .Placeholder("Enter township")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditRange">Range:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.Range)
+                            .Name("EditRange")
+                            .Placeholder("Enter range")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditSection">Section:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.Section)
+                            .Name("EditSection")
+                            .Placeholder("Enter section")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditWorkOrderNumber">Work Order Number:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.WorkOrderNumber)
+                            .Name("EditWorkOrderNumber")
+                            .Placeholder("Enter work order number")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditScopeOfWork">Scope Of Work:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.ScopeOfWork)
+                            .Name("EditScopeOfWork")
+                            .Placeholder("Enter scope of work")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditROWWidth">ROW Width:</label>
+                <div>
+                    @(Html.Kendo().NumericTextBoxFor(m => m.ROWWidth)
+                            .Name("EditROWWidth")
+                            .Placeholder("0.00")
+                            .Decimals(2)
+                            .Min(double.Parse("0.00"))
+                            .Spinners(false)
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditReadyForInspectionDate">Ready For Inspection Date:</label>
+                <div>
+                    @(Html.Kendo().DatePickerFor(m => m.ReadyForInspectionDate)
+                            .Name("EditReadyForInspectionDate")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditInspectedBy">Inspected By:</label>
+                <div>
+                    @(Html.Kendo().TextBoxFor(m => m.InspectedBy)
+                            .Name("EditInspectedBy")
+                            .Placeholder("Enter instpected by")
+                            )
+                </div>
+            </div>
+        </div>
+        <div class="col-4 border-left">
+            <div class="form-group">
+                <label for="EditInspectionDate">Inspection Date:</label>
+                <div>
+                    @(Html.Kendo().DatePickerFor(m => m.InspectionDate)
+                            .Name("EditInspectionDate")
+                            )
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6 border-left">
+            <div class="form-group">
+                <label for="EditComment">Comment:</label>
+                <div>
+                    @(Html.Kendo().TextAreaFor(m => m.Comment)
+                        .Name("EditComment")
+                        .Placeholder("Enter comment")
+                        .Rows(5)
+                        .MaxLength(500)
+                        .HtmlAttributes(new { @class = "w-100" })
+                    )
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

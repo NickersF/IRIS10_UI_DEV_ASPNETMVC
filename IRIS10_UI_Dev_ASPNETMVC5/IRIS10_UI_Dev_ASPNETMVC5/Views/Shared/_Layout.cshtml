@@ -114,8 +114,20 @@
                                     .Items(innerChildren =>
                                     {
                                         innerChildren.Add().Text("Edit Utility Permit Required Forms").Action("UtilEditRequiredFields", "Permits");
+                                        innerChildren.Add().Text("Edit Utility Permit General Forms").Action("UtilEditGeneralFields", "Permits");
+                                        innerChildren.Add().Text("Edit Utility Permit Applicant Forms").Action("UtilEditApplicantFields", "Permits");
+                                        innerChildren.Add().Text("Edit Utility Permit Sub Contractor Forms").Action("UtilEditSubContractorFields", "Permits");
                                     });
                             children.Add().Separator(true);
+                            children.Add().Text("Edit ODOT Permit Form Templates")
+                                    .Items(innerChildren =>
+                                    {
+                                        innerChildren.Add().Text("Edit ODOT Permit Required Forms").Action("ODOTEditRequiredFields", "Permits");
+                                        innerChildren.Add().Text("Edit ODOT Permit Required Forms").Action("ODOTEditGeneralFields", "Permits");
+                                        innerChildren.Add().Text("Edit ODOT Permit Load Information Forms").Action("ODOTEditLoadFields", "Permits");
+                                        innerChildren.Add().Text("Edit ODOT Permit Route Forms").Action("ODOTEditRouteFields", "Permits");
+                                        innerChildren.Add().Text("Edit ODOT Permit Axle Forms").Action("ODOTEditRouteFields", "Permits");
+                                    });
                             children.Add().Text("Common Permit Input Forms").Action("CommonFormInputs", "Permits");
                         });
 
