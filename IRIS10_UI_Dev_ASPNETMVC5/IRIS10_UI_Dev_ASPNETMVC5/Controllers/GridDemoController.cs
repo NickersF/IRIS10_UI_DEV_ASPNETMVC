@@ -13,5 +13,15 @@ namespace IRIS10_UI_Dev_ASPNETMVC5.Controllers
         {
             return View();
         }
+
+        public ActionResult TabStripGridDemo()
+        {
+            return View();
+        }
+
+        public ActionResult FlexLayoutGrid()
+        {
+            return View();
+        }
     }
 }

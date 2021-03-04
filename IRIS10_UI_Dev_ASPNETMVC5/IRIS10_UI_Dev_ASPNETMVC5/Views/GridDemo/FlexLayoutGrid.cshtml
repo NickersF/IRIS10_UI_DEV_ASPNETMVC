@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FlexLayoutGrid</title>
+
+    @Styles.Render("~/Content/css")
+
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+<body>
+    <div class="main-layout-wrapper">
+        <div class="row-flex header-flex header-color">
+            <h5>A Header</h5>
+            <p>With some paragraph about the header.</p>
+        </div>
+
+        <div class="row-flex content-flex content-color">
+            <p>Body of content</p>
+        </div>
+
+        <div class="row-flex footer-flex footer-color">
+            <p>A Footer.</p>
+        </div>
+    </div>
+</body>
+</html>

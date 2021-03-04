@@ -1,6 +1,60 @@
 ﻿// CSS rules to configure the Kendo UI TabStrip example
 
+html,
+body {
+    height: 100%;
+}
+
+.k-tabstrip-wrapper {
+    height: 100%;
+}
+
+.main-layout-wrapper {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.main-layout-wrapper .row-flex {
+    border: 1px dotted grey;
+}
+
+.main-layout-wrapper .row-flex.header-flex {
+    flex: 0 1 auto;
+    /* The above is shorthand for:
+  flex-grow: 0,
+  flex-shrink: 1,
+  flex-basis: auto
+  */
+}
+
+.main-layout-wrapper .row-flex.content-flex {
+    flex: 1 1 auto;
+}
+
+.main-layout-wrapper .row-flex.footer-flex {
+    flex: 0 1 40px;
+}
+
+
+// Kendo customs and colors
 #tabstrip {
-    height: 320px !important;
+    height: 100%;
     overflow: auto;
+}
+
+.tabstrip-custom-wrapper {
+    height: 100%;
+}
+
+.header-color {
+    background-color: mediumpurple;
+}
+
+.content-color {
+    background-color: thistle;
+}
+
+.footer-color {
+    background-color: bisque;
 }

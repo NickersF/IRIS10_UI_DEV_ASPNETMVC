@@ -1,7 +1,7 @@
 ﻿// Reports test grid
 $("#TestGridReports").kendoGrid({
     dataSource: sampleReports,
-    change: onChange,
+    //change: onChange,
     columns: [
         {
             selectable: true,
@@ -18,7 +18,8 @@ $("#TestGridReports").kendoGrid({
             title: "Report ID"
         }
     ],
-    selectable: "row"
+    selectable: "row",
+    resizeable: true
 });
 
 // Users test grid

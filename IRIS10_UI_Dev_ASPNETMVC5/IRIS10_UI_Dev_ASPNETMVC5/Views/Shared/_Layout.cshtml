@@ -19,29 +19,29 @@
     <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
 </head>
 <body>
+    <div class="main-layout-wrapper">
+        <header class="container-fluid">
+            <div class="row iris-bg-light-blue p-2">
 
-    <header class="container-fluid">
-        <div class="row iris-bg-light-blue p-2">
+                <div class="col-4 d-flex align-items-center pl-0 pr-0">
+                    <a href="@Url.Action("Index", "Home")"><img class="img-fluid" width="300" height="76" src="~/Images/IRIS_logo_web_ltgray.svg" /></a>
+                </div>
 
-            <div class="col-4 d-flex align-items-center pl-0 pr-0">
-                <a href="@Url.Action("Index", "Home")"><img class="img-fluid" width="300" height="76" src="~/Images/IRIS_logo_web_ltgray.svg" /></a>
-            </div>
-
-            <div class="col-2 ml-auto pl-0 pr-0">
-                <div class="card iris-border-hinted iris-bg-light-blue">
-                    <div class="card-body text-light p-1">
-                        <div><strong class="text-dark">Username: </strong><span>Nicholas Fazzolari</span></div>
-                        <div><strong class="text-dark">Tenant: </strong><span>Polk</span></div>
-                    </div>
-                    <div class="card-footer p-1">
-                        <button type="button" class="btn btn-primary btn-sm">Logout</button>
+                <div class="col-2 ml-auto pl-0 pr-0">
+                    <div class="card iris-border-hinted iris-bg-light-blue">
+                        <div class="card-body text-light p-1">
+                            <div><strong class="text-dark">Username: </strong><span>Nicholas Fazzolari</span></div>
+                            <div><strong class="text-dark">Tenant: </strong><span>Polk</span></div>
+                        </div>
+                        <div class="card-footer p-1">
+                            <button type="button" class="btn btn-primary btn-sm">Logout</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <nav class="row" id="mainNavigation">
-            @(Html.Kendo().Menu()
+            <nav class="row" id="mainNavigation">
+                @(Html.Kendo().Menu()
                 .Name("screensPreviewMenu")
                 .Items(items =>
                 {
@@ -118,7 +118,6 @@
                                         innerChildren.Add().Text("Edit Utility Permit Applicant Forms").Action("UtilEditApplicantFields", "Permits");
                                         innerChildren.Add().Text("Edit Utility Permit Sub Contractor Forms").Action("UtilEditSubContractorFields", "Permits");
                                     });
-                            children.Add().Separator(true);
                             children.Add().Text("Edit ODOT Permit Form Templates")
                                     .Items(innerChildren =>
                                     {
@@ -128,6 +127,7 @@
                                         innerChildren.Add().Text("Edit ODOT Permit Route Forms").Action("ODOTEditRouteFields", "Permits");
                                         innerChildren.Add().Text("Edit ODOT Permit Axle Forms").Action("ODOTEditRouteFields", "Permits");
                                     });
+                            children.Add().Separator(true);
                             children.Add().Text("Common Permit Input Forms").Action("CommonFormInputs", "Permits");
                         });
 
@@ -135,6 +135,8 @@
                         .Items(children =>
                         {
                             children.Add().Text("Grid Demo").Action("Index", "GridDemo");
+                            children.Add().Text("TabStrip With Grid Demo").Action("TabStripGridDemo", "GridDemo");
+                            children.Add().Text("Flexy Layout For TabStrip Demo").Action("FlexLayoutGrid", "GridDemo");
                             children.Add().Text("Text Editor Demo").Action("Index", "TextEditorDemo");
                             children.Add().Text("Panel Bar Demo").Action("Index", "PanelBarDemo");
                             children.Add().Text("Window Demo").Action("Index", "WindowEx");
@@ -143,12 +145,14 @@
                             children.Add().Text("Toolbar Demo").Enabled(false);
                         });
                 }))
-        </nav>
-    </header>
+            </nav>
+        </header>
 
-    <main>
-        @RenderBody()
-    </main>
+        <main class="row-flex content-flex content-color">
+            @RenderBody()
+        </main>
+    </div>
+
 
     @RenderSection("scripts", required: false)
 </body>

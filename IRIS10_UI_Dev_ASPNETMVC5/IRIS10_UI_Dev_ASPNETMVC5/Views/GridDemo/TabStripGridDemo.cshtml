@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="~/Scripts/custom/TestGridData.js"></script>
+
+@*<style>
+    #TestGridReports {
+        height: 100%;
+    }
+</style>*@
+
+<div class="tabstrip-custom-wrapper">
+    @(Html.Kendo().TabStrip()
+        .Name("tabstrip")
+        .Items(tabstrip =>
+        {
+            tabstrip.Add().Text("Tool Bar and Grid Tab")
+                .Selected(true);
+
+
+            tabstrip.Add().Text("Text Tab")
+                .Content(@<text>
+                    <div>
+                        <p>Hey Look I'm text!</p>
+                    </div>
+                    </text>);
+        })
+    )
+</div>
+
+@*<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div id="TestGridReports"></div>
+        </div>
+    </div>
+</div>*@
+
+<script src="~/Scripts/custom/MainGridDemo.js"></script>

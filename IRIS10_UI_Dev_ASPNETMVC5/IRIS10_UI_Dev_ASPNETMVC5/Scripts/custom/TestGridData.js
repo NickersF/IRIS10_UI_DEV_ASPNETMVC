@@ -30,6 +30,21 @@ var sampleReports = [
     {
         ReportName: "Employee Time Report",
         ReportId: "RP1006"
+    },
+
+    {
+        ReportName: "Employee Time Report",
+        ReportId: "RP1006"
+    },
+
+    {
+        ReportName: "Employee Time Report",
+        ReportId: "RP1006"
+    },
+
+    {
+        ReportName: "Employee Time Report",
+        ReportId: "RP1006"
     }
 ];
 
