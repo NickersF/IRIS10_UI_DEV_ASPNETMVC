@@ -33,22 +33,21 @@
 /*.row [class*='col-'] {
     transition: all 0.5s ease-in-out;
 }*/
-html,
-body {
+.iris-global-full-height {
   height: 100%;
 }
 .k-tabstrip-wrapper {
   height: 100%;
 }
-.main-layout-wrapper {
+.iris-main-layout-wrapper {
   display: flex;
   flex-flow: column;
   height: 100%;
 }
-.main-layout-wrapper .row-flex {
+.iris-main-layout-wrapper .iris-row-flex {
   border: 1px dotted grey;
 }
-.main-layout-wrapper .row-flex.header-flex {
+.iris-main-layout-wrapper .iris-row-flex.iris-header-flex {
   flex: 0 1 auto;
   /* The above is shorthand for:
   flex-grow: 0,
@@ -56,25 +55,26 @@ body {
   flex-basis: auto
   */
 }
-.main-layout-wrapper .row-flex.content-flex {
+.iris-main-layout-wrapper .iris-row-flex.iris-content-flex {
   flex: 1 1 auto;
 }
-.main-layout-wrapper .row-flex.footer-flex {
-  flex: 0 1 40px;
+.iris-main-layout-wrapper .iris-row-flex.iris-footer-flex {
+  flex: 0 1 auto;
 }
 #tabstrip {
   height: 100%;
   overflow: auto;
 }
-.tabstrip-custom-wrapper {
+.iris-tabstrip-custom-wrapper {
+  display: flex;
   height: 100%;
 }
-.header-color {
+.test-header-color {
   background-color: mediumpurple;
 }
-.content-color {
+.test-content-color {
   background-color: thistle;
 }
-.footer-color {
+.test-footer-color {
   background-color: bisque;
 }

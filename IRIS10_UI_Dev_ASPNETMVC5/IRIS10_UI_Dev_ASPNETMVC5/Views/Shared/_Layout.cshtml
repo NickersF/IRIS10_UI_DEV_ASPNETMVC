@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html class="iris-global-full-height">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,9 +18,11 @@
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
     <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
 </head>
-<body>
-    <div class="main-layout-wrapper">
-        <header class="container-fluid">
+<body class="iris-global-full-height">
+
+    <div class="iris-main-layout-wrapper">
+
+        <header class="container-fluid iris-row-flex iris-header-flex test-header-color">
             <div class="row iris-bg-light-blue p-2">
 
                 <div class="col-4 d-flex align-items-center pl-0 pr-0">
@@ -148,7 +150,7 @@
             </nav>
         </header>
 
-        <main class="row-flex content-flex content-color">
+        <main class="iris-row-flex iris-content-flex test-content-color">
             @RenderBody()
         </main>
     </div>
