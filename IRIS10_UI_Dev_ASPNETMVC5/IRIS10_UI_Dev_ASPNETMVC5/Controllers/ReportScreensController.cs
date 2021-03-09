@@ -14,6 +14,11 @@ namespace IRIS10_UI_Dev_ASPNETMVC5.Controllers
             return PartialView();
         }
 
+        public ActionResult ReportLayoutFluid()
+        {
+            return View();
+        }
+
         public ActionResult _PanelBarTemplateCurrentReport()
         {
             return View();

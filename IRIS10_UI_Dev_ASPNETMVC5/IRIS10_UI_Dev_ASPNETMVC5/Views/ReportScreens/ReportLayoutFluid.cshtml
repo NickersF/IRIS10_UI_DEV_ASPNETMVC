@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="iris-global-full-height">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ReportLayoutFluid</title>
+
+    @Styles.Render("~/Content/css")
+
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+<body class="iris-global-full-height">
+
+    @* Wrapper at _Layout.cshtml level *@
+    <div class="iris-main-layout-wrapper">
+
+        @* Header at _Layout.cshtml level *@
+        <header class="iris-row-flex iris-header-flex test-header-color">
+            <h4>Header content</h4>
+        </header>
+
+        @* Content section wrapper at _Layout.cshtml level *@
+        <main class="iris-row-flex iris-content-flex test-content-color">
+
+            @* Full height wrapper for report upper and lower *@
+            <section class="iris-main-layout-wrapper">
+
+                @* Report upper flex container *@
+                <div class="iris-row-flex iris-content-flex">
+                    <div class="container-fluid h-100">
+                        <div class="row h-100">
+                            <div class="col-6 h-100 iris-row-flex">Report List Grid</div>
+                            <div class="col-6 h-100 iris-row-flex">Report Description Panel</div>
+                        </div>
+                    </div>
+                </div>
+
+                @* Report lower flex container *@
+                <div class="iris-row-flex iris-content-flex">
+                    <div class="iris-main-layout-wrapper">
+                        <div class="iris-row-flex iris-header-flex">
+                            Report Filter Toolbar
+                        </div>
+                        <div class="iris-row-flex iris-content-flex">
+                            Report Filter Grid
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+        @* Footer at _Layout.cshtml level *@
+        <footer class="iris-row-flex iris-footer-flex test-footer-color">
+            <h4>Footer content</h4>
+        </footer>
+    </div>
+</body>
+</html>

@@ -3864,6 +3864,7 @@
     <Content Include="Views\Permits\ODOTEditAxleFields.cshtml" />
     <Content Include="Views\GridDemo\TabStripGridDemo.cshtml" />
     <Content Include="Views\GridDemo\FlexLayoutGrid.cshtml" />
+    <Content Include="Views\ReportScreens\ReportLayoutFluid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

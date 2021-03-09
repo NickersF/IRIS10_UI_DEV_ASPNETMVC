@@ -33,6 +33,7 @@
 /*.row [class*='col-'] {
     transition: all 0.5s ease-in-out;
 }*/
+/*#region IRIS Custom Grid*/
 .iris-global-full-height {
   height: 100%;
 }
@@ -61,6 +62,7 @@
 .iris-main-layout-wrapper .iris-row-flex.iris-footer-flex {
   flex: 0 1 auto;
 }
+/*#endregion*/
 #tabstrip {
   height: 100%;
   overflow: auto;
@@ -76,5 +78,5 @@
   background-color: thistle;
 }
 .test-footer-color {
-  background-color: bisque;
+  background-color: salmon;
 }

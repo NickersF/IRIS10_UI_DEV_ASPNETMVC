@@ -66,6 +66,7 @@
                         .Items(children =>
                         {
                             children.Add().Text("Reports Main").Action("_ReportsMain", "ReportScreens");
+                            children.Add().Text("Fluid Reports Layout").Action("ReportLayoutFluid", "ReportScreens");
                         });
 
                     items.Add().Text("Permit Views and Templates")
@@ -154,7 +155,6 @@
             @RenderBody()
         </main>
     </div>
-
 
     @RenderSection("scripts", required: false)
 </body>
