@@ -56,6 +56,13 @@
                             children.Add().Text("Change Password Confirmation Screen").Action("ChangePasswordConfirmation", "Login");
                         });
 
+                    items.Add().Text("ODOT Road Milage Report")
+                        .Items(children =>
+                        {
+                            children.Add().Text("Login Select").Action("LoginSelect", "ODOTMilage");
+                            children.Add().Text("ODOT Login").Action("ODOTLogin", "ODOTMilage");
+                            children.Add().Text("AOC Login").Action("AOCLogin", "ODOTMilage");
+                        });
                     items.Add().Text("Admin Views and Templates")
                         .Items(children =>
                         {

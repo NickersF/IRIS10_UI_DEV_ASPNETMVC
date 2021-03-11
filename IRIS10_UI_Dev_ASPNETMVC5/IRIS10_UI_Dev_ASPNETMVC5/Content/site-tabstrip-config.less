@@ -1,11 +1,9 @@
-﻿// CSS rules to configure the Kendo UI TabStrip example
+﻿/*
+    CSS rules to configure the Kendo UI TabStrip example
+*/
 
-    /*#region IRIS Custom Grid*/
+/*#region IRIS Custom Grid*/
 .iris-global-full-height {
-    height: 100%;
-}
-
-.k-tabstrip-wrapper {
     height: 100%;
 }
 
@@ -37,17 +35,23 @@
 }
 /*#endregion*/
 
-// Kendo customs and colors
+/*#region Kendo custom overrides*/
 #tabstrip {
     height: 100%;
     overflow: auto;
+}
+
+.k-tabstrip-wrapper {
+    height: 100%;
 }
 
 .iris-tabstrip-custom-wrapper {
     display: flex;
     height: 100%;
 }
+/*#endregion*/
 
+/*#region Testing colors*/
 .test-header-color {
     background-color: mediumpurple;
 }
@@ -59,3 +63,20 @@
 .test-footer-color {
     background-color: salmon;
 }
+
+.flextest-light-blue {
+    background-color: #e3f2fd;
+}
+
+.flextest-medium-blue {
+    background-color: #bbdefb;
+}
+
+.flextest-dark-blue {
+    background-color: #64b5f6;
+}
+
+.flextest-darker-blue {
+    background-color: #2196f3;
+}
+/*#endregion*/

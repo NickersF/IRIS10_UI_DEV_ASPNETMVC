@@ -6,5 +6,9 @@
   {
     "outputFile": "Content/site-reports.css",
     "inputFile": "Content/site-reports.less"
+  },
+  {
+    "outputFile": "Content/site-odot.css",
+    "inputFile": "Content/site-odot.less"
   }
 ]

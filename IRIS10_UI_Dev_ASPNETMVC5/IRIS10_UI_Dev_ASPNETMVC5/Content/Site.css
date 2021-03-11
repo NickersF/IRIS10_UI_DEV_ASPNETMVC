@@ -27,17 +27,20 @@
 .report-list-height {
   height: 256px;
 }
+.height-fit-content {
+  height: fit-content;
+}
 .iris-grid-no-header {
   display: none;
 }
 /*.row [class*='col-'] {
     transition: all 0.5s ease-in-out;
 }*/
+/*
+    CSS rules to configure the Kendo UI TabStrip example
+*/
 /*#region IRIS Custom Grid*/
 .iris-global-full-height {
-  height: 100%;
-}
-.k-tabstrip-wrapper {
   height: 100%;
 }
 .iris-main-layout-wrapper {
@@ -63,14 +66,20 @@
   flex: 0 1 auto;
 }
 /*#endregion*/
+/*#region Kendo custom overrides*/
 #tabstrip {
   height: 100%;
   overflow: auto;
+}
+.k-tabstrip-wrapper {
+  height: 100%;
 }
 .iris-tabstrip-custom-wrapper {
   display: flex;
   height: 100%;
 }
+/*#endregion*/
+/*#region Testing colors*/
 .test-header-color {
   background-color: mediumpurple;
 }
@@ -79,4 +88,22 @@
 }
 .test-footer-color {
   background-color: salmon;
+}
+.flextest-light-blue {
+  background-color: #e3f2fd;
+}
+.flextest-medium-blue {
+  background-color: #bbdefb;
+}
+.flextest-dark-blue {
+  background-color: #64b5f6;
+}
+.flextest-darker-blue {
+  background-color: #2196f3;
+}
+/*#endregion*/
+#loginButtonsWrapper,
+#loginFormODOTWrapper,
+#loginFormCountiesWrapper {
+  display: none;
 }
