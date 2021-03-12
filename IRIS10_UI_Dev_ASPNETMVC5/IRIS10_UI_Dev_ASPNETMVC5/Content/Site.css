@@ -33,9 +33,6 @@
 .iris-grid-no-header {
   display: none;
 }
-/*.row [class*='col-'] {
-    transition: all 0.5s ease-in-out;
-}*/
 /*
     CSS rules to configure the Kendo UI TabStrip example
 */
@@ -106,4 +103,29 @@
 #loginFormODOTWrapper,
 #loginFormCountiesWrapper {
   display: none;
+}
+.odot-header-bg {
+  background: #2e6ff2;
+  background: linear-gradient(0deg, #2e6ff2 0%, #5399ee 100%);
+}
+.odot-login-grad-bg {
+  background: #e3f2fd;
+  background: linear-gradient(180deg, #e3f2fd 0%, #ffffff 100%);
+}
+.odot-2rem-type {
+  font-size: 2rem;
+}
+#closeODOTRegPanel_btn:hover,
+#closeODOTForgotPanel_btn:hover {
+  color: #737373;
+}
+#closeODOTLoginForm_btn,
+#closeCountyLoginForm_btn {
+  color: #737373;
+  font-size: 1.25rem;
+}
+#closeODOTLoginForm_btn:hover,
+#closeCountyLoginForm_btn:hover {
+  color: #5399EE;
+  font-size: 1.25rem;
 }

@@ -3877,8 +3877,7 @@
     <Content Include="Views\GridDemo\FlexLayoutGrid.cshtml" />
     <Content Include="Views\ReportScreens\ReportLayoutFluid.cshtml" />
     <Content Include="Views\ODOTMilage\LoginSelect.cshtml" />
-    <Content Include="Views\ODOTMilage\ODOTLogin.cshtml" />
-    <Content Include="Views\ODOTMilage\AOCLogin.cshtml" />
+    <Content Include="Views\ODOTMilage\MileageReportMain.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

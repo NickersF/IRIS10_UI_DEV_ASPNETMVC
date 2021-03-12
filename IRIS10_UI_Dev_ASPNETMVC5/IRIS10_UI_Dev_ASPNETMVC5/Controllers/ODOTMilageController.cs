@@ -13,13 +13,7 @@ namespace IRIS10_UI_Dev_ASPNETMVC5.Controllers
             return View();
         }
 
-        // GET: ODOTMilage
-        public ActionResult ODOTLogin()
-        {
-            return View();
-        }
-
-        public ActionResult AOCLogin()
+        public ActionResult MileageReportMain()
         {
             return View();
         }

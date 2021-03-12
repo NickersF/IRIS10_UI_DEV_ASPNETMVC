@@ -1,3 +1,33 @@
-﻿#loginButtonsWrapper, #loginFormODOTWrapper, #loginFormCountiesWrapper {
+﻿@import "site-colors.less";
+
+#loginButtonsWrapper, #loginFormODOTWrapper, #loginFormCountiesWrapper {
     display: none;
+}
+
+.odot-header-bg {
+    background: rgb(46,111,242);
+    background: linear-gradient(0deg, rgba(46,111,242,1) 0%, rgba(83,153,238,1) 100%);
+}
+
+.odot-login-grad-bg {
+    background: rgb(227,242,253);
+    background: linear-gradient(180deg, rgba(227,242,253,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+.odot-2rem-type {
+    font-size: 2rem;
+}
+
+#closeODOTRegPanel_btn:hover, #closeODOTForgotPanel_btn:hover {
+    color: @IRIS_GRAY_03;
+}
+
+#closeODOTLoginForm_btn, #closeCountyLoginForm_btn {
+    color: @IRIS_GRAY_03;
+    font-size: 1.25rem;
+}
+
+#closeODOTLoginForm_btn:hover, #closeCountyLoginForm_btn:hover {
+    color: @IRIS_BLUE_03;
+    font-size: 1.25rem;
 }
