@@ -46,7 +46,7 @@
   height: 100%;
 }
 .iris-main-layout-wrapper .iris-row-flex {
-  border: 1px dotted grey;
+  /*border: 1px dotted grey;*/
 }
 .iris-main-layout-wrapper .iris-row-flex.iris-header-flex {
   flex: 0 1 auto;
@@ -107,6 +107,9 @@
 .odot-header-bg {
   background: #2e6ff2;
   background: linear-gradient(0deg, #2e6ff2 0%, #5399ee 100%);
+}
+.odot-logo-height {
+  height: 64px;
 }
 .odot-login-grad-bg {
   background: #e3f2fd;

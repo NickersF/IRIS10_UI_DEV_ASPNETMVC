@@ -3,7 +3,7 @@
 
 $(document).ready(function () {
 
-    // Set initial state of first screen
+    // Set initial state of login screen elements
     $("#loginButtonsWrapper").fadeIn(900).addClass("d-flex");
     $("#ODOTForgotPasswordPanel").hide();
     $("#ODOTRegistrationPanel").hide();
@@ -21,6 +21,7 @@ $(document).ready(function () {
         $("#loginFormCountiesWrapper").fadeIn(900).addClass("d-flex");
     });
 
+    // Closes the ODOT login form container
     $("#closeODOTLoginForm_btn").click(function () {
 
         if ($("#loginButtonsWrapper").css("display") == "none") {
@@ -41,6 +42,7 @@ $(document).ready(function () {
 
     });
 
+    // Closes the county login form container
     $("#closeCountyLoginForm_btn").click(function () {
 
         if ($("#loginButtonsWrapper").css("display") == "none") {
@@ -98,5 +100,6 @@ $(document).ready(function () {
         $("#countyRegistrationPanel").slideUp(500, "swing");
     });
 
+    // Load log
     console.log("ODOT_UI.js Loaded");
 });

@@ -55,16 +55,17 @@
             <!-- #region ODOT Login Form Container - Contains login UI for ODOT users -->
             <section id="loginFormODOTWrapper" class="justify-content-around align-items-center odot-login-grad-bg w-100">
                 <div class="border rounded shadow-sm bg-white w-25 p-5">
-                    <div class="row justify-content-end">
-                        <div class="col-2">
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <h5>ODOT User Login</h5>
+                        </div>
+                        <div class="col-2 d-flex justify-content-end">
                             <span id="closeODOTLoginForm_btn" class="k-icon k-i-close"></span>
                         </div>
                     </div>
 
-                    <h5>ODOT User Login</h5>
-
                     <!-- #region ODOT Login Form -->
-                    <form>
+                    <form id="ODOTUserLoginForm">
                         <div class="form-group">
                             <label for="ODOTInputEmail">Email address</label>
                             <input type="email" class="form-control" id="ODOTInputEmail" aria-describedby="emailHelp">
@@ -89,8 +90,8 @@
                     <!-- #region ODOT Password Recovery Panel -->
                     <div id="ODOTForgotPasswordPanel" class="card border-danger mt-3">
                         <div class="card-body text-danger">
-                            <div class="row justify-content-end">
-                                <div class="col-2">
+                            <div class="row no-gutters justify-content-end">
+                                <div class="col-2 d-flex justify-content-end">
                                     <span id="closeODOTForgotPanel_btn" class="k-icon k-i-close"></span>
                                 </div>
                             </div>
@@ -108,8 +109,8 @@
                     <!-- #region ODOT New User Registration Panel -->
                     <div id="ODOTRegistrationPanel" class="card border-success mt-3">
                         <div class="card-body text-success">
-                            <div class="row justify-content-end">
-                                <div class="col-2">
+                            <div class="row no-gutters justify-content-end">
+                                <div class="col-2 d-flex justify-content-end">
                                     <span id="closeODOTRegPanel_btn" class="k-icon k-i-close"></span>
                                 </div>
                             </div>
@@ -124,19 +125,20 @@
             </section>
             <!-- #endregion -->
 
-            <!-- #region County Login Form - Contains login UI for county users -->
+            <!-- #region County Login Form Container - Contains login UI for county users -->
             <section id="loginFormCountiesWrapper" class="justify-content-around align-items-center odot-login-grad-bg w-100">
                 <div class="border rounded shadow-sm bg-white w-25 p-5">
-                    <div class="row justify-content-end">
-                        <div class="col-2">
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <h5>County User Login</h5>
+                        </div>
+                        <div class="col-2 d-flex justify-content-end">
                             <span id="closeCountyLoginForm_btn" class="k-icon k-i-close"></span>
                         </div>
                     </div>
 
-                    <h5>County User Login</h5>
-
                     <!-- #region County User Login Form -->
-                    <form>
+                    <form id="countyUserLoginForm">
                         <div class="form-group">
                             <label for="countyInputEmail">Email address</label>
                             <input type="email" class="form-control" id="countyInputEmail" aria-describedby="emailHelp">
@@ -161,8 +163,8 @@
                     <!-- #region County Password Recovery Panel -->
                     <div id="countyForgotPasswordPanel" class="card border-danger mt-3">
                         <div class="card-body text-danger">
-                            <div class="row justify-content-end">
-                                <div class="col-2">
+                            <div class="row no-gutters justify-content-end">
+                                <div class="col-2 d-flex justify-content-end">
                                     <span id="closeCountyForgotPanel_btn" class="k-icon k-i-close"></span>
                                 </div>
                             </div>
@@ -181,7 +183,7 @@
                     <div id="countyRegistrationPanel" class="card border-success mt-3">
                         <div class="card-body text-success">
                             <div class="row justify-content-end">
-                                <div class="col-2">
+                                <div class="col-2 d-flex justify-content-end">
                                     <span id="closeCountyRegPanel_btn" class="k-icon k-i-close"></span>
                                 </div>
                             </div>
