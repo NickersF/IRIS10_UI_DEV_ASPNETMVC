@@ -1495,7 +1495,9 @@
     <Content Include="Content\kendo\2020.3.1021-source\dataviz\kendo.dataviz.blueopal.less" />
     <Content Include="Content\kendo\2020.3.1021-source\dataviz\kendo.dataviz.black.less" />
     <Content Include="Content\kendo\2020.3.1021-source\common\transitions.less" />
+    <Content Include="Images\Example_Shape.svg" />
     <Content Include="Images\ODOT_UI_Illustration.svg" />
+    <Content Include="Images\Oregon_County_Map_Optimized.svg" />
     <Content Include="package.json" />
     <Content Include="package-lock.json" />
     <Content Include="Content\site-tabstrip-config.less" />
@@ -1513,6 +1515,8 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom\CustomReportExampleGrid.js" />
     <Content Include="Scripts\custom\MainGridDemo.js" />
+    <Content Include="Scripts\custom\ODOT_InteractiveMap.js" />
+    <Content Include="Scripts\custom\ODOT_SVGInteractivityEx.js" />
     <Content Include="Scripts\custom\ODOT_UI.js" />
     <Content Include="Scripts\custom\StatefulButtons.js" />
     <Content Include="Scripts\custom\TestGridData.js" />
@@ -3885,6 +3889,7 @@
     <Content Include="Views\ReportScreens\ReportLayoutFluid.cshtml" />
     <Content Include="Views\ODOTMilage\LoginSelect.cshtml" />
     <Content Include="Views\ODOTMilage\MileageReportMain.cshtml" />
+    <Content Include="Views\ODOTMilage\SVGInteractivity.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

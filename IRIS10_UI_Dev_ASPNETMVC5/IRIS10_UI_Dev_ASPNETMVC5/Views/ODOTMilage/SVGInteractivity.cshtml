@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SVGInteractivity</title>
+
+    @Styles.Render("~/Content/css")
+
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+<body>
+    <div>
+        @*<img src="~/Images/Example_Shape.svg" />*@
+        <object id="svgObject" type="image/svg+xml" data="~/Images/Example_Shape.svg"></object>
+    </div>
+
+    <div id="someId"></div>
+    <p id="countyNameLabel"></p>
+    <script src="~/Scripts/custom/ODOT_SVGInteractivityEx.js"></script>
+</body>
+</html>

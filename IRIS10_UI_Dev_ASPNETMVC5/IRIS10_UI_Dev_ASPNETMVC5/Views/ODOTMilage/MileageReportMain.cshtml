@@ -35,7 +35,27 @@
             </div>
         </header>
 
-        <section class="flex-grow-1 odot-login-grad-bg">
+        <section id="countyMapContainer" class="container-fluid h-100">
+            <div class="row odot-login-grad-bg h-100 pt-3 pb-3">
+                <div class="col d-flex">
+                    <div class="card flex-fill">
+                        <div class="card-header">
+                            <h5>Oregon County Map</h5>
+                            <div class="card">
+                                <div class="card-body bg-white">
+                                    <h5 id="countyNameLabel" class="m-0">No County Selected</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <object id="svgObject" type="image/svg+xml" class="w-50" data="~/Images/Oregon_County_Map_Optimized.svg"></object>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        @*<section class="flex-grow-1 odot-login-grad-bg">
             <div class="row no-gutters h-100">
                 <div class="col h-100">
                     @(Html.Kendo().Spreadsheet()
@@ -115,8 +135,10 @@
                     )
                 </div> 
             </div>
-        </section>
+        </section>*@
 
     </main>
+
+    <script src="~/Scripts/custom/ODOT_InteractiveMap.js"></script>
 </body>
 </html>

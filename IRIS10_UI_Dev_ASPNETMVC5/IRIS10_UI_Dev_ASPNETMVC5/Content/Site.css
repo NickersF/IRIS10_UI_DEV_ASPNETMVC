@@ -132,3 +132,7 @@
   color: #5399EE;
   font-size: 1.25rem;
 }
+.odot-map-sizer {
+  width: 60%;
+  height: 60%;
+}
