@@ -9,6 +9,8 @@
  */
 
 window.onload = function () {
+    var k = 0;                                                  // lcv for opted-in tenants (sloppy...)
+    var j = 0;
     // County data arrays
     var oregonCounties = [
         'Baker',
@@ -73,18 +75,6 @@ window.onload = function () {
 
     // Contains an HTML Collection of all shape tags in the SVG file.
     var countyPathElements = svgDoc.getElementsByTagName("path");
-    console.log(countyPathElements);
-
-    var k = 0;  // lcv for opted-in tenants (sloppy...)
-    // Paint opted in counties green
-    for (let i = 0; i < countyPathElements.length; i++) {
-
-        if (countiesOptedIn[k].TenantName == countyPathElements[i].id) {
-
-            countyPathElements[i].setAttribute("fill", "#a5d6a7");
-            k++;
-        }
-    }
 
     // Attach mouseover events to all county svg shapes
     for (let i = 0; i < countyPathElements.length; i++) {
@@ -104,4 +94,17 @@ window.onload = function () {
         });
 
     }
+
+    // Paint opted in counties green
+    for (let i = 0; i < countyPathElements.length; i++) {
+        
+        if (countiesOptedIn[k].TenantName == countyPathElements[i].id) {
+
+            k++
+            countyPathElements[i].setAttribute("fill", "#a5d6a7");
+            
+        }
+
+    }
+
 };
