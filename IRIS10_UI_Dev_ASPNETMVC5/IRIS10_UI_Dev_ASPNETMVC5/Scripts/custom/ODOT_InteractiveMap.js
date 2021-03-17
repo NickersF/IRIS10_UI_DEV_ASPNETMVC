@@ -9,10 +9,9 @@
  */
 
 window.onload = function () {
-    var k = 0;                                                  // lcv for opted-in tenants (sloppy...)
-    var j = 0;
+    let k = 0;                                                  // lcv for opted-in tenants (sloppy...)
     // County data arrays
-    var oregonCounties = [
+    let oregonCounties = [
         'Baker',
         'Benton',
         'Clackamas',
@@ -68,17 +67,17 @@ window.onload = function () {
             "TenantName": "Linn"
         }
     ];
-    console.log(countiesOptedIn[2].TenantName);
-
-    var svgObject = document.getElementById("svgObject");	    // Get the Object by ID
-    var svgDoc = svgObject.contentDocument;					    // Get the SVG document inside the Object tag
+    // SVG object and document variables
+    let svgObject = document.getElementById("svgObject");	    // Get the Object by ID
+    let svgDoc = svgObject.contentDocument;					    // Get the SVG document inside the Object tag
 
     // Contains an HTML Collection of all shape tags in the SVG file.
-    var countyPathElements = svgDoc.getElementsByTagName("path");
+    let countyPathElements = svgDoc.getElementsByTagName("path");
 
-    // Attach mouseover events to all county svg shapes
+    // Attach mouse events to all county svg shapes
     for (let i = 0; i < countyPathElements.length; i++) {
 
+        // Mouseover event which changes color and sets text label in county details panel
         countyPathElements[i].addEventListener("mouseover", function () {
 
             countyPathElements[i].setAttribute("fill", "#5399ee");
@@ -86,10 +85,17 @@ window.onload = function () {
 
         });
 
+        // Mouseout event which checks for opted in counties to preserve green highlighting
         countyPathElements[i].addEventListener("mouseout", function () {
 
-            countyPathElements[i].setAttribute("fill", "#f2f2f2");
-            document.getElementById("countyNameLabel").innerText = "No County Selected";
+            if (compareTenant(countyPathElements[i].id)) {
+                countyPathElements[i].setAttribute("fill", "#a5d6a7");
+                document.getElementById("countyNameLabel").innerText = "No County Selected";
+            }
+            else {
+                countyPathElements[i].setAttribute("fill", "#f2f2f2");
+                document.getElementById("countyNameLabel").innerText = "No County Selected";
+            }
 
         });
 
@@ -99,12 +105,22 @@ window.onload = function () {
     for (let i = 0; i < countyPathElements.length; i++) {
         
         if (countiesOptedIn[k].TenantName == countyPathElements[i].id) {
-
             k++
             countyPathElements[i].setAttribute("fill", "#a5d6a7");
-            
         }
 
     }
 
+    // Compare opted-in counties to current active event county
+    function compareTenant(currCounty) {
+
+        for (let i = 0; i < countiesOptedIn.length; i++) {
+
+            if (currCounty == countiesOptedIn[i].TenantName) {
+                return true;
+            }
+
+        }
+
+    }
 };
