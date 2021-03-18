@@ -25,174 +25,182 @@
     <main id="loginWrapper" class="d-flex flex-column h-100">
 
         <!-- #region Page Header -->
-        <header id="loginSelectHeader" class="d-flex flex-column justify-content-center align-items-center odot-header-bg h-25 shadow text-center">
+        <header id="loginSelectHeader" class="d-flex flex-column justify-content-center align-items-center odot-header-bg shadow text-center">
             <h1 class="display-4 text-light mb-5">ODOT Mileage Reporting System</h1>
-            <img src="~/Images/ODOT_UI_Illustration.svg" class="img-fluid h-25" />
+            <img src="~/Images/ODOT_UI_Illustration.svg" class="img-fluid odot-logo-height mb-4" />
         </header>
         <!-- #endregion -->
 
         <!-- #region Main Content Section - Contains login selection and login forms -->
-        <section id="loginSelectWrapper" class="d-flex h-75">
+        <section id="loginSelectWrapper" class="container-fluid no-gutters flex-grow-1 odot-login-grad-bg align-items-center">
 
             <!-- #region Login Selection Section - Contains two wrapped buttons to allow for login selection -->
-            <section id="loginButtonsWrapper" class="justify-content-around align-items-center odot-login-grad-bg w-100">
+            <section id="loginButtonsWrapper" class="row no-gutters justify-content-around align-items-center h-100">
 
-                <div id="loginODOTContainer" class="height-fit-content border rounded shadow-sm bg-white w-25 p-5">
-                    <h5>Login For ODOT Users</h5>
-                    <p>This login connects ODOT users to the road mileage data retrieval tool.</p>
-                    <button id="loginSelectODOT_btn" type="button" class="k-button odot-2rem-type w-100 pt-3 pb-3"><strong>ODOT Login</strong></button>
+                <div id="loginODOTContainer" class="col-md-4 border rounded shadow-sm bg-white">
+                    <div class="p-5">
+                        <h5>Login For ODOT Users</h5>
+                        <p>This login connects ODOT users to the road mileage data retrieval tool.</p>
+                        <button id="loginSelectODOT_btn" type="button" class="k-button odot-2rem-type w-100 pt-3 pb-3"><strong>ODOT Login</strong></button>
+                    </div>
                 </div>
 
-                <div id="loginCountiesContainer" class="height-fit-content border rounded shadow-sm bg-white w-25 p-5">
-                    <h5>Login For County Users</h5>
-                    <p>This login connects county users to the road mileage data access tool.</p>
-                    <button id="loginSelectCounties_btn" type="button" class="k-button odot-2rem-type w-100 pt-3 pb-3"><strong>County Login</strong></button>
+                <div id="loginCountiesContainer" class="col-md-4 border rounded shadow-sm bg-white">
+                    <div class="p-5">
+                        <h5>Login For County Users</h5>
+                        <p>This login connects county users to the road mileage data access tool.</p>
+                        <button id="loginSelectCounties_btn" type="button" class="k-button odot-2rem-type w-100 pt-3 pb-3"><strong>County Login</strong></button>
+                    </div>
                 </div>
 
             </section>
             <!-- #endregion -->
 
             <!-- #region ODOT Login Form Container - Contains login UI for ODOT users -->
-            <section id="loginFormODOTWrapper" class="justify-content-around align-items-center odot-login-grad-bg w-100">
-                <div class="border rounded shadow-sm bg-white w-25 p-5">
-                    <div class="row no-gutters">
-                        <div class="col">
-                            <h5>ODOT User Login</h5>
-                        </div>
-                        <div class="col-2 d-flex justify-content-end">
-                            <span id="closeODOTLoginForm_btn" class="k-icon k-i-close"></span>
-                        </div>
-                    </div>
-
-                    <!-- #region ODOT Login Form -->
-                    <form id="ODOTUserLoginForm">
-                        <div class="form-group">
-                            <label for="ODOTInputEmail">Email address</label>
-                            <input type="email" class="form-control" id="ODOTInputEmail" aria-describedby="emailHelp">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="ODOTInputPassword">Password</label>
-                            <input type="password" class="form-control" id="ODOTInputPassword">
-                        </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="ODOTKeepLoggedCheck">
-                            <label class="form-check-label" for="ODOTKeepLoggedCheck">Keep me logged in</label>
-                        </div>
-                        <button id="ODOTLogin_btn" type="submit" class="k-button">Login</button>
-                    </form>
-                    <!-- #endregion -->
-
-                    <div id="ODOTForgotPassword" class="mt-3">
-                        <a id="ODOTForgotPasswordLink" href="#">Forgot Password?</a>
-                    </div>
-
-                    <!-- #region ODOT Password Recovery Panel -->
-                    <div id="ODOTForgotPasswordPanel" class="card border-danger mt-3">
-                        <div class="card-body text-danger">
-                            <div class="row no-gutters justify-content-end">
-                                <div class="col-2 d-flex justify-content-end">
-                                    <span id="closeODOTForgotPanel_btn" class="k-icon k-i-close"></span>
-                                </div>
+            <section id="loginFormODOTWrapper" class="row no-gutters justify-content-around align-items-center h-100">
+                <div class="col-md-4 border rounded shadow-sm bg-white">
+                    <div class="p-5">
+                        <div class="row">
+                            <div class="col">
+                                <h5>ODOT User Login</h5>
                             </div>
-                            <h5 class="card-title">ODOT User Password Recovery</h5>
-                            <p class="card-text">Forgot your password? It's okay, let's get you reset.</p>
-                            <button id="ODOTForgotPassword_btn" type="button" class="btn btn-danger">Reset Password</button>
-                        </div>
-                    </div>
-                    <!-- #endregion -->
-
-                    <div id="openODOTRegistrationPanel" class="mt-3">
-                        <a id="openODOTRegistrationLink" href="#">New Account Registration.</a>
-                    </div>
-
-                    <!-- #region ODOT New User Registration Panel -->
-                    <div id="ODOTRegistrationPanel" class="card border-success mt-3">
-                        <div class="card-body text-success">
-                            <div class="row no-gutters justify-content-end">
-                                <div class="col-2 d-flex justify-content-end">
-                                    <span id="closeODOTRegPanel_btn" class="k-icon k-i-close"></span>
-                                </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <span id="closeODOTLoginForm_btn" class="k-icon k-i-close"></span>
                             </div>
-                            <h5 class="card-title">ODOT User Registration</h5>
-                            <p class="card-text">If you do not have a Mileage Reporting login please click below to submit an account registration form.</p>
-                            <button id="ODOTRegisterAccount_btn" type="button" class="btn btn-success">Register Account</button>
                         </div>
+
+                        <!-- #region ODOT Login Form -->
+                        <form id="ODOTUserLoginForm">
+                            <div class="form-group">
+                                <label for="ODOTInputEmail">Email address</label>
+                                <input type="email" class="form-control" id="ODOTInputEmail" aria-describedby="emailHelp">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="ODOTInputPassword">Password</label>
+                                <input type="password" class="form-control" id="ODOTInputPassword">
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="ODOTKeepLoggedCheck">
+                                <label class="form-check-label" for="ODOTKeepLoggedCheck">Keep me logged in</label>
+                            </div>
+                            <button id="ODOTLogin_btn" type="submit" class="k-button">Login</button>
+                        </form>
+                        <!-- #endregion -->
+
+                        <div id="ODOTForgotPassword" class="mt-3">
+                            <a id="ODOTForgotPasswordLink" href="#">Forgot Password?</a>
+                        </div>
+
+                        <!-- #region ODOT Password Recovery Panel -->
+                        <div id="ODOTForgotPasswordPanel" class="card border-danger mt-3">
+                            <div class="card-body text-danger">
+                                <div class="row no-gutters justify-content-end">
+                                    <div class="col-2 d-flex justify-content-end">
+                                        <span id="closeODOTForgotPanel_btn" class="k-icon k-i-close"></span>
+                                    </div>
+                                </div>
+                                <h5 class="card-title">ODOT User Password Recovery</h5>
+                                <p class="card-text">Forgot your password? It's okay, let's get you reset.</p>
+                                <button id="ODOTForgotPassword_btn" type="button" class="btn btn-danger">Reset Password</button>
+                            </div>
+                        </div>
+                        <!-- #endregion -->
+
+                        <div id="openODOTRegistrationPanel" class="mt-3">
+                            <a id="openODOTRegistrationLink" href="#">New Account Registration.</a>
+                        </div>
+
+                        <!-- #region ODOT New User Registration Panel -->
+                        <div id="ODOTRegistrationPanel" class="card border-success mt-3">
+                            <div class="card-body text-success">
+                                <div class="row no-gutters justify-content-end">
+                                    <div class="col-2 d-flex justify-content-end">
+                                        <span id="closeODOTRegPanel_btn" class="k-icon k-i-close"></span>
+                                    </div>
+                                </div>
+                                <h5 class="card-title">ODOT User Registration</h5>
+                                <p class="card-text">If you do not have a Mileage Reporting login please click below to submit an account registration form.</p>
+                                <button id="ODOTRegisterAccount_btn" type="button" class="btn btn-success">Register Account</button>
+                            </div>
+                        </div>
+                        <!-- #endregion -->
                     </div>
-                    <!-- #endregion -->
 
                 </div>
             </section>
             <!-- #endregion -->
 
             <!-- #region County Login Form Container - Contains login UI for county users -->
-            <section id="loginFormCountiesWrapper" class="justify-content-around align-items-center odot-login-grad-bg w-100">
-                <div class="border rounded shadow-sm bg-white w-25 p-5">
-                    <div class="row no-gutters">
-                        <div class="col">
-                            <h5>County User Login</h5>
-                        </div>
-                        <div class="col-2 d-flex justify-content-end">
-                            <span id="closeCountyLoginForm_btn" class="k-icon k-i-close"></span>
-                        </div>
-                    </div>
-
-                    <!-- #region County User Login Form -->
-                    <form id="countyUserLoginForm">
-                        <div class="form-group">
-                            <label for="countyInputEmail">Email address</label>
-                            <input type="email" class="form-control" id="countyInputEmail" aria-describedby="emailHelp">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="countyInputPassword">Password</label>
-                            <input type="password" class="form-control" id="countyInputPassword">
-                        </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="countyKeepLoggedCheck">
-                            <label class="form-check-label" for="countyKeepLoggedCheck">Keep me logged in</label>
-                        </div>
-                        <button id="countyLogin_btn" type="submit" class="k-button">Login</button>
-                    </form>
-                    <!-- #endregion -->
-
-                    <div id="countyForgotPassword" class="mt-3">
-                        <a id="countyForgotPasswordLink" href="#">Forgot Password?</a>
-                    </div>
-
-                    <!-- #region County Password Recovery Panel -->
-                    <div id="countyForgotPasswordPanel" class="card border-danger mt-3">
-                        <div class="card-body text-danger">
-                            <div class="row no-gutters justify-content-end">
-                                <div class="col-2 d-flex justify-content-end">
-                                    <span id="closeCountyForgotPanel_btn" class="k-icon k-i-close"></span>
-                                </div>
+            <section id="loginFormCountiesWrapper" class="row no-gutters justify-content-around align-items-center h-100">
+                <div class="col-md-4 border rounded shadow-sm bg-white">
+                    <div class="p-5">
+                        <div class="row">
+                            <div class="col">
+                                <h5>County User Login</h5>
                             </div>
-                            <h5 class="card-title">ODOT User Password Recovery</h5>
-                            <p class="card-text">Forgot your password? It's okay, let's get you reset.</p>
-                            <button id="countyForgotPassword_btn" type="button" class="btn btn-danger">Reset Password</button>
-                        </div>
-                    </div>
-                    <!-- #endregion -->
-
-                    <div id="openCountyRegistrationPanel" class="mt-3">
-                        <a id="openCountyRegistrationLink" href="#">Not Registered? Get started!</a>
-                    </div>
-
-                    <!-- #region County New User Registration Panel -->
-                    <div id="countyRegistrationPanel" class="card border-success mt-3">
-                        <div class="card-body text-success">
-                            <div class="row justify-content-end">
-                                <div class="col-2 d-flex justify-content-end">
-                                    <span id="closeCountyRegPanel_btn" class="k-icon k-i-close"></span>
-                                </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <span id="closeCountyLoginForm_btn" class="k-icon k-i-close"></span>
                             </div>
-                            <h5 class="card-title">County User Registration</h5>
-                            <p class="card-text">If you do not have a Mileage Reporting login please click below to submit an account registration form.</p>
-                            <button id="countyRegisterAccount_btn" type="button" class="btn btn-success">Register Account</button>
                         </div>
+
+                        <!-- #region County User Login Form -->
+                        <form id="countyUserLoginForm">
+                            <div class="form-group">
+                                <label for="countyInputEmail">Email address</label>
+                                <input type="email" class="form-control" id="countyInputEmail" aria-describedby="emailHelp">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="countyInputPassword">Password</label>
+                                <input type="password" class="form-control" id="countyInputPassword">
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="countyKeepLoggedCheck">
+                                <label class="form-check-label" for="countyKeepLoggedCheck">Keep me logged in</label>
+                            </div>
+                            <button id="countyLogin_btn" type="submit" class="k-button">Login</button>
+                        </form>
+                        <!-- #endregion -->
+
+                        <div id="countyForgotPassword" class="mt-3">
+                            <a id="countyForgotPasswordLink" href="#">Forgot Password?</a>
+                        </div>
+
+                        <!-- #region County Password Recovery Panel -->
+                        <div id="countyForgotPasswordPanel" class="card border-danger mt-3">
+                            <div class="card-body text-danger">
+                                <div class="row no-gutters justify-content-end">
+                                    <div class="col-2 d-flex justify-content-end">
+                                        <span id="closeCountyForgotPanel_btn" class="k-icon k-i-close"></span>
+                                    </div>
+                                </div>
+                                <h5 class="card-title">ODOT User Password Recovery</h5>
+                                <p class="card-text">Forgot your password? It's okay, let's get you reset.</p>
+                                <button id="countyForgotPassword_btn" type="button" class="btn btn-danger">Reset Password</button>
+                            </div>
+                        </div>
+                        <!-- #endregion -->
+
+                        <div id="openCountyRegistrationPanel" class="mt-3">
+                            <a id="openCountyRegistrationLink" href="#">Not Registered? Get started!</a>
+                        </div>
+
+                        <!-- #region County New User Registration Panel -->
+                        <div id="countyRegistrationPanel" class="card border-success mt-3">
+                            <div class="card-body text-success">
+                                <div class="row justify-content-end">
+                                    <div class="col-2 d-flex justify-content-end">
+                                        <span id="closeCountyRegPanel_btn" class="k-icon k-i-close"></span>
+                                    </div>
+                                </div>
+                                <h5 class="card-title">County User Registration</h5>
+                                <p class="card-text">If you do not have a Mileage Reporting login please click below to submit an account registration form.</p>
+                                <button id="countyRegisterAccount_btn" type="button" class="btn btn-success">Register Account</button>
+                            </div>
+                        </div>
+                        <!-- #endregion -->
                     </div>
-                    <!-- #endregion -->
 
                 </div>
             </section>
@@ -204,6 +212,6 @@
     </main>
     <!-- #endregion -->
     
-    <script src="~/Scripts/custom/ODOT_UI.js"></script>
+    <script src="~/Scripts/custom/ODOT_UI_Login.js"></script>
 </body>
 </html>

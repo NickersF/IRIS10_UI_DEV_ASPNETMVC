@@ -5,7 +5,6 @@
  ===================================
  This script implements the interactivity of the ODOT Mileage Report
  interactive SVG map.
- 
  */
 
 window.onload = function () {

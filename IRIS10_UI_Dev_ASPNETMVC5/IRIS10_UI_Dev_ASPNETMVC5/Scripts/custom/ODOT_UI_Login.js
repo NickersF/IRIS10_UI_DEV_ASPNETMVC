@@ -1,5 +1,10 @@
-﻿// Author: Nicholas Fazzolari
-// JS for the ODOT UI events and state
+﻿/*
+ ODOT Mileage Report Login Events
+ ===================================
+ Author: Nicholas Fazzolari for AOC/ORP
+ ===================================
+ This script implements the user events for the login pages
+ */
 
 $(document).ready(function () {
 
@@ -9,6 +14,12 @@ $(document).ready(function () {
     $("#ODOTRegistrationPanel").hide();
     $("#countyForgotPasswordPanel").hide();
     $("#countyRegistrationPanel").hide();
+
+    // Login elements responsive class switching
+    if ($(window).width <= 768) {
+        $("#loginODOTContainer").addClass("mt-3");
+        $("#loginCountiesContainer").addClass("mt-3 mb-3");
+    }
 
     // Login select events
     $("#loginSelectODOT_btn").click(function () {

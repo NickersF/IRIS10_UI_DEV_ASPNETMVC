@@ -1515,9 +1515,10 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom\CustomReportExampleGrid.js" />
     <Content Include="Scripts\custom\MainGridDemo.js" />
-    <Content Include="Scripts\custom\ODOT_InteractiveMap.js" />
+    <Content Include="Scripts\custom\ODOT_UI_InteractiveMap.js" />
     <Content Include="Scripts\custom\ODOT_SVGInteractivityEx.js" />
-    <Content Include="Scripts\custom\ODOT_UI.js" />
+    <Content Include="Scripts\custom\ODOT_UI_Login.js" />
+    <Content Include="Scripts\custom\ODOT_UI_MainEvents.js" />
     <Content Include="Scripts\custom\StatefulButtons.js" />
     <Content Include="Scripts\custom\TestGridData.js" />
     <Content Include="Scripts\custom\_ReportsMain.js" />
@@ -3890,6 +3891,8 @@
     <Content Include="Views\ODOTMilage\LoginSelect.cshtml" />
     <Content Include="Views\ODOTMilage\MileageReportMain.cshtml" />
     <Content Include="Views\ODOTMilage\SVGInteractivity.cshtml" />
+    <Content Include="Views\ODOTMilage\LoginLayoutGrid.cshtml" />
+    <Content Include="Views\ODOTMilage\MainLayoutGrid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

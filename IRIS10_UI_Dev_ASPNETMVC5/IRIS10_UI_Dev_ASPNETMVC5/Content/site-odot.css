@@ -6,6 +6,7 @@
 .color-test {
   color: #2E6FF2;
 }
+/*#region IRIS Colors */
 .iris-bg-dark-blue {
   background-color: #151B26;
 }
@@ -21,25 +22,53 @@
 .iris-border-hinted {
   border-color: rgba(0, 0, 0, 0.125);
 }
+/*#endregion*/
+/*#region Testing colors*/
+.test-header-color {
+  background-color: mediumpurple;
+}
+.test-content-color {
+  background-color: thistle;
+}
+.test-footer-color {
+  background-color: salmon;
+}
+.flextest-light-blue {
+  background-color: #e3f2fd;
+}
+.flextest-medium-blue {
+  background-color: #bbdefb;
+}
+.flextest-dark-blue {
+  background-color: #64b5f6;
+}
+.flextest-darker-blue {
+  background-color: #2196f3;
+}
+/*#endregion*/
+/*#region Display management classes */
 #loginButtonsWrapper,
 #loginFormODOTWrapper,
 #loginFormCountiesWrapper {
   display: none;
 }
+/*#endregion*/
+/*#region Type classes (move to own .less file) */
+.odot-2rem-type {
+  font-size: 2rem;
+}
+/*#endregion*/
+/*#region Gradient background classes */
 .odot-header-bg {
   background: #2e6ff2;
   background: linear-gradient(0deg, #2e6ff2 0%, #5399ee 100%);
-}
-.odot-logo-height {
-  height: 64px;
 }
 .odot-login-grad-bg {
   background: #e3f2fd;
   background: linear-gradient(180deg, #e3f2fd 0%, #ffffff 100%);
 }
-.odot-2rem-type {
-  font-size: 2rem;
-}
+/*#endregion*/
+/*#region Custom window management button states */
 #closeODOTRegPanel_btn:hover,
 #closeODOTForgotPanel_btn:hover {
   color: #737373;
@@ -54,7 +83,32 @@
   color: #5399EE;
   font-size: 1.25rem;
 }
+/*#endregion*/
+/*#region Sizing classes for various elements */
+.odot-logo-height {
+  height: 64px;
+}
 .odot-map-sizer {
   width: 60%;
   height: 60%;
 }
+/*#endregion*/
+/*#region Custom responsive breakpoints */
+@media (max-width: 768px) {
+  #loginODOTContainer {
+    margin-top: 1rem;
+  }
+  #loginCountiesContainer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  #loginFormODOTWrapper {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  #loginFormCountiesWrapper {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+/*#endregion*/

@@ -1,27 +1,30 @@
 ﻿@import "site-colors.less";
 
+/*#region Display management classes */
 #loginButtonsWrapper, #loginFormODOTWrapper, #loginFormCountiesWrapper {
     display: none;
 }
+/*#endregion*/
 
+/*#region Type classes (move to own .less file) */
+.odot-2rem-type {
+    font-size: 2rem;
+}
+/*#endregion*/
+
+/*#region Gradient background classes */
 .odot-header-bg {
     background: rgb(46,111,242);
     background: linear-gradient(0deg, rgba(46,111,242,1) 0%, rgba(83,153,238,1) 100%);
-}
-
-.odot-logo-height {
-    height: 64px;
 }
 
 .odot-login-grad-bg {
     background: rgb(227,242,253);
     background: linear-gradient(180deg, rgba(227,242,253,1) 0%, rgba(255,255,255,1) 100%);
 }
+/*#endregion*/
 
-.odot-2rem-type {
-    font-size: 2rem;
-}
-
+/*#region Custom window management button states */
 #closeODOTRegPanel_btn:hover, #closeODOTForgotPanel_btn:hover {
     color: @IRIS_GRAY_03;
 }
@@ -35,8 +38,38 @@
     color: @IRIS_BLUE_03;
     font-size: 1.25rem;
 }
+/*#endregion*/
+
+/*#region Sizing classes for various elements */
+.odot-logo-height {
+    height: 64px;
+}
 
 .odot-map-sizer {
     width: 60%;
     height: 60%;
 }
+/*#endregion*/
+
+/*#region Custom responsive breakpoints */
+@media (max-width: 768px) {
+    #loginODOTContainer {
+        margin-top: 1rem;
+    }
+
+    #loginCountiesContainer {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #loginFormODOTWrapper {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #loginFormCountiesWrapper {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+/*#endregion*/
