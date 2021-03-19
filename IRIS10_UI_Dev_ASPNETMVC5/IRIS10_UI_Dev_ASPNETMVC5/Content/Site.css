@@ -5,6 +5,7 @@
 /* Grays */
 /* Main Palette */
 /* Custom Validation Colors */
+/* Interactive Map Colors */
 /* IRIS Custom color classes */
 .color-test {
   color: #2E6FF2;
@@ -138,14 +139,42 @@
   color: #5399EE;
   font-size: 1.25rem;
 }
+#closeSideBar_btn,
+#closeSpreadsheet_btn {
+  color: #737373;
+  font-size: 1.25rem;
+}
+#closeSideBar_btn:hover,
+#closeSpreadsheet_btn:hover {
+  color: #5399EE;
+  font-size: 1.25rem;
+}
 /*#endregion*/
 /*#region Sizing classes for various elements */
 .odot-logo-height {
   height: 64px;
 }
+#mainSideBar {
+  max-width: 350px;
+}
 .odot-map-sizer {
   width: 60%;
   height: 60%;
+}
+.odot-map-legend-grey {
+  width: 1rem;
+  height: 1rem;
+  background-color: #F2F2F2;
+}
+.odot-map-legend-green {
+  width: 1rem;
+  height: 1rem;
+  background-color: #A5D6A7;
+}
+.odot-map-legend-blue {
+  width: 1rem;
+  height: 1rem;
+  background-color: #5399EE;
 }
 /*#endregion*/
 /*#region Custom responsive breakpoints */

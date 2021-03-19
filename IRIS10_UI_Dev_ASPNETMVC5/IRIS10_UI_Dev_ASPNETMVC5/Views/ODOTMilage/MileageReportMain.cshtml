@@ -20,43 +20,207 @@
     <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
 </head>
 <body class="h-100">
-    
-    <main id="mileageMainWrapper" class="d-flex flex-column h-100">
 
-        <header class="odot-header-bg text-light">
+    <!-- #region Parent Content Wrapper -->
+    <main id="mainLayoutWrapper" class="d-flex flex-column h-100">
+
+        <!-- #region Page Header -->
+        <header id="mainHeader" class="odot-header-bg text-light">
             <div class="row no-gutters">
                 <div class="col p-3">
                     <h5>ODOT Mileage Report System</h5>
                     @*<img src="~/Images/ODOT_UI_Illustration.svg" class="odot-logo-height" />*@
                 </div>
-                <div class="col-2">
+                <div class="col-3">
                     user area
                 </div>
             </div>
         </header>
+        <!-- #endregion -->
 
-        <section id="countyMapContainer" class="container-fluid h-100">
-            <div class="row odot-login-grad-bg h-100 pt-3 pb-3">
-                <div class="col d-flex">
-                    <div class="card flex-fill">
-                        <div class="card-header">
-                            <h5>Oregon County Map</h5>
-                            <div class="card">
-                                <div class="card-body bg-white">
-                                    <h5 id="countyNameLabel" class="m-0">No County Selected</h5>
+        <!-- #region Main Content Wrapper -->
+        <section id="mainContentWrapper" class="row no-gutters flex-grow-1 odot-login-grad-bg">
+
+            <!-- #region Sidebar -->
+            <section id="mainSideBar" class="col-md-auto">
+
+                <section id="sideBarContainer" class="container-fluid h-100">
+                    <div class="row no-gutters h-100 pt-3 pb-3">
+                        <div class="col d-flex">
+                            <div class="card flex-fill">
+
+                                <!-- #region Sidebar Header -->
+                                <div class="card-header">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5>County Selection Manager</h5>
+                                        </div>
+                                        <div class="col-2 d-flex justify-content-end">
+                                            <span id="closeSideBar_btn" class="k-icon k-i-close"></span>
+                                        </div>
+                                    </div>
+
                                 </div>
+                                <!-- #endregion -->
+
+                                <!-- #region County Multiselect Component -->
+                                <div class="card-body">
+
+                                    <button id="viewData_btn" class="btn btn-primary">Show ODOT Mileage Report Data Editor</button>
+
+                                    <ul class="list-group">
+                                        <li class="list-group-item">County 1</li>
+                                        <li class="list-group-item">County 2</li>
+                                        <li class="list-group-item">County 3</li>
+                                        <li class="list-group-item">County 4</li>
+                                        <li class="list-group-item">County 5</li>
+                                    </ul>
+
+                                </div>
+                                <!-- #endregion -->
+
                             </div>
                         </div>
-                        <div class="card-body d-flex justify-content-center align-items-center">
-                            <object id="svgObject" type="image/svg+xml" class="w-50" data="~/Images/Oregon_County_Map_Optimized.svg"></object>
+                    </div>
+                    
+                </section>
+            </section>
+            <!-- #endregion -->
+
+            <!-- #region Content Panels - Map and Spreadsheet View -->
+            <section id="mainContentSection" class="col-md flex-grow-1">
+
+                <!-- #region Interactive Map Container -->
+                <section id="interactiveMapContainer" class="container-fluid h-100">
+
+                    <div class="row h-100 pt-3 pb-3">
+                        <div class="col d-flex">
+                            <div class="card flex-fill">
+
+                                <!-- #region Map Header -->
+                                <div class="row no-gutters card-header justify-content-between">
+
+                                    <!-- #region Dynamic County Selection Label -->
+                                    <div class="col-md-4">
+                                        <h5>Interactive Oregon County Map</h5>
+                                        <div class="card">
+                                            <div class="card-body bg-white">
+                                                <div class="row no-gutters">
+                                                    <div class="col-md">
+                                                        <h5 id="countyNameLabel" class="m-0">No County Selected</h5>
+                                                    </div>
+                                                    <div class="col-md">
+                                                        <button id="openSideBarMap_btn" class="k-button">Show County Selection Manager</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion -->
+
+                                    <!-- #region Map Legend -->
+                                    <div class="col-md-4">
+                                        <h5>Legend</h5>
+                                        <div class="card">
+                                            <div class="card-body rounded-lg bg-white">
+                                                <div class="row no-gutters">
+                                                    <div class="col-4">
+                                                        <div class="d-inline-block odot-map-legend-grey border border-dark"></div>
+                                                        <span class="small text-muted pb-1">Inactive county</span>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="d-inline-block odot-map-legend-blue border border-dark"></div>
+                                                        <span class="small text-muted pb-1">Selected county</span>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="d-inline-block odot-map-legend-green border border-dark"></div>
+                                                        <span class="small text-muted pb-1">Active county</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion -->
+
+                                </div>
+                                <!-- #endregion -->
+
+                                <!-- #region Map -->
+                                <div class="card-body d-flex justify-content-center align-items-center">
+                                    <object id="svgObject" type="image/svg+xml" class="w-50" data="~/Images/Oregon_County_Map_Optimized.svg"></object>
+                                </div>
+                                <!-- #endregion -->
+
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+
+                </section>
+                <!-- #endregion -->
+
+                <!-- #region Spreadsheet Container -->
+                <section id="spreadsheetContainer" class="container-fluid h-100">
+                    <div class="row h-100 pt-3 pb-3">
+                        <div class="col d-flex">
+                            <div class="card flex-fill">
+
+                                <!-- #region Spreadsheet Container Header -->
+                                <div class="card-header">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5>ODOT Mileage Report Data Editor</h5>
+                                        </div>
+                                        <div class="col-2 d-flex justify-content-end">
+                                            <span id="closeSpreadsheet_btn" class="k-icon k-i-close"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- #endregion -->
+
+                                <!-- #region Spreadsheet Kendo UI -->
+                                <div class="card-body">
+                                    <button id="openSideBarSpreadsheet_btn" class="k-button">Show County Selection Manager</button>
+                                    @(Html.Kendo().Spreadsheet()
+                                        .Name("spreadsheet")
+                                        .Rows(10)
+                                        .Columns(10)
+                                        .Sheetsbar(true)
+                                        .Toolbar(true)
+                                        .HtmlAttributes(new { style = "width:100%" })
+                                        .Toolbar(t => t.Home(true).Data(false).Insert(false))
+                                        .Excel(excel => excel
+                                            .ProxyURL(Url.Action("Index_Save", "Spreadsheet"))
+                                        )
+                                        .Pdf(pdf => pdf
+                                            .ProxyURL(Url.Action("Index_Save", "Spreadsheet"))
+                                        )
+                                        .Sheets(sheets => {
+                                            sheets.Add()
+                                                .Name("Test Sheet");
+                                            })
+                                    )
+                                </div>
+                                <!-- #endregion -->
+
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </section>
+                <!-- #endregion -->
+
+            </section>
+            <!-- #endregion -->
+
         </section>
+        <!-- #endregion -->
 
     </main>
+    <!-- #endregion -->
 
     <script src="~/Scripts/custom/ODOT_UI_InteractiveMap.js"></script>
+    <script src="~/Scripts/custom/ODOT_UI_MainEvents.js"></script>
+
 </body>
 </html>

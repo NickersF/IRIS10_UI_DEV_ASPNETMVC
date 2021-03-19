@@ -24,17 +24,49 @@
     <!-- #region Parent Content Wrapper -->
     <main id="mainLayoutWrapper" class="d-flex flex-column h-100">
 
-        <section id="mainHeader" class="flextest-light-blue">mainHeader</section>
+        <!-- #region Page Header -->
+        <section id="mainHeader" class="flextest-light-blue">
+            pageHeader
+        </section>
+        <!-- #endregion -->
+
+        <!-- #region Main Content Wrapper -->
         <section id="mainContentWrapper" class="row no-gutters flex-grow-1">
+
+            <!-- #region Sidebar -->
             <section id="mainSideBar" class="col-md-auto flextest-medium-blue">
                 <p>mainSideBar</p>
                 <button id="closeSideBar_btn" class="k-button">Close Side Bar</button>
+                <button id="viewData_btn" class="k-button">View Data</button>
             </section>
+            <!-- #endregion -->
+
+            <!-- #region Content Section -->
             <section id="mainContentSection" class="col-md flex-grow-1 flextest-dark-blue">
+
                 <p>mainContentSecttion</p>
-                <button id="openSideBar_btn" class="k-button">Show Side Bar</button>
+
+                <!-- #region Interactive Map Container -->
+                <section id="interactiveMapContainer">
+                    <p>interactiveMapContainer</p>
+                    <button id="openSideBarMap_btn" class="k-button">Show Side Bar</button>
+
+                </section>
+                <!-- #endregion -->
+                <!-- #region Spreadsheet Container -->
+                <section id="spreadsheetContainer">
+                    <p>spreadSheetContainer</p>
+                    <button id="openSideBarSpreadsheet_btn" class="k-button">Show Side Bar</button>
+                    <button id="closeSpreadsheet_btn" class="k-button">Close Spreadsheet View</button>
+
+                </section>
+                <!-- #endregion -->
+
             </section>
+            <!-- #endregion -->
+
         </section>
+        <!-- #endregion -->
 
     </main>
     <!-- #endregion -->

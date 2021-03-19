@@ -38,6 +38,16 @@
     color: @IRIS_BLUE_03;
     font-size: 1.25rem;
 }
+
+#closeSideBar_btn, #closeSpreadsheet_btn {
+    color: @IRIS_GRAY_03;
+    font-size: 1.25rem;
+}
+
+#closeSideBar_btn:hover, #closeSpreadsheet_btn:hover {
+    color: @IRIS_BLUE_03;
+    font-size: 1.25rem;
+}
 /*#endregion*/
 
 /*#region Sizing classes for various elements */
@@ -45,9 +55,34 @@
     height: 64px;
 }
 
+#mainSideBar {
+    max-width: 350px;
+}
+
 .odot-map-sizer {
     width: 60%;
     height: 60%;
+}
+
+// Map legend size mixin
+.odot-map-legend-size() {
+    width: 1rem;
+    height: 1rem;
+}
+
+.odot-map-legend-grey {
+    .odot-map-legend-size();
+    background-color: @IRIS_GRAY_04;
+}
+
+.odot-map-legend-green {
+    .odot-map-legend-size();
+    background-color: @IRIS_MAP_GREEN;
+}
+
+.odot-map-legend-blue {
+    .odot-map-legend-size();
+    background-color: @IRIS_BLUE_03;
 }
 /*#endregion*/
 
