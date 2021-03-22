@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="h-100">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ODOT Mileage Report UI</title>
+
+    @Styles.Render("~/Content/css")
+
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+<body class="h-100">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <button id="clearSelection_btn" class="btn btn-primary">Clear Selection</button>
+                <ul id="UserselectedCountiesList" class="list-group">
+                </ul>
+            </div>
+            <div class="col-6">
+                <object id="svgMapMultiselect" type="image/svg+xml" class="w-50" data="~/Images/Sample_Counties.svg"></object>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="~/Scripts/custom/ODOT_UI_MultiSelect.js"></script>
+    <script src="~/Scripts/custom/ODOT_UI_MainEvents.js"></script>
+
+</body>
+</html>
