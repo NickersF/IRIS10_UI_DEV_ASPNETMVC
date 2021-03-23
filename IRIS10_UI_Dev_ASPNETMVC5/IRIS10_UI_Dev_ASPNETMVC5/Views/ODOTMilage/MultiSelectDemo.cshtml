@@ -24,18 +24,26 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-6">
-                <button id="clearSelection_btn" class="btn btn-primary">Clear Selection</button>
+                <button id="clearAll_btn" class="btn btn-primary">Remove All</button>
+                @*<button id="clearSelection_btn" class="btn btn-primary">Remove Selected Items</button>*@
                 <ul id="UserselectedCountiesList" class="list-group">
                 </ul>
+                <button id="queryData_btn" class="btn btn-primary">Run Query Against Selection</button>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Default checkbox
+                    </label>
+                </div>
+
             </div>
             <div class="col-6">
-                <object id="svgMapMultiselect" type="image/svg+xml" class="w-50" data="~/Images/Sample_Counties.svg"></object>
+                <object id="svgMapObject_Demo" type="image/svg+xml" class="w-50" data="~/Images/Sample_Counties.svg"></object>
 
             </div>
         </div>
     </div>
-
-
 
     <script src="~/Scripts/custom/ODOT_UI_MultiSelect.js"></script>
     <script src="~/Scripts/custom/ODOT_UI_MainEvents.js"></script>

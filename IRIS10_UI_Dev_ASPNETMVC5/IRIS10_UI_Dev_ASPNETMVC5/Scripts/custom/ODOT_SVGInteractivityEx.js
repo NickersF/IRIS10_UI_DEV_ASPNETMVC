@@ -19,8 +19,8 @@
 		}
 	];
 
-	var svgObject = document.getElementById("svgObject");	// Get the Object by ID
-	var svgDoc = svgObject.contentDocument;					// Get the SVG document inside the Object tag
+	var svgMapObject = document.getElementById("svgMapObject");	// Get the Object by ID
+	var svgDoc = svgMapObject.contentDocument;					// Get the SVG document inside the Object tag
 
 	// HTML Collection of the path elments within the SVG file
 	var pathElements = svgDoc.getElementsByTagName("polygon");

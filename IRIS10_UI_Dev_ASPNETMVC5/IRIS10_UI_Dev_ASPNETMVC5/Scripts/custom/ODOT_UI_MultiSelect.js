@@ -8,24 +8,36 @@
 
 window.onload = function () {
 
+    // Demo switch
+    let IS_PROD = false;
+    // User county selection flag
+    let isSelectedCounty = false;
     // County object constructor
     function CountyObject(countyName, isSelected) {
         this.countyName = countyName;
         this.isSelected = isSelected;
         this.listGroupItemBuilder = listGroupItemBuilder;
+        this.listGroupItemDestroyer = listGroupItemDestroyer;
 
         // Builds a list-group item and appends it to the list container using the CountyObject data
         function listGroupItemBuilder(countyId) {
 
-            let listItemTemplateString = '<li id="' + countyId + '_listItem" class="list-group-item"><div class="form-check"><input id="' + countyId + '_check" class="form-check-input" type="checkbox" value="" id="defaultCheck1"><label class="form-check-label" for="' + countyId + '_check">' + countyId + '</label></div></li>';
+            let listItemTemplateString = '<li id="' + countyId + '" class="list-group-item"><div class="form-check"><input id="' + countyId + '_check" class="form-check-input" type="checkbox" value="" id="defaultCheck1"><label class="form-check-label" for="' + countyId + '_check">' + countyId + '</label></div></li>';
             $("#UserselectedCountiesList").append(listItemTemplateString);
 
         }
+
+        function listGroupItemDestroyer(countyId) {
+            $("#UserselectedCountiesList").remove(countyId);
+        }
     }
-
-    // Selected county objects
+    let svgMapObject;
+    let svgDoc;
+    let svgMapObject_DemoObj;
+    let svgDoc_demo;
+    let countyPathElements;
+    // Selected county objects for export
     let selectedCounties = [];
-
     // Counties to add that meet selection criteria
     let countiesOptedIn = [
         {
@@ -38,65 +50,113 @@ window.onload = function () {
             "TenantName": "County_3"
         }
     ];
-
-    // JS SVG and svg DOM instances
-    let svgMapMultiselectObj = document.getElementById("svgMapMultiselect");
-    let svgDoc = svgMapMultiselectObj.contentDocument;
-
-    // Collection of svg paths.
-    let countyPathElements = svgDoc.getElementsByTagName("path");
+    // SVG object and document variables
+    if (IS_PROD == true) {
+        svgMapObject = document.getElementById("svgMapObject");
+        svgDoc = svgMapObject.contentDocument;
+        countyPathElements = svgDoc.getElementsByTagName("path");
+    } else {
+        svgMapObject_DemoObj = document.getElementById("svgMapObject_Demo");
+        svgDoc_demo = svgMapObject_DemoObj.contentDocument;
+        countyPathElements = svgDoc_demo.getElementsByTagName("path");
+    }
+    
+    // SVG paths in demo map.
+    /*let countyPathElements = svgDoc_demo.getElementsByTagName("path");*/
 
     // Main loop for map events
     for (let i = 0; i < countyPathElements.length; i++) {
 
-        if ((compareTenant(countyPathElements[i].id)) && (CountyObject.isSelected)) {
-            countyPathElements[i].addEventListener("click", function () {
-                deselectCounty(countyPathElements[i]);
-            });
-        }
+        countyPathElements[i].setAttribute("fill", "#F2F2F2");
 
-        if ((compareTenant(countyPathElements[i].id)) && (!CountyObject.isSelected)) {
+        if ((compareTenant(countyPathElements[i].id))) {
 
             countyPathElements[i].addEventListener("click", function () {
-                selectCounty(countyPathElements[i]);
+                mapSelectCountyToggle(countyPathElements[i]);
             });
-
-            console.log("County Selected.");
         }
     }
 
-    function selectCounty(aCounty) {
+    // Toggles selection on map element
+    function mapSelectCountyToggle(aCounty) {
 
-        aCounty.setAttribute("fill", "#ff5722");        // Set bkg of map element
+        // Check if grey - deselected
+        if (aCounty.getAttribute("fill") == "#F2F2F2") {
+            aCounty.setAttribute("fill", "#ffb74d");
+            listGroupItemBuilder(aCounty.id)
+            isSelectedCounty = true;
+            return isSelectedCounty;
+        }
 
-        // County Object
-        var countyObject = new CountyObject(aCounty.id, true);
-        // 
-        countyObject.listGroupItemBuilder(aCounty.id);
-        selectedCounties.push(countyObject);          // Add the county id to the array of selected counties
-
-        // Logging
-        console.log("County id from selectedCounty call: " + aCounty.id);
-        console.log(selectedCounties);
-    }
-
-    // Deselect a county
-    function deselectCounty(aCounty) {
-
-        if (selectedCounties[i].countyName == aCounty.id) {
-
+        // Check if orange - selected
+        if (aCounty.getAttribute("fill") == "#ffb74d") {
             aCounty.setAttribute("fill", "#F2F2F2");
-            selectedCounties[i].isSelected = false;
-
+            listGroupItemDestroyer(aCounty.id);
+            isSelectedCounty = false;
+            return isSelectedCounty;
         }
     }
 
-    // Clear county selection list-group
-    $("#clearSelection_btn").click(function () {
+    // Builds a list-group item and appends it to the list container using the CountyObject data
+    function listGroupItemBuilder(aCountyId) {
+
+        let listItemTemplateString = '<li id="' + aCountyId + '" class="list-group-item"><h5>' + aCountyId + '</li>';
+        $("#UserselectedCountiesList").append(listItemTemplateString);
+
+    }
+
+    // Removes a list-group item
+    function listGroupItemDestroyer(aCountyId) {
+
+        $("#" + aCountyId).remove();
+
+    }
+
+    // Clear all items from list-group
+    $("#clearAll_btn").click(function () {
 
         $("#UserselectedCountiesList").empty();
 
+        for (let i = 0; i < countyPathElements.length; i++) {
+            countyPathElements[i].setAttribute("fill", "#F2F2F2");
+        }
+
     });
+
+    // Handles the click event which finalizes the selected data for backend processing
+    $("#queryData_btn").click(function () {
+        console.log("queryData_btn clicked!");
+        populateSelectedCountyArray();
+    });
+
+    // Gets the list elements and populates the list
+    function populateSelectedCountyArray() {
+        let listElements = document.getElementsByTagName("li");
+
+        for (let i = 0; i < listElements.length; i++) {
+            selectedCounties.push(listElements[i].id);
+        }
+
+        console.log(selectedCounties);
+    }
+
+    // Clear selected items from list-group
+    //$("#clearSelection_btn").click(function () {
+
+    //    removeCheckedCounties();
+
+    //    // Needs to only recolor items that are checked.
+    //    for (let i = 0; i < countyPathElements.length; i++) {
+    //        countyPathElements[i].setAttribute("fill", "#F2F2F2");
+    //    }
+    //});
+
+    //function removeCheckedCounties() {
+    //    const countiesCheckedForRemoval = document.querySelectorAll('.form-check-input:checked');
+    //    Array.prototype.forEach.call(countiesCheckedForRemoval, function (countiesCheckedForRemoval) {
+    //        countiesCheckedForRemoval.closest('.list-group-item').remove();
+    //    });
+    //}
 
     // Compare opted-in counties to current active event county
     function compareTenant(currCounty) {
@@ -110,34 +170,5 @@ window.onload = function () {
         }
 
     }
-
-    //=========================
-    // Single county example
-    //=========================
-
-    //let singleCounty = svgDoc.getElementById("County_1");
-    //console.log(singleCounty);
-
-    //singleCounty.addEventListener("click", function () {
-    //    selectCounty(singleCounty);
-    //});
-
-    //function selectCounty(aCounty) {
-
-    //    aCounty.setAttribute("fill", "#5399ee");        // Set bkg of map element
-
-    //    // Object based approach... maybe
-    //    var countyObject_1 = new CountyObject(aCounty.id, true);
-    //    countyObject_1.listGroupItemBuilder(aCounty.id);
-    //    selectedCounties.push(countyObject_1);          // Add the county id to the array of selected counties
-
-    //    // Logging
-    //    console.log(aCounty.id);
-    //    console.log(selectedCounties);
-    //}
-
-    //=========================
-    // End single county example
-    //=========================
 
 };

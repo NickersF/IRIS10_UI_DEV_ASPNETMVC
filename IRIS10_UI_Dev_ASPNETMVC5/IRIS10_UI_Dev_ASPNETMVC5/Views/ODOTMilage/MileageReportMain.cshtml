@@ -65,17 +65,20 @@
 
                                 <!-- #region County Multiselect Component -->
                                 <div class="card-body">
+                                    <div class="row card-header">
+                                        <div class="col-md">
+                                            <button id="clearAll_btn" class="btn btn-primary">Remove All</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <ul id="UserselectedCountiesList" class="list-group"></ul>
 
-                                    <button id="viewData_btn" class="btn btn-primary">Show ODOT Mileage Report Data Editor</button>
-
-                                    <ul class="list-group">
-                                        <li class="list-group-item">County 1</li>
-                                        <li class="list-group-item">County 2</li>
-                                        <li class="list-group-item">County 3</li>
-                                        <li class="list-group-item">County 4</li>
-                                        <li class="list-group-item">County 5</li>
-                                    </ul>
-
+                                    <div class="row card-footer">
+                                        <div class="col-md">
+                                            <button id="viewData_btn" class="btn btn-primary">Show ODOT Mileage Report Data Editor</button>
+                                            <button id="queryData_btn" class="btn btn-primary">Run Query Against Selection</button>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- #endregion -->
 
@@ -147,7 +150,7 @@
 
                                 <!-- #region Map -->
                                 <div class="card-body d-flex justify-content-center align-items-center">
-                                    <object id="svgObject" type="image/svg+xml" class="w-50" data="~/Images/Oregon_County_Map_Optimized.svg"></object>
+                                    <object id="svgMapObject" type="image/svg+xml" class="w-50" data="~/Images/Oregon_County_Map_Optimized.svg"></object>
                                 </div>
                                 <!-- #endregion -->
 
@@ -220,6 +223,7 @@
     <!-- #endregion -->
 
     <script src="~/Scripts/custom/ODOT_UI_InteractiveMap.js"></script>
+    @*<script src="~/Scripts/custom/ODOT_UI_MultiSelect.js"></script>*@
     <script src="~/Scripts/custom/ODOT_UI_MainEvents.js"></script>
 
 </body>
