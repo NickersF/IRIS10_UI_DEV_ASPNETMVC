@@ -207,18 +207,6 @@ window.onload = function () {
 
     }
 
-    // Opens the sideBar when a county is selected on the map
-    function openSideBar() {
-
-        let mainSideBar = document.getElementById("mainSideBar");
-        let $mainSideBar = $("#mainSideBar");
-
-        if (mainSideBar.style.display == "none") {
-            $mainSideBar.fadeIn(900);
-        }
-
-    }
-
     // Submits the query to the database - if success open spreadsheet view
     function submitQuery() {
 
@@ -243,13 +231,26 @@ window.onload = function () {
 
     }
 
-    // Select all item from map
-    $("#selectAll_btn").click(function () {
-        selectAllCounties(countyPathElements);
-    });
-
+    // Open side bar button event
     $("#mapViewOpenSideBar_btn").click(function () {
         openSideBar();
+    });
+
+    // Opens the sideBar when a county is selected on the map
+    function openSideBar() {
+
+        let mainSideBar = document.getElementById("mainSideBar");
+        let $mainSideBar = $("#mainSideBar");
+
+        if (mainSideBar.style.display == "none") {
+            $mainSideBar.fadeIn(900);
+        }
+
+    }
+
+    // Select all button event
+    $("#selectAll_btn").click(function () {
+        selectAllCounties(countyPathElements);
     });
 
     // Selects all opted in counties on the map
@@ -281,7 +282,7 @@ window.onload = function () {
         }
     }
 
-    // Clear all items from list-group
+    // Clear all button event
     $("#clearAll_btn").click(function () {
         clearSelection(countyPathElements);
     });
@@ -291,7 +292,6 @@ window.onload = function () {
 
         let itemsDeselected = 0;
 
-        // Resets coloring and selected state for each selected county
         for (let i = 0; i < selection.length; i++) {
 
             if (itemsDeselected == selectionCount) {
@@ -326,7 +326,13 @@ window.onload = function () {
         } else if (selectedCounties.length == countiesOptedIn.length) {
             $("#selectedCountiesLabel").text("All Counties Selected");
         } else {
-            $("#selectedCountiesLabel").text(selectedCounties.length + " Counties Selected");
+            if (selectedCounties.length == 1) {
+                $("#selectedCountiesLabel").text(selectedCounties.length + " County Selected");
+
+            } else {
+                $("#selectedCountiesLabel").text(selectedCounties.length + " Counties Selected");
+
+            }
         }
 
     }
