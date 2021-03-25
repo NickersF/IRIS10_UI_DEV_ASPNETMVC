@@ -114,7 +114,10 @@
   font-size: 2rem;
 }
 /*#endregion*/
-/*#region Gradient background classes */
+/*#region Background classes */
+.odot-header-bg-flat {
+  background-color: #5399EE;
+}
 .odot-header-bg {
   background: #2e6ff2;
   background: linear-gradient(0deg, #2e6ff2 0%, #5399ee 100%);
@@ -171,10 +174,10 @@
   height: 1rem;
   background-color: #A5D6A7;
 }
-.odot-map-legend-blue {
+.odot-map-legend-amber {
   width: 1rem;
   height: 1rem;
-  background-color: #5399EE;
+  background-color: #FFB74D;
 }
 /*#endregion*/
 /*#region Custom responsive breakpoints */

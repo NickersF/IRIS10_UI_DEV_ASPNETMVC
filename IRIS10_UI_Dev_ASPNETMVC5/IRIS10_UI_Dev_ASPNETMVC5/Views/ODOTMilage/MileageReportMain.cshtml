@@ -25,7 +25,7 @@
     <main id="mainLayoutWrapper" class="d-flex flex-column h-100">
 
         <!-- #region Page Header -->
-        <header id="mainHeader" class="odot-header-bg text-light">
+        <header id="mainHeader" class="iris-bg-light-blue text-light">
             <div class="row no-gutters">
                 <div class="col p-3">
                     <h5>ODOT Mileage Report System</h5>
@@ -70,17 +70,23 @@
                                         <div class="col d-flex flex-column">
                                             <div class="card flex-fill">
                                                 <div class="card-header">
-                                                    <h6>Selected Counties</h6>
+                                                    <h6 id="selectedCountiesLabel">Selected Counties</h6>
                                                 </div>
                                                 <div class="card-body d-flex flex-column">
-                                                    <button id="clearAll_btn" class="btn btn-primary mb-3">Remove All</button>
                                                     <ul id="UserselectedCountiesList" class="list-group"></ul>
                                                     @*<button id="viewData_btn" class="btn btn-primary">Show ODOT Mileage Report Data Editor</button>*@
                                                 </div>
                                             </div>
+                                            <div class="row no-gutters mt-3">
+                                                <div class="col-md-6">
+                                                    <button id="selectAll_btn" class="btn btn-primary"><span class="k-icon k-i-select-all mr-1"></span>Select All</button>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <button id="clearAll_btn" class="btn btn-primary"><span class="k-icon k-i-delete mr-1"></span>Remove All</button>
 
-                                            <button id="queryData_btn" class="btn btn-primary mt-3">Run Query Against Selection</button>
-
+                                                </div>
+                                            </div>
+                                            <button id="queryData_btn" class="btn btn-primary mt-2"><span class="k-icon k-i-data-sql mr-1"></span>Run Query Against Selection</button>
                                         </div>
                                     </div>
                                 </div>
@@ -108,17 +114,17 @@
                                 <div class="row no-gutters card-header justify-content-between">
 
                                     <!-- #region Dynamic County Selection Label -->
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <h5>Interactive Oregon County Map</h5>
                                         <div class="card">
                                             <div class="card-body bg-white">
                                                 <div class="row no-gutters">
-                                                    <div class="col-md">
+                                                    <div class="col-md-8">
                                                         <h5 id="countyNameLabel" class="m-0">No County Selected</h5>
                                                     </div>
-                                                    @*<div class="col-md">
-                                                        <button id="openSideBarMap_btn" class="k-button">Show County Selection Manager</button>
-                                                    </div>*@
+                                                    <div class="col-md-4">
+                                                        <button id="mapViewOpenSideBar_btn" class="btn btn-primary"><span class="k-icon k-i-layout-1-by-4 mr-1"></span>Open Selection Manager</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -132,16 +138,12 @@
                                             <div class="card-body rounded-lg bg-white">
                                                 <div class="row no-gutters">
                                                     <div class="col-4">
-                                                        <div class="d-inline-block odot-map-legend-grey border border-dark"></div>
-                                                        <span class="small text-muted pb-1">Inactive county</span>
-                                                    </div>
-                                                    <div class="col-4">
-                                                        <div class="d-inline-block odot-map-legend-blue border border-dark"></div>
-                                                        <span class="small text-muted pb-1">Selected county</span>
-                                                    </div>
-                                                    <div class="col-4">
                                                         <div class="d-inline-block odot-map-legend-green border border-dark"></div>
-                                                        <span class="small text-muted pb-1">Active county</span>
+                                                        <span class="small text-muted pb-1">Opted-in County</span>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="d-inline-block odot-map-legend-amber border border-dark"></div>
+                                                        <span class="small text-muted pb-1">Selected county</span>
                                                     </div>
                                                 </div>
                                             </div>

@@ -8,7 +8,8 @@
  */
 
 window.onload = function () {
-    let k = 0;                                                  // lcv for opted-in tenants (sloppy...)
+    // Counters
+    let k = 0;
     let selectionCount = 0;
     // County data arrays
     let selectedCounties = [];
@@ -71,19 +72,13 @@ window.onload = function () {
     // SVG object and document variables
     let svgMapObject = document.getElementById("svgMapObject");	    // Get the Object by ID
     let svgDoc = svgMapObject.contentDocument;					    // Get the SVG document inside the Object tag
-
     // Contains an HTML Collection of all shape tags in the SVG file.
     let countyPathElements = svgDoc.getElementsByTagName("path");
 
-    // Create and set a selection state attribute to all county svg shapes
+    // Attach mouse events to all county svg shapes
     for (let i = 0; i < countyPathElements.length; i++) {
 
         countyPathElements[i].setAttribute("isSelected", "false");
-
-    }
-
-    // Attach mouse events to all county svg shapes
-    for (let i = 0; i < countyPathElements.length; i++) {
 
         // Mouseover event which changes color and sets text label in county details panel
         countyPathElements[i].addEventListener("mouseover", function () {
@@ -93,12 +88,16 @@ window.onload = function () {
             }
 
             if (countyPathElements[i].attributes.isSelected.value == "false") {
-                countyPathElements[i].setAttribute("fill", "#5399EE");
-                document.getElementById("countyNameLabel").innerText = countyPathElements[i].id + " County";
-            }
 
-            //countyPathElements[i].setAttribute("fill", "#5399EE");
-            //document.getElementById("countyNameLabel").innerText = countyPathElements[i].id + " County";
+                if (compareTenant(countyPathElements[i].id)) {
+                    countyPathElements[i].setAttribute("fill", "#4CAF50");
+                    document.getElementById("countyNameLabel").innerText = countyPathElements[i].id + " County";
+                } else {
+                    countyPathElements[i].setAttribute("fill", "#5399EE");
+                    document.getElementById("countyNameLabel").innerText = countyPathElements[i].id + " County";
+                }
+
+            }
 
         });
 
@@ -124,7 +123,7 @@ window.onload = function () {
         });
 
         // Click event for multiselect
-        if ((compareTenant(countyPathElements[i].id))) {
+        if (compareTenant(countyPathElements[i].id)) {
 
             countyPathElements[i].addEventListener("click", function () {
                 mapSelectCountyToggle(countyPathElements[i]);
@@ -136,7 +135,6 @@ window.onload = function () {
     // Paint opted in counties green
     for (let i = 0; i < countyPathElements.length; i++) {
 
-        // Stop the loop once all opted in counties have been checked
         if (countiesOptedIn.length == k) {
             break;
         }
@@ -162,24 +160,24 @@ window.onload = function () {
             initializeFill = true;
         }
 
-        // If county is not selected color it, add it to list DOM element, and open the sideBar
         if (aCounty.attributes.isSelected.value == "false") {
             aCounty.setAttribute("isSelected", "true");
             aCounty.setAttribute("fill", "#FFB74D");
             listGroupItemBuilder(aCounty.id);
             selectedCounties.push(aCounty.id);
-            openSideBarOnSelectCounty();
+            displayNumOfSelectedCounties();
+            openSideBar();
             selectionCount++;
 
             return;
         }
 
-        // If county is selected deselect it
         if (aCounty.attributes.isSelected.value == "true") {
             aCounty.setAttribute("isSelected", "false");
             aCounty.setAttribute("fill", "#A5D6A7");
             listGroupItemDestroyer(aCounty.id);
-            selectedCounties.pop(aCounty.id);
+            removeDeselectedFromArray(aCounty.id);
+            displayNumOfSelectedCounties();
             selectionCount--;
 
             return;
@@ -201,8 +199,16 @@ window.onload = function () {
 
     }
 
+    // Removes the deselected county from the array
+    function removeDeselectedFromArray(aCountyId) {
+
+        let index = selectedCounties.indexOf(aCountyId);
+        selectedCounties.splice(index, 1);
+
+    }
+
     // Opens the sideBar when a county is selected on the map
-    function openSideBarOnSelectCounty() {
+    function openSideBar() {
 
         let mainSideBar = document.getElementById("mainSideBar");
         let $mainSideBar = $("#mainSideBar");
@@ -213,18 +219,16 @@ window.onload = function () {
 
     }
 
-    // Gets the list elements and populates the list
-    function populateSelectedCountyArray() {
-        //let listElements = $("#UserselectedCountiesList").children();
+    // Submits the query to the database - if success open spreadsheet view
+    function submitQuery() {
 
-        //for (let i = 0; i < listElements.length; i++) {
-        //    selectedCounties.push(listElements[i].id);
-        //}
+        // code here for query
+
+        $("#interactiveMapContainer").hide();
+        $("#spreadsheetContainer").show();
 
         console.log(selectedCounties);
     }
-
-
 
     // Compare opted-in counties to current active event county
     function compareTenant(currCounty) {
@@ -237,6 +241,44 @@ window.onload = function () {
 
         }
 
+    }
+
+    // Select all item from map
+    $("#selectAll_btn").click(function () {
+        selectAllCounties(countyPathElements);
+    });
+
+    $("#mapViewOpenSideBar_btn").click(function () {
+        openSideBar();
+    });
+
+    // Selects all opted in counties on the map
+    function selectAllCounties(aCounty) {
+
+        let initializeFill = false;
+
+        for (let i = 0; i < aCounty.length; i++) {
+
+            if (!initializeFill) {
+                aCounty[i].setAttribute("fill", "#A5D6A7");
+                initializeFill = true;
+            }
+
+            if (selectionCount == countiesOptedIn.length) {
+                displayNumOfSelectedCounties();
+                openSideBar();
+                break;
+            }
+
+            if ((compareTenant(aCounty[i].id)) && (aCounty[i].attributes.isSelected.value == "false")) {
+                aCounty[i].setAttribute("isSelected", "true");
+                aCounty[i].setAttribute("fill", "#FFB74D");
+                listGroupItemBuilder(aCounty[i].id);
+                selectedCounties.push(aCounty[i].id);
+                selectionCount++;
+            }
+
+        }
     }
 
     // Clear all items from list-group
@@ -252,7 +294,6 @@ window.onload = function () {
         // Resets coloring and selected state for each selected county
         for (let i = 0; i < selection.length; i++) {
 
-            // Stop the loop once all opted in counties have been checked
             if (itemsDeselected == selectionCount) {
                 break;
             }
@@ -266,17 +307,27 @@ window.onload = function () {
 
         }
 
-        // Empty the list-group elements (clears the visual list)
         $("#UserselectedCountiesList").empty();
-
-        // Empty the array of selected counties
+        selectionCount = 0;
         selectedCounties.splice(0, selectedCounties.length);
-
+        displayNumOfSelectedCounties();
     }
 
     // Handles the click event which finalizes the selected data for backend processing
     $("#queryData_btn").click(function () {
-        populateSelectedCountyArray();
+        submitQuery();
     });
 
+    // Sets selected county list header text
+    function displayNumOfSelectedCounties() {
+
+        if (selectedCounties.length == 0) {
+            $("#selectedCountiesLabel").text("No Counties Selected");
+        } else if (selectedCounties.length == countiesOptedIn.length) {
+            $("#selectedCountiesLabel").text("All Counties Selected");
+        } else {
+            $("#selectedCountiesLabel").text(selectedCounties.length + " Counties Selected");
+        }
+
+    }
 };
