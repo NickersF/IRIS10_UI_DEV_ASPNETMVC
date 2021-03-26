@@ -85,6 +85,7 @@ window.onload = function () {
 
             if (countyPathElements[i].attributes.isSelected.value == "true") {
                 countyPathElements[i].setAttribute("fill", "#FFE082");
+                document.getElementById("countyNameLabel").innerText = countyPathElements[i].id + " County";
             }
 
             if (countyPathElements[i].attributes.isSelected.value == "false") {
@@ -207,23 +208,12 @@ window.onload = function () {
 
     }
 
-    // Submits the query to the database - if success open spreadsheet view
-    function submitQuery() {
-
-        // code here for query
-
-        $("#interactiveMapContainer").hide();
-        $("#spreadsheetContainer").show();
-
-        console.log(selectedCounties);
-    }
-
     // Compare opted-in counties to current active event county
-    function compareTenant(currCounty) {
+    function compareTenant(currCountyId) {
 
         for (let i = 0; i < countiesOptedIn.length; i++) {
 
-            if (currCounty == countiesOptedIn[i].TenantName) {
+            if (currCountyId == countiesOptedIn[i].TenantName) {
                 return true;
             }
 
@@ -303,6 +293,7 @@ window.onload = function () {
                 selection[i].setAttribute("fill", "#A5D6A7");
                 selection[i].setAttribute("isSelected", "false");
                 itemsDeselected++;
+
             }
 
         }
@@ -313,10 +304,21 @@ window.onload = function () {
         displayNumOfSelectedCounties();
     }
 
-    // Handles the click event which finalizes the selected data for backend processing
+    // Submit query event
     $("#queryData_btn").click(function () {
         submitQuery();
     });
+
+    // Submits the query to the database - if success open spreadsheet view
+    function submitQuery() {
+
+        // code here for query
+
+        $("#interactiveMapContainer").hide();
+        $("#spreadsheetContainer").show();
+
+        console.log(selectedCounties);
+    }
 
     // Sets selected county list header text
     function displayNumOfSelectedCounties() {

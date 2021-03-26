@@ -1496,13 +1496,16 @@
     <Content Include="Content\kendo\2020.3.1021-source\dataviz\kendo.dataviz.black.less" />
     <Content Include="Content\kendo\2020.3.1021-source\common\transitions.less" />
     <Content Include="Images\Example_Shape.svg" />
+    <Content Include="Images\logout_button.svg" />
     <Content Include="Images\ODOT_UI_Illustration.svg" />
     <Content Include="Images\Oregon_County_Map_Optimized.svg" />
     <Content Include="Images\Sample_Counties.svg" />
+    <Content Include="Images\user_avatar.svg" />
     <Content Include="package.json" />
     <Content Include="package-lock.json" />
     <Content Include="Content\site-tabstrip-config.less" />
     <Content Include="Content\site-odot.less" />
+    <Content Include="Content\site-user-accounts.less" />
     <None Include="packages.config" />
     <Content Include="Images\IRIS_card_header.svg" />
     <Content Include="Images\IRIS_logo_web_blue.svg" />
@@ -1516,6 +1519,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom\CustomReportExampleGrid.js" />
     <Content Include="Scripts\custom\MainGridDemo.js" />
+    <Content Include="Scripts\custom\ODOT_UI_LoginModals.js" />
     <Content Include="Scripts\custom\ODOT_UI_MultiSelect.js" />
     <Content Include="Scripts\custom\ODOT_UI_InteractiveMap.js" />
     <Content Include="Scripts\custom\ODOT_SVGInteractivityEx.js" />

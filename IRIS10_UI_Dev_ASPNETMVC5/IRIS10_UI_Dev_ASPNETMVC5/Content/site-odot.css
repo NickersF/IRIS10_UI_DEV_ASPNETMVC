@@ -102,8 +102,10 @@
 .odot-logo-height {
   height: 64px;
 }
-#mainSideBar {
-  max-width: 350px;
+@media (min-width: 768px) {
+  #mainSideBar {
+    max-width: 350px;
+  }
 }
 .odot-map-sizer {
   width: 60%;

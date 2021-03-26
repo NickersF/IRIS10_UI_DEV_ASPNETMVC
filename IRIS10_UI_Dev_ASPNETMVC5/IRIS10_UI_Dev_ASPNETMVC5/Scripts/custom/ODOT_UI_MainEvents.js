@@ -27,6 +27,13 @@ $(document).ready(function () {
     $mainSideBar.hide();
     $spreadsheetContainer.hide();
 
+    // Front-end user account object
+    let userAccountObject = {
+        firstName: "First",
+        lastName: "Last",
+        tenantName: "Tenant"
+    }
+
     // Main page navigation
 
     // Opens the sidebar on the map view (initial view)
@@ -55,5 +62,33 @@ $(document).ready(function () {
         $spreadsheetContainer.hide();
         $interactiveMapContainer.show();
     });
+
+    // Responsive visual state changes - touches various elements based on viewport size
+    $(window).bind("resize", function () {
+
+        if ($(this).width() < 768) {
+            $("#clearAllBtnContainer").removeClass("pl-2").addClass("mt-2")
+            $("#headerTitleText").addClass("text-center");
+            $("#headerUserControlContainer").removeClass("bg-white border border-right-0 rounded-left text-dark").addClass("mt-2");
+            $("#mapLegendContainer").addClass("mt-2");
+            $("#logout_btn").removeClass("logout-button-light").addClass("logout-button-dark");
+        } else {
+            $("#clearAllBtnContainer").removeClass("mt-2").addClass("pl-2")
+            $("#headerTitleText").removeClass("text-center");
+            $("#headerUserControlContainer").removeClass("mt-2").addClass("bg-white border border-right-0 rounded-left text-dark");
+            $("#mapLegendContainer").removeClass("mt-2");
+            $("#logout_btn").removeClass("logout-button-dark").addClass("logout-button-light");
+        }
+
+        if ($(this).width() < 992) {
+            $("#mapViewOpenSideBar_btn").addClass("mt-2 w-100");
+        } else {
+            $("#mapViewOpenSideBar_btn").removeClass("mt-2 w-100");
+
+        }
+
+    }).trigger('resize');
+
+    $("#userNameField").text(userAccountObject.firstName + " " + userAccountObject.lastName + " (" + userAccountObject.tenantName + ")");
 
 });

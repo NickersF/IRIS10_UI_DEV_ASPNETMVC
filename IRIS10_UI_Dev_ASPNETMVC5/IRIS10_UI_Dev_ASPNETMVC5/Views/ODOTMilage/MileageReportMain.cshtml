@@ -25,15 +25,36 @@
     <main id="mainLayoutWrapper" class="d-flex flex-column h-100">
 
         <!-- #region Page Header -->
-        <header id="mainHeader" class="iris-bg-light-blue text-light">
-            <div class="row no-gutters">
-                <div class="col p-3">
-                    <h5>ODOT Mileage Report System</h5>
-                    @*<img src="~/Images/ODOT_UI_Illustration.svg" class="odot-logo-height" />*@
+        <header id="mainHeader" class="container-fluid iris-bg-light-blue text-light">
+            <div class="row pt-3 pb-3">
+
+                <div id="headerTitleText" class="col-md">
+                    <div class="row h-100">
+                        <div class="col d-flex align-items-center">
+                            <h4>ODOT Mileage Report System</h4>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-3">
-                    user area
+
+                <div id="headerUserControlContainer" class="col-auto bg-white border border-right-0 rounded-left text-dark">
+                    <div class="row h-100">
+                        <div class="col-auto d-flex align-items-center pt-2 pb-2">
+                            <svg id="user_avatar_layer" class="user-avatar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                                <circle cx="32" cy="32" r="32" fill="#f2f2f2" />
+                                <path id="user_avatar_path" class="user-avatar" d="M18.67,48A2.61,2.61,0,0,1,16,45.33c0-2.66,2.67-10.66,16-10.66s16,8,16,10.66A2.61,2.61,0,0,1,45.33,48ZM32,32a8,8,0,1,0-8-8A8,8,0,0,0,32,32Z" fill="#151b26" />
+                            </svg>
+                        </div>
+                        <div class="col-auto d-flex align-items-center p-0">
+                            <div><strong id="userNameField"></strong></div>
+                        </div>
+                        <div class="col-auto d-flex align-items-center">
+                            <svg id="logoutSvgObj" class="logout-button-light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                                <path id="logout_btn" class="logout-button" d="M40,50a2,2,0,0,1-2,2H6a2,2,0,0,1-2-2V14a2,2,0,0,1,2-2H38a2,2,0,0,1,2,2v8a2,2,0,0,0,4,0V14a6,6,0,0,0-6-6H6a6,6,0,0,0-6,6V50a6,6,0,0,0,6,6H38a6,6,0,0,0,6-6V42a2,2,0,0,0-4,0ZM63.41,33.42a2,2,0,0,0,0-2.83h0l-12-12a2,2,0,0,0-2.83,2.84L57.17,30H22a2,2,0,0,0,0,4H57.17l-8.59,8.58a2,2,0,0,0,2.83,2.84Z" fill="#151b26" fill-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </header>
         <!-- #endregion -->
@@ -44,7 +65,7 @@
             <!-- #region Sidebar -->
             <section id="mainSideBar" class="col-md-auto">
 
-                <section id="sideBarContainer" class="container-fluid h-100">
+                <section id="sideBarContainer" class="container-fluid pr-0 h-100">
                     <div class="row no-gutters h-100 pt-3 pb-3">
                         <div class="col d-flex">
                             <div class="card flex-fill">
@@ -53,7 +74,7 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col">
-                                            <h5>County Selection Manager</h5>
+                                            <h5>County Custom Selection Tool</h5>
                                         </div>
                                         <div class="col-2 d-flex justify-content-end">
                                             <span id="closeSideBar_btn" class="k-icon k-i-close"></span>
@@ -79,10 +100,10 @@
                                             </div>
                                             <div class="row no-gutters mt-3">
                                                 <div class="col-md-6">
-                                                    <button id="selectAll_btn" class="btn btn-primary"><span class="k-icon k-i-select-all mr-1"></span>Select All</button>
+                                                    <button id="selectAll_btn" class="btn btn-primary w-100"><span class="k-icon k-i-select-all mr-1"></span>Select All</button>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <button id="clearAll_btn" class="btn btn-primary"><span class="k-icon k-i-delete mr-1"></span>Remove All</button>
+                                                <div id="clearAllBtnContainer" class="col-md-6 pl-2">
+                                                    <button id="clearAll_btn" class="btn btn-primary w-100"><span class="k-icon k-i-delete mr-1"></span>Remove All</button>
 
                                                 </div>
                                             </div>
@@ -114,16 +135,16 @@
                                 <div class="row no-gutters card-header justify-content-between">
 
                                     <!-- #region Dynamic County Selection Label -->
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <h5>Interactive Oregon County Map</h5>
                                         <div class="card">
                                             <div class="card-body bg-white">
                                                 <div class="row no-gutters">
-                                                    <div class="col-md-8">
+                                                    <div class="col-lg">
                                                         <h5 id="countyNameLabel" class="m-0">No County Selected</h5>
                                                     </div>
-                                                    <div class="col-md-4">
-                                                        <button id="mapViewOpenSideBar_btn" class="btn btn-primary"><span class="k-icon k-i-layout-1-by-4 mr-1"></span>Open Selection Manager</button>
+                                                    <div class="col-lg">
+                                                        <button id="mapViewOpenSideBar_btn" class="btn btn-primary"><span class="k-icon k-i-layout-1-by-4 mr-1"></span>Open Selection Tool</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -132,16 +153,16 @@
                                     <!-- #endregion -->
 
                                     <!-- #region Map Legend -->
-                                    <div class="col-md-4">
+                                    <div id="mapLegendContainer" class="col-md-auto">
                                         <h5>Legend</h5>
                                         <div class="card">
                                             <div class="card-body rounded-lg bg-white">
-                                                <div class="row no-gutters">
-                                                    <div class="col-4">
+                                                <div class="row">
+                                                    <div class="col-auto">
                                                         <div class="d-inline-block odot-map-legend-green border border-dark"></div>
                                                         <span class="small text-muted pb-1">Opted-in County</span>
                                                     </div>
-                                                    <div class="col-4">
+                                                    <div class="col-auto">
                                                         <div class="d-inline-block odot-map-legend-amber border border-dark"></div>
                                                         <span class="small text-muted pb-1">Selected county</span>
                                                     </div>
@@ -174,21 +195,27 @@
                             <div class="card flex-fill">
 
                                 <!-- #region Spreadsheet Container Header -->
-                                <div class="card-header">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h5>ODOT Mileage Report Data Editor</h5>
+                                <div class="row no-gutters card-header">
+                                    <div class="col">
+                                        <h5>ODOT Mileage Report Data Editor</h5>
+                                        <div class="card">
+                                            <div class="card-body bg-white">
+                                                <div class="row no-gutters">
+                                                    <div class="col-md">
+                                                        <button id="openSideBarSpreadsheet_btn" class="btn btn-primary"><span class="k-icon k-i-layout-1-by-4 mr-1"></span>Open Selection Tool</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-2 d-flex justify-content-end">
-                                            <span id="closeSpreadsheet_btn" class="k-icon k-i-close"></span>
-                                        </div>
+                                    </div>
+                                    <div class="col-auto d-flex justify-content-end">
+                                        <span id="closeSpreadsheet_btn" class="k-icon k-i-close"></span>
                                     </div>
                                 </div>
                                 <!-- #endregion -->
 
                                 <!-- #region Spreadsheet Kendo UI -->
-                                <div class="card-body">
-                                    <button id="openSideBarSpreadsheet_btn" class="k-button">Show County Selection Manager</button>
+                                @*<div class="card-body">
                                     @(Html.Kendo().Spreadsheet()
                                         .Name("spreadsheet")
                                         .Rows(10)
@@ -208,7 +235,7 @@
                                                 .Name("Test Sheet");
                                             })
                                     )
-                                </div>
+                                </div>*@
                                 <!-- #endregion -->
 
                             </div>
