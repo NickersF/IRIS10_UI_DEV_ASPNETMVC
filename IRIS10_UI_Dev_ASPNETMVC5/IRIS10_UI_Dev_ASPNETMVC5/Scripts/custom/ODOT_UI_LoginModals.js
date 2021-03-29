@@ -9,23 +9,70 @@
 $(document).ready(function () {
 
     // Modal container variables
-    let passwordRecoveryWindow = $("#passwordRecoveryModal");
-    let userRegistrationWindow = $("#userRegistrationModal");
+    let ODOTPasswordRecoveryModal = $("#ODOTPasswordRecoveryModal");
+    let ODOTUserRegistrationModal = $("#ODOTUserRegistrationModal");
+    let CountyPasswordRecoveryModal = $("#CountyPasswordRecoveryModal");
+    let CountyUserRegistrationModal = $("#CountyUserRegistrationModal");
 
     // Password recovery window instances
-    let passwordRecoveryWindow_ODOT = $("#passwordRecoveryModal");
-    let passwordRecoveryWindow_County = 
+    ODOTPasswordRecoveryModal.kendoWindow({
+        actions: ["Close"],
+        draggable: false,
+        visible: false,
+        modal: true,
+        resizable: false,
+        width: "33%",
+        title: "ODOT User Password Recovery",
+    });
 
-    let ODOTInitMsg = "ODOT user wants to reset his password.";
-    let countyInitMsg = "County user wants to reset his password.";
+    ODOTUserRegistrationModal.kendoWindow({
+        actions: ["Close"],
+        draggable: false,
+        visible: false,
+        modal: true,
+        resizable: false,
+        width: "33%",
+        title: "New ODOT User Registration",
+    });
 
-    // Check if person who forgot password is a ODOT or County user
+    CountyPasswordRecoveryModal.kendoWindow({
+        actions: ["Close"],
+        draggable: false,
+        visible: false,
+        modal: true,
+        resizable: false,
+        width: "33%",
+        title: "County User Password Recovery",
+    });
+
+    CountyUserRegistrationModal.kendoWindow({
+        actions: ["Close"],
+        draggable: false,
+        visible: false,
+        modal: true,
+        resizable: false,
+        width: "33%",
+        title: "New County User Registration",
+    });
+
+    // Open ODOT user password recovery
     $("#ODOTForgotPassword_btn").click(function () {
+        ODOTPasswordRecoveryModal.data("kendoWindow").center().open();
+    });
 
-        if (this.id == "ODOTForgotPassword_btn") {
-            passwordRecoveryWindow.text(ODOTInitMsg);
-        }
+    // Open ODOT new user registration
+    $("#ODOTRegisterAccount_btn").click(function () {
+        ODOTUserRegistrationModal.data("kendoWindow").center().open();
+    });
 
+    // Open County user password recovery
+    $("#countyForgotPassword_btn").click(function () {
+        CountyPasswordRecoveryModal.data("kendoWindow").center().open();
+    });
+
+    // Open County user registration
+    $("#countyRegisterAccount_btn").click(function () {
+        CountyUserRegistrationModal.data("kendoWindow").center().open();
     });
 
 });

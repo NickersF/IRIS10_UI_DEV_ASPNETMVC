@@ -93,8 +93,8 @@
                         </div>
 
                         <!-- #region ODOT Password Recovery Panel -->
-                        <div id="ODOTForgotPasswordPanel" class="card border-danger mt-3">
-                            <div class="card-body text-danger">
+                        <div id="ODOTForgotPasswordPanel" class="card border-success mt-3">
+                            <div class="card-body text-success">
                                 <div class="row no-gutters justify-content-end">
                                     <div class="col-2 d-flex justify-content-end">
                                         <span id="closeODOTForgotPanel_btn" class="k-icon k-i-close"></span>
@@ -102,7 +102,8 @@
                                 </div>
                                 <h5 class="card-title">ODOT User Password Recovery</h5>
                                 <p class="card-text">Forgot your password? It's okay, let's get you reset.</p>
-                                <button id="ODOTForgotPassword_btn" type="button" class="btn btn-danger">Reset Password</button>
+                                <div id="ODOTResetPW"></div>
+                                <button id="ODOTForgotPassword_btn" type="button" class="btn btn-success">Reset Password</button>
                             </div>
                         </div>
                         <!-- #endregion -->
@@ -168,8 +169,8 @@
                         </div>
 
                         <!-- #region County Password Recovery Panel -->
-                        <div id="countyForgotPasswordPanel" class="card border-danger mt-3">
-                            <div class="card-body text-danger">
+                        <div id="countyForgotPasswordPanel" class="card border-success mt-3">
+                            <div class="card-body text-success">
                                 <div class="row no-gutters justify-content-end">
                                     <div class="col-2 d-flex justify-content-end">
                                         <span id="closeCountyForgotPanel_btn" class="k-icon k-i-close"></span>
@@ -177,7 +178,7 @@
                                 </div>
                                 <h5 class="card-title">ODOT User Password Recovery</h5>
                                 <p class="card-text">Forgot your password? It's okay, let's get you reset.</p>
-                                <button id="countyForgotPassword_btn" type="button" class="btn btn-danger">Reset Password</button>
+                                <button id="countyForgotPassword_btn" type="button" class="btn btn-success">Reset Password</button>
                             </div>
                         </div>
                         <!-- #endregion -->
@@ -213,8 +214,19 @@
     <!-- #endregion -->
     
     <!-- #region Modal Window Containers -->
-    <div id="passwordRecoveryModal"></div>
-    <div id="userRegistrationModal"></div>
+    <div id="ODOTPasswordRecoveryModal">
+        @Html.Partial("RecoverPasswordODOT")
+    </div>
+    <div id="ODOTUserRegistrationModal">
+        @Html.Partial("UserRegistrationODOT")
+    </div>
+
+    <div id="CountyPasswordRecoveryModal">
+        @Html.Partial("RecoverPasswordCounty")
+    </div>
+    <div id="CountyUserRegistrationModal">
+        @Html.Partial("UserRegistrationCounty")
+    </div>
     <!-- #endregion -->
 
     <script src="~/Scripts/custom/ODOT_UI_Login.js"></script>

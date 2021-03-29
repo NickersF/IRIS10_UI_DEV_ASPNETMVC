@@ -27,8 +27,14 @@ namespace IRIS10_UI_Dev_ASPNETMVC5
 
             routes.MapRoute(
                 name: "ReportScreens",
-                url: "{controller}/{actions}",
+                url: "{controller}/{action}",
                 defaults: new { controller = "ReportScreens", action = "Index" }
+                );
+
+            routes.MapRoute(
+                name: "ODOTMilage",
+                url: "{controller}/{action}",
+                defaults: new { controller = "ODOTMilageController", action = "LoginSelect"}
                 );
         }
     }
