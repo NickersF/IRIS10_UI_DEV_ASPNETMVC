@@ -131,6 +131,13 @@ window.onload = function () {
             });
         }
 
+        // Click event to opt in counties
+        if (!compareTenant(countyPathElements[i].id)) {
+            countyPathElements[i].addEventListener("click", function () {
+                console.log(countyPathElements[i].id + " not opted in.");
+            });
+        }
+
     }
 
     // Paint opted in counties green
