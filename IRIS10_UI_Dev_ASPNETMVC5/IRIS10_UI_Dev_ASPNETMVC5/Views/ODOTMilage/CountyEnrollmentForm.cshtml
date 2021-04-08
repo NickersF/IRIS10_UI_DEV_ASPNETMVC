@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<h5>County Enrollment Status</h5>
+
+<form id="CountyPasswordRecoveryForm" class="mt-3">
+
+    <div class="form-group">
+        @(Html.Kendo().Switch()
+            .Name("enrollCountySwitch_map")
+        )
+    </div>
+    <label id="enrollCountySwitchLabel" for="enrollCountySwitch"></label>
+
+</form>
+
+<script>
+
+    // Displays enrollment status label for enrollment switch
+
+    function setEnrollmentStatus(e) {
+
+        $("#enrollCountySwitchLabel").text("County enrolled: " + e.checked);
+        
+    }
+
+</script>

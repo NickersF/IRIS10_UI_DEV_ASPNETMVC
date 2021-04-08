@@ -132,18 +132,18 @@
                             <div class="card flex-fill">
 
                                 <!-- #region Map Header -->
-                                <div class="row no-gutters card-header justify-content-between">
+                                <div class="row no-gutters card-header">
 
                                     <!-- #region Dynamic County Selection Label -->
                                     <div class="col-md-4">
-                                        <h5>Interactive Oregon County Map</h5>
-                                        <div class="card">
+                                        <div class="card h-100">
                                             <div class="card-body bg-white">
                                                 <div class="row no-gutters">
                                                     <div class="col-lg">
-                                                        <h5 id="countyNameLabel" class="m-0">No County Selected</h5>
+                                                        <h5>Interactive Oregon County Map</h5>
+                                                        <h6 id="countyNameLabel" class="m-0">No County Selected</h6>
                                                     </div>
-                                                    <div class="col-lg">
+                                                    <div class="col-lg ml-3">
                                                         <button id="mapViewOpenSideBar_btn" class="btn btn-primary"><span class="k-icon k-i-layout-1-by-4 mr-1"></span>Open Selection Tool</button>
                                                     </div>
                                                 </div>
@@ -152,19 +152,40 @@
                                     </div>
                                     <!-- #endregion -->
 
+                                    <!-- #region County Enrollment Switch -->
+                                    <div class="col-md-2 ml-3">
+                                        <div class="card h-100">
+                                            <div class="card-body bg-white">
+                                                <div class="row no-gutters">
+                                                    <div class="col-lg">
+                                                        <h5>County Enrollment Switch</h5>
+                                                        @(Html.Kendo().Switch()
+                                                            .Name("enrollCountySwitch")
+                                                        )
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- #endregion -->
+
                                     <!-- #region Map Legend -->
-                                    <div id="mapLegendContainer" class="col-md-auto">
-                                        <h5>Legend</h5>
-                                        <div class="card">
+                                    <div class="col-md-auto ml-auto">
+                                        <div class="card h-100">
                                             <div class="card-body rounded-lg bg-white">
                                                 <div class="row">
-                                                    <div class="col-auto">
-                                                        <div class="d-inline-block odot-map-legend-green border border-dark"></div>
-                                                        <span class="small text-muted pb-1">Opted-in County</span>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <div class="d-inline-block odot-map-legend-amber border border-dark"></div>
-                                                        <span class="small text-muted pb-1">Selected county</span>
+                                                    <div class="col-lg">
+                                                        <h5>Legend</h5>
+                                                        <div class="row">
+                                                            <div class="col-auto">
+                                                                <div class="d-inline-block odot-map-legend-green border border-dark"></div>
+                                                                <span class="small text-muted pb-1">Opted-in County</span>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="d-inline-block odot-map-legend-amber border border-dark"></div>
+                                                                <span class="small text-muted pb-1">Selected county</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -253,6 +274,12 @@
         <!-- #endregion -->
 
     </main>
+    <!-- #endregion -->
+
+    <!-- #region County enrollment modal -->
+    <div id="CountyEnrollmentModal">
+        @Html.Partial("CountyEnrollmentForm")
+    </div>
     <!-- #endregion -->
 
     <script src="~/Scripts/custom/ODOT_UI_InteractiveMap.js"></script>

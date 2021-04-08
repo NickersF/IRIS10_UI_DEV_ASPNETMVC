@@ -3900,6 +3900,7 @@
     <Content Include="Views\ODOTMilage\UserRegistrationODOT.cshtml" />
     <Content Include="Views\ODOTMilage\RecoverPasswordCounty.cshtml" />
     <Content Include="Views\ODOTMilage\UserRegistrationCounty.cshtml" />
+    <Content Include="Views\ODOTMilage\CountyEnrollmentForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

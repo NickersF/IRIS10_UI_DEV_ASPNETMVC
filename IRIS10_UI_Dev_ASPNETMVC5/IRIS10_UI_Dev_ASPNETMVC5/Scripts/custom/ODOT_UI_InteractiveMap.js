@@ -74,6 +74,19 @@ window.onload = function () {
     let svgDoc = svgMapObject.contentDocument;					    // Get the SVG document inside the Object tag
     // Contains an HTML Collection of all shape tags in the SVG file.
     let countyPathElements = svgDoc.getElementsByTagName("path");
+    // Modal JQuery object
+    let CountyEnrollmentModal = $("#CountyEnrollmentModal");
+
+    // Password recovery window instances
+    CountyEnrollmentModal.kendoWindow({
+        actions: ["Close"],
+        draggable: false,
+        visible: false,
+        modal: true,
+        resizable: false,
+        width: "25%",
+        title: "Enroll County Form"
+    });
 
     // Attach mouse events to all county svg shapes
     for (let i = 0; i < countyPathElements.length; i++) {
@@ -134,6 +147,7 @@ window.onload = function () {
         // Click event to opt in counties
         if (!compareTenant(countyPathElements[i].id)) {
             countyPathElements[i].addEventListener("click", function () {
+                CountyEnrollmentModal.data("kendoWindow").center().open();
                 console.log(countyPathElements[i].id + " not opted in.");
             });
         }
@@ -345,4 +359,5 @@ window.onload = function () {
         }
 
     }
+
 };
