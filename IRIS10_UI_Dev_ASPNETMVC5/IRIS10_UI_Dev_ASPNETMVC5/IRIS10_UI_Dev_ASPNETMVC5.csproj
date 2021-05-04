@@ -134,6 +134,7 @@
     <Compile Include="Controllers\PanelBarDemoController.cs" />
     <Compile Include="Controllers\PermitsController.cs" />
     <Compile Include="Controllers\ReportScreensController.cs" />
+    <Compile Include="Controllers\StepWizardController.cs" />
     <Compile Include="Controllers\TextEditorDemoController.cs" />
     <Compile Include="Controllers\WindowExController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1502,6 +1503,7 @@
     <Content Include="Content\site-tabstrip-config.less" />
     <Content Include="Content\site-odot.less" />
     <Content Include="Content\site-user-accounts.less" />
+    <Content Include="Content\site-fuel-import.less" />
     <None Include="packages.config" />
     <Content Include="Images\IRIS_card_header.svg" />
     <Content Include="Images\IRIS_logo_web_blue.svg" />
@@ -3901,6 +3903,7 @@
     <Content Include="Views\ODOTMilage\RecoverPasswordCounty.cshtml" />
     <Content Include="Views\ODOTMilage\UserRegistrationCounty.cshtml" />
     <Content Include="Views\ODOTMilage\CountyEnrollmentForm.cshtml" />
+    <Content Include="Views\StepWizard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

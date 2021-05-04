@@ -56,6 +56,12 @@
                             children.Add().Text("Change Password Confirmation Screen").Action("ChangePasswordConfirmation", "Login");
                         });
 
+                    items.Add().Text("Step Wizard UI") // Dropdown level
+                        .Items(children =>
+                        {
+                            children.Add().Text("Step Wizard").Action("Index", "StepWizard");
+                        });
+
                     items.Add().Text("ODOT Road Milage Report")
                         .Items(children =>
                         {

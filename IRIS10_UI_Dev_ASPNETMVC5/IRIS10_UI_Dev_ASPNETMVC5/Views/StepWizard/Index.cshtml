@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+<body>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-10">
+                <div id="stepWiz_step1_schemaSelect" class="step-arrowbox-active">
+                    <div class="arrowbox-content-active">
+                        <p>1. Select Schema</p>
+                    </div>
+                </div>
+                <div id="stepWiz_step2_fileSelect" class="step-arrowbox">
+                    <div class="arrowbox-content">
+                        <p>2. Upload Data File</p>
+                    </div>
+                </div>
+                <div id="stepWiz_step3_errorCorrect" class="step-arrowbox">
+                    <div class="arrowbox-content">
+                        <p>3. Correct Errors</p>
+                    </div>
+                </div>
+                <div id="stepWiz_step4_importData" class="step-arrowbox">
+                    <div class="arrowbox-content">
+                        <p>4. Import to Timecard</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10">
+                <h1>Hi, I'm the step 1 panel.</h1>
+                <p>Click the button to move to the next step.</p>
+                <button id="completeStep1_btn" class="btn btn-primary">Next Step</button>
+            </div>
+            <div class="col-md-10">
+                <h1>Hi, I'm the step 2 panel.</h1>
+                <p>Click the button to move to the next step.</p>
+                <button id="completeStep2_btn" class="btn btn-primary">Next Step</button>
+            </div>
+            <div class="col-md-10">
+                <h1>Hi, I'm the step 3 panel.</h1>
+                <p>Click the button to move to the next step.</p>
+                <button id="completeStep2_btn" class="btn btn-primary">Next Step</button>
+            </div>
+            <div class="col-md-10">
+                <h1>Hi, I'm the step 4 panel.</h1>
+                <p>Click the button to move to the next step.</p>
+                <button id="completeStep2_btn" class="btn btn-primary">Next Step</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
