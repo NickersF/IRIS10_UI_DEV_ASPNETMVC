@@ -25,23 +25,23 @@
 
         <div class="row">
             <div class="col-md-10">
-                <div id="stepWiz_step1_schemaSelect" class="step-arrowbox-active">
-                    <div class="arrowbox-content-active">
+                <div id="stepWiz_step1_schemaSelect" class="step-arrowbox">
+                    <div id="step1Content" class="arrowbox-content">
                         <p>1. Select Schema</p>
                     </div>
                 </div>
                 <div id="stepWiz_step2_fileSelect" class="step-arrowbox">
-                    <div class="arrowbox-content">
+                    <div id="step2Content" class="arrowbox-content">
                         <p>2. Upload Data File</p>
                     </div>
                 </div>
                 <div id="stepWiz_step3_errorCorrect" class="step-arrowbox">
-                    <div class="arrowbox-content">
+                    <div id="step3Content" class="arrowbox-content">
                         <p>3. Correct Errors</p>
                     </div>
                 </div>
                 <div id="stepWiz_step4_importData" class="step-arrowbox">
-                    <div class="arrowbox-content">
+                    <div id="step4Content" class="arrowbox-content">
                         <p>4. Import to Timecard</p>
                     </div>
                 </div>
@@ -49,28 +49,56 @@
         </div>
 
         <div class="row">
-            <div class="col-md-10">
-                <h1>Hi, I'm the step 1 panel.</h1>
-                <p>Click the button to move to the next step.</p>
-                <button id="completeStep1_btn" class="btn btn-primary">Next Step</button>
+            <div id="stepPanel_step0_getStarted" class="col-md-10">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Welcome to Fuel Import.</h1>
+                        <p>Click the button to start importing fuel records.</p>
+                        <button id="completeStep0_btn" class="btn btn-primary">Start</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-10">
-                <h1>Hi, I'm the step 2 panel.</h1>
-                <p>Click the button to move to the next step.</p>
-                <button id="completeStep2_btn" class="btn btn-primary">Next Step</button>
+            <div id="stepPanel_step1_schemaSelect" class="col-md-10">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Hi, I'm the step 1 panel.</h1>
+                        <p>Click the button to move to the next step.</p>
+                        <button id="completeStep1_btn" class="btn btn-primary">Next Step</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-10">
-                <h1>Hi, I'm the step 3 panel.</h1>
-                <p>Click the button to move to the next step.</p>
-                <button id="completeStep2_btn" class="btn btn-primary">Next Step</button>
+            <div id="stepPanel_step2_fileSelect" class="col-md-10">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Hi, I'm the step 2 panel.</h1>
+                        <p>Click the button to move to the next step.</p>
+                        <button id="completeStep2_btn" class="btn btn-primary">Next Step</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-10">
-                <h1>Hi, I'm the step 4 panel.</h1>
-                <p>Click the button to move to the next step.</p>
-                <button id="completeStep2_btn" class="btn btn-primary">Next Step</button>
+            <div id="stepPanel_step3_errorCorrect" class="col-md-10">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Hi, I'm the step 3 panel.</h1>
+                        <p>Click the button to move to the next step.</p>
+                        <button id="completeStep3_btn" class="btn btn-primary">Next Step</button>
+                    </div>
+                </div>
+            </div>
+            <div id="stepPanel_step4_importData" class="col-md-10">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Hi, I'm the step 4 panel.</h1>
+                        <p>Click the button to move to the next step.</p>
+                        <button id="completeStep4_btn" class="btn btn-primary">Next Step</button>
+                    </div>
+                </div>
             </div>
         </div>
 
     </div>
+
+    <script src="~/Scripts/custom/Fuel_Import_UI.js"></script>
+
 </body>
 </html>
