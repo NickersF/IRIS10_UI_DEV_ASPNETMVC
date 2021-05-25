@@ -1,16 +1,17 @@
 ﻿/* IRIS LESS Color Library */
 
+/*#region IRIS Colors */
 /* Grays */
-@IRIS_GRAY_01:  #1A1A1A;
-@IRIS_GRAY_02:  #2D2D2D;
-@IRIS_GRAY_03:  #737373;
-@IRIS_GRAY_04:  #F2F2F2;
+@IRIS_GRAY_01: #1A1A1A;
+@IRIS_GRAY_02: #2D2D2D;
+@IRIS_GRAY_03: #737373;
+@IRIS_GRAY_04: #F2F2F2;
 
 /* Main Palette */
-@IRIS_BLUE_01:  #151B26;
-@IRIS_BLUE_02:  #2E6FF2;
-@IRIS_BLUE_03:  #5399EE;
-@IRIS_RED_01:   #F21D1D;
+@IRIS_BLUE_01: #233042;
+@IRIS_BLUE_02: #2E6FF2;
+@IRIS_BLUE_03: #5399EE;
+@IRIS_RED_01: #F21D1D;
 
 /* Custom Validation Colors */
 @IRIS_VALIDATE_GREEN_DK: #4CAF50;
@@ -22,12 +23,6 @@
 @IRIS_MAP_GREEN: #A5D6A7;
 @IRIS_MAP_AMBER: #FFB74D;
 
-/* IRIS Custom color classes */
-.color-test {
-    color: @IRIS_BLUE_02;
-}
-
-/*#region IRIS Colors */
 .iris-bg-dark-blue {
     background-color: @IRIS_BLUE_01;
 }
@@ -46,6 +41,18 @@
 
 .iris-border-hinted {
     border-color: rgba(0, 0, 0, 0.125);
+}
+/*#endregion*/
+
+/*#region Gradient Background classes */
+.dark-gradient-bg {
+    background: rgb(46,111,242);
+    background: linear-gradient(0deg, rgba(46,111,242,1) 0%, rgba(83,153,238,1) 100%);
+}
+
+.light-gradient-bg {
+    background: rgb(227,242,253);
+    background: linear-gradient(180deg, rgba(227,242,253,1) 0%, rgba(255,255,255,1) 100%);
 }
 /*#endregion*/
 

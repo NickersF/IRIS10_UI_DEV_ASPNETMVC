@@ -15,6 +15,11 @@ namespace IRIS10_UI_Dev_ASPNETMVC5.Controllers
             return View();
         }
 
+        public ActionResult OtherIndex()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";

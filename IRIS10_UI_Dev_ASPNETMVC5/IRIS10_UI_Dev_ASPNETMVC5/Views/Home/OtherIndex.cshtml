@@ -1,0 +1,139 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<section class="container-fluid">
+    <div class="row mt-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Basic Kendo UI Widget Examples</h5>
+
+                    @(Html.Kendo().Button()
+                        .Name("textButton")
+                        .HtmlAttributes( new {type = "button", @class = "btn btn-primary mt-3" } )
+                        .Content("Text Button")
+                    )
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Bootstrap UI Conversation Cards Example</h5>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Conversation</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p>Content here.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+
+                    <h5>Kendo Upload Helper</h5>
+                    @(Html.Kendo().Upload()
+                        .Name("UploadExample")
+                        .Async(a => a
+                            .Save("Save", "Upload")
+                            .Remove("Remove", "Upload")
+                            .AutoUpload(true)
+                        )
+                    )
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+
+                    <h5>Kendo Text Editor</h5>
+                    @(Html.Kendo().Editor()
+                        .Name("editor")
+                        .Value(@<text>
+                            <p>
+                                Kendo UI Editor allows your users to edit HTML in a familiar, user-friendly way.
+                            </p>
+                        </text>)
+                    )
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+
+                    <h5>Kendo Text Box</h5>
+                    @(Html.Kendo().TextBox()
+                        .Name("KendoTxtBoxEx")
+                        .Placeholder("Placeholder text")
+                    )
+
+                    <h5>Pure HTML5 Text Box</h5>
+                    <input id="InputTxtBoxExample" class="form-control" placeholder="Placeholder text" />
+
+                    <h5>1 Row Text Area</h5>
+                    <textarea class="form-control" placeholder="Sample text for textarea element here." rows="1"></textarea>
+
+                    <h5>2 Row Text Area</h5>
+                    <textarea class="form-control" placeholder="Sample text for textarea element here." rows="2"></textarea>
+
+                    <h5>3 Row Text Area</h5>
+                    <textarea class="form-control" placeholder="Sample text for textarea element here." rows="3"></textarea>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+
+                    <h5>Stateful Kendo Button Example</h5>
+
+                    <button id="ToggleButtonState" class="btn btn-info">Change State</button>
+
+                    @(Html.Kendo().Button()
+                    .Name("StatefulButton")
+                    .Content("Button")
+                    )
+
+                    <h5>Sateful Bootstrap Button Example</h5>
+                    <button id="StateFullButton_BS" class="btn btn-primary">Button</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/custom/StatefulButtons.js"></script>
+</section>

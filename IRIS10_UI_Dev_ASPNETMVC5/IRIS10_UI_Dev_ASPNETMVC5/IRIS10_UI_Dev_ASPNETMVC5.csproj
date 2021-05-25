@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CommonLayoutController.cs" />
     <Compile Include="Controllers\GridDemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -152,6 +153,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\iris-bootstrap-custom-v2.css" />
     <Content Include="Content\iris10-bootstrap-custom-theme.css" />
     <Content Include="Content\kendo\2020.3.1021-source\dataviz\kendo.dataviz.black.css" />
     <Content Include="Content\kendo\2020.3.1021-source\dataviz\kendo.dataviz.blueopal.css" />
@@ -1504,6 +1506,7 @@
     <Content Include="Content\site-odot.less" />
     <Content Include="Content\site-user-accounts.less" />
     <Content Include="Content\site-fuel-import.less" />
+    <Content Include="Content\site-main-layouts.less" />
     <None Include="packages.config" />
     <Content Include="Images\IRIS_card_header.svg" />
     <Content Include="Images\IRIS_logo_web_blue.svg" />
@@ -3905,6 +3908,9 @@
     <Content Include="Views\ODOTMilage\UserRegistrationCounty.cshtml" />
     <Content Include="Views\ODOTMilage\CountyEnrollmentForm.cshtml" />
     <Content Include="Views\StepWizard\Index.cshtml" />
+    <Content Include="Views\CommonLayout\MainLayout.cshtml" />
+    <Content Include="Views\Shared\_NewLayout.cshtml" />
+    <Content Include="Views\Home\OtherIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />
