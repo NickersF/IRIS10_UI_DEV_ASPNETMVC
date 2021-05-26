@@ -1,0 +1,133 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IRIS10 UI Development Sandbox</title>
+
+    @Styles.Render("~/Content/css")
+
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+<body>
+    <div>
+        @(Html.Kendo().Drawer()
+        .Name("drawer")
+        .Template(@"
+            <ul>
+              <li data-role='drawer-item' class='k-state-selected'><span class='k-icon k-i-information'></span><span class='k-item-text' data-id='GettingStarted'>Getting Started</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+              <li data-role='drawer-separator'></li>
+              <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-question'></span><span class='k-item-text' data-id='Kendo'>About Kendo UI</span></li>
+              <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-palette'></span><span class='k-item-text' data-id='ThemeSupport'>Supported Themes</span></li>
+              <li data-role='drawer-separator'></li>
+              <li data-role='drawer-item'><span class='k-icon k-i-zoom'></span><span class='k-item-text' data-id='Overview'>Overview</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></li>
+              <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-js'></span><span class='k-item-text' data-id='About'>About Kendo</span></li>
+              <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='All'>All Kendo Components</span></li>
+              <li data-role='drawer-separator'></li>
+              <li data-role='drawer-item'><span class='k-icon k-i-star'></span><span class='k-item-text' data-id='Popular'>Most popular components</span></li>
+            </ul>
+        ")
+        .Events(x => x.ItemClick("onItemClick"))
+    )
+    </div>
+
+    <script>
+        function onItemClick(e) {
+            if (!e.item.hasClass("k-drawer-separator")) {
+                var drawerContainer = e.sender.drawerContainer;
+                var expandIcon = e.item.find("span.k-i-arrow-chevron-right");
+                var collapseIcon = e.item.find("span.k-i-arrow-chevron-down");
+                drawerContainer.find("#drawer-content > div").addClass("hidden");
+                drawerContainer.find("#drawer-content").find("#" + e.item.find(".k-item-text").attr("data-id")).removeClass("hidden");
+
+                /* If the expandIcon is visible, the sub-items are hidden. Clicking on the icon should remove the hidden class and reveal the items.*/
+                if (expandIcon.length) {
+                    e.item.nextAll(".k-drawer-item:not(.k-drawer-separator):lt(2)").removeClass("hidden");
+                    expandIcon.removeClass("k-i-arrow-chevron-right").addClass("k-i-arrow-chevron-down");
+                }
+
+                /* If the collapseIcon is visible, the sub-items are visible. Clicking on the icon should add the hidden class and hide the items. */
+                if (collapseIcon.length) {
+                    e.item.nextAll(".k-drawer-item:not(.k-drawer-separator):lt(2)").addClass("hidden");
+                    collapseIcon.addClass("k-i-arrow-chevron-right").removeClass("k-i-arrow-chevron-down");
+                }
+            }
+        }
+    </script>
+
+    <style>
+
+        #drawer-content li {
+            font-size: 1.2em;
+            padding-left: .89em;
+            background: 0 0;
+            border-radius: 0;
+            border-width: 0 0 1px;
+            border-color: rgba(33, 37, 41, 0.125);
+            line-height: 1.5em;
+            padding: 0em 0.4em 0.7em .84em
+        }
+
+            #drawer-content li:last-child {
+                border: 0;
+            }
+
+        .hidden {
+            display: none;
+        }
+
+        #demo-runner #example div.demo-section {
+            max-width: 800px;
+        }
+
+        .k-toolbar .k-icon {
+            font-size: 18px;
+        }
+
+        #drawer-content ul {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        h6 {
+            font-size: 1rem;
+            margin-bottom: .5rem;
+            font-family: inherit;
+            font-weight: 500;
+            line-height: 1.2;
+            color: inherit;
+        }
+
+        .k-drawer-content {
+            padding: 15px;
+        }
+
+        .kendoka {
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            background-image: url('https://demos.telerik.com/kendo-ui/content/shared/images/site/kendoka-cta.svg');
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            margin-left: 8px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</body>
+</html>

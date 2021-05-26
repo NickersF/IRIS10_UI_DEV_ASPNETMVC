@@ -1,0 +1,141 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="h-100">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IRIS10 UI Development Sandbox</title>
+
+    @Styles.Render("~/Content/css")
+
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+<body class="d-flex flex-column h-100">
+
+    <header class="iris-bg-light-blue">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-md-2 p-3">
+                    <img src="~/Images/IRIS_Logo_Gray_Light.svg" />
+                </div>
+                <div class="col-md-auto ml-auto">
+                    <div class="d-flex bg-light m-3 p-2 rounded rounded-sm">
+                        <strong>Nicholas Fazzolari (AOCCRP)</strong>
+                        <button class="btn btn-sm btn-primary ml-3">Logout <span class="k-icon k-i-logout"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="d-flex flex-grow-1">
+        <div class="d-flex flex-column container-fluid p-0">
+            <div class="row flex-grow-1 no-gutters">
+                <div class="d-flex flex-column col-md">
+                    @(Html.Kendo().ToolBar().Name("toolbar").Items(items=> {
+                        items.Add().Type(CommandType.Button).Icon("menu").HtmlAttributes(new { @class="k-flat"}).Click("toggleDrawer");
+                        items.Add().Template("<h3 class='ml-2'>Road Information System</h3>");
+                    }))
+                    @(Html.Kendo().Drawer()
+                        .Name("drawer")
+                        .Template(@"
+                        <ul>
+                            <li data-role='drawer-item' class='k-state-selected'><span class='k-icon k-i-info'></span><span class='k-item-text' data-id='Information'>Information</span></li>
+                            <li data-role='drawer-item'><span class='k-icon k-i-clip-45'></span><span class='k-item-text' data-id='Appurtenances'>Appurtenances</span></li>
+                            <li data-role='drawer-item'><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Miscellaneous'>Miscellaneous</span></li>
+                            <li data-role='drawer-item'><span class='k-icon k-i-invert-colors'></span><span class='k-item-text' data-id='Management'>Management</span></li>
+                            <li data-role='drawer-item'><span class='k-icon k-i-dictionary-add'></span><span class='k-item-text' data-id='Road_Definitions'>Road Definitions</span></li>
+                            <li data-role='drawer-item'><span class='k-icon k-i-gears'></span><span class='k-item-text' data-id='RIS_Utilities'>RIS Utilities</span></li>
+                        </ul>
+                        ")
+                        .Mode("push")
+                        .Mini(true)
+                        .Position("left")
+                        .MinHeight(768)
+                        .SwipeToOpen(true)
+                        .Content(@"
+                        <div id='drawer-content'>
+                            <div id='Information'>
+                                Information categories listed here
+                            </div>
+                            <div id='Appurtenances' class='hidden'>
+                                Appurtenances categories listed here
+                            </div>
+                            <div id='Miscellaneous' class='hidden'>
+                                Miscellaneous categories listed here
+                            </div>
+                            <div id='Management' class='hidden'>
+                                Management categories listed here
+                            </div>
+                            <div id='Road_Definitions' class='hidden'>
+                                Road definitions categories listed here
+                            </div>
+                            <div id='RIS_Utilities' class='hidden'>
+                                RIS Utilities categories listed here
+                            </div>
+                        </div>
+                        ")
+                        .Events(x => x.ItemClick("onItemClick")))
+
+                    <script>
+                        function toggleDrawer() {
+                            var drawerInstance = $("#drawer").data().kendoDrawer;
+                            var drawerContainer = drawerInstance.drawerContainer;
+                            if (drawerContainer.hasClass("k-drawer-expanded")) {
+                                drawerInstance.hide();
+                            } else {
+                                drawerInstance.show();
+                            }
+                        }
+
+                        function onItemClick(e) {
+                            if (!e.item.hasClass("k-drawer-separator")) {
+                                e.sender.drawerContainer.find("#drawer-content > div").addClass("hidden");
+                                e.sender.drawerContainer.find("#drawer-content").find("#" + e.item.find(".k-item-text").attr("data-id")).removeClass("hidden");
+                            }
+                        }
+
+
+                    </script>
+
+                    <style>
+                        #drawer-content li {
+                            font-size: 1.2em;
+                            padding-left: .89em;
+                            background: 0 0;
+                            border-radius: 0;
+                            border-width: 0 0 1px;
+                            border-color: rgba(33, 37, 41, 0.125);
+                            border-style: solid;
+                            line-height: 1.5em;
+                            padding: 1.09em .84em 1.23em .84em;
+                        }
+
+                            #drawer-content li:last-child {
+                                border: 0;
+                            }
+
+                        .hidden {
+                            display: none;
+                        }
+
+                        .k-toolbar .k-icon {
+                            font-size: 18px;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -57,7 +57,12 @@
                         {
                             children.Add().Text("Step Wizard").Action("Index", "StepWizard");
                         });
-
+                    items.Add().Text("RIS Screens")
+                        .Items(children =>
+                        {
+                            children.Add().Text("RIS Main Screen").Action("Index", "RIS");
+                            children.Add().Text("Drawer Category Template").Action("DrawerCategoryTemplate", "RIS");
+                        });
                     items.Add().Text("ODOT Road Milage Report")
                         .Items(children =>
                         {
@@ -72,7 +77,8 @@
                     items.Add().Text("Layout Templates")
                         .Items(children =>
                         {
-                            children.Add().Text("IRIS10 Layout").Action("MainLayout", "CommonLayout");
+                            children.Add().Text("IRIS10 Main Layout").Action("MainLayout", "CommonLayout");
+                            children.Add().Text("IRIS10 Side Bar Layout").Action("SideBarLayout", "CommonLayout");
                         });
 
                     items.Add().Text("Reports Views and Templates")
@@ -150,6 +156,9 @@
                     items.Add().Text("Kendo UI Demos") // Dropdown level
                         .Items(children =>
                         {
+                            children.Add().Text("Drawer Navigation Demo").Action("Index", "DrawerDemo");
+                            children.Add().Text("Hierarchy Drawer Navigation Demo").Action("HierarchyDrawer", "DrawerDemo");
+
                             children.Add().Text("Grid Demo").Action("Index", "GridDemo");
                             children.Add().Text("TabStrip With Grid Demo").Action("TabStripGridDemo", "GridDemo");
                             children.Add().Text("Flexy Layout For TabStrip Demo").Action("FlexLayoutGrid", "GridDemo");

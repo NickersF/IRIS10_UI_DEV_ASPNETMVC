@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CommonLayoutController.cs" />
+    <Compile Include="Controllers\DrawerDemoController.cs" />
     <Compile Include="Controllers\GridDemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Controllers\PanelBarDemoController.cs" />
     <Compile Include="Controllers\PermitsController.cs" />
     <Compile Include="Controllers\ReportScreensController.cs" />
+    <Compile Include="Controllers\RISController.cs" />
     <Compile Include="Controllers\StepWizardController.cs" />
     <Compile Include="Controllers\TextEditorDemoController.cs" />
     <Compile Include="Controllers\WindowExController.cs" />
@@ -1495,6 +1497,7 @@
     <Content Include="Content\kendo\2020.3.1021-source\dataviz\kendo.dataviz.black.less" />
     <Content Include="Content\kendo\2020.3.1021-source\common\transitions.less" />
     <Content Include="Images\Example_Shape.svg" />
+    <Content Include="Images\IRIS_Logo_Gray_Light.svg" />
     <Content Include="Images\logout_button.svg" />
     <Content Include="Images\ODOT_UI_Illustration.svg" />
     <Content Include="Images\Oregon_County_Map_Optimized.svg" />
@@ -3911,6 +3914,11 @@
     <Content Include="Views\CommonLayout\MainLayout.cshtml" />
     <Content Include="Views\Shared\_NewLayout.cshtml" />
     <Content Include="Views\Home\OtherIndex.cshtml" />
+    <Content Include="Views\CommonLayout\SideBarLayout.cshtml" />
+    <Content Include="Views\DrawerDemo\Index.cshtml" />
+    <Content Include="Views\DrawerDemo\HierarchyDrawer.cshtml" />
+    <Content Include="Views\RIS\Index.cshtml" />
+    <Content Include="Views\RIS\DrawerCategoryTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

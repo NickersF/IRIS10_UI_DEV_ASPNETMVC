@@ -6,15 +6,15 @@ using System.Web.Mvc;
 
 namespace IRIS10_UI_Dev_ASPNETMVC5.Controllers
 {
-    public class CommonLayoutController : Controller
+    public class DrawerDemoController : Controller
     {
-        // GET: CommonLayout
-        public ActionResult MainLayout()
+        // GET: DrawerDemo
+        public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult SideBarLayout()
+        public ActionResult HierarchyDrawer()
         {
             return View();
         }
