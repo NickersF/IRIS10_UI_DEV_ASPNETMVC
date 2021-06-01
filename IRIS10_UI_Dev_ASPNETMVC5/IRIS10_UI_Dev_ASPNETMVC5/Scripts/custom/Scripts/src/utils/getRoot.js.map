@@ -1,1 +1,0 @@
-{"version":3,"file":"getRoot.js","sourceRoot":"","sources":["../../../../src/utils/getRoot.js"],"names":[],"mappings":"AAAA;;;;;;GAMG;AACH,MAAM,CAAC,OAAO,UAAU,OAAO,CAAC,IAAI;IAClC,IAAI,IAAI,CAAC,UAAU,KAAK,IAAI,EAAE;QAC5B,OAAO,OAAO,CAAC,IAAI,CAAC,UAAU,CAAC,CAAC;KACjC;IAED,OAAO,IAAI,CAAC;AACd,CAAC"}
