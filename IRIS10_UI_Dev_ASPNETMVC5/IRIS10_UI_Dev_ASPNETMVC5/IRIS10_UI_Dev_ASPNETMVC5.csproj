@@ -535,6 +535,7 @@
     <Content Include="Views\RIS\Index.cshtml" />
     <Content Include="Views\RIS\DrawerCategoryTemplate.cshtml" />
     <Content Include="Views\RIS\DrawerContentTemplates.cshtml" />
+    <Content Include="Views\RIS\RISMain.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

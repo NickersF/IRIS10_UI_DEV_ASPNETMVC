@@ -1,0 +1,1 @@
+{"version":3,"file":"getParentNode.js","sourceRoot":"","sources":["../../../../src/utils/getParentNode.js"],"names":[],"mappings":"AAAA;;;;;;GAMG;AACH,MAAM,CAAC,OAAO,UAAU,aAAa,CAAC,OAAO;IAC3C,IAAI,OAAO,CAAC,QAAQ,KAAK,MAAM,EAAE;QAC/B,OAAO,OAAO,CAAC;KAChB;IACD,OAAO,OAAO,CAAC,UAAU,IAAI,OAAO,CAAC,IAAI,CAAC;AAC5C,CAAC"}

@@ -5,10 +5,10 @@
 
 <!DOCTYPE html>
 
-<html class="h-100">
+<html lang="en" class="h-100">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>IRIS10 UI Development Sandbox</title>
 
     @Styles.Render("~/Content/css")
@@ -49,6 +49,7 @@
                         items.Add().Type(CommandType.Button).Icon("menu").HtmlAttributes(new { @class="k-flat"}).Click("toggleDrawer");
                         items.Add().Template("<h3 class='ml-2'>Road Information System</h3>");
                     }))
+
                     @(Html.Kendo().Drawer()
                         .Name("drawer")
                         .Template(@"
@@ -69,111 +70,112 @@
                         <div id='drawer-content'>
                             <div id='Information'>
                                 
-<div class='container-fluid mt-3'>
-    <h1 class='text-primary'>RIS Information Modules</h1>
-    <div class='row'>
-        <div class='col-md-3'>
-            <div class='card mb-3'>
-                <div class='card-body'>
-                    <h5 class='card-title'>Primary card title</h5>
-                    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class='col-md-3'>
-            <div class='card mb-3'>
-                <div class='card-body'>
-                    <h5 class='card-title'>Primary card title</h5>
-                    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class='col-md-3'>
-            <div class='card mb-3'>
-                <div class='card-body'>
-                    <h5 class='card-title'>Primary card title</h5>
-                    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class='col-md-3'>
-            <div class='card mb-3'>
-                <div class='card-body'>
-                    <h5 class='card-title'>Primary card title</h5>
-                    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class='row'>
-        <div class='col-md-3'>
-            <div class='card mb-3'>
-                <div class='card-body'>
-                    <h5 class='card-title'>Primary card title</h5>
-                    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class='col-md-3'>
-            <div class='card mb-3'>
-                <div class='card-body'>
-                    <h5 class='card-title'>Primary card title</h5>
-                    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class='col-md-3'>
-            <div class='card mb-3'>
-                <div class='card-body'>
-                    <h5 class='card-title'>Primary card title</h5>
-                    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class='col-md-3'>
-            <div class='card mb-3'>
-                <div class='card-body'>
-                    <h5 class='card-title'>Primary card title</h5>
-                    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class='row'>
-        <div class='col-md-3'>
-            <div class='card mb-3'>
-                <div class='card-body'>
-                    <h5 class='card-title'>Primary card title</h5>
-                    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class='col-md-3'>
-            <div class='card mb-3'>
-                <div class='card-body'>
-                    <h5 class='card-title'>Primary card title</h5>
-                    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class='col-md-3'>
-            <div class='card mb-3'>
-                <div class='card-body'>
-                    <h5 class='card-title'>Primary card title</h5>
-                    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class='col-md-3'>
-            <div class='card mb-3'>
-                <div class='card-body'>
-                    <h5 class='card-title'>Primary card title</h5>
-                    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                                <div class='container-fluid mt-3'>
+                                <h1 class='text-primary'>RIS Information Modules</h1>
+                                <div class='row'>
+                                <div class='col-md-3'>
+                                    <div class='card mb-3'>
+                                        <div class='card-body'>
+                                            <h5 class='card-title'>Primary card title</h5>
+                                            <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='col-md-3'>
+                                    <div class='card mb-3'>
+                                        <div class='card-body'>
+                                            <h5 class='card-title'>Primary card title</h5>
+                                            <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='col-md-3'>
+                                    <div class='card mb-3'>
+                                        <div class='card-body'>
+                                            <h5 class='card-title'>Primary card title</h5>
+                                            <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='col-md-3'>
+                                    <div class='card mb-3'>
+                                        <div class='card-body'>
+                                            <h5 class='card-title'>Primary card title</h5>
+                                            <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class='row'>
+                                <div class='col-md-3'>
+                                    <div class='card mb-3'>
+                                        <div class='card-body'>
+                                            <h5 class='card-title'>Primary card title</h5>
+                                            <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='col-md-3'>
+                                    <div class='card mb-3'>
+                                        <div class='card-body'>
+                                            <h5 class='card-title'>Primary card title</h5>
+                                            <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='col-md-3'>
+                                    <div class='card mb-3'>
+                                        <div class='card-body'>
+                                            <h5 class='card-title'>Primary card title</h5>
+                                            <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='col-md-3'>
+                                    <div class='card mb-3'>
+                                        <div class='card-body'>
+                                            <h5 class='card-title'>Primary card title</h5>
+                                            <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class='row'>
+                                <div class='col-md-3'>
+                                    <div class='card mb-3'>
+                                        <div class='card-body'>
+                                            <h5 class='card-title'>Primary card title</h5>
+                                            <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='col-md-3'>
+                                    <div class='card mb-3'>
+                                        <div class='card-body'>
+                                            <h5 class='card-title'>Primary card title</h5>
+                                            <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='col-md-3'>
+                                    <div class='card mb-3'>
+                                        <div class='card-body'>
+                                            <h5 class='card-title'>Primary card title</h5>
+                                            <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='col-md-3'>
+                                    <div class='card mb-3'>
+                                        <div class='card-body'>
+                                            <h5 class='card-title'>Primary card title</h5>
+                                            <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                </div>
+
                             </div>
                             <div id='Appurtenances' class='hidden'>
                                 Appurtenances categories listed here
@@ -192,7 +194,8 @@
                             </div>
                         </div>
                         ")
-                        .Events(x => x.ItemClick("onItemClick")))
+                        .Events(x => x.ItemClick("onItemClick"))
+                        )
 
                     <script>
                         function toggleDrawer() {

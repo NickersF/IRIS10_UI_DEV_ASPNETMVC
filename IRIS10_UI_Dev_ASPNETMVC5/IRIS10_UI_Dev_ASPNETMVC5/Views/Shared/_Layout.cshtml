@@ -63,7 +63,8 @@
                     items.Add().Text("RIS Screens")
                         .Items(children =>
                         {
-                            children.Add().Text("RIS Main Screen").Action("Index", "RIS");
+                            children.Add().Text("RIS Regular Drawer").Action("Index", "RIS");
+                            children.Add().Text("RIS Main").Action("RISMain", "RIS");
                             children.Add().Text("Drawer Category Template").Action("DrawerCategoryTemplate", "RIS");
                             children.Add().Text("Drawer Content Template").Action("DrawerContentTemplates", "RIS");
                         });
