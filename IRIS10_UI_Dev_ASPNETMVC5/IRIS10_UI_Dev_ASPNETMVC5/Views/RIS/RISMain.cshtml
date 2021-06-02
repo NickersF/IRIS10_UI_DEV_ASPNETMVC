@@ -45,46 +45,103 @@
                 <div class="d-flex flex-column col-md">
 
                     @*@(Html.Kendo().ToolBar().Name("toolbar").Items(items=> {
-                        items.Add().Type(CommandType.Button).Icon("menu").HtmlAttributes(new { @class="k-flat"}).Click("toggleDrawer");
-                        items.Add().Template("<h3 class='ml-2'>Road Information System</h3>");
-                        }))*@
+        items.Add().Type(CommandType.Button).Icon("menu").HtmlAttributes(new { @class="k-flat"}).Click("toggleDrawer");
+        items.Add().Template("<h3 class='ml-2'>Road Information System</h3>");
+        }))*@
 
                     @(Html.Kendo().Drawer()
                         .Name("drawer")
                         .Template(@"
                                 <ul>
-                                    <li id='closeDrawer' data-role='drawer-item'><span class='k-icon k-i-menu'></span><span class='k-item-text' data-id='Road'>Road Information System</span></li>
-                                    <li data-role='drawer-item'><span class='k-icon k-i-information'></span><span class='k-item-text' data-id='Information'>Information</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+                                    <li id='closeDrawer' class='k-state-selected' data-role='drawer-item'><span class='k-icon k-i-menu'></span><span class='k-item-text' data-id='Road'>Road Information System</span></li>
                                     <li data-role='drawer-separator'></li>
-                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Kendo'>About Kendo UI</span></li>
-                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='ThemeSupport'>Supported Themes</span></li>
-                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='ThemeSupport'>Another Item</span></li>
+
+                                    <li data-role='drawer-item'><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Information'>Information</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+                                    
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Boundaries'>Boundaries</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='CuldesacsTurnouts'>Culdesacs & Turnouts</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Curbs'>Curbs</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Intersections'>Intersections</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='MapLocators'>Map Locators</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Medians'>Medians</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='ReferencePoints'>Reference Points</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RightOfWay'>Right of Way</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Road'>Road</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RoadFeatures'>Road Features</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RoadSearch'>Road Search</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Shoulders'>Shoulders</span></li>
+                                    <span></span>
                                     <li data-role='drawer-separator'></li>
-                                    <li data-role='drawer-item' class='k-state-selected'><span class='k-icon k-i-zoom'></span><span class='k-item-text' data-id='Overview'>Overview</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-down'></li>
-                                    <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='About'>About Kendo</span></li>
-                                    <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='All'>All Kendo Components</span></li>
+
+                                    <li data-role='drawer-item'><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Appurtenances'>Appurtenances</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Approaches'>Approaches</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='CatchBasins'>Catch Basins</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Culverts'>Culverts</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Ditches'>Ditches</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='GatesCattleguards'>Gates & Cattleguards</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='GuardrailsBarries'>Guardrails and Barries</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Illumination'>Illumination</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='ManholesVaults'>Manholes & Vaults</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='PavementMarkings'>Pavement Markings</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RailroadCrossings'>Railroad Crossings</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Signals'>Signals</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Signs'>Signs</span></li>
+                                    <span></span>
                                     <li data-role='drawer-separator'></li>
-                                    <li data-role='drawer-item'><span class='k-icon k-i-star'></span><span class='k-item-text' data-id='Popular'>Most popular components</span></li>
+
+                                    <li data-role='drawer-item'><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Miscellaneous'>Miscellaneous</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+                                    <li data-role='drawer-separator'></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='AdjacentDevelopments'>Adjacent Developments</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='BikeFacilities'>Bike Facilities</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='LocationReference'>Location Reference</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Monumentation'>Monumentation</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='MUTCD'>MUTCD</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RestrictedParking'>Restricted Parking</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RoadUseConstraints'>Road Use Constraints</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='SpeedZone'>Speed Zone</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='StreetAddress'>Street Address</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='UniqueRoutes'>Unique Routes</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Utilities'>Utilities</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Walks'>Walks</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Wall'>Wall</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='WheelchairRamps'>Wheelchair Ramps</span></li>
+
+                                    <li data-role='drawer-item'><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Management'>Management</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+                                    <li data-role='drawer-separator'></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Accidents'>Accidents</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='AdoptaRoad'>Adopt a Road</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='AverageDailyTraffic'>Average Daily Traffic</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='BridgeInventory'>Bridge Inventory</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Levee'>Levee</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='MaintenanceRoutes'>Maintenance Routes</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='MaintenanceScheduleHistory'>Maintenance Schedule History</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='MaintenanceScheduleSetup'>Maintenance Schedule Setup</span></li>
+
+                                    <li data-role='drawer-item'><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RoadDefinitions'>Road Definitions</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+                                    <li data-role='drawer-separator'></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Jurisdiction'>Jurisdiction</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Lanes'>Lanes</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RoadClassifications'>Road Classifications</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RoadSegments'>Road Segments</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='SurfaceType'>Surface Type</span></li>
+
+                                    <li data-role='drawer-item'><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RISUtilities'>RIS Utilities</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+                                    <li data-role='drawer-separator'></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='CountyFunctionalClass'>County Functional Class</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='LookupValues'>Lookup Values</span></li>
+                                    <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='MaintenanceDistrict'>Maintenance District</span></li>
                                 </ul>
                                 ")
                         .Mode("push")
-                        .Mini(true)
+                        .Mini(m => m.Width(100))
                         .Position("left")
                         .AutoCollapse(false)
                         .MinHeight(330)
                         .SwipeToOpen(true)
                         .Content(@"
                                 <div id='drawer-content'>
-                                    <div id='About' class='hidden'>
-                                        <h4 class='header'>Kendo UI</h4>
-                                        <h6>
-                                            Kendo UI is a comprehensive HTML5 user interface framework for building interactive and high-performance websites and applications.
-                                            It comes with a library of 70+ UI widgets, an abundance of data-visualization gadgets, client-side data source, and a built-in MVVM (Model-View-ViewModel) library.
-                                        </h6>
-                                        <h6>
-                                            Kendo UI for jQuery provides AngularJS and Bootstrap integration and is also distributed as part of several product units that you can choose from depending on your project requirements.
-                                            The suite includes widgets for enterprise-grade line-of-business applications and is suitable for creating professional websites that require expert and timely technical support.
-                                        </h6>
+                                    <div id='Boundaries' class='hidden'>
+                                        <h4 class='header'>Boundaries</h4>
                                     </div>
 
                                     <div id='All' class='hidden'>
@@ -208,12 +265,14 @@
                             drawerContainer.find("#drawer-content").find("#" + e.item.find(".k-item-text").attr("data-id")).removeClass("hidden");
 
                             if (expandIcon.length) {
-                                e.item.nextAll(".k-drawer-item:not(.k-drawer-separator):lt(3)").removeClass("hidden");
+                                e.item.nextUntil('span').removeClass("hidden");
+                                //e.item.nextAll(".k-drawer-item:not(.k-drawer-separator):lt(14)").removeClass("hidden");
                                 expandIcon.removeClass("k-i-arrow-chevron-right").addClass("k-i-arrow-chevron-down");
                             }
 
                             if (collapseIcon.length) {
-                                e.item.nextAll(".k-drawer-item:not(.k-drawer-separator):lt(3)").addClass("hidden");
+                                e.item.nextUntil('span').addClass("hidden");
+                                //e.item.nextAll(".k-drawer-item:not(.k-drawer-separator):lt(14)").addClass("hidden");
                                 collapseIcon.addClass("k-i-arrow-chevron-right").removeClass("k-i-arrow-chevron-down");
                             }
                         }
@@ -235,14 +294,6 @@
                                 drawerInstance.show();
                             }
 
-                            if ($("li.k-drawer-item").children("span.k-icon.k-i-none").length > 0) {
-                                $("k-drawer-item").addClass("hidden");
-                                console.log($("li.k-drawer-item").length)
-
-                                console.log("selection block reached");
-                            }
-
-                            console.log($("li.k-drawer-item").children("span.k-icon.k-i-none").length)
                             console.log("Close drawer click event raised");
                         })
                     });
