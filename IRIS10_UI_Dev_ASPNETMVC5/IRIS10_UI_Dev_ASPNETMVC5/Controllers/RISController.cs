@@ -19,6 +19,11 @@ namespace IRIS10_UI_Dev_ASPNETMVC5.Controllers
             return View();
         }
 
+        public ActionResult RISMiniDrawerTemplate()
+        {
+            return View();
+        }
+
         public ActionResult DrawerCategoryTemplate()
         {
             return View();

@@ -1,0 +1,288 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>IRIS10 UI Development Sandbox - RIS Main</title>
+
+    @Styles.Render("~/Content/css")
+
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="https://kendo.cdn.telerik.com/2021.2.511/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.2.511/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.2.511/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.2.511/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+<body class="d-flex flex-column h-100">
+
+    <header class="iris-bg-light-blue">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-md-2 p-3">
+                    <img src="~/Images/IRIS_Logo_Gray_Light.svg" />
+                </div>
+                <div class="col-md-auto ml-auto">
+                    <div class="d-flex bg-light m-3 p-2 rounded rounded-sm">
+                        <strong>Nicholas Fazzolari (AOCCRP)</strong>
+                        <button class="btn btn-sm btn-primary ml-3">Logout <span class="k-icon k-i-logout"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="d-flex flex-grow-1">
+        <div class="d-flex flex-column container-fluid p-0">
+            <div class="row flex-grow-1 no-gutters">
+                <div class="d-flex flex-column col-md">
+
+                    <ul>
+                        <li id='closeDrawer1' class='k-state-selected' data-role='drawer-item'><span class='k-icon k-i-menu'></span><span class='k-item-text' data-id='Road'>Road Information System</span></li>
+                        <li data-role='drawer-separator'></li>
+
+                        <li data-id='mini_Information'       data-role='drawer-item'><span class='k-icon k-i-set-column-position'></span></li>
+                        <li data-id='mini_Boundaries'        data-role='drawer-item'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-id='mini_CuldesacsTurnouts' data-role='drawer-item'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-id='mini_Curbs'             data-role='drawer-item'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-id='mini_Intersections'     data-role='drawer-item'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-id='mini_MapLocators'       data-role='drawer-item'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-id='mini_Medians'           data-role='drawer-item'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-id='mini_ReferencePoints'   data-role='drawer-item'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-id='mini_RightOfWay'        data-role='drawer-item'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-id='mini_Road'              data-role='drawer-item'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-id='mini_RoadFeatures'      data-role='drawer-item'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-id='mini_RoadSearch'        data-role='drawer-item'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-id='mini_Shoulders'         data-role='drawer-item'><span class='k-icon k-i-style-builder'></span></li>
+                        <span></span>
+                        <li data-role='drawer-separator'></li>
+
+                        <li data-role='drawer-item'><span class='k-icon k-i-set-column-position'></span><span class='k-item-text' data-id='Appurtenances'>Appurtenances</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Approaches'>Approaches</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='CatchBasins'>Catch Basins</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Culverts'>Culverts</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Ditches'>Ditches</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='GatesCattleguards'>Gates & Cattleguards</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='GuardrailsBarries'>Guardrails and Barries</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Illumination'>Illumination</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='ManholesVaults'>Manholes & Vaults</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='PavementMarkings'>Pavement Markings</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RailroadCrossings'>Railroad Crossings</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Signals'>Signals</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Signs'>Signs</span></li>
+                        <span></span>
+                        <li data-role='drawer-separator'></li>
+
+                        <li data-role='drawer-item'><span class='k-icon k-i-set-column-position'></span><span class='k-item-text' data-id='Miscellaneous'>Miscellaneous</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='AdjacentDevelopments'>Adjacent Developments</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='BikeFacilities'>Bike Facilities</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='LocationReference'>Location Reference</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Monumentation'>Monumentation</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='MUTCD'>MUTCD</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RestrictedParking'>Restricted Parking</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RoadUseConstraints'>Road Use Constraints</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='SpeedZone'>Speed Zone</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='StreetAddress'>Street Address</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='UniqueRoutes'>Unique Routes</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Utilities'>Utilities</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Walks'>Walks</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Wall'>Wall</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='WheelchairRamps'>Wheelchair Ramps</span></li>
+                        <span></span>
+                        <li data-role='drawer-separator'></li>
+
+                        <li data-role='drawer-item'><span class='k-icon k-i-set-column-position'></span><span class='k-item-text' data-id='Management'>Management</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Accidents'>Accidents</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='AdoptaRoad'>Adopt a Road</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='AverageDailyTraffic'>Average Daily Traffic</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='BridgeInventory'>Bridge Inventory</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Levee'>Levee</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='MaintenanceRoutes'>Maintenance Routes</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='MaintenanceScheduleHistory'>Maintenance Schedule History</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='MaintenanceScheduleSetup'>Maintenance Schedule Setup</span></li>
+                        <span></span>
+                        <li data-role='drawer-separator'></li>
+
+                        <li data-role='drawer-item'><span class='k-icon k-i-set-column-position'></span><span class='k-item-text' data-id='RoadDefinitions'>Road Definitions</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Jurisdiction'>Jurisdiction</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Lanes'>Lanes</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RoadClassifications'>Road Classifications</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RoadSegments'>Road Segments</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='SurfaceType'>Surface Type</span></li>
+                        <span></span>
+                        <li data-role='drawer-separator'></li>
+
+                        <li data-role='drawer-item'><span class='k-icon k-i-set-column-position'></span><span class='k-item-text' data-id='RISUtilities'>RIS Utilities</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='CountyFunctionalClass'>County Functional Class</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='LookupValues'>Lookup Values</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='MaintenanceDistrict'>Maintenance District</span></li>
+                        <span></span>
+                        <li data-role='drawer-separator'></li>
+                    </ul>
+
+                    <ul>
+                        <li id='MiniToggleDrawer' class='k-state-selected' data-role='drawer-item'><span class='k-icon k-i-menu'></span><span class='k-item-text' data-id='Road'>Road Information System</span></li>
+                        <li data-role='drawer-separator'></li>
+
+                        <li id="MiniInformationItem" data-role='drawer-item' data-id='Information' class='flex-column'><span class='k-icon k-i-set-column-position'></span><div class='k-icon k-i-arrow-chevron-down'></div></li>
+                        <li data-role='drawer-item' data-id='Boundaries'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='CuldesacsTurnouts'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Curbs'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Intersections'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='MapLocators'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Medians'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='ReferencePoints'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='RightOfWay'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Road'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='RoadFeatures'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='RoadSearch'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Shoulders'><span class='k-icon k-i-style-builder'></span></li>
+                        <span></span>
+                        <li data-role='drawer-separator'></li>
+                    </ul>
+                </div>
+
+                <script>
+
+                    //function onItemClick(e) {
+                    //    if (!e.item.hasClass("k-drawer-separator")) {
+                    //        var drawerContainer = e.sender.drawerContainer;
+                    //        var expandIcon = e.item.find("span.k-i-arrow-chevron-right");
+                    //        var collapseIcon = e.item.find("span.k-i-arrow-chevron-down");
+                    //        drawerContainer.find("#drawer-content > div").addClass("hidden");
+                    //        drawerContainer.find("#drawer-content").find("#" + e.item.find(".k-item-text").attr("data-id")).removeClass("hidden");
+
+                    //        if (expandIcon.length) {
+                    //            e.item.nextUntil('span').removeClass("hidden");
+                    //            //e.item.nextAll(".k-drawer-item:not(.k-drawer-separator):lt(14)").removeClass("hidden");
+                    //            expandIcon.removeClass("k-i-arrow-chevron-right").addClass("k-i-arrow-chevron-down");
+                    //        }
+
+                    //        if (collapseIcon.length) {
+                    //            e.item.nextUntil('span').addClass("hidden");
+                    //            //e.item.nextAll(".k-drawer-item:not(.k-drawer-separator):lt(14)").addClass("hidden");
+                    //            collapseIcon.addClass("k-i-arrow-chevron-right").removeClass("k-i-arrow-chevron-down");
+                    //        }
+                    //    }
+                    //}
+
+                    $(document).ready(function () {
+                        //$("#drawer").data("kendoDrawer").show();
+                        $(".k-drawer-container").addClass("h-100");
+
+                        // Click to show/hide the drawer (mini mode active)
+                        //$("#closeDrawer").click(function () {
+
+                        //    var drawerInstance = $("#drawer").data().kendoDrawer;
+                        //    var drawerContainer = drawerInstance.drawerContainer;
+
+                        //    if (drawerContainer.hasClass("k-drawer-expanded")) {
+                        //        drawerInstance.hide();
+                        //    } else {
+                        //        drawerInstance.show();
+                        //    }
+
+                        //    console.log("Close drawer click event raised");
+                        //})
+
+                        $("#MiniToggleDrawer").click(function () {
+                            // expand to normal mode
+                        });
+
+                        $("#MiniInformationItem").click(function (e) {
+
+                            var collapseIcon = $(this.lastChild);
+
+                            console.log(collapseIcon);
+                            console.log(collapseIcon.hasClass('k-i-arrow-chevron-down'));
+
+                            if (collapseIcon.hasClass('k-i-arrow-chevron-down')) {
+                                collapseIcon.removeClass('k-i-arrow-chevron-down');
+                                collapseIcon.addClass('k-i-arrow-chevron-up');
+                            }
+
+                            if (collapseIcon.hasClass('k-i-arrow-chevron-up')) {
+                                collapseIcon.removeClass('k-i-arrow-chevron-up');
+                                collapseIcon.addClass('k-i-arrow-chevron-down');
+                            }
+                        });
+
+                    });
+                </script>
+
+                <style>
+
+                    #drawer-content li {
+                        font-size: 1.2em;
+                        padding-left: .89em;
+                        background: 0 0;
+                        border-radius: 0;
+                        border-width: 0 0 1px;
+                        border-color: rgba(33, 37, 41, 0.125);
+                        line-height: 1.5em;
+                        padding: 0em 0.4em 0.7em .84em
+                    }
+
+                        #drawer-content li:last-child {
+                            border: 0;
+                        }
+
+                    .hidden {
+                        display: none;
+                    }
+
+                    #demo-runner #example div.demo-section {
+                        max-width: 800px;
+                    }
+
+                    .k-toolbar .k-icon {
+                        font-size: 18px;
+                    }
+
+                    #drawer-content ul {
+                        margin-top: 0;
+                        margin-bottom: 1rem;
+                    }
+
+                    h6 {
+                        font-size: 1rem;
+                        margin-bottom: .5rem;
+                        font-family: inherit;
+                        font-weight: 500;
+                        line-height: 1.2;
+                        color: inherit;
+                    }
+
+                    .k-drawer-content {
+                        padding: 15px;
+                    }
+
+                    .kendoka {
+                        margin: 0 auto;
+                        width: 300px;
+                        height: 300px;
+                        background-size: cover;
+                        background-image: url('https://demos.telerik.com/kendo-ui/content/shared/images/site/kendoka-cta.svg');
+                    }
+
+                    .header {
+                        text-align: center;
+                        margin-bottom: 30px;
+                        margin-left: 8px;
+                        font-weight: bold;
+                        font-size: 20px;
+                    }
+                </style>
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>
