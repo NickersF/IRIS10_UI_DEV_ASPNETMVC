@@ -14,6 +14,7 @@
     @Styles.Render("~/Content/css")
 
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/fb9297107b.js" crossorigin="anonymous"></script>
     <script src="https://kendo.cdn.telerik.com/2021.2.511/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2021.2.511/js/jszip.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2021.2.511/js/kendo.all.min.js"></script>
@@ -53,10 +54,10 @@
                         .Name("drawer")
                         .Template(@"
                                 <ul>
-                                    <li id='closeDrawer' class='k-state-selected' data-role='drawer-item'><span class='k-icon k-i-menu'></span><span class='k-item-text' data-id='Road'>Road Information System</span></li>
+                                    <li id='ToggleDrawer' class='k-state-selected' data-role='drawer-item'><span class='k-icon k-i-menu'></span><span class='k-item-text' data-id='Road'>Road Information System</span></li>
                                     <li data-role='drawer-separator'></li>
 
-                                    <li data-role='drawer-item'><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Information'>Information</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+                                    <li data-role='drawer-item'><span class='k-icon k-i-set-column-position'></span><span class='k-item-text' data-id='Information'>Information</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Boundaries'>Boundaries</span></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='CuldesacsTurnouts'>Culdesacs & Turnouts</span></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Curbs'>Curbs</span></li>
@@ -72,7 +73,7 @@
                                     <span></span>
                                     <li data-role='drawer-separator'></li>
 
-                                    <li data-role='drawer-item'><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Appurtenances'>Appurtenances</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></li>
+                                    <li data-role='drawer-item'><span class='k-icon k-i-set-column-position'></span><span class='k-item-text' data-id='Appurtenances'>Appurtenances</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Approaches'>Approaches</span></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='CatchBasins'>Catch Basins</span></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Culverts'>Culverts</span></li>
@@ -88,7 +89,7 @@
                                     <span></span>
                                     <li data-role='drawer-separator'></li>
 
-                                    <li data-role='drawer-item'><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Miscellaneous'>Miscellaneous</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+                                    <li data-role='drawer-item'><span class='k-icon k-i-set-column-position'></span><span class='k-item-text' data-id='Miscellaneous'>Miscellaneous</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='AdjacentDevelopments'>Adjacent Developments</span></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='BikeFacilities'>Bike Facilities</span></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='LocationReference'>Location Reference</span></li>
@@ -106,7 +107,7 @@
                                     <span></span>
                                     <li data-role='drawer-separator'></li>
 
-                                    <li data-role='drawer-item'><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Management'>Management</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+                                    <li data-role='drawer-item'><span class='k-icon k-i-set-column-position'></span><span class='k-item-text' data-id='Management'>Management</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
 
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Accidents'>Accidents</span></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='AdoptaRoad'>Adopt a Road</span></li>
@@ -119,7 +120,7 @@
                                     <span></span>
                                     <li data-role='drawer-separator'></li>
 
-                                    <li data-role='drawer-item'><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RoadDefinitions'>Road Definitions</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+                                    <li data-role='drawer-item'><span class='k-icon k-i-set-column-position'></span><span class='k-item-text' data-id='RoadDefinitions'>Road Definitions</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Jurisdiction'>Jurisdiction</span></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Lanes'>Lanes</span></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RoadClassifications'>Road Classifications</span></li>
@@ -128,7 +129,7 @@
                                     <span></span>
                                     <li data-role='drawer-separator'></li>
 
-                                    <li data-role='drawer-item'><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RISUtilities'>RIS Utilities</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
+                                    <li data-role='drawer-item'><span class='k-icon k-i-set-column-position'></span><span class='k-item-text' data-id='RISUtilities'>RIS Utilities</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='CountyFunctionalClass'>County Functional Class</span></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='LookupValues'>Lookup Values</span></li>
                                     <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='MaintenanceDistrict'>Maintenance District</span></li>
@@ -137,148 +138,184 @@
                                 </ul>
                                 ")
                         .Mode("push")
-                        .Mini(m=>m.Width(50).Template(@"<ul>
-                    <li id='closeDrawer' class='k-state-selected' data-role='drawer-item'><span class='k-icon k-i-menu'></span><span class='k-item-text' data-id='Road'>Road Information System</span></li>
-                    <li data-role='drawer-separator'></li>
+                        .Mini(m=>m.Template(
+                        @"<ul>
+                            <li id='MiniToggleDrawer' class='k-state-selected' data-role='drawer-item'><span class='k-icon k-i-menu'></span><span class='k-item-text' data-id='Road'>Road Information System</span></li>
+                            <li data-role='drawer-separator'></li>
 
-                    <li data-role='drawer-item' data-id='Information'       class='flex-column'><span class='k-icon k-i-set-column-position'></span><div class='k-icon k-i-arrow-chevron-down'></div></li>
-                    <li data-role='drawer-item' data-id='Boundaries'       ><span class='k-icon k-i-style-builder'></span></li>
-                    <li data-role='drawer-item' data-id='CuldesacsTurnouts'><span class='k-icon k-i-style-builder'></span></li>
-                    <li data-role='drawer-item' data-id='Curbs'            ><span class='k-icon k-i-style-builder'></span></li>
-                    <li data-role='drawer-item' data-id='Intersections'    ><span class='k-icon k-i-style-builder'></span></li>
-                    <li data-role='drawer-item' data-id='MapLocators'      ><span class='k-icon k-i-style-builder'></span></li>
-                    <li data-role='drawer-item' data-id='Medians'          ><span class='k-icon k-i-style-builder'></span></li>
-                    <li data-role='drawer-item' data-id='ReferencePoints'  ><span class='k-icon k-i-style-builder'></span></li>
-                    <li data-role='drawer-item' data-id='RightOfWay'       ><span class='k-icon k-i-style-builder'></span></li>
-                    <li data-role='drawer-item' data-id='Road'             ><span class='k-icon k-i-style-builder'></span></li>
-                    <li data-role='drawer-item' data-id='RoadFeatures'     ><span class='k-icon k-i-style-builder'></span></li>
-                    <li data-role='drawer-item' data-id='RoadSearch'       ><span class='k-icon k-i-style-builder'></span></li>
-                    <li data-role='drawer-item' data-id='Shoulders'        ><span class='k-icon k-i-style-builder'></span></li>
-                    <span></span>
-                    <li data-role='drawer-separator'></li>
-                    </ul>"))
-                    .Position("left")
-                    .AutoCollapse(false)
-                    .MinHeight(330)
-                    .SwipeToOpen(true)
-                    .Content(@"
-                    <div id='drawer-content'>
-                        <div id='Boundaries' class='hidden'>
-                            <h4 class='header'>Boundaries</h4>
-                        </div>
+                            <li id='MiniInformationItem' data-role='drawer-item' data-id='Information' class='flex-column'><span class='fas fa-info-circle'></span><div id='ExpandIcon' class='k-icon k-i-arrow-chevron-down'></div></li>
+                            <li data-role='drawer-item' data-id='Boundaries' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Boundaries' class='hidden'>Boundaries</span></li>
+                            <li data-role='drawer-item' data-id='CuldesacsTurnouts' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='Curbs' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='Intersections' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='MapLocators' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='Medians' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='ReferencePoints' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='RightOfWay' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='Shoulders' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='Road' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='RoadFeatures' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='RoadSearch' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <span></span>
+                            <li data-role='drawer-separator'></li>
 
-                        <div id='All' class='hidden'>
-                            <h4 class='header'>
-                                <div class='kendoka'>
-                                </div>
-                                Check all available components of Kendo UI for jQuery at the following
-                                <a href='https://demos.telerik.com/kendo-ui/'>Demos</a>
-                                article.
-                            </h4>
-                        </div>
+                            <li id='MiniAppurtenances' data-role='drawer-item' data-id='Appurtenances' class='flex-column'><span class='k-icon k-i-set-column-position'></span><div id='ExpandIcon' class='k-icon k-i-arrow-chevron-down'></div></li>
+                            <li data-role='drawer-item' data-id='Approaches'        class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='CatchBasins'       class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='Culverts'          class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='Ditches'           class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='GatesCattleguards' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='GuardrailsBarries' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='Illumination'      class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='ManholesVaults'    class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='PavementMarkings'  class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='RailroadCrossings' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='Signals'           class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='Signs'             class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <span></span>
+                            <li data-role='drawer-separator'></li>
 
-                        <div id='Angular' class='header hidden'>
-                            <h6>
-                                Kendo UI allows to quickly build stunning and high-performance responsive web applications.
-                            </h6>
-                        </div>
+                            <li id='MiniMiscellaneous' data-role='drawer-item' data-id='Miscellaneous' class='flex-column'><span class='k-icon k-i-set-column-position'></span><div id='ExpandIcon' class='k-icon k-i-arrow-chevron-down'></div></li>
+                            <li data-role='drawer-item' data-id='AdjacentDevelopments'class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='BikeFacilities'      class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='LocationReference'   class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='Monumentation'       class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='MUTCD'               class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='RestrictedParking'   class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='RoadUseConstraints'  class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='SpeedZone'           class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='StreetAddress'       class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='UniqueRoutes'        class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='Utilities'           class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='Walks'               class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='Wall'                class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <li data-role='drawer-item' data-id='WheelchairRamps'     class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                            <span></span>
+                            <li data-role='drawer-separator'></li>
+                        </ul>"
+                        ))
+                        .Position("left")
+                        .AutoCollapse(false)
+                        .MinHeight(330)
+                        .SwipeToOpen(true)
+                        .Content(@"
+                        <div id='drawer-content'>
+                            <div id='Boundaries' class='hidden'>
+                                <h4 class='header'>Boundaries</h4>
+                            </div>
 
-                        <div id='GettingStarted' class='hidden'>
-                            <h4 class='header'>A Complete UI Toolkit for Web Development</h4>
-                            <h6>
-                                <strong>Progress&reg; Kendo UI&reg;</strong> delivers everything you need to build a modern web application under tight deadlines,
-                                with out-of-the-box features and functions that can speed your development time by 50 percent:
-                            </h6>
-                            <ul>
-                                <li>Flexible - Use your preferred framework, including jQuery, AngularJS/Angular, React, and Vue.js.</li>
-                                <li>
-                                    Versatile - Leverage more than 200 customizable UI components spread across the various libraries to create
-                                    eye-catching, data-rich desktop, tablet, and mobile web apps.
-                                </li>
-                                <li>
-                                    Powerful - Accelerate development time with responsive layout, powerful data-binding, cross-browser compatibility and
-                                    ready-to-use themes.
-                                </li>
-                                <li>
-                                    Supported -Get started fast with easy integration backed by comprehensive documentation, flexible support options,
-                                    hands-on training courses and a large developer community.
-                                </li>
-                            </ul>
-                        </div>
+                            <div id='All' class='hidden'>
+                                <h4 class='header'>
+                                    <div class='kendoka'>
+                                    </div>
+                                    Check all available components of Kendo UI for jQuery at the following
+                                    <a href='https://demos.telerik.com/kendo-ui/'>Demos</a>
+                                    article.
+                                </h4>
+                            </div>
 
-                        <div id='Kendo' class='hidden'>
-                            <h4 class='header'>Build Better JavaScript Apps Faster</h4>
-                            <h6>
-                                The ultimate collection of JavaScript UI components with libraries for jQuery, Angular, React, and Vue. Quickly build
-                                eye-catching, high-performance, responsive web applications, regardless of your JavaScript framework choice.
-                            </h6>
-                            <ul>
-                                <li>Decreases time-to-market</li>
-                                <li>Provides advanced UI features</li>
-                                <li>Supports popular frameworks</li>
-                                <li>Reduces design risk</li>
-                            </ul>
-                            <a href='https://www.telerik.com/kendo-ui'>Click here for more information</a>
-                        </div>
+                            <div id='Angular' class='header hidden'>
+                                <h6>
+                                    Kendo UI allows to quickly build stunning and high-performance responsive web applications.
+                                </h6>
+                            </div>
 
-                        <div id='ThemeSupport' class='hidden'>
-                            <h4 class='header'>Kendo UI provides themes that you can use to style your application.</h4>
-                            <h6>Currently, the Kendo ships the following themes:</h6>
-                            <ul>
-                                <li>Kendo UI Default theme</li>
-                                <li>Kendo UI Bootstrap theme</li>
-                                <li>Kendo UI Material theme</li>
-                            </ul>
-                            <h6>
-                                The Kendo UI <strong>Theme Builder</strong> is a web application which enables you to create new or customize existing
-                                themes.
-                            </h6>
-                            <h6>
-                                The Theme Builder renders the same look and feel as all other components in the suite and delivers full control over their
-                                visual elements.
-                            </h6>
-                            <a href='https://themebuilder.telerik.com'>Play with the Theme Builder</a>
-                        </div>
+                            <div id='GettingStarted' class='hidden'>
+                                <h4 class='header'>A Complete UI Toolkit for Web Development</h4>
+                                <h6>
+                                    <strong>Progress&reg; Kendo UI&reg;</strong> delivers everything you need to build a modern web application under tight deadlines,
+                                    with out-of-the-box features and functions that can speed your development time by 50 percent:
+                                </h6>
+                                <ul>
+                                    <li>Flexible - Use your preferred framework, including jQuery, AngularJS/Angular, React, and Vue.js.</li>
+                                    <li>
+                                        Versatile - Leverage more than 200 customizable UI components spread across the various libraries to create
+                                        eye-catching, data-rich desktop, tablet, and mobile web apps.
+                                    </li>
+                                    <li>
+                                        Powerful - Accelerate development time with responsive layout, powerful data-binding, cross-browser compatibility and
+                                        ready-to-use themes.
+                                    </li>
+                                    <li>
+                                        Supported -Get started fast with easy integration backed by comprehensive documentation, flexible support options,
+                                        hands-on training courses and a large developer community.
+                                    </li>
+                                </ul>
+                            </div>
 
-                        <div id='Overview'>
-                            <h4 class='header'>Spend your time developing core functionality, not UI components</h4>
-                            <h6>
-                                Build your next application, or augment an existing one, with easy-to-use Kendo UI components designed with performance and
-                                rich user experience in mind.
-                            </h6>
-                            <h6>
-                                Easily add advanced UI components into your existing designs or take advantage of our comprehensive library in new design
-                                starts. Kendo UI lets you save time by integrating components to handle all the key functionality you need in a UI, letting
-                                you focus your development efforts on your proprietary features.
-                            </h6>
-                        </div>
+                            <div id='Kendo' class='hidden'>
+                                <h4 class='header'>Build Better JavaScript Apps Faster</h4>
+                                <h6>
+                                    The ultimate collection of JavaScript UI components with libraries for jQuery, Angular, React, and Vue. Quickly build
+                                    eye-catching, high-performance, responsive web applications, regardless of your JavaScript framework choice.
+                                </h6>
+                                <ul>
+                                    <li>Decreases time-to-market</li>
+                                    <li>Provides advanced UI features</li>
+                                    <li>Supports popular frameworks</li>
+                                    <li>Reduces design risk</li>
+                                </ul>
+                                <a href='https://www.telerik.com/kendo-ui'>Click here for more information</a>
+                            </div>
 
-                        <div id='Popular' class='hidden'>
-                            <h4 class='header'>Most Popular Widgets</h4>
-                            <ul>
-                                <li>Grid</li>
-                                <li>Charts</li>
-                                <li>Dropdowns</li>
-                                <li>Inputs</li>
-                                <li>Themes</li>
-                            </ul>
+                            <div id='ThemeSupport' class='hidden'>
+                                <h4 class='header'>Kendo UI provides themes that you can use to style your application.</h4>
+                                <h6>Currently, the Kendo ships the following themes:</h6>
+                                <ul>
+                                    <li>Kendo UI Default theme</li>
+                                    <li>Kendo UI Bootstrap theme</li>
+                                    <li>Kendo UI Material theme</li>
+                                </ul>
+                                <h6>
+                                    The Kendo UI <strong>Theme Builder</strong> is a web application which enables you to create new or customize existing
+                                    themes.
+                                </h6>
+                                <h6>
+                                    The Theme Builder renders the same look and feel as all other components in the suite and delivers full control over their
+                                    visual elements.
+                                </h6>
+                                <a href='https://themebuilder.telerik.com'>Play with the Theme Builder</a>
+                            </div>
+
+                            <div id='Overview'>
+                                <h4 class='header'>Spend your time developing core functionality, not UI components</h4>
+                                <h6>
+                                    Build your next application, or augment an existing one, with easy-to-use Kendo UI components designed with performance and
+                                    rich user experience in mind.
+                                </h6>
+                                <h6>
+                                    Easily add advanced UI components into your existing designs or take advantage of our comprehensive library in new design
+                                    starts. Kendo UI lets you save time by integrating components to handle all the key functionality you need in a UI, letting
+                                    you focus your development efforts on your proprietary features.
+                                </h6>
+                            </div>
+
+                            <div id='Popular' class='hidden'>
+                                <h4 class='header'>Most Popular Widgets</h4>
+                                <ul>
+                                    <li>Grid</li>
+                                    <li>Charts</li>
+                                    <li>Dropdowns</li>
+                                    <li>Inputs</li>
+                                    <li>Themes</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    ")
-                    .Events(x => x.ItemClick("onItemClick"))
-                    )
+                        ")
+                        .Events(x => x.ItemClick("onItemClick"))
+                        )
                 </div>
 
                 <script>
-                    function toggleDrawer() {
-                        var drawerInstance = $("#drawer").data().kendoDrawer;
-                        var drawerContainer = drawerInstance.drawerContainer;
-                        if (drawerContainer.hasClass("k-drawer-expanded")) {
-                            drawerInstance.hide();
-                        } else {
-                            drawerInstance.show();
-                        }
-                    }
+                    //function toggleDrawer() {
+                    //    var drawerInstance = $("#drawer").data().kendoDrawer;
+                    //    var drawerContainer = drawerInstance.drawerContainer;
+                    //    if (drawerContainer.hasClass("k-drawer-expanded")) {
+                    //        drawerInstance.hide();
+                    //    } else {
+                    //        drawerInstance.show();
+                    //    }
+                    //}
 
                     function onItemClick(e) {
                         if (!e.item.hasClass("k-drawer-separator")) {
@@ -287,6 +324,8 @@
                             var collapseIcon = e.item.find("span.k-i-arrow-chevron-down");
                             drawerContainer.find("#drawer-content > div").addClass("hidden");
                             drawerContainer.find("#drawer-content").find("#" + e.item.find(".k-item-text").attr("data-id")).removeClass("hidden");
+
+                            console.log(e);
 
                             if (expandIcon.length) {
                                 e.item.nextUntil('span').removeClass("hidden");
@@ -303,11 +342,26 @@
                     }
 
                     $(document).ready(function () {
+
                         $("#drawer").data("kendoDrawer").show();
                         $(".k-drawer-container").addClass("h-100");
 
+                        // Toggle drawer in mini mode
+                        $('.k-drawer-container').on('click', '#MiniToggleDrawer', function () {
+                            var drawerInstance = $("#drawer").data().kendoDrawer;
+                            var drawerContainer = drawerInstance.drawerContainer;
 
-                        $("#closeDrawer").click(function () {
+                            if (drawerContainer.hasClass("k-drawer-expanded")) {
+                                drawerInstance.hide();
+                            } else {
+                                drawerInstance.show();
+                            }
+
+                            console.log("Mini toggle drawer click event raised");
+                        });
+
+                        // Toggle drawer in full mode
+                        $(".k-drawer-container").on('click', '#ToggleDrawer', function () {
 
                             var drawerInstance = $("#drawer").data().kendoDrawer;
                             var drawerContainer = drawerInstance.drawerContainer;
@@ -318,8 +372,70 @@
                                 drawerInstance.show();
                             }
 
-                            console.log("Close drawer click event raised");
-                        })
+                            console.log("Full toggle drawer click event raised");
+                        });
+
+                        // Show/Hide items
+                        $(".k-drawer-items").on('click', '#MiniInformationItem', function (e) {
+
+                            //let expandIcon = $("#ExpandIcon");
+                            let clickedItem = $(e.currentTarget);
+                            let expandIcon = clickedItem.find("#ExpandIcon");
+
+                            if (expandIcon.hasClass('k-i-arrow-chevron-down')) {
+                                expandIcon.removeClass('k-i-arrow-chevron-down').addClass('k-i-arrow-chevron-up');
+                                clickedItem.nextUntil('span').removeClass("hidden");
+                                return;
+                            }
+
+                            if (expandIcon.hasClass('k-i-arrow-chevron-up')) {
+                                expandIcon.addClass('k-i-arrow-chevron-down').removeClass('k-i-arrow-chevron-up');
+                                clickedItem.nextUntil('span').addClass("hidden");
+                                return;
+                            }
+                        });
+
+                        $(".k-drawer-items").on('click', '#MiniAppurtenances', function (e) {
+
+                            //let expandIcon = $("#ExpandIcon");
+                            let clickedItem = $(e.currentTarget);
+                            let expandIcon = clickedItem.find("#ExpandIcon");
+
+                            console.log(expandIcon)
+
+                            if (expandIcon.hasClass('k-i-arrow-chevron-down')) {
+                                expandIcon.removeClass('k-i-arrow-chevron-down').addClass('k-i-arrow-chevron-up');
+                                clickedItem.nextUntil('span').removeClass("hidden");
+                                return;
+                            }
+
+                            if (expandIcon.hasClass('k-i-arrow-chevron-up')) {
+                                expandIcon.addClass('k-i-arrow-chevron-down').removeClass('k-i-arrow-chevron-up');
+                                clickedItem.nextUntil('span').addClass("hidden");
+                                return;
+                            }
+                        });
+                        
+                        $(".k-drawer-items").on('click', '#MiniMiscellaneous', function (e) {
+
+                            //let expandIcon = $("#ExpandIcon");
+                            let clickedItem = $(e.currentTarget);
+                            let expandIcon = clickedItem.find("#ExpandIcon");
+
+                            console.log(expandIcon)
+
+                            if (expandIcon.hasClass('k-i-arrow-chevron-down')) {
+                                expandIcon.removeClass('k-i-arrow-chevron-down').addClass('k-i-arrow-chevron-up');
+                                clickedItem.nextUntil('span').removeClass("hidden");
+                                return;
+                            }
+
+                            if (expandIcon.hasClass('k-i-arrow-chevron-up')) {
+                                expandIcon.addClass('k-i-arrow-chevron-down').removeClass('k-i-arrow-chevron-up');
+                                clickedItem.nextUntil('span').addClass("hidden");
+                                return;
+                            }
+                        });
                     });
                 </script>
 
@@ -384,6 +500,14 @@
                         margin-left: 8px;
                         font-weight: bold;
                         font-size: 20px;
+                    }
+
+                    .drawer-overflow-y {
+                        overflow-y: scroll;
+                    }
+
+                    .max-height-full {
+                        max-height: 100%;
                     }
                 </style>
 

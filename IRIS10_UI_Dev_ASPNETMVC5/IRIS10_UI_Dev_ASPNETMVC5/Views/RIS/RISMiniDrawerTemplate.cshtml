@@ -131,19 +131,53 @@
                         <li id='MiniToggleDrawer' class='k-state-selected' data-role='drawer-item'><span class='k-icon k-i-menu'></span><span class='k-item-text' data-id='Road'>Road Information System</span></li>
                         <li data-role='drawer-separator'></li>
 
-                        <li id="MiniInformationItem" data-role='drawer-item' data-id='Information' class='flex-column'><span class='k-icon k-i-set-column-position'></span><div class='k-icon k-i-arrow-chevron-down'></div></li>
-                        <li data-role='drawer-item' data-id='Boundaries'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='CuldesacsTurnouts'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='Curbs'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='Intersections'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='MapLocators'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='Medians'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='ReferencePoints'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='RightOfWay'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='Road'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='RoadFeatures'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='RoadSearch'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='Shoulders'><span class='k-icon k-i-style-builder'></span></li>
+                        <li id="MiniInformationItem" data-role='drawer-item' data-id='Information' class='flex-column'><span class='k-icon k-i-set-column-position'></span><div id="ExpandIcon_Info" class='k-icon k-i-arrow-chevron-down'></div></li>
+                        <li data-role='drawer-item' data-id='Boundaries' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='CuldesacsTurnouts' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Curbs' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Intersections' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='MapLocators' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Medians' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='ReferencePoints' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='RightOfWay' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Shoulders' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Road' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='RoadFeatures' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='RoadSearch' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <span></span>
+                        <li data-role='drawer-separator'></li>
+
+                        <li id="MiniAppurtenances" data-role='drawer-item' data-id='Appurtenances' class="flex-column"><span class='k-icon k-i-set-column-position'></span><div id="ExpandIcon" class='k-icon k-i-arrow-chevron-down'></div></li>
+                        <li data-role='drawer-item' data-id='Approaches' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='CatchBasins' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Culverts' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Ditches' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='GatesCattleguards' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='GuardrailsBarries' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Illumination' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='ManholesVaults' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='PavementMarkings' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='RailroadCrossings' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Signals' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Signs' class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <span></span>
+                        <li data-role='drawer-separator'></li>
+
+                        <li id='MiniMiscellaneous' data-role='drawer-item' data-id='Miscellaneous' class="flex-column"><span class='k-icon k-i-set-column-position'></span><div id='ExpandIcon' class='k-icon k-i-arrow-chevron-down'></div></li>
+                        <li data-role='drawer-item' data-id='AdjacentDevelopments'class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='BikeFacilities'      class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='LocationReference'   class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Monumentation'       class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='MUTCD'               class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='RestrictedParking'   class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='RoadUseConstraints'  class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='SpeedZone'           class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='StreetAddress'       class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='UniqueRoutes'        class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Utilities'           class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Walks'               class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='Wall'                class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='WheelchairRamps'     class='hidden'><span class='k-icon k-i-style-builder'></span></li>
                         <span></span>
                         <li data-role='drawer-separator'></li>
                     </ul>
@@ -198,19 +232,22 @@
 
                         $("#MiniInformationItem").click(function (e) {
 
-                            var collapseIcon = $(this.lastChild);
+                            let expandIcon = $("#ExpandIcon");
+                            let clickedItem = $(e.currentTarget);
+                            console.log(clickedItem);
 
-                            console.log(collapseIcon);
-                            console.log(collapseIcon.hasClass('k-i-arrow-chevron-down'));
-
-                            if (collapseIcon.hasClass('k-i-arrow-chevron-down')) {
-                                collapseIcon.removeClass('k-i-arrow-chevron-down');
-                                collapseIcon.addClass('k-i-arrow-chevron-up');
+                            if (expandIcon.hasClass('k-i-arrow-chevron-down')) {
+                                expandIcon.removeClass('k-i-arrow-chevron-down').addClass('k-i-arrow-chevron-up');
+                                console.log(expandIcon.hasClass('k-i-arrow-chevron-down'));
+                                clickedItem.nextUntil('span').removeClass("hidden");
+                                return;
                             }
 
-                            if (collapseIcon.hasClass('k-i-arrow-chevron-up')) {
-                                collapseIcon.removeClass('k-i-arrow-chevron-up');
-                                collapseIcon.addClass('k-i-arrow-chevron-down');
+                            if (expandIcon.hasClass('k-i-arrow-chevron-up')) {
+                                expandIcon.addClass('k-i-arrow-chevron-down').removeClass('k-i-arrow-chevron-up');
+                                console.log(expandIcon.hasClass('k-i-arrow-chevron-up'));
+                                clickedItem.nextUntil('span').addClass("hidden");
+                                return;
                             }
                         });
 
