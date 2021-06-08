@@ -1,0 +1,1 @@
+{"version":3,"file":"getOppositeVariation.js","sourceRoot":"","sources":["../../../src/utils/getOppositeVariation.js"],"names":[],"mappings":"AAAA;;;;;;GAMG;AACH,MAAM,CAAC,OAAO,UAAU,oBAAoB,CAAC,SAAS;IACpD,IAAI,SAAS,KAAK,KAAK,EAAE;QACvB,OAAO,OAAO,CAAC;KAChB;SAAM,IAAI,SAAS,KAAK,OAAO,EAAE;QAChC,OAAO,KAAK,CAAC;KACd;IACD,OAAO,SAAS,CAAC;AACnB,CAAC"}

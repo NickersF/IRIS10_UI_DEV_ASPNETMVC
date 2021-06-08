@@ -44,6 +44,7 @@
             <div class="row flex-grow-1 no-gutters">
                 <div class="d-flex flex-column col-md">
 
+                    @* Full size drawer template *@
                     <ul>
                         <li id='closeDrawer1' class='k-state-selected' data-role='drawer-item'><span class='k-icon k-i-menu'></span><span class='k-item-text' data-id='Road'>Road Information System</span></li>
                         <li data-role='drawer-separator'></li>
@@ -81,20 +82,20 @@
                         <li data-role='drawer-separator'></li>
 
                         <li data-role='drawer-item'><span class='k-icon k-i-set-column-position'></span><span class='k-item-text' data-id='Miscellaneous'>Miscellaneous</span><span class='k-spacer'></span><span class='k-icon k-i-arrow-chevron-right'></span></li>
-                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='AdjacentDevelopments'>Adjacent Developments</span></li>
-                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='BikeFacilities'>Bike Facilities</span></li>
-                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='LocationReference'>Location Reference</span></li>
-                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Monumentation'>Monumentation</span></li>
-                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='MUTCD'>MUTCD</span></li>
-                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RestrictedParking'>Restricted Parking</span></li>
-                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RoadUseConstraints'>Road Use Constraints</span></li>
-                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='SpeedZone'>Speed Zone</span></li>
-                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='StreetAddress'>Street Address</span></li>
-                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='UniqueRoutes'>Unique Routes</span></li>
-                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Utilities'>Utilities</span></li>
-                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Walks'>Walks</span></li>
-                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Wall'>Wall</span></li>
-                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='WheelchairRamps'>Wheelchair Ramps</span></li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='AdjacentDevelopments'>Adjacent Developments</span>    </li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='BikeFacilities'>Bike Facilities</span>                </li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='LocationReference'>Location Reference</span>          </li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Monumentation'>Monumentation</span>                   </li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='MUTCD'>MUTCD</span>                                   </li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RestrictedParking'>Restricted Parking</span>          </li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='RoadUseConstraints'>Road Use Constraints</span>       </li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='SpeedZone'>Speed Zone</span>                          </li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='StreetAddress'>Street Address</span>                  </li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='UniqueRoutes'>Unique Routes</span>                    </li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Utilities'>Utilities</span>                           </li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Walks'>Walks</span>                                   </li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='Wall'>Wall</span>                                     </li>
+                        <li data-role='drawer-item'><span class='k-icon k-i-none'></span><span class='k-icon k-i-style-builder'></span><span class='k-item-text' data-id='WheelchairRamps'>Wheelchair Ramps</span>              </li>
                         <span></span>
                         <li data-role='drawer-separator'></li>
 
@@ -127,6 +128,7 @@
                         <li data-role='drawer-separator'></li>
                     </ul>
 
+                    @* Mini drawer template *@
                     <ul>
                         <li id='MiniToggleDrawer' class='k-state-selected' data-role='drawer-item'><span class='k-icon k-i-menu'></span><span class='k-item-text' data-id='Road'>Road Information System</span></li>
                         <li data-role='drawer-separator'></li>
@@ -164,20 +166,48 @@
                         <li data-role='drawer-separator'></li>
 
                         <li id='MiniMiscellaneous' data-role='drawer-item' data-id='Miscellaneous' class="flex-column"><span class='k-icon k-i-set-column-position'></span><div id='ExpandIcon' class='k-icon k-i-arrow-chevron-down'></div></li>
-                        <li data-role='drawer-item' data-id='AdjacentDevelopments'class='hidden'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='BikeFacilities'      class='hidden'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='LocationReference'   class='hidden'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='Monumentation'       class='hidden'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='MUTCD'               class='hidden'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='RestrictedParking'   class='hidden'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='RoadUseConstraints'  class='hidden'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='SpeedZone'           class='hidden'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='StreetAddress'       class='hidden'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='UniqueRoutes'        class='hidden'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='Utilities'           class='hidden'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='Walks'               class='hidden'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='Wall'                class='hidden'><span class='k-icon k-i-style-builder'></span></li>
-                        <li data-role='drawer-item' data-id='WheelchairRamps'     class='hidden'><span class='k-icon k-i-style-builder'></span></li>
+                        <li data-role='drawer-item' data-id='AdjacentDevelopments' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='AdjacentDevelopments'>Adjacent Developments</span></li>
+                        <li data-role='drawer-item' data-id='BikeFacilities' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='BikeFacilities'>Bike Facilities</span>            </li>
+                        <li data-role='drawer-item' data-id='LocationReference' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='LocationReference'>Location Reference</span>      </li>
+                        <li data-role='drawer-item' data-id='Monumentation' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='Monumentation'>Monumentation</span>               </li>
+                        <li data-role='drawer-item' data-id='MUTCD' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='MUTCD'>MUTCD</span>                               </li>
+                        <li data-role='drawer-item' data-id='RestrictedParking' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='RestrictedParking'>Restricted Parking</span>      </li>
+                        <li data-role='drawer-item' data-id='RoadUseConstraints' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='RoadUseConstraints'>Road Use Constraints</span>   </li>
+                        <li data-role='drawer-item' data-id='SpeedZone' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='SpeedZone'>Speed Zone</span>                      </li>
+                        <li data-role='drawer-item' data-id='StreetAddress' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='StreetAddress'>Street Address</span>              </li>
+                        <li data-role='drawer-item' data-id='UniqueRoutes' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='UniqueRoutes'>Unique Routes</span>                </li>
+                        <li data-role='drawer-item' data-id='Utilities' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='Utilities'>Utilities</span>                       </li>
+                        <li data-role='drawer-item' data-id='Walks' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='Walks'>Walks</span>                               </li>
+                        <li data-role='drawer-item' data-id='Wall' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='Wall'>Wall</span>                                 </li>
+                        <li data-role='drawer-item' data-id='WheelchairRamps' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='WheelchairRamps'>Wheelchair Ramps</span>          </li>
+                        <span></span>
+                        <li data-role='drawer-separator'></li>
+
+                        <li id='MiniManagement' data-role='drawer-item' data-id='Management' class='flex-column'><span class='k-icon k-i-set-column-position'></span><div id='ExpandIcon' class='k-icon k-i-arrow-chevron-down'></div></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='Accidents'>Accidents</span></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='AdoptaRoad'>Adopt a Road</span></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='AverageDailyTraffic'>Average Daily Traffic</span></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='BridgeInventory'>Bridge Inventory</span></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='Levee'>Levee</span></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='MaintenanceRoutes'>Maintenance Routes</span></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='MaintenanceScheduleHistory'>Maintenance Schedule History</span></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='MaintenanceScheduleSetup'>Maintenance Schedule Setup</span></li>
+                        <span></span>
+                        <li data-role='drawer-separator'></li>
+
+                        <li id='MiniRoadDefs' data-role='drawer-item' data-id='RoadDefinitions' class='flex-column'><span class='k-icon k-i-set-column-position'></span><div id='ExpandIcon' class='k-icon k-i-arrow-chevron-down'></div></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='Jurisdiction'>Jurisdiction</span></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='Lanes'>Lanes</span></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='RoadClassifications'>Road Classifications</span></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='RoadSegments'>Road Segments</span></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='SurfaceType'>Surface Type</span></li>
+                        <span></span>
+                        <li data-role='drawer-separator'></li>
+
+                        <li id='MiniRisUtilities' data-role='drawer-item' data-id='RISUtilities' class='flex-column'><span class='k-icon k-i-set-column-position'></span><div id='ExpandIcon' class='k-icon k-i-arrow-chevron-down'></div></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='CountyFunctionalClass'>County Functional Class</span></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='LookupValues'>Lookup Values</span></li>
+                        <li data-role='drawer-item' class='hidden'><span class='k-icon k-i-style-builder'></span><span class='k-item-text hidden' data-id='MaintenanceDistrict'>Maintenance District</span></li>
                         <span></span>
                         <li data-role='drawer-separator'></li>
                     </ul>
@@ -185,27 +215,27 @@
 
                 <script>
 
-                    //function onItemClick(e) {
-                    //    if (!e.item.hasClass("k-drawer-separator")) {
-                    //        var drawerContainer = e.sender.drawerContainer;
-                    //        var expandIcon = e.item.find("span.k-i-arrow-chevron-right");
-                    //        var collapseIcon = e.item.find("span.k-i-arrow-chevron-down");
-                    //        drawerContainer.find("#drawer-content > div").addClass("hidden");
-                    //        drawerContainer.find("#drawer-content").find("#" + e.item.find(".k-item-text").attr("data-id")).removeClass("hidden");
+                    function onItemClick(e) {
+                        if (!e.item.hasClass("k-drawer-separator")) {
+                            var drawerContainer = e.sender.drawerContainer;
+                            var expandIcon = e.item.find("span.k-i-arrow-chevron-right");
+                            var collapseIcon = e.item.find("span.k-i-arrow-chevron-down");
+                            drawerContainer.find("#drawer-content > div").addClass("hidden");
+                            drawerContainer.find("#drawer-content").find("#" + e.item.find(".k-item-text").attr("data-id")).removeClass("hidden");
 
-                    //        if (expandIcon.length) {
-                    //            e.item.nextUntil('span').removeClass("hidden");
-                    //            //e.item.nextAll(".k-drawer-item:not(.k-drawer-separator):lt(14)").removeClass("hidden");
-                    //            expandIcon.removeClass("k-i-arrow-chevron-right").addClass("k-i-arrow-chevron-down");
-                    //        }
+                            if (expandIcon.length) {
+                                e.item.nextUntil('span').removeClass("hidden");
+                                //e.item.nextAll(".k-drawer-item:not(.k-drawer-separator):lt(14)").removeClass("hidden");
+                                expandIcon.removeClass("k-i-arrow-chevron-right").addClass("k-i-arrow-chevron-down");
+                            }
 
-                    //        if (collapseIcon.length) {
-                    //            e.item.nextUntil('span').addClass("hidden");
-                    //            //e.item.nextAll(".k-drawer-item:not(.k-drawer-separator):lt(14)").addClass("hidden");
-                    //            collapseIcon.addClass("k-i-arrow-chevron-right").removeClass("k-i-arrow-chevron-down");
-                    //        }
-                    //    }
-                    //}
+                            if (collapseIcon.length) {
+                                e.item.nextUntil('span').addClass("hidden");
+                                //e.item.nextAll(".k-drawer-item:not(.k-drawer-separator):lt(14)").addClass("hidden");
+                                collapseIcon.addClass("k-i-arrow-chevron-right").removeClass("k-i-arrow-chevron-down");
+                            }
+                        }
+                    }
 
                     $(document).ready(function () {
                         //$("#drawer").data("kendoDrawer").show();

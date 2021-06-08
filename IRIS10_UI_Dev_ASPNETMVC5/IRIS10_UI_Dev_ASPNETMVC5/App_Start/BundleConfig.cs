@@ -24,7 +24,7 @@ namespace IRIS10_UI_Dev_ASPNETMVC5
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap.bundle.js",
                       "~/Scripts/respond.js"));
         }
     }

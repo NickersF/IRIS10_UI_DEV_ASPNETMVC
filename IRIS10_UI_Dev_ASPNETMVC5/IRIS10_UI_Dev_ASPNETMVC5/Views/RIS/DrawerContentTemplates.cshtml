@@ -21,116 +21,176 @@
     <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
 </head>
 <body class="d-flex flex-column h-100">
-    <div class='container-fluid'>
-        <div class='row'>
-            <div class='col-md-3'>
-                <div class='card mb-3'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Primary card title</h5>
-                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3'>
-                <div class='card mb-3'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Primary card title</h5>
-                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3'>
-                <div class='card mb-3'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Primary card title</h5>
-                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3'>
-                <div class='card mb-3'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Primary card title</h5>
-                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
+    <div id='drawer-content'>
+
+        <div id='Boundaries' class='hidden'>
+            <h4>Boundaries</h4>
         </div>
-        <div class='row'>
-            <div class='col-md-3'>
-                <div class='card mb-3'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Primary card title</h5>
-                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3'>
-                <div class='card mb-3'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Primary card title</h5>
-                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3'>
-                <div class='card mb-3'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Primary card title</h5>
-                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3'>
-                <div class='card mb-3'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Primary card title</h5>
-                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
+        <div id='CuldesacsTurnouts' class='hidden'>
+            <h4>Culdesacs Turnouts</h4>
         </div>
-        <div class='row'>
-            <div class='col-md-3'>
-                <div class='card mb-3'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Primary card title</h5>
-                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3'>
-                <div class='card mb-3'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Primary card title</h5>
-                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3'>
-                <div class='card mb-3'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Primary card title</h5>
-                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class='col-md-3'>
-                <div class='card mb-3'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Primary card title</h5>
-                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
+        <div id='Curbs' class='hidden'>
+            <h4>Curbs</h4>
+        </div>
+        <div id='Intersections' class='hidden'>
+            <h4>Intersections</h4>
+        </div>
+        <div id='MapLocators' class='hidden'>
+            <h4>Map Locators</h4>
+        </div>
+        <div id='Medians' class='hidden'>
+            <h4>Medians</h4>
+        </div>
+        <div id='ReferencePoints' class='hidden'>
+            <h4>Reference Points</h4>
+        </div>
+        <div id='RightOfWay' class='hidden'>
+            <h4>Right Of Way</h4>
+        </div>
+        <div id='Road' class='hidden'>
+            <h4>Road</h4>
+        </div>
+        <div id='RoadFeatures' class='hidden'>
+            <h4>Road Features</h4>
+        </div>
+        <div id='RoadSearch' class='hidden'>
+            <h4>Road Search</h4>
+        </div>
+        <div id='Shoulders' class='hidden'>
+            <h4>Shoulders</h4>
+        </div>
+
+
+        <div id='Approaches' class='hidden'>
+            <h4>Approaches</h4>
+        </div>
+        <div id='CatchBasins' class='hidden'>
+            <h4>Catch Basins</h4>
+        </div>
+        <div id='Culverts' class='hidden'>
+            <h4>Culverts</h4>
+        </div>
+        <div id='Ditches' class='hidden'>
+            <h4>Ditches</h4>
+        </div>
+        <div id='GatesCattleguards' class='hidden'>
+            <h4>Gates & Cattleguards</h4>
+        </div>
+        <div id='GuardrailsBarries' class='hidden'>
+            <h4>Guardrails & Barries</h4>
+        </div>
+        <div id='Illumination' class='hidden'>
+            <h4>Illumination</h4>
+        </div>
+        <div id='ManholesVaults' class='hidden'>
+            <h4>Manholes & Vaults</h4>
+        </div>
+        <div id='PavementMarkings' class='hidden'>
+            <h4>Pavement Markings</h4>
+        </div>
+        <div id='RailroadCrossings' class='hidden'>
+            <h4>Railroad Crossings</h4>
+        </div>
+        <div id='Signals' class='hidden'>
+            <h4>Signals</h4>
+        </div>
+        <div id='Signs' class='hidden'>
+            <h4>Signs</h4>
+        </div>
+
+        <div id='AdjacentDevelopments' class='hidden'>
+            <h4>Adjacent Developments</h4>
+        </div>
+        <div id='BikeFacilities' class='hidden'>
+            <h4>Bike Facilities</h4>
+        </div>
+        <div id='LocationReference' class='hidden'>
+            <h4>Location Reference</h4>
+        </div>
+        <div id='Monumentation' class='hidden'>
+            <h4>Monumentation</h4>
+        </div>
+        <div id='MUTCD' class='hidden'>
+            <h4>MUTCD</h4>
+        </div>
+        <div id='RestrictedParking' class='hidden'>
+            <h4>Restricted Parking</h4>
+        </div>
+        <div id='RoadUseConstraints' class='hidden'>
+            <h4>Road Use Constraints</h4>
+        </div>
+        <div id='SpeedZone' class='hidden'>
+            <h4>Speed Zone</h4>
+        </div>
+        <div id='StreetAddress' class='hidden'>
+            <h4>Street Address</h4>
+        </div>
+        <div id='UniqueRoutes' class='hidden'>
+            <h4>Unique Routes</h4>
+        </div>
+        <div id='Utilities' class='hidden'>
+            <h4>Utilities</h4>
+        </div>
+        <div id='Walks' class='hidden'>
+            <h4>Walks</h4>
+        </div>
+        <div id='Wall' class='hidden'>
+            <h4>Wall</h4>
+        </div>
+        <div id='WheelchairRamps' class='hidden'>
+            <h4>Wheelchair Ramps</h4>
+        </div>
+
+        <div id='Accidents' class='hidden'>
+            <h4>Accidents</h4>
+        </div>
+        <div id='AdoptaRoad' class='hidden'>
+            <h4>Adopt a Road</h4>
+        </div>
+        <div id='AverageDailyTraffic' class='hidden'>
+            <h4>Average Daily Traffic</h4>
+        </div>
+        <div id='BridgeInventory' class='hidden'>
+            <h4>Bridge Inventory</h4>
+        </div>
+        <div id='Levee' class='hidden'>
+            <h4>Levee</h4>
+        </div>
+        <div id='MaintenanceRoutes' class='hidden'>
+            <h4>Maintenance Routes</h4>
+        </div>
+        <div id='MaintenanceScheduleHistory' class='hidden'>
+            <h4>Maintenance Schedule History</h4>
+        </div>
+        <div id='MaintenanceScheduleSetup' class='hidden'>
+            <h4>Maintenance Schedule Setup</h4>
+        </div>
+
+        <div id='Jurisdiction' class='hidden'>
+            <h4>Jurisdiction</h4>
+        </div>
+        <div id='Lanes' class='hidden'>
+            <h4>Lanes</h4>
+        </div>
+        <div id='RoadClassifications' class='hidden'>
+            <h4>RoadClassifications</h4>
+        </div>
+        <div id='RoadSegments' class='hidden'>
+            <h4>Road Segments</h4>
+        </div>
+        <div id='SurfaceType' class='hidden'>
+            <h4>Surface Type</h4>
+        </div>
+
+        <div id='CountyFunctionalClass' class='hidden'>
+            <h4>County Functional Class</h4>
+        </div>
+        <div id='LookupValues' class='hidden'>
+            <h4>Lookup Values</h4>
+        </div>
+        <div id='MaintenanceDistrict' class='hidden'>
+            <h4>Maintenance District</h4>
         </div>
     </div>
-    @*<div class="card mb-3" style="max-width: 18rem;">
-        <div class="card-header bg-primary text-light"><span class="k-icon k-i-window mr-3"></span>Header</div>
-        <div class="card-body">
-            <h5 class="card-title">Primary card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>*@
 </body>
 </html>
