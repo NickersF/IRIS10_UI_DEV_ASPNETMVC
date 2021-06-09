@@ -5,7 +5,7 @@
 
 <!DOCTYPE html>
 
-<html lang="en" class="h-100">
+<html lang="en" class="h-100 max-height-full">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,9 +22,9 @@
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
     <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
 </head>
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100 max-height-full">
 
-    <header class="iris-bg-light-blue">
+    <header id="MainHeader" class="iris-bg-light-blue">
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col-md-2 p-3">
@@ -40,10 +40,10 @@
         </div>
     </header>
 
-    <main class="d-flex flex-grow-1">
-        <div class="d-flex flex-column container-fluid p-0">
-            <div class="row flex-grow-1 no-gutters">
-                <div class="d-flex flex-column col-md">
+    <main id="MainContainer" class="d-flex flex-grow-1 max-height-full">
+        <div class="d-flex flex-column container-fluid p-0 max-height-full">
+            <div class="row flex-grow-1 no-gutters max-height-full">
+                <div class="d-flex flex-column col-md max-height-full max-height-full">
 
                     @(Html.Kendo().Drawer()
                         .Name("drawer")
@@ -134,7 +134,7 @@
                         .Mode("push")
                         .Mini(m=>m.Template(
                         @"<ul id='MiniDrawer'>
-                            <li id='MiniToggleDrawer' class='k-state-selected' data-role='drawer-item'><span class='k-icon k-i-menu'></span><span class='k-item-text' data-id='Road'>Road Information System</span></li>
+                            <li id='MiniToggleDrawer' class='k-state-selected' data-role='drawer-item'><span class='k-icon k-i-menu'></span><span class='k-item-text hidden' data-id='Road'>Road Information System</span></li>
                             <li data-role='drawer-separator'></li>
 
                             <li id='MiniInformationItem' data-role='drawer-item' data-id='Information' class='flex-column'><span class='fas fa-info-circle'></span><div id='ExpandIcon' class='k-icon k-i-arrow-chevron-down'></div></li>
@@ -397,6 +397,41 @@
 
                 <script>
 
+                    // Sets the difference between the main header and main container when drawer items are expanded
+                    function SetContainerHeight() {
+                        let mainHeader = document.getElementById("MainHeader");
+                        let mainContainer = document.getElementById("MainContainer");
+                        let headerHeight = mainHeader.offsetHeight;
+                        let mainHeight = mainContainer.offsetHeight;
+
+                        let newHeight = mainHeight - headerHeight;
+
+                        console.log("Header height: " + headerHeight + " , Main container height: " + mainHeight + " , New main height: " + newHeight);
+
+                        mainContainer.style.height = newHeight + "px";
+                    }
+
+                    // Sets the width of the drawer items wrapper based on the existence of a scrollbar on it
+                    function SetDrawerContainerWidthOnScrollbar() {
+                        let mainContainer = document.getElementById("MainContainer");
+                        let drawerItemsWrapperEl = document.querySelector(".k-drawer-wrapper");
+                        let drawerItemsEl = document.querySelector(".k-drawer-items");
+
+                        let mainHeight = mainContainer.offsetHeight;
+                        let drawerItemsHeight = drawerItemsEl.offsetHeight;
+
+                        if (drawerItemsHeight > mainHeight) {
+                            drawerItemsWrapperEl.style.width = "54px";
+                            console.log(drawerItemsWrapperEl.style.width);
+                        }
+
+                        if (drawerItemsHeight < mainHeight) {
+                            drawerItemsWrapperEl.style.width = "48px";
+                        }
+
+                        console.log("Container height:" + mainHeight + " Drawer items height: " + drawerItemsHeight);
+                    }
+
                     function onItemClick(e) {
                         if (!e.item.hasClass("k-drawer-separator")) {
                             var drawerContainer = e.sender.drawerContainer;
@@ -404,6 +439,8 @@
                             var collapseIcon = e.item.find("span.k-i-arrow-chevron-down");
                             drawerContainer.find("#drawer-content > div").addClass("hidden");
                             drawerContainer.find("#drawer-content").find("#" + e.item.find(".k-item-text").attr("data-id")).removeClass("hidden");
+
+                            SetContainerHeight();
 
                             if (expandIcon.length) {
                                 e.item.nextUntil('span').removeClass("hidden");
@@ -421,6 +458,8 @@
 
                         $("#drawer").data("kendoDrawer").show();
                         $(".k-drawer-container").addClass("h-100");
+
+                        SetContainerHeight();
 
                         // Toggle drawer in mini mode
                         $('.k-drawer-container').on('click', '#MiniToggleDrawer', function () {
@@ -453,15 +492,21 @@
                             let clickedItem = $(e.currentTarget);
                             let expandIcon = clickedItem.find("#ExpandIcon");
 
+                            SetContainerHeight();
+
                             if (expandIcon.hasClass('k-i-arrow-chevron-down')) {
                                 expandIcon.removeClass('k-i-arrow-chevron-down').addClass('k-i-arrow-chevron-up');
                                 clickedItem.nextUntil('span').removeClass("hidden");
+                                SetDrawerContainerWidthOnScrollbar();
+
                                 return;
                             }
 
                             if (expandIcon.hasClass('k-i-arrow-chevron-up')) {
                                 expandIcon.addClass('k-i-arrow-chevron-down').removeClass('k-i-arrow-chevron-up');
                                 clickedItem.nextUntil('span').addClass("hidden");
+                                SetDrawerContainerWidthOnScrollbar();
+
                                 return;
                             }
                         });
@@ -471,15 +516,21 @@
                             let clickedItem = $(e.currentTarget);
                             let expandIcon = clickedItem.find("#ExpandIcon");
 
+                            SetContainerHeight();
+
                             if (expandIcon.hasClass('k-i-arrow-chevron-down')) {
                                 expandIcon.removeClass('k-i-arrow-chevron-down').addClass('k-i-arrow-chevron-up');
                                 clickedItem.nextUntil('span').removeClass("hidden");
+                                SetDrawerContainerWidthOnScrollbar();
+
                                 return;
                             }
 
                             if (expandIcon.hasClass('k-i-arrow-chevron-up')) {
                                 expandIcon.addClass('k-i-arrow-chevron-down').removeClass('k-i-arrow-chevron-up');
                                 clickedItem.nextUntil('span').addClass("hidden");
+                                SetDrawerContainerWidthOnScrollbar();
+
                                 return;
                             }
                         });
@@ -489,15 +540,21 @@
                             let clickedItem = $(e.currentTarget);
                             let expandIcon = clickedItem.find("#ExpandIcon");
 
+                            SetContainerHeight();
+
                             if (expandIcon.hasClass('k-i-arrow-chevron-down')) {
                                 expandIcon.removeClass('k-i-arrow-chevron-down').addClass('k-i-arrow-chevron-up');
                                 clickedItem.nextUntil('span').removeClass("hidden");
+                                SetDrawerContainerWidthOnScrollbar();
+
                                 return;
                             }
 
                             if (expandIcon.hasClass('k-i-arrow-chevron-up')) {
                                 expandIcon.addClass('k-i-arrow-chevron-down').removeClass('k-i-arrow-chevron-up');
                                 clickedItem.nextUntil('span').addClass("hidden");
+                                SetDrawerContainerWidthOnScrollbar();
+
                                 return;
                             }
                         });
@@ -507,15 +564,21 @@
                             let clickedItem = $(e.currentTarget);
                             let expandIcon = clickedItem.find("#ExpandIcon");
 
+                            SetContainerHeight();
+
                             if (expandIcon.hasClass('k-i-arrow-chevron-down')) {
                                 expandIcon.removeClass('k-i-arrow-chevron-down').addClass('k-i-arrow-chevron-up');
                                 clickedItem.nextUntil('span').removeClass("hidden");
+                                SetDrawerContainerWidthOnScrollbar();
+
                                 return;
                             }
 
                             if (expandIcon.hasClass('k-i-arrow-chevron-up')) {
                                 expandIcon.addClass('k-i-arrow-chevron-down').removeClass('k-i-arrow-chevron-up');
                                 clickedItem.nextUntil('span').addClass("hidden");
+                                SetDrawerContainerWidthOnScrollbar();
+
                                 return;
                             }
                         });
@@ -525,34 +588,43 @@
                             let clickedItem = $(e.currentTarget);
                             let expandIcon = clickedItem.find("#ExpandIcon");
 
+                            SetContainerHeight();
+
                             if (expandIcon.hasClass('k-i-arrow-chevron-down')) {
                                 expandIcon.removeClass('k-i-arrow-chevron-down').addClass('k-i-arrow-chevron-up');
                                 clickedItem.nextUntil('span').removeClass("hidden");
+                                SetDrawerContainerWidthOnScrollbar();
+
                                 return;
                             }
 
                             if (expandIcon.hasClass('k-i-arrow-chevron-up')) {
                                 expandIcon.addClass('k-i-arrow-chevron-down').removeClass('k-i-arrow-chevron-up');
                                 clickedItem.nextUntil('span').addClass("hidden");
+                                SetDrawerContainerWidthOnScrollbar();
                                 return;
                             }
                         });
 
                         $(".k-drawer-items").on('click', '#MiniRisUtilities', function (e) {
 
-                            //let expandIcon = $("#ExpandIcon");
                             let clickedItem = $(e.currentTarget);
                             let expandIcon = clickedItem.find("#ExpandIcon");
+
+                            SetContainerHeight();
 
                             if (expandIcon.hasClass('k-i-arrow-chevron-down')) {
                                 expandIcon.removeClass('k-i-arrow-chevron-down').addClass('k-i-arrow-chevron-up');
                                 clickedItem.nextUntil('span').removeClass("hidden");
+                                SetDrawerContainerWidthOnScrollbar();
                                 return;
                             }
 
                             if (expandIcon.hasClass('k-i-arrow-chevron-up')) {
                                 expandIcon.addClass('k-i-arrow-chevron-down').removeClass('k-i-arrow-chevron-up');
                                 clickedItem.nextUntil('span').addClass("hidden");
+                                SetDrawerContainerWidthOnScrollbar();
+
                                 return;
                             }
                         });
@@ -623,11 +695,11 @@
 
                 <style>
                     .hidden {
-                        display: none;
+                        display: none !important;
                     }
 
                     .max-height-full {
-                        max-height: 100%;
+                        max-height: 100% !important;
                     }
 
                     .fa-icon-li-padding {
