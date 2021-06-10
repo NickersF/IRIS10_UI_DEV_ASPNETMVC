@@ -1,188 +1,108 @@
 ﻿<!DOCTYPE html>
-<html class="iris-global-full-height">
+
+<html lang="en-us" class="h-100 max-height-full">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@ViewBag.Title IRIS10 UI Development Sandbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>IRIS10 UI Development Sandbox</title>
 
     @Styles.Render("~/Content/css")
 
     @*<link href="https://kendo.cdn.telerik.com/2021.2.511/styles/kendo.default.min.css" rel="stylesheet" type="text/css" />*@
-	@*<link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />*@
-	<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-	<script src="https://kendo.cdn.telerik.com/2021.2.511/js/jquery.min.js"></script>
-	<script src="https://kendo.cdn.telerik.com/2021.2.511/js/jszip.min.js"></script>
-	<script src="https://kendo.cdn.telerik.com/2021.2.511/js/kendo.all.min.js"></script>
-	<script src="https://kendo.cdn.telerik.com/2021.2.511/js/kendo.aspnetmvc.min.js"></script>
-	<script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
-	<script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+    @*<link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />*@
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="https://kendo.cdn.telerik.com/2021.2.511/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.2.511/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.2.511/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.2.511/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
 </head>
-<body class="iris-global-full-height">
+<body class="d-flex flex-column h-100 max-height-full">
 
-    <div class="iris-main-layout-wrapper">
-
-        <header class="container-fluid iris-row-flex iris-header-flex">
-            <div class="row iris-bg-light-blue p-2">
-
-                <div class="col-4 d-flex align-items-center pl-0 pr-0">
-                    <a href="@Url.Action("Index", "Home")"><img class="img-fluid" width="300" height="76" src="~/Images/IRIS_logo_web_ltgray.svg" /></a>
+    <header id="MainHeader" class="iris-bg-light-blue">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-md-2 p-3">
+                    <img src="~/Images/IRIS_Logo_Gray_Light.svg" />
                 </div>
-
-                <div class="col-md-2 ml-auto pl-0 pr-0">
-                    <div class="card iris-border-hinted iris-bg-light-blue">
-                        <div class="card-body text-light p-1">
-                            <div><strong class="text-dark">Username: </strong><span>Nicholas Fazzolari</span></div>
-                            <div><strong class="text-dark">Tenant: </strong><span>Polk</span></div>
+                <div class="col-md-auto ml-auto d-flex align-items-center">
+                    <div class="d-flex bg-light mr-3 p-2 rounded rounded-sm">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <strong class="iris-type-dark-blue">Nicholas Fazzolari (AOCCRP)</strong>
                         </div>
-                        <div class="card-footer p-1">
-                            <button type="button" class="btn btn-primary btn-sm">Logout</button>
+                        <div>
+                            <button class="btn btn-sm btn-primary ml-3"><span>Logout</span> <span class="k-icon k-i-logout pl-2"></span></button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </header>
 
-            <nav class="row" id="mainNavigation">
-                @(Html.Kendo().Menu()
-                .Name("screensPreviewMenu")
-                .Items(items =>
-                {
-                    items.Add().Text("IRIS 10 Login Screens") // Dropdown level
-                        .Items(children =>
-                        {
-                            children.Add().Text("Login Screen").Action("Login", "Login");
-                            children.Add().Text("Reset Password Screen").Action("ResetPassword", "Login");
-                            children.Add().Text("Change Password Screen").Action("ChangePassword", "Login");
-                            children.Add().Text("Change Password Confirmation Screen").Action("ChangePasswordConfirmation", "Login");
-                        });
+    <main id="MainContent" class="d-flex flex-grow-1 max-height-full">
+        @RenderBody()
+    </main>
 
-                    items.Add().Text("Step Wizard UI") // Dropdown level
-                        .Items(children =>
-                        {
-                            children.Add().Text("Step Wizard").Action("Index", "StepWizard");
-                        });
-                    items.Add().Text("RIS Screens")
-                        .Items(children =>
-                        {
-                            children.Add().Text("RIS Regular Drawer").Action("Index", "RIS");
-                            children.Add().Text("RIS Main").Action("RISMain", "RIS");
-                            children.Add().Text("Drawer Mini Template").Action("RISMiniDrawerTemplate", "RIS");
-                            children.Add().Text("Drawer Category Template").Action("DrawerCategoryTemplate", "RIS");
-                            children.Add().Text("Drawer Content Template").Action("DrawerContentTemplates", "RIS");
-                        });
-                    items.Add().Text("ODOT Road Milage Report")
-                        .Items(children =>
-                        {
-                            children.Add().Text("Login Select").Action("LoginSelect", "ODOTMilage");
-                            children.Add().Text("Mileage Report Main").Action("MileageReportMain", "ODOTMilage");
-                            children.Add().Text("SVG Interactivty Example").Action("SVGInteractivity", "ODOTMilage");
-                            children.Add().Separator(true);
-                            children.Add().Text("Login Layout Grid").Action("LoginLayoutGrid", "ODOTMilage");
-                            children.Add().Text("Main Layout Grid").Action("MainLayoutGrid", "ODOTMilage");
-                            children.Add().Text("Multiselect Demo").Action("MultiSelectDemo", "ODOTMilage");
-                        });
-                    items.Add().Text("Layout Templates")
-                        .Items(children =>
-                        {
-                            children.Add().Text("IRIS10 Main Layout").Action("MainLayout", "CommonLayout");
-                            children.Add().Text("IRIS10 Side Bar Layout").Action("SideBarLayout", "CommonLayout");
-                        });
+    <footer id="MainFooter" class="iris-bg-light-blue">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <span>Footer</span>
+            </div>
+        </div>
+    </footer>
 
-                    items.Add().Text("Reports Views and Templates")
-                        .Items(children =>
-                        {
-                            children.Add().Text("Reports Main").Action("_ReportsMain", "ReportScreens");
-                            children.Add().Text("Fluid Reports Layout").Action("ReportLayoutFluid", "ReportScreens");
-                        });
+    <script>
 
-                    items.Add().Text("Permit Views and Templates")
-                        .Items(children =>
-                        {
-                            children.Add().Text("Add Standard Permit Form Templates")
-                                    .Items(innerChildren =>
-                                    {
-                                        innerChildren.Add().Text("Add Standard Permit Forms").Action("StdPermitGenReqFields", "Permits");
-                                        innerChildren.Add().Text("Add Standard Permit Owner Forms").Action("StdPermitOwnerFields", "Permits");
-                                        innerChildren.Add().Text("Add Standard Permit Site Forms").Action("StdPermitSiteFields", "Permits");
-                                        innerChildren.Add().Text("Add Standard Permit Applicant Forms").Action("StdPermitApplicantField", "Permits");
-                                        innerChildren.Add().Text("Add Standard Permit Contractor Forms").Action("StdPermitsContractorFields", "Permits");
-                                        innerChildren.Add().Text("Add Standard Permit User Forms").Action("StdPermitUserFields", "Permits");
+        // Implement a basic API for controlling the display of core layout elements
 
-                                    });
-                            children.Add().Text("Add Utility Permit Form Templates")
-                                    .Items(innerChildren =>
-                                    {
-                                        innerChildren.Add().Text("Add Utility Permit Required Forms ").Action("UtilAddPermitRequiredFields", "Permits");
-                                        innerChildren.Add().Text("Add Utility Permit General Forms ").Action("UtilAddPermitGeneralFields", "Permits");
-                                        innerChildren.Add().Text("Add Utility Permit Applicant Forms ").Action("UtilAddPermitAppFields", "Permits");
-                                        innerChildren.Add().Text("Add Utility Permit Sub Contractor Forms ").Action("UtilAddPermitContractorFields", "Permits");
-                                        innerChildren.Add().Text("Add Utility Permit User Forms ").Action("UtilAddPermitUserFields", "Permits");
-                                    });
-                            children.Add().Text("Add ODOT Permit Form Templates")
-                                    .Items(innerChildren =>
-                                    {
-                                        innerChildren.Add().Text("Add ODOT Permit Required Forms ").Action("ODOTAddPermitRequiredFields", "Permits");
-                                        innerChildren.Add().Text("Add ODOT Permit General Forms ").Action("ODOTAddPermitGeneralFields", "Permits");
-                                        innerChildren.Add().Text("Add ODOT Permit Load Information Forms ").Action("ODOTAddPermitLoadInfoFields", "Permits");
-                                        innerChildren.Add().Text("Add ODOT Permit Route Forms ").Action("ODOTAddPermitRouteFields", "Permits");
-                                        innerChildren.Add().Text("Add ODOT Permit Axle Forms ").Action("ODOTAddPermitAxleFields", "Permits");
-                                    });
-                            children.Add().Separator(true);
-                            children.Add().Text("Edit Standard Permit Form Templates")
-                                    .Items( innerChildren =>
-                                    {
-                                        innerChildren.Add().Text("Edit Standard Permit Required Forms").Action("StdPermitEditRequiredFields", "Permits");
-                                        innerChildren.Add().Text("Edit Standard Permit General Forms").Action("StdPermitEditGeneralFields", "Permits");
-                                        innerChildren.Add().Text("Edit Standard Permit Owner Forms").Action("StdPermitEditOwnerFields", "Permits");
-                                        innerChildren.Add().Text("Edit Standard Permit Site Forms").Action("StdPermitEditSiteFields", "Permits");
-                                        innerChildren.Add().Text("Edit Standard Permit Applicant Forms").Action("StdPermitEditApplicantFields", "Permits");
-                                        innerChildren.Add().Text("Edit Standard Permit Contractor Forms").Action("StdPermitEditContractorFields", "Permits");
+        function ShowHeader(setValue) {
 
-                                    });
-                            children.Add().Text("Edit Utility Permit Form Templates")
-                                    .Items(innerChildren =>
-                                    {
-                                        innerChildren.Add().Text("Edit Utility Permit Required Forms").Action("UtilEditRequiredFields", "Permits");
-                                        innerChildren.Add().Text("Edit Utility Permit General Forms").Action("UtilEditGeneralFields", "Permits");
-                                        innerChildren.Add().Text("Edit Utility Permit Applicant Forms").Action("UtilEditApplicantFields", "Permits");
-                                        innerChildren.Add().Text("Edit Utility Permit Sub Contractor Forms").Action("UtilEditSubContractorFields", "Permits");
-                                    });
-                            children.Add().Text("Edit ODOT Permit Form Templates")
-                                    .Items(innerChildren =>
-                                    {
-                                        innerChildren.Add().Text("Edit ODOT Permit Required Forms").Action("ODOTEditRequiredFields", "Permits");
-                                        innerChildren.Add().Text("Edit ODOT Permit Required Forms").Action("ODOTEditGeneralFields", "Permits");
-                                        innerChildren.Add().Text("Edit ODOT Permit Load Information Forms").Action("ODOTEditLoadFields", "Permits");
-                                        innerChildren.Add().Text("Edit ODOT Permit Route Forms").Action("ODOTEditRouteFields", "Permits");
-                                        innerChildren.Add().Text("Edit ODOT Permit Axle Forms").Action("ODOTEditRouteFields", "Permits");
-                                    });
-                            children.Add().Separator(true);
-                            children.Add().Text("Common Permit Input Forms").Action("CommonFormInputs", "Permits");
-                        });
+            let MainHeaderEl = $("#MainHeader");
 
-                    items.Add().Text("Kendo UI Demos") // Dropdown level
-                        .Items(children =>
-                        {
-                            children.Add().Text("Drawer Navigation Demo").Action("Index", "DrawerDemo");
-                            children.Add().Text("Hierarchy Drawer Navigation Demo").Action("HierarchyDrawer", "DrawerDemo");
+            if (!setValue) {
+                MainHeaderEl.addClass("d-none");
+            }
 
-                            children.Add().Text("Grid Demo").Action("Index", "GridDemo");
-                            children.Add().Text("TabStrip With Grid Demo").Action("TabStripGridDemo", "GridDemo");
-                            children.Add().Text("Flexy Layout For TabStrip Demo").Action("FlexLayoutGrid", "GridDemo");
-                            children.Add().Text("Text Editor Demo").Action("Index", "TextEditorDemo");
-                            children.Add().Text("Panel Bar Demo").Action("Index", "PanelBarDemo");
-                            children.Add().Text("Window Demo").Action("Index", "WindowEx");
-                            children.Add().Text("TabStrip Example").Action("TabStripExample", "Home");
-                            children.Add().Text("Gantt Demo").Enabled(false);
-                            children.Add().Text("Toolbar Demo").Enabled(false);
-                        });
-                }))
-            </nav>
-        </header>
+            if (setValue) {
+                MainHeaderEl.removeClass("d-none");
+            }
+        }
 
-        <main class="iris-row-flex iris-content-flex">
-            @RenderBody()
-        </main>
-    </div>
+        function ShowMainContent(setValue) {
+
+            let MainContentEl = $("#MainContent");
+
+            if (!setValue) {
+                MainContentEl.removeClass("d-flex");
+                MainContentEl.addClass("d-none");
+            }
+
+            if (setValue) {
+                $("#MainContent").removeClass("d-none");
+            }
+        }
+
+        function ShowFooter(setValue) {
+
+            let MainFooterEl = $("#MainFooter");
+
+            if (!setValue) {
+                MainFooterEl.addClass("d-none");
+            }
+
+            if (setValue) {
+                MainFooterEl.removeClass("d-none");
+            }
+        }
+
+        $(document).ready(function () {
+            ShowHeader(true);
+            ShowMainContent(true);
+            ShowFooter(false);
+        });
+
+    </script>
 
     @RenderSection("scripts", required: false)
 </body>

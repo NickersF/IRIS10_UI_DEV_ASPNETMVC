@@ -4,7 +4,147 @@
 }
 
 <div class="d-flex flex-column container-fluid pt-3 pb-3">
-    <div class="row flex-grow-1">
+    <div class="row">
+        <div class="col-md">
+            <nav id="mainNavigation">
+                @(Html.Kendo().Menu()
+                .Name("screensPreviewMenu")
+                .Items(items =>
+                {
+                    items.Add().Text("IRIS 10 Login Screens") // Dropdown level
+                        .Items(children =>
+                        {
+                            children.Add().Text("Login Screen").Action("Login", "Login");
+                            children.Add().Text("Reset Password Screen").Action("ResetPassword", "Login");
+                            children.Add().Text("Change Password Screen").Action("ChangePassword", "Login");
+                            children.Add().Text("Change Password Confirmation Screen").Action("ChangePasswordConfirmation", "Login");
+                        });
+
+                    items.Add().Text("Step Wizard UI") // Dropdown level
+                        .Items(children =>
+                        {
+                            children.Add().Text("Step Wizard").Action("Index", "StepWizard");
+                        });
+                    items.Add().Text("RIS Screens")
+                        .Items(children =>
+                        {
+                            children.Add().Text("RIS Regular Drawer").Action("Index", "RIS");
+                            children.Add().Text("RIS Main").Action("RISMain", "RIS");
+                            children.Add().Text("Drawer Mini Template").Action("RISMiniDrawerTemplate", "RIS");
+                            children.Add().Text("Drawer Category Template").Action("DrawerCategoryTemplate", "RIS");
+                            children.Add().Text("Drawer Content Template").Action("DrawerContentTemplates", "RIS");
+                        });
+                    items.Add().Text("ODOT Road Milage Report")
+                        .Items(children =>
+                        {
+                            children.Add().Text("Login Select").Action("LoginSelect", "ODOTMilage");
+                            children.Add().Text("Mileage Report Main").Action("MileageReportMain", "ODOTMilage");
+                            children.Add().Text("SVG Interactivty Example").Action("SVGInteractivity", "ODOTMilage");
+                            children.Add().Separator(true);
+                            children.Add().Text("Login Layout Grid").Action("LoginLayoutGrid", "ODOTMilage");
+                            children.Add().Text("Main Layout Grid").Action("MainLayoutGrid", "ODOTMilage");
+                            children.Add().Text("Multiselect Demo").Action("MultiSelectDemo", "ODOTMilage");
+                        });
+                    items.Add().Text("Layout Templates")
+                        .Items(children =>
+                        {
+                            children.Add().Text("IRIS10 Main Layout").Action("MainLayout", "CommonLayout");
+                            children.Add().Text("IRIS10 Side Bar Layout").Action("SideBarLayout", "CommonLayout");
+                        });
+
+                    items.Add().Text("Reports Views and Templates")
+                        .Items(children =>
+                        {
+                            children.Add().Text("Reports Main").Action("_ReportsMain", "ReportScreens");
+                            children.Add().Text("Fluid Reports Layout").Action("ReportLayoutFluid", "ReportScreens");
+                        });
+
+                    items.Add().Text("Permit Views and Templates")
+                        .Items(children =>
+                        {
+                            children.Add().Text("Add Standard Permit Form Templates")
+                                    .Items(innerChildren =>
+                                    {
+                                        innerChildren.Add().Text("Add Standard Permit Forms").Action("StdPermitGenReqFields", "Permits");
+                                        innerChildren.Add().Text("Add Standard Permit Owner Forms").Action("StdPermitOwnerFields", "Permits");
+                                        innerChildren.Add().Text("Add Standard Permit Site Forms").Action("StdPermitSiteFields", "Permits");
+                                        innerChildren.Add().Text("Add Standard Permit Applicant Forms").Action("StdPermitApplicantField", "Permits");
+                                        innerChildren.Add().Text("Add Standard Permit Contractor Forms").Action("StdPermitsContractorFields", "Permits");
+                                        innerChildren.Add().Text("Add Standard Permit User Forms").Action("StdPermitUserFields", "Permits");
+
+                                    });
+                            children.Add().Text("Add Utility Permit Form Templates")
+                                    .Items(innerChildren =>
+                                    {
+                                        innerChildren.Add().Text("Add Utility Permit Required Forms ").Action("UtilAddPermitRequiredFields", "Permits");
+                                        innerChildren.Add().Text("Add Utility Permit General Forms ").Action("UtilAddPermitGeneralFields", "Permits");
+                                        innerChildren.Add().Text("Add Utility Permit Applicant Forms ").Action("UtilAddPermitAppFields", "Permits");
+                                        innerChildren.Add().Text("Add Utility Permit Sub Contractor Forms ").Action("UtilAddPermitContractorFields", "Permits");
+                                        innerChildren.Add().Text("Add Utility Permit User Forms ").Action("UtilAddPermitUserFields", "Permits");
+                                    });
+                            children.Add().Text("Add ODOT Permit Form Templates")
+                                    .Items(innerChildren =>
+                                    {
+                                        innerChildren.Add().Text("Add ODOT Permit Required Forms ").Action("ODOTAddPermitRequiredFields", "Permits");
+                                        innerChildren.Add().Text("Add ODOT Permit General Forms ").Action("ODOTAddPermitGeneralFields", "Permits");
+                                        innerChildren.Add().Text("Add ODOT Permit Load Information Forms ").Action("ODOTAddPermitLoadInfoFields", "Permits");
+                                        innerChildren.Add().Text("Add ODOT Permit Route Forms ").Action("ODOTAddPermitRouteFields", "Permits");
+                                        innerChildren.Add().Text("Add ODOT Permit Axle Forms ").Action("ODOTAddPermitAxleFields", "Permits");
+                                    });
+                            children.Add().Separator(true);
+                            children.Add().Text("Edit Standard Permit Form Templates")
+                                    .Items( innerChildren =>
+                                    {
+                                        innerChildren.Add().Text("Edit Standard Permit Required Forms").Action("StdPermitEditRequiredFields", "Permits");
+                                        innerChildren.Add().Text("Edit Standard Permit General Forms").Action("StdPermitEditGeneralFields", "Permits");
+                                        innerChildren.Add().Text("Edit Standard Permit Owner Forms").Action("StdPermitEditOwnerFields", "Permits");
+                                        innerChildren.Add().Text("Edit Standard Permit Site Forms").Action("StdPermitEditSiteFields", "Permits");
+                                        innerChildren.Add().Text("Edit Standard Permit Applicant Forms").Action("StdPermitEditApplicantFields", "Permits");
+                                        innerChildren.Add().Text("Edit Standard Permit Contractor Forms").Action("StdPermitEditContractorFields", "Permits");
+
+                                    });
+                            children.Add().Text("Edit Utility Permit Form Templates")
+                                    .Items(innerChildren =>
+                                    {
+                                        innerChildren.Add().Text("Edit Utility Permit Required Forms").Action("UtilEditRequiredFields", "Permits");
+                                        innerChildren.Add().Text("Edit Utility Permit General Forms").Action("UtilEditGeneralFields", "Permits");
+                                        innerChildren.Add().Text("Edit Utility Permit Applicant Forms").Action("UtilEditApplicantFields", "Permits");
+                                        innerChildren.Add().Text("Edit Utility Permit Sub Contractor Forms").Action("UtilEditSubContractorFields", "Permits");
+                                    });
+                            children.Add().Text("Edit ODOT Permit Form Templates")
+                                    .Items(innerChildren =>
+                                    {
+                                        innerChildren.Add().Text("Edit ODOT Permit Required Forms").Action("ODOTEditRequiredFields", "Permits");
+                                        innerChildren.Add().Text("Edit ODOT Permit Required Forms").Action("ODOTEditGeneralFields", "Permits");
+                                        innerChildren.Add().Text("Edit ODOT Permit Load Information Forms").Action("ODOTEditLoadFields", "Permits");
+                                        innerChildren.Add().Text("Edit ODOT Permit Route Forms").Action("ODOTEditRouteFields", "Permits");
+                                        innerChildren.Add().Text("Edit ODOT Permit Axle Forms").Action("ODOTEditRouteFields", "Permits");
+                                    });
+                            children.Add().Separator(true);
+                            children.Add().Text("Common Permit Input Forms").Action("CommonFormInputs", "Permits");
+                        });
+
+                    items.Add().Text("Kendo UI Demos") // Dropdown level
+                        .Items(children =>
+                        {
+                            children.Add().Text("Drawer Navigation Demo").Action("Index", "DrawerDemo");
+                            children.Add().Text("Hierarchy Drawer Navigation Demo").Action("HierarchyDrawer", "DrawerDemo");
+
+                            children.Add().Text("Grid Demo").Action("Index", "GridDemo");
+                            children.Add().Text("TabStrip With Grid Demo").Action("TabStripGridDemo", "GridDemo");
+                            children.Add().Text("Flexy Layout For TabStrip Demo").Action("FlexLayoutGrid", "GridDemo");
+                            children.Add().Text("Text Editor Demo").Action("Index", "TextEditorDemo");
+                            children.Add().Text("Panel Bar Demo").Action("Index", "PanelBarDemo");
+                            children.Add().Text("Window Demo").Action("Index", "WindowEx");
+                            children.Add().Text("TabStrip Example").Action("TabStripExample", "Home");
+                            children.Add().Text("Gantt Demo").Enabled(false);
+                            children.Add().Text("Toolbar Demo").Enabled(false);
+                        });
+                }))
+            </nav>
+        </div>
+    </div>
+    <div class="row flex-grow-1 mt-3">
         <div class="d-flex flex-column col-md">
             <div class="card flex-grow-1">
                 <div class="card-body">Example card</div>

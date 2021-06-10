@@ -1,18 +1,14 @@
 ﻿/* IRIS 10 CSS UI Development Sandbox */
 @import "bootstrap.min.css";
-@import "iris10-bootstrap-custom-theme.css";
+@import "iris-bootstrap-custom-v2.css";
 /* IRIS LESS Color Library */
+/*#region IRIS Colors */
 /* Grays */
 /* Main Palette */
 /* Custom Validation Colors */
 /* Interactive Map Colors */
-/* IRIS Custom color classes */
-.color-test {
-  color: #2E6FF2;
-}
-/*#region IRIS Colors */
 .iris-bg-dark-blue {
-  background-color: #151B26;
+  background-color: #233042;
 }
 .iris-bg-medium-blue {
   background-color: #2E6FF2;
@@ -20,11 +16,30 @@
 .iris-bg-light-blue {
   background-color: #5399EE;
 }
+.iris-type-dark-blue {
+  color: #233042;
+}
+.iris-type-medium-blue {
+  color: #2E6FF2;
+}
+.iris-type-light-blue {
+  color: #5399EE;
+}
 .iris-border-medium-gray {
   border-color: #737373;
 }
 .iris-border-hinted {
   border-color: rgba(0, 0, 0, 0.125);
+}
+/*#endregion*/
+/*#region Gradient Background classes */
+.dark-gradient-bg {
+  background: #2e6ff2;
+  background: linear-gradient(0deg, #2e6ff2 0%, #5399ee 100%);
+}
+.light-gradient-bg {
+  background: #e3f2fd;
+  background: linear-gradient(180deg, #e3f2fd 0%, #ffffff 100%);
 }
 /*#endregion*/
 /*#region Testing colors*/
@@ -85,7 +100,7 @@
 .logout-button-dark {
   width: 1.25rem;
   height: 1.25rem;
-  fill: #151B26;
+  fill: #233042;
 }
 .logout-button-dark:hover {
   width: 1.25rem;
