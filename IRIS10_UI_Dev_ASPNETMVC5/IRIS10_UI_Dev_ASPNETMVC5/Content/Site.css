@@ -71,6 +71,9 @@
 .height-fit-content {
   height: fit-content;
 }
+.border-50 {
+  border-radius: 100%;
+}
 .iris-grid-no-header {
   display: none;
 }

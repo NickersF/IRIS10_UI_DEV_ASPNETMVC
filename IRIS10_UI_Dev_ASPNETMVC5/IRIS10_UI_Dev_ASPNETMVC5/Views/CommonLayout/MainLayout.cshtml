@@ -13,6 +13,7 @@
 
     @Styles.Render("~/Content/css")
 
+    <script src="https://kit.fontawesome.com/fb9297107b.js" crossorigin="anonymous"></script>
     <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jszip.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
@@ -28,10 +29,10 @@
                 <div class="col-md-2 p-3">
                     <img src="~/Images/IRIS_Logo_Gray_Light.svg" />
                 </div>
-                <div class="col-md-auto ml-auto">
-                    <div class="d-flex bg-light m-3 p-2 rounded rounded-sm">
-                        <strong>Nicholas Fazzolari (AOCCRP)</strong>
-                        <button class="btn btn-sm btn-primary ml-3">Logout <span class="k-icon k-i-logout"></span></button>
+                <div class="col-md-auto ml-auto d-flex align-items-center">
+
+                    <div class="d-flex m-3 p-2">
+                        <button id="UserAccountSettings" class="btn btn-light border-50 p-2"><i class="fas fa-user-circle fa-2x p-1"></i></button>
                     </div>
                 </div>
             </div>
@@ -39,14 +40,17 @@
     </header>
 
     <main class="d-flex flex-grow-1">
-        @*<div class="d-flex flex-column container-fluid p-0">
-            <div class="row flex-grow-1 no-gutters">
-                <div class="d-flex flex-column col-md">
-
-                </div>
-            </div>
-        </div>*@
     </main>
 
+    @(Html.Kendo().Tooltip()
+        .For("#UserAccountSettings")
+        .Position(TooltipPosition.Bottom)
+        .AutoHide(false)
+        .Content("Hello!")
+        .Width(256)
+        .Height(384)
+    )
+
+    <script src="~/Scripts/custom/uas-controller.js"></script>
 </body>
 </html>
