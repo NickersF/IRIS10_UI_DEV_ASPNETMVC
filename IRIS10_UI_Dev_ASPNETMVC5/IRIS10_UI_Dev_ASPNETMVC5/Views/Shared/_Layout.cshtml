@@ -9,6 +9,7 @@
     @Styles.Render("~/Content/css")
 
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/fb9297107b.js" crossorigin="anonymous"></script>
     <script src="https://kendo.cdn.telerik.com/2021.2.511/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2021.2.511/js/jszip.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2021.2.511/js/kendo.all.min.js"></script>
@@ -18,20 +19,15 @@
 </head>
 <body class="d-flex flex-column h-100 max-height-full">
 
-    <header id="MainHeader" class="iris-bg-light-blue">
+    <header class="iris-bg-light-blue">
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col-md-2 p-3">
                     <img src="~/Images/IRIS_Logo_Gray_Light.svg" />
                 </div>
                 <div class="col-md-auto ml-auto d-flex align-items-center">
-                    <div class="d-flex bg-light mr-3 p-2 rounded rounded-sm">
-                        <div class="d-flex justify-content-center align-items-center">
-                            <strong class="iris-type-dark-blue">Nicholas Fazzolari (AOCCRP)</strong>
-                        </div>
-                        <div>
-                            <button class="btn btn-sm btn-primary ml-3"><span>Logout</span> <span class="k-icon k-i-logout pl-2"></span></button>
-                        </div>
+                    <div class="d-flex m-3 p-2">
+                        <button id="UserAccountSettings" class="btn btn-light border-50 p-2"><i class="fas fa-user-circle fa-2x p-1"></i></button>
                     </div>
                 </div>
             </div>

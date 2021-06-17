@@ -304,7 +304,7 @@
     <Content Include="Scripts\custom\ODOT_UI_MainEvents.js" />
     <Content Include="Scripts\custom\StatefulButtons.js" />
     <Content Include="Scripts\custom\TestGridData.js" />
-    <Content Include="Scripts\custom\uas-controller.js" />
+    <Content Include="Scripts\custom\UserAccountMenu.js" />
     <Content Include="Scripts\custom\_ReportsMain.js" />
     <Content Include="Scripts\custom\windowEx_openJQWindow.js" />
     <Content Include="Scripts\custom\windowEx_openWindow.js" />
@@ -537,6 +537,7 @@
     <Content Include="Views\RIS\DrawerContentTemplates.cshtml" />
     <Content Include="Views\RIS\RISMain.cshtml" />
     <Content Include="Views\RIS\RISMiniDrawerTemplate.cshtml" />
+    <Content Include="Views\CommonLayout\UserAccountMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />

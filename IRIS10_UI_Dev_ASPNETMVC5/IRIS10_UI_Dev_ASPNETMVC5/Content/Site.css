@@ -72,7 +72,7 @@
   height: fit-content;
 }
 .border-50 {
-  border-radius: 100%;
+  border-radius: 50%;
 }
 .iris-grid-no-header {
   display: none;
@@ -115,6 +115,21 @@
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
 }
+/* #region User Account Menu Style Rules */
+.user-menu-template-size {
+  width: 256px;
+  height: 384px;
+  max-width: 256px;
+  max-height: 384px;
+}
+.user-menu-item {
+  padding: 4px 8px 4px 16px;
+}
+.user-menu-item:hover {
+  background-color: #2E6FF2;
+  padding: 4px 8px 4px 16px;
+}
+/* #endregion */
 /*
     CSS rules to configure the Kendo UI TabStrip example
 */
