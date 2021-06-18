@@ -1,6 +1,6 @@
 ﻿/* IRIS LESS Color Library */
 
-/*#region IRIS Colors */
+/* #region IRIS Colors */
 /* Grays */
 @IRIS_GRAY_01: #1A1A1A;
 @IRIS_GRAY_02: #2D2D2D;
@@ -22,7 +22,9 @@
 /* Interactive Map Colors */
 @IRIS_MAP_GREEN: #A5D6A7;
 @IRIS_MAP_AMBER: #FFB74D;
+/* #endregion */
 
+/* #region IRIS Colored Backgrounds */
 .iris-bg-dark-blue {
     background-color: @IRIS_BLUE_01;
 }
@@ -34,7 +36,31 @@
 .iris-bg-light-blue {
     background-color: @IRIS_BLUE_03;
 }
+/* #endregion */
 
+/* #region IRIS Colored Borders */
+.iris-border-dark-blue {
+    border-color: @IRIS_BLUE_01 !important;
+}
+
+.iris-border-medium-blue {
+    border-color: @IRIS_BLUE_02 !important;
+}
+
+.iris-border-light-blue {
+    border-color: @IRIS_BLUE_03 !important;
+}
+
+.iris-border-medium-gray {
+    border-color: @IRIS_GRAY_03 !important;
+}
+
+.iris-border-hinted {
+    border-color: rgba(0, 0, 0, 0.125) !important;
+}
+/*#endregion*/
+
+/* #region IRIS Colored Type */
 .iris-type-dark-blue {
     color: @IRIS_BLUE_01
 }
@@ -46,15 +72,7 @@
 .iris-type-light-blue {
     color: @IRIS_BLUE_03;
 }
-
-.iris-border-medium-gray {
-    border-color: @IRIS_GRAY_03;
-}
-
-.iris-border-hinted {
-    border-color: rgba(0, 0, 0, 0.125);
-}
-/*#endregion*/
+/* #endregion */
 
 /*#region Gradient Background classes */
 .dark-gradient-bg {

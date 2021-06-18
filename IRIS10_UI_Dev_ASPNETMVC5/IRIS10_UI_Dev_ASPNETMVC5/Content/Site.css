@@ -2,11 +2,13 @@
 @import "bootstrap.min.css";
 @import "iris-bootstrap-custom-v2.css";
 /* IRIS LESS Color Library */
-/*#region IRIS Colors */
+/* #region IRIS Colors */
 /* Grays */
 /* Main Palette */
 /* Custom Validation Colors */
 /* Interactive Map Colors */
+/* #endregion */
+/* #region IRIS Colored Backgrounds */
 .iris-bg-dark-blue {
   background-color: #233042;
 }
@@ -16,6 +18,25 @@
 .iris-bg-light-blue {
   background-color: #5399EE;
 }
+/* #endregion */
+/* #region IRIS Colored Borders */
+.iris-border-dark-blue {
+  border-color: #233042 !important;
+}
+.iris-border-medium-blue {
+  border-color: #2E6FF2 !important;
+}
+.iris-border-light-blue {
+  border-color: #5399EE !important;
+}
+.iris-border-medium-gray {
+  border-color: #737373 !important;
+}
+.iris-border-hinted {
+  border-color: rgba(0, 0, 0, 0.125) !important;
+}
+/*#endregion*/
+/* #region IRIS Colored Type */
 .iris-type-dark-blue {
   color: #233042;
 }
@@ -25,13 +46,7 @@
 .iris-type-light-blue {
   color: #5399EE;
 }
-.iris-border-medium-gray {
-  border-color: #737373;
-}
-.iris-border-hinted {
-  border-color: rgba(0, 0, 0, 0.125);
-}
-/*#endregion*/
+/* #endregion */
 /*#region Gradient Background classes */
 .dark-gradient-bg {
   background: #2e6ff2;
@@ -67,9 +82,6 @@
 /*#endregion*/
 .report-list-height {
   height: 256px;
-}
-.height-fit-content {
-  height: fit-content;
 }
 .border-50 {
   border-radius: 50%;
@@ -116,11 +128,9 @@
   border-bottom-left-radius: 50%;
 }
 /* #region User Account Menu Style Rules */
-.user-menu-template-size {
+.user-menu-template {
   width: 256px;
-  height: 384px;
   max-width: 256px;
-  max-height: 384px;
 }
 .user-menu-item {
   padding: 4px 8px 4px 16px;
@@ -128,6 +138,15 @@
 .user-menu-item:hover {
   background-color: #2E6FF2;
   padding: 4px 8px 4px 16px;
+}
+.k-tooltip {
+  padding: 0px;
+  /*background-color: @IRIS_BLUE_01;*/
+  border-radius: 4px;
+}
+.k-tooltip .k-callout {
+  color: #233042;
+  border-bottom-color: #233042;
 }
 /* #endregion */
 /*

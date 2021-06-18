@@ -138,7 +138,9 @@
     <Compile Include="Controllers\ReportScreensController.cs" />
     <Compile Include="Controllers\RISController.cs" />
     <Compile Include="Controllers\StepWizardController.cs" />
+    <Compile Include="Controllers\TemplatesController.cs" />
     <Compile Include="Controllers\TextEditorDemoController.cs" />
+    <Compile Include="Controllers\UserAccountMenuController.cs" />
     <Compile Include="Controllers\WindowExController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -413,6 +415,9 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Templates\UserAccountMenuTemplate.tmpl.htm" />
+    <None Include="Views\Shared\EditorTemplates\UserAccountMenuTemplate.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UserAccountMenuTemplate.tmpl.htm" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -538,6 +543,7 @@
     <Content Include="Views\RIS\RISMain.cshtml" />
     <Content Include="Views\RIS\RISMiniDrawerTemplate.cshtml" />
     <Content Include="Views\CommonLayout\UserAccountMenu.cshtml" />
+    <Content Include="Views\UserAccountMenu\UserAccountMenuTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Site.css" />
@@ -554,6 +560,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Icons\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Templates\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

@@ -46,10 +46,18 @@
         </div>
     </footer>
 
+    @*@(Html.Kendo().Tooltip()
+            .For("#UserAccountSettings")
+            .LoadContentFrom("UserAccountMenuTemplate", "UserAccountMenu")
+            .Position(TooltipPosition.Bottom)
+            .AutoHide(true)
+            .Width(256)
+            .Events(events => events.RequestStart("requestStart"))
+        )*@
+
     <script>
 
         // Implement a basic API for controlling the display of core layout elements
-
         function ShowHeader(setValue) {
 
             let MainHeaderEl = $("#MainHeader");
@@ -90,12 +98,102 @@
             }
         }
 
+        // User Account Menu AJAX
+        function requestStart(e) {
+            e.options.data = {
+                id: e.target.data("id")
+            }
+        }
+
         $(document).ready(function () {
+
+            $("#UserAccountSettings").kendoTooltip({
+                position: "bottom",
+                width: "256px",
+                showOn: "click",
+                autoHide: true,
+                content: kendo.template($("#UserAccountMenuTemplate").html())
+            });
+
             ShowHeader(true);
             ShowMainContent(true);
             ShowFooter(false);
         });
 
+        //// Creates a gloabl object called templateLoader with a single method "loadExtTemplate".
+        //var templateLoader = (function ($, host) {
+        //    // Loads external templates from path and injects in to page DOM.
+        //    return {
+        //        // Method: loadExtTemplate.
+        //        // Params: (string) path: the relative path to a file that contains template definitions.
+        //        loadExtTemplate: function (path) {
+        //            // Use jQuery Ajax to fetch the template file.
+        //            var tmplLoader = $.get(path)
+        //                .success(function (result) {
+        //                    // On success, Add templates to DOM (assumes file only has template definitions).
+        //                    $("body").append(result);
+        //                })
+        //                .error(function (result) {
+        //                    alert("Error Loading Templates -- TODO: Better Error Handling");
+        //                })
+
+        //            tmplLoader.complete(function () {
+        //                // Publish an event that indicates when a template is done loading.
+        //                $(host).trigger("TEMPLATE_LOADED", [path]);
+        //            });
+        //        }
+        //    };
+        //})(jQuery, document);
+
+        //templateLoader.loadExtTemplate("Templates/UserAccountMenuTemplate");
+
+        ////Subscribe to the event triggered when the templates are loaded
+        ////Do not load use templates before they are available
+        //$(document).bind("TEMPLATE_LOADED", function (e, path) {
+        //    console.log('Templates loaded');
+
+        //    //Compile and cache templates
+        //    _itemTemplate = kendo.template($("#UserAccountMenuTemplate").html(), { useWithBlock: false });
+
+        //    //Use the template (assuming "data" is collection loaded elsewhere)
+        //    _itemTemplate(data);
+        //})
+    </script>
+
+    <script id="UserAccountMenuTemplate" type="text/x-kendo-template">
+        <div class="user-menu-template iris-bg-dark-blue iris-border-dark-blue rounded">
+            <div class="container-fluid h-100 d-flex flex-column">
+                <div class="row border-bottom iris-border-light-blue pb-2">
+                    <div class="col text-light">
+                        <h5 class="text-center mt-3 mb-3">Welcome Ken Smith</h5>
+                        <i class="fas fa-laptop-house iris-type-light-blue"></i><strong class="ml-3">Tenant: </strong><span class="iris-type-light-blue">AOCCRP</span>
+                    </div>
+                </div>
+                <div class="row border-bottom iris-border-light-blue">
+                    <div class="col p-0">
+                        <a href="\\\\#" class="user-menu-item text-white d-block">Support</a>
+                        <a href="\\\\#" class="user-menu-item text-white d-block">Users</a>
+                        <a href="\\\\#" class="user-menu-item text-white d-block">Sync Permits</a>
+                        <a href="\\\\#" class="user-menu-item text-white d-block">Help</a>
+                    </div>
+                </div>
+                <div class="row border-bottom iris-border-light-blue">
+                    <div class="col">
+                        <span class="d-inline-block mt-2 mb-2 text-light">Change Tenant:</span>
+                        <select id="TenantList" class="mb-3 w-100">
+                            <option>Item 1</option>
+                            <option>Item 2</option>
+                            <option>Item 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row flex-grow-1">
+                    <div class="col d-flex justify-content-center align-items-center text-center">
+                        <div class="mt-2 mb-2"><a href="\\\\#" class="text-white">Legal Info</a><span class="text-light"> | Version: 10.0.0</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </script>
 
     @RenderSection("scripts", required: false)
