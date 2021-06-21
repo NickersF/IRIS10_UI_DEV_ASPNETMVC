@@ -119,49 +119,10 @@
             ShowMainContent(true);
             ShowFooter(false);
         });
-
-        //// Creates a gloabl object called templateLoader with a single method "loadExtTemplate".
-        //var templateLoader = (function ($, host) {
-        //    // Loads external templates from path and injects in to page DOM.
-        //    return {
-        //        // Method: loadExtTemplate.
-        //        // Params: (string) path: the relative path to a file that contains template definitions.
-        //        loadExtTemplate: function (path) {
-        //            // Use jQuery Ajax to fetch the template file.
-        //            var tmplLoader = $.get(path)
-        //                .success(function (result) {
-        //                    // On success, Add templates to DOM (assumes file only has template definitions).
-        //                    $("body").append(result);
-        //                })
-        //                .error(function (result) {
-        //                    alert("Error Loading Templates -- TODO: Better Error Handling");
-        //                })
-
-        //            tmplLoader.complete(function () {
-        //                // Publish an event that indicates when a template is done loading.
-        //                $(host).trigger("TEMPLATE_LOADED", [path]);
-        //            });
-        //        }
-        //    };
-        //})(jQuery, document);
-
-        //templateLoader.loadExtTemplate("Templates/UserAccountMenuTemplate");
-
-        ////Subscribe to the event triggered when the templates are loaded
-        ////Do not load use templates before they are available
-        //$(document).bind("TEMPLATE_LOADED", function (e, path) {
-        //    console.log('Templates loaded');
-
-        //    //Compile and cache templates
-        //    _itemTemplate = kendo.template($("#UserAccountMenuTemplate").html(), { useWithBlock: false });
-
-        //    //Use the template (assuming "data" is collection loaded elsewhere)
-        //    _itemTemplate(data);
-        //})
     </script>
 
     <script id="UserAccountMenuTemplate" type="text/x-kendo-template">
-        <div class="user-menu-template iris-bg-dark-blue iris-border-dark-blue rounded">
+        <div id="UserAccountMenu" class="user-menu-template iris-bg-dark-blue iris-border-dark-blue rounded">
             <div class="container-fluid h-100 d-flex flex-column">
                 <div class="row border-bottom iris-border-light-blue pb-2">
                     <div class="col text-light">
@@ -174,7 +135,7 @@
                         <a href="\\\\#" class="user-menu-item text-white d-block">Support</a>
                         <a href="\\\\#" class="user-menu-item text-white d-block">Users</a>
                         <a href="\\\\#" class="user-menu-item text-white d-block">Sync Permits</a>
-                        <a href="\\\\#" class="user-menu-item text-white d-block">Help</a>
+                        <a href="\\\\#" class="user-menu-item text-white d-block">Logout</a>
                     </div>
                 </div>
                 <div class="row border-bottom iris-border-light-blue">

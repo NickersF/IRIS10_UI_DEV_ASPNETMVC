@@ -415,9 +415,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Templates\UserAccountMenuTemplate.tmpl.htm" />
     <None Include="Views\Shared\EditorTemplates\UserAccountMenuTemplate.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\UserAccountMenuTemplate.tmpl.htm" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
