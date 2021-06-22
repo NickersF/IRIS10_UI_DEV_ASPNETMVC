@@ -133,10 +133,11 @@
   max-width: 256px;
 }
 .user-menu-item {
+  background-color: #233042 !important;
   padding: 4px 8px 4px 16px;
 }
 .user-menu-item:hover {
-  background-color: #2E6FF2;
+  background-color: #2E6FF2 !important;
   padding: 4px 8px 4px 16px;
 }
 .k-tooltip {
