@@ -13,6 +13,9 @@
 
     @Styles.Render("~/Content/css")
 
+    @* Font awesome kit CDN link *@
+    <script src="https://kit.fontawesome.com/fb9297107b.js" crossorigin="anonymous"></script>
+
     <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jszip.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
@@ -39,8 +42,40 @@
     </header>
 
     <main class="d-flex flex-grow-1">
-        <div class="d-flex flex-column container-fluid p-0">
-            <div class="row flex-grow-1 no-gutters">
+        <div class="d-flex flex-column container-fluid">
+            <div class="row">
+                <div class="col-md">
+                    <h5>Icon Implementations</h5>
+                    <p>Check the code to see the difference between the three different ways to render icons:</p>
+                    <div>
+                        <span class="fas fa-info-circle"></span>
+                    </div>
+                    <div>
+                        <span><img src="~/Content/Icons/Drawer/info-circle-solid.svg" class="iris-icon-sizer-01" /></span>
+                    </div>
+                    <div>
+                        <img src="~/Content/Icons/Drawer/info-circle-solid.svg" class="iris-icon-sizer-01" />
+                    </div>
+                    <div>
+                        <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" class="svg-inline--fa fa-info-circle fa-w-16 iris-icon-sizer-01" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md">
+                    <h5>Icons Example in an Unordered List</h5>
+                    <div>
+                        <ul class="no-bullets">
+                            <li><span class="fas fa-info-circle"></span><span>Some Text</span></li>
+                            <li><span><img src="~/Content/Icons/Drawer/info-circle-solid.svg" class="iris-icon-sizer-01" /></span><span>Some Text</span></li>
+                            <li><span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" class="svg-inline--fa fa-info-circle fa-w-16 iris-icon-sizer-01" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg></span><span>Some Text</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            @*<div class="row flex-grow-1 no-gutters">
                 <div class="d-flex flex-column col-md">
                     <ul>
                         <li id='closeDrawer' data-role='drawer-item'><span class='k-icon k-i-menu'></span><span class='k-item-text' data-id='Road'>Road Information System</span></li>
@@ -57,38 +92,38 @@
                         <li data-role='drawer-item'><span class='k-icon k-i-star'></span><span class='k-item-text' data-id='Popular'>Most popular components</span></li>
                     </ul>
                 </div>
-            </div>
+            </div>*@
         </div>
-
-        <style>
-            #drawer-content li {
-                font-size: 1.2em;
-                padding-left: .89em;
-                background: 0 0;
-                border-radius: 0;
-                border-width: 0 0 1px;
-                border-color: rgba(33, 37, 41, 0.125);
-                border-style: solid;
-                line-height: 1.5em;
-                padding: 1.09em .84em 1.23em .84em;
-            }
-
-                #drawer-content li:last-child {
-                    border: 0;
-                }
-
-            .hidden {
-                display: none;
-            }
-
-            #example .demo-section {
-                max-width: 640px;
-            }
-
-            .k-toolbar .k-icon {
-                font-size: 18px;
-            }
-        </style>
     </main>
+
+    <style>
+        #drawer-content li {
+            font-size: 1.2em;
+            padding-left: .89em;
+            background: 0 0;
+            border-radius: 0;
+            border-width: 0 0 1px;
+            border-color: rgba(33, 37, 41, 0.125);
+            border-style: solid;
+            line-height: 1.5em;
+            padding: 1.09em .84em 1.23em .84em;
+        }
+
+            #drawer-content li:last-child {
+                border: 0;
+            }
+
+        .hidden {
+            display: none;
+        }
+
+        #example .demo-section {
+            max-width: 640px;
+        }
+
+        .k-toolbar .k-icon {
+            font-size: 18px;
+        }
+    </style>
 </body>
 </html>

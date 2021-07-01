@@ -370,3 +370,10 @@
   left: 1rem;
   color: #F2F2F2;
 }
+.iris-icon-sizer-01 {
+  height: 1em;
+  width: 1em;
+}
+.no-bullets {
+  list-style-type: none;
+}

@@ -270,6 +270,7 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="Content\site-devhelpers.less" />
     <Content Include="Content\site-reports.less" />
+    <Content Include="Content\Icons\Drawer\info-circle-solid.svg" />
     <Content Include="Images\Example_Shape.svg" />
     <Content Include="Images\IRIS_Logo_Gray_Light.svg" />
     <Content Include="Images\logout_button.svg" />
@@ -284,6 +285,7 @@
     <Content Include="Content\site-user-accounts.less" />
     <Content Include="Content\site-fuel-import.less" />
     <Content Include="Content\site-main-layouts.less" />
+    <Content Include="Content\site-icon-styles.less" />
     <None Include="packages.config" />
     <Content Include="Images\IRIS_card_header.svg" />
     <Content Include="Images\IRIS_logo_web_blue.svg" />
@@ -556,7 +558,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Icons\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Templates\" />
   </ItemGroup>
